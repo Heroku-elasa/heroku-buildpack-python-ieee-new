@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head><title>downloaded Maker Pro</title></head>
+	<body>
+
+		{% try %}
+			{% try %}
+				{% module download_modle(url2) %}
+			{% except %}
+				<li><a href={{url.replace(' ','%20')}}>you requested to download :</a></li>
+                <li><a href={{main_url.replace(' ','%20')}}>{{main_url}}</a></li>
+			{% end %}
+		
+		<h1>Your Download</h1>
+		<h2><p>your donwload link is :&mdash;</h2>
+            <pre>you requested to download from: <a href={{url.replace(' ','%20')}}>{{url}}</a> </pre>
+			
+            {% if pdf_path!="" and  pdf_path!="We find link but we could not download file becuse of some problem !!" %}
+            <br>And main pdf file is :</br>
+            <li><a href={{pdf_path.replace(" ",'%20')}}>{{pdf_path.split('/')[-1]}}</a></li>
+            <pre> in time:{{time}}</pre>
+            <pre> from ip:{{ip}}</pre>
+
+            {% else %}
+			<pre>we found this to download: <a href={{link.replace(' ','%20')}}>{{link}}</a> </pre>
+			<h1>we can not download pdf from this address</h1>
+            <li><a href={{pdf_path.replace(" ",'%20')}}>{{pdf_path.split('/')[-1]}}</a></li>
+
+            //<br>we can not download pdf from this address</br>
+            {% end %}
+            {% if war_path!="" and  war_path!="No watter marker requested my be becuase of big size or lack of time" %}
+		<br>And water marked file is :</br>
+		<li><a href={{war_path.replace(' ','%20')}}>{{war_path.split('/')[-1]}}</a></li>
+		<br>in time  :</br>{{time}}
+			</p>
+            {% elif war_path=='No watter marker requested my be becuase of big size or lack of time' %}
+            <br> No watter marker requested my be becuase of big size or lack of time</br>{% end %}
+			<form id="download_form" action="/index" method="post">
+			<label class="grey" for="log">download  Address</label><br />
+			<input type="text" name="url_to_download" style="width:50%" id="download"><br>	
+			<label class="grey" for="log">Your Email Adress for downloading</label><br />
+			<input type="text" name="email" style="width:50%" id="email"><br>	
+			<input type="submit" id="downloadbtn" name="download" value="submit" class="button"><br />
+			</form>
+		{% except %}	
+            <form id="download_form" action="/index" method="post">
+			<label class="grey" for="log">download  Address</label><br />
+			<input type="text" name="url_to_download" style="width:50%" id="download"><br>	
+			<label class="grey" for="log">Your Email Adress for downloading</label><br />
+			<input type="text" name="email" style="width:50%" id="email"><br>	
+			<input type="submit" id="downloadbtn" name="download" value="submit" class="button"><br />
+			</form>
+		{% end %}	
+			
+	</body>
+</html>

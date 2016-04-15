@@ -1,0 +1,4 @@
+202.202.0.163:3128  For Site:pr2ss.tk Rs_Time 1.67
+202.114.6.37:9001  For Site:pr2ss.tk Rs_Time 15.48
+151.236.14.48:80@ user:pass For Site: pr2mss.tk  * pr2sss.tk  * pr2ss.tk Rs_Time 4.06
+ffkk

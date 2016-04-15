@@ -1,0 +1,5 @@
+#Sample: URL	SUCCESS:--1--		SERVER_IP:--IP--  METODE:--FTP/DRUPAL/MEGA-- 	USER:--ID:PASS--    APP_KEY:--None--   APP_SECRET:--None--   APP_TOKEN:--None--     REMOTE_PATH:--/--  		 QUOTA:----
+http://power-market-lab.tk SUCCESS:--1-- SERVER_IP:--93.188.160.79-- METODE:--FTP-- USER:--u683103535:ss123456-- APP_KEY:--None-- APP_SECRET:--None-- APP_TOKEN:--None-- REMOTE_PATH:--/dl1/-- QUOTA:-- Success_try:--6-- Failed_try:--0-
+http://irancall.tk     SUCCESS:--0-- SERVER_IP:--31.170.167.170--  METODE:--FTP-- 	USER:--u967933577:ss123456--    APP_KEY:--None--   APP_SECRET:--None--   APP_TOKEN:--None--    REMOTE_PATH:--/dl1/--  	 QUOTA:--   Success_try:--14-- Failed_try:--2--
+http://film-22.4rog.in  SUCCESS:--1-- SERVER_IP:--31.170.163.223--  METODE:--FTP-- 	USER:--u165951127:ss123456--    APP_KEY:--None--   APP_SECRET:--None--   APP_TOKEN:--None--    REMOTE_PATH:--/dl1/--  	 QUOTA:--   Success_try:--0-- Failed_try:--0--
+http://koonkoriha.tk  SUCCESS:--0-- SERVER_IP:--31.170.166.100--  METODE:--FTP-- 	USER:--u391528959:ss123456--    APP_KEY:--None--   APP_SECRET:--None--   APP_TOKEN:--None--    REMOTE_PATH:--/dl/--   QUOTA:----  Success_try:--0-- Failed_try:--41--

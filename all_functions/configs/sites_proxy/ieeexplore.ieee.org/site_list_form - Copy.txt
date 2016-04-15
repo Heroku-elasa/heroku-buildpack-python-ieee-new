@@ -1,0 +1,6 @@
+#Sample: 						USER:--ID:PASS-- 	    				Form_Tag:--ID_tag:pass_tag-- 		Submit_tag:--Name:Value--		 Form_id:--<Form id--     Form_Type:--submitbutton--  Log_test:--<a href="/logout/" target="_top" style="display: block; width: 100%; height: 100%; text-decoration:none"> </a>--
+http://lib.just.edu.jo/login?url=    USER:--20084019007:12345678-- 					Form_Tag:--user:pass--    		Submit_tag:--0:Login--  Form_id:----   Form_Type:--submitbutton-- Log_test:--http://ieeexplore.ieee.org--  database_link:--http://lib.just.edu.jo/login?url=http://ieeexplore.ieee.org--
+http://login.wanfangdata.com.cn/Login.aspx    USER:--xzgyzyjsxy:xzgy0516-- 					Form_Tag:--userid:password--    		Submit_tag:--login:??--  Form_id:--aspnetForm--   Form_Type:--submit-- Log_test:--http://g.wanfangdata.com.cn/UserService--  database_link:--http://lib.just.edu.jo/login?url=http://ieeexplore.ieee.org--    
+
+
+http://www.just.edu.jo/library/pages/eResourcesAz.aspx#s    USER:--20084019007:12345678-- 					Form_Tag:--userid:password--    		Submit_tag:--login:??--  Form_id:--aspnetForm--   Form_Type:--submit-- Log_test:--http://g.wanfangdata.com.cn/UserService--  database_link:--http://lib.just.edu.jo/login?url=http://ieeexplore.ieee.org--    

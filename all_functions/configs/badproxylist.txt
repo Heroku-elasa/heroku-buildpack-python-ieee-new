@@ -1,0 +1,22 @@
+None:None  For Site  For Site:www.sciencedirect.com Rs_Time 7.37* pr4ss.tk Rs_Time 1410790201.06 * www.springer.com Rs_Time 6.64 * link.springer.com Rs_Time 1410861011.22 * ieeexplore.ieee.org Rs_Time 95.99
+202.213.2.140:80  For Site:www.sciencedirect.com Rs_Time 21.01 * link.springer.com Rs_Time 21.03
+202.118.236.130:3128  For Site:www.sciencedirect.com Rs_Time 56.47 * link.springer.com Rs_Time 83.75
+219.223.252.150:56142  For Site:www.sciencedirect.com Rs_Time 21.01 * link.springer.com Rs_Time 21.03
+143.107.192.112:21320  For Site:www.sciencedirect.com Rs_Time 21.01 * link.springer.com Rs_Time 21.07
+143.107.192.143:21320  For Site:www.sciencedirect.com Rs_Time 21.02 * link.springer.com Rs_Time 21.02
+143.107.207.245:21320  For Site:www.sciencedirect.com Rs_Time 21.01 * link.springer.com Rs_Time 21.02
+202.202.0.163:3128  For Site:www.sciencedirect.com Rs_Time 18.87 * link.springer.com Rs_Time 18.87 * cpanel.1freehosting.com Rs_Time 18.88
+151.236.14.48:80  For Site:www.sciencedirect.com Rs_Time 1409367212.46 * link.springer.com Rs_Time 0.37 * cpanel.1freehosting.com Rs_Time 1412410501.68
+193.49.144.8:3128  For Site:www.sciencedirect.com Rs_Time 21.01 * link.springer.com Rs_Time 21.02
+196.220.96.112:3128  For Site:pr4ss.tk Rs_Time 9.5 * link.springer.com Rs_Time 22.08 * www.sciencedirect.com Rs_Time 40.42
+207.190.66.99:80  For Site:link.springer.com Rs_Time 1.86
+210.14.5.30:3128  For Site:link.springer.com Rs_Time 2.48
+210.14.5.10:3128  For Site:link.springer.com Rs_Time 2.4
+202.195.192.197:3128  For Site:link.springer.com Rs_Time 21.03
+119.40.116.28:80  For Site:link.springer.com Rs_Time 0.85
+222.66.115.229:80  For Site:link.springer.com Rs_Time 25.77
+222.66.115.233:80  For Site:www.sciencedirect.com Rs_Time 3.26
+118.141.72.148:80  For Site:www.sciencedirect.com Rs_Time 32.76
+106.184.7.75:8080  For Site:www.sciencedirect.com Rs_Time 54.66
+190.63.140.71:80  For Site:www.sciencedirect.com Rs_Time 9330.72
+185.91.175.60:8888  For Site:www.sciencedirect.com Rs_Time 16.99

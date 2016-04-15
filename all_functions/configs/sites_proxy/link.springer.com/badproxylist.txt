@@ -1,0 +1,16 @@
+196.220.96.112:3128  For Site:link.springer.comRs_Time 6.18 Success_try:0 Failed_try:1
+207.190.66.99:80  For Site:link.springer.com Rs_Time 1.85
+202.213.2.140:80  For Site:link.springer.com Rs_Time 21.03
+210.14.5.30:3128  For Site:link.springer.com Rs_Time 2.48
+210.14.5.10:3128  For Site:link.springer.com Rs_Time 2.38
+202.195.192.197:3128  For Site:link.springer.com Rs_Time 21.02
+202.118.236.130:3128  For Site:link.springer.com Rs_Time 83.74
+219.223.252.150:56142  For Site:link.springer.com Rs_Time 21.02
+143.107.192.112:21320  For Site:link.springer.com Rs_Time 21.06
+143.107.192.143:21320  For Site:link.springer.com Rs_Time 21.02
+143.107.207.245:21320  For Site:link.springer.com Rs_Time 21.02
+202.202.0.163:3128  For Site:link.springer.com Rs_Time 18.86
+151.236.14.48:80  For Site:link.springer.com Rs_Time 0.36
+119.40.116.28:80  For Site:link.springer.com Rs_Time 0.84
+193.49.144.8:3128  For Site:link.springer.com Rs_Time 21.02
+202.29.239.89:31228    For Site:link.springer.com Rs_Time 6.55

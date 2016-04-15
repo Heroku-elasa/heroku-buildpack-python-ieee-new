@@ -1,0 +1,21 @@
+    #None:None For Site: www.sciencedirect.com Rs_Time 4.37
+150.188.84.18:8080 For Site: www.sciencedirect.com Rs_Time 31.9 Success_try:0 Failed_try:2
+150.188.88.16:8080 For Site: www.sciencedirect.com
+
+161.6.128.79:21320 For Site: www.sciencedirect.com
+161.6.129.10:21320 For Site: www.sciencedirect.com
+161.6.41.141:21320 For Site: www.sciencedirect.com
+161.6.42.117:21320 For Site: www.sciencedirect.com
+161.6.45.63:21320 For Site: www.sciencedirect.com
+161.6.8.98:21320 For Site: www.sciencedirect.com
+
+202.112.114.27:3128 For Site: www.sciencedirect.com Rs_Time 3.76 Success_try:0 Failed_try:1
+202.112.114.28:3128 For Site: www.sciencedirect.com Rs_Time 4.37
+146.163.183.64:9064  For Site: www.sciencedirect.com Rs_Time 4.37
+159.226.170.79:8080  For Site: www.sciencedirect.com Rs_Time 4.37
+
+#222.66.115.233:80 For Site:www.sciencdirect.com Rs_Time 3.93
+#202.202.121.138:3128 For Site:link.springer.com Rs_Time 6	
+#140.137.62.184:9064  For Site:www.sciencdirect.com Rs_Time 3.93
+#222.66.115.233:80 For Site:www.sciencedirect.com Rs_Time 13.24
+#193.140.229.249:3128 For Site:link.springer.com Rs_Time 6

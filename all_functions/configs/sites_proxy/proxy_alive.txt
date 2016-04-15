@@ -1,0 +1,7 @@
+222.66.115.233:80  For Site:dl.acm.org Rs_Time 12.34* stackoverflow.com Rs_Time 22.09 * ieeexplore.ieee.org Rs_Time 35.53 * pr4ss.tk Rs_Time 2.71 * link.springer.com Rs_Time 49.29
+None:None    For Site:link.springer.com Rs_Time 3521.45
+202.213.2.140:80  For Site:ieeexplore.ieee.org Rs_Time 18.78
+119.40.116.28:80  For Site:ieeexplore.ieee.org Rs_Time 3.93
+202.29.239.89:3128  For Site:link.springer.com Rs_Time 35.72
+222.66.115.229:80  For Site:link.springer.com Rs_Time 26.46
+#None:None For Site: dl.acm.org * stackoverflow.com Rs_Time 9.41

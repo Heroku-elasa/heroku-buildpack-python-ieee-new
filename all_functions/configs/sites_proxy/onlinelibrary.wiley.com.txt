@@ -1,0 +1,4 @@
+196.220.96.112:3128  For Site:onlinelibrary.wiley.com Rs_Time 3.93
+
+210.14.5.30:3128  For Site:onlinelibrary.wiley.com Rs_Time 3.93
+210.14.5.10:3128  For Site:onlinelibrary.wiley.com Rs_Time 3.93

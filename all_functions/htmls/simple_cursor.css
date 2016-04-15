@@ -1,0 +1,100 @@
+html {
+background: #111;
+}
+ 
+body {
+color: #090;
+width: 480px;
+margin: 50px auto;
+ 
+font-family: Courier New, Courier, monospace;
+font-size: 14px;
+font-weight: bold;
+line-height: 16px;
+ 
+-webkit-font-smoothing: antialiased;
+}
+ 
+div.cursor {
+display: inline-block;
+background: #111;
+margin-left: 1px;
+ 
+-webkit-animation: blink 2s linear 0s infinite;
+-moz-animation: blink 2s linear 0s infinite;
+-ms-animation: blink 2s linear 0s infinite;
+-o-animation: blink 2s linear 0s infinite;
+}
+@-webkit-keyframes blink {
+0% { background: #0a0 }
+47% { background: #090 }
+50% { background: #000 }
+97% { background: #000 }
+100% { background: #090 }
+}
+ 
+@-moz-keyframes blink {
+0% { background: #0a0 }
+47% { background: #090 }
+50% { background: #000 }
+97% { background: #000 }
+100% { background: #090 }
+}
+ 
+@-ms-keyframes blink {
+0% { background: #0a0 }
+47% { background: #090 }
+50% { background: #000 }
+97% { background: #000 }
+100% { background: #090 }
+}
+ 
+@-o-keyframes blink {
+0% { background: #0a0 }
+47% { background: #090 }
+50% { background: #000 }
+97% { background: #000 }
+100% { background: #090 }
+}
+
+
+
+.blink {
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-name: blink;
+}
+ 
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 1;
+    }
+    76% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/*http://www.websitecodetutorials.com/code/css/css3-blinking-image-with-keyframes.php*/
+@-moz-keyframes blink {0%{opacity:1;} 50%{opacity:0;} 100%{opacity:1;}} /* Firefox */
+@-webkit-keyframes blink {0%{opacity:1;} 50%{opacity:0;} 100%{opacity:1;}} /* Webkit */
+@-ms-keyframes blink {0%{opacity:1;} 50%{opacity:0;} 100%{opacity:1;}} /* IE */
+@keyframes blink {0%{opacity:1;} 50%{opacity:0;} 100%{opacity:1;}} /* Opera and prob css3 final iteration */
+img {
+border:1px solid #000;
+-moz-transition:all 1s ease-in-out;
+-webkit-transition:all 1s ease-in-out;
+-o-transition:all 1s ease-in-out;
+-ms-transition:all 1s ease-in-out;
+transition:all 1s ease-in-out;
+/* order: name, direction, duration, iteration-count, timing-function */  
+-moz-animation:blink normal 2s infinite ease-in-out; /* Firefox */
+-webkit-animation:blink normal 2s infinite ease-in-out; /* Webkit */
+-ms-animation:blink normal 2s infinite ease-in-out; /* IE */
+animation:blink normal 2s infinite ease-in-out; /* Opera and prob css3 final iteration */
+}?

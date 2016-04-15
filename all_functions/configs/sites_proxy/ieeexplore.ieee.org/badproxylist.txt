@@ -1,0 +1,10 @@
+
+222.66.115.233:80   For Site:ieeexplore.ieee.orgRs_Time 21.03 Success_try:0 Failed_try:17
+119.40.116.28:80    For Site:ieeexplore.ieee.org Rs_Time 47.02
+222.66.115.229:80   For Site:ieeexplore.ieee.org Rs_Time 77.01
+202.213.2.140:80    For Site:ieeexplore.ieee.org Rs_Time 111.17
+196.220.96.112:3128    For Site:ieeexplore.ieee.org Rs_Time 31.72
+146.163.183.64:9064   For Site:ieeexplore.ieee.org Rs_Time 32.78
+202.112.114.27:3128   For Site:ieeexplore.ieee.org Rs_Time 6.76
+202.112.114.28:3128   For Site:ieeexplore.ieee.org Rs_Time 38.41
+150.188.84.18:8080   For Site:ieeexplore.ieee.org Rs_Time 46.01

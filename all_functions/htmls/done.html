@@ -1,0 +1,175 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <title>File Upload</title>
+    <!---
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('li').click(function(){
+                window.location = $(this).find("a").attr("href");
+            });
+        });
+    </script>
+    <link type="text/css" src="static/default.css" rel="stylesheet"/>
+    -->
+    <style>
+        body {
+            font-family: "Times";
+        }
+        ul {
+            list-style:none;
+            width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 50px;
+        }
+        #title {
+            background:#CACAFA;
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#E6E6FF', endColorstr='#CACAFA');
+            background: -webkit-gradient(linear, left top, left bottom, from(#E6E6FF), to(#CACAFA));
+            background: -moz-linear-gradient(top, #E6E6FF, #CACAFA);
+            padding-bottom:4px;
+            padding-top:8px;
+            color:white;
+            font-size: 16pt;
+            text-shadow:0px 1px 1px black;
+            font-weight:bold;
+            text-align:center;
+            -moz-border-radius-topleft:15px;
+            -moz-border-radius-topright:15px;
+            -webkit-border-top-left-radius: 15px;
+            -webkit-border-top-right-radius: 15px;
+            border-bottom: solid 1px white;
+        }
+        #footer {
+            height:12px;
+            padding-bottom:6px;
+            padding-top:6px;
+            background:#CACAFA;
+            -moz-border-radius-bottomright:15px;
+            -moz-border-radius-bottomleft:15px;
+            -webkit-border-bottom-left-radius: 15px;
+            -webkit-border-bottom-right-radius: 15px;
+        }
+        #file:hover {
+            background: #EBEBFF;
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#E6E6FF', endColorstr='#F2F2FF');
+            background: -webkit-gradient(linear, left top, left bottom, from(#E6E6FF), to(#F2F2FF));
+            background: -moz-linear-gradient(top, #E6E6FF, #F2F2FF);
+        }
+        #file {
+            cursor:pointer;
+            padding-left:10px;
+            padding-top:8px;
+            padding-bottom:8px;
+            background:#DCDCFC;
+            border-bottom: solid 1px white;
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F0F0FF', endColorstr='#DCDCFC');
+            background: -webkit-gradient(linear, left top, left bottom, from(#F0F0FF), to(#DCDCFC));
+            background: -moz-linear-gradient(top, #F0F0FF, #DCDCFC);
+        }
+        #formcontainer {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #search-container {
+            background-color: #00598E;
+            border: 0 none;
+            border-radius: 0 1px 1px 0;
+            color: #EEEEEE;
+            direction: ltr;
+            display: block;
+            font-family: Tahoma,Geneva,sans-serif;
+            font-size: 17px;
+            height: 36px;
+            margin: 0;
+            padding: 5px;
+            text-align: left;
+            width: 160px;
+        }
+        #download-button a.green {
+            background: -moz-linear-gradient(center top , #7DB72F, #4E7D0E) repeat scroll 0 0 rgba(0, 0, 0, 0);
+            border: 1px solid #538312;
+            color: #E8F0DE;
+            position: relative;
+            top: 1px;
+        }
+        a {
+            text-decoration:none;
+            color:black;
+        }
+    </style>
+</head>
+<body>
+
+<ul>
+    <li id = "title">Files</li>
+
+
+    <li id="footer"></li>
+</ul>
+<div id="formcontainer" align="center">
+    <form action="/index" enctype="multipart/form-data" method="post">
+        <p>
+            <label class="grey" for="log">download  Address</label><br />
+            <input id="search-container" type="text" name="url_to_download" style="width:40%" size="40">
+            <br><label class="grey" for="log">Your Email Adress for downloading</label><br />
+            <input id="search-container"  type="text" name="email"  style="width:40%" id="email">
+            <input id="download-button" type="submit" value="Download">
+        </p>
+    </form>
+</div>
+
+<!-- ... your form code here ...
+		
+		<h1>Your Download</h1>
+		<form id="download_form" action="/index" method="post">
+			<label class="grey" for="log">download  Address</label><br />
+			<input type="text" name="url_to_download" style="width:40%" id="download">
+            <br><label class="grey" for="log">Your Email Adress for downloading</label><br />
+			<input type="text" name="email" style="width:20%" id="email"><br>	
+			<input type="submit" id="downloadbtn" name="download" value="submit" class="button"><br />
+			</form>
+
+-->
+		<p>your request to download from :&mdash;
+            
+			{% try %}
+				{% module download_modle(url2) %}
+			{% except %}
+			
+				<li><a id="file" href={{main_url}}>{{main_url}}</a></li>
+			{% end %}
+			<pre id="file">we found this to download: <a id="file" href={{link}}>{{link}}</a> </pre>
+            {% if pdf_path!='' %}
+            <br>And main pdf file is :</br>
+            <li><a id="file" href="{{pdf_path}}">{{pdf_path }} </a><pre class="" id="file" >with size {{pdf_size}}</pre></li>
+            <pre> in time:{{time}}</pre>
+            <pre> from ip:{{ip}}</pre>
+
+            {% else %}
+            <br>we can not download pdf from this address</br>
+            {% end %}
+            {% if war_path!='' and war_path!='No watter marker requested my be becuase of big size or lack of time' %}
+		<br>And water marked file is :</br>
+<!-- ... your form code here ...
+		<li><a id="file" href="{{war_path}}">{{war_path.split('/')[-1]}}</a><pre> with size {{wt_pdf_size}}</pre></li>
+
+        <li><a href="{{war_path}}">{{war_path.split('/')[-1]}}</a><pre> with size {{wt_pdf_size}}</pre></li>
+        -->
+        <li><a id="file" href="{{ static_url(war_path.split('/')[-1]) }}">{{war_path.split('/')[-1]}}</a><pre id="file"> with size {{wt_pdf_size}}</pre></li>
+		<br id="file">in time  :</br>{{time}}
+			</p>
+            {% elif war_path=='No watter marker requested my be becuase of big size or lack of time' %}
+            <br> No watter marker requested my be becuase of big size or lack of time</br>
+            {% end %}
+			 
+			 {% if email!='' %}
+            <br>File is emailed to : </br>
+            <li><a id="file" href={{email}}>{{email}}</a></li>
+            <pre> in time:{{time}}</pre>
+            <pre> from ip:{{ip}}</pre>                        
+            {% end %}
+	</body>
+</html>

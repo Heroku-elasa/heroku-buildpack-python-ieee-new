@@ -1,0 +1,238 @@
+http://ncc1701.libprox.jfku.edu:8080/login
+user name:smith
+password:53420
+===========================
+2-Curry College 
+http://odin.curry.edu/menu
+user name:rwarners
+password:morgan85
+===========================
+3-University of Northern Colorado
+http://source.unco.edu/screens/journalfinder.html
+user name:donn5902
+password:stranger14
+===========================
+4-Point Loma Nazarene University
+http://www.pointloma.edu/experience/academics/libraries/ryan-library/find-articles-databases
+Username: David Jonathon Arriola
+Password: 34474310
+===========================
+5-William Penn University
+http://library.wmpenn.edu:2048/menu
+Username : ferrellr
+Password : ferr9863
+===========================
+6-La Salle University
+https://dbproxy.lasalle.edu/menu
+Username: otten
+Password: 22889cmo
+===========================
+7-Great Basin College
+http://library.gbcnv.edu:2048/login
+Username and Password :21485000332456
+===========================
+8-Library of Texas
+http://www.libraryoftexas.org/texshare/
+user name:RMN1161
+password:TX76051
+===========================
+9-ocu.edu.tw
+http://203.72.145.156:8080/menu
+user name:952020             user name:952021                    user name:952022
+password:952020              password:952021                        password:952021
+===========================
+10-Marshall University 
+http://ezproxy.marshall.edu:2048/menu
+user name:901340492
+password:0509
+============================
+11-Parkland College
+http://ezproxy.parkland.edu:2048/login
+user name:lperlman
+password:lperlman
+=============================
+12-Roseman University
+https://nv-ezproxy.roseman.edu:2443/menu
+user name:jriddle
+password:michael69
+=============================
+13-Keuka College
+http://library.keuka.edu/menu
+user name:darnold
+password:margie1
+=============================
+14-Taylor University
+http://ezproxy.taylors.edu.my/menu
+user name:0707W59209
+password:3847774
+=============================
+15-Buffalo State College
+http://guides.buffalostate.edu/az
+user name:skollgr
+password:studivme
+=============================
+16-Marygrove College
+http://library.marygrove.edu:2048/menu
+user name:emeckens6193
+password:0176193
+=============================
+17-Nicola Valley Institute of Technology 
+http://ezproxy.nvit.ca:2048/menu
+Barcode:n0009960
+=============================
+18-Maricopa Community College 
+http://ezproxy.pvc.maricopa.edu/menu
+user name:dyl2133753
+password:DWSaqer123
+=============================
+19-Springfield College 
+http://ezproxy.spfldcol.edu/menu
+user name:lbrewster
+password:kewlness
+=============================
+20-Pfeiffer University
+http://doris.pfeiffer.edu:2048/login
+user name:thyde
+password:4067
+=============================
+21-aint Leo University 
+http://ezproxy.saintleo.edu/login 
+user name:refhelp
+password:saintleo
+=============================
+22-Northeastern State University
+http://library.nsuok.edu/Indexes/dblist.html
+user name:aldridga
+password:visa3500
+=============================
+23-Toronto Public Library
+http://ezproxy.torontopubliclibrary.ca/
+user name:27131022109013
+password:7676
+=============================
+24-Caribbean University 
+http://securelib.caribbean.edu:2048/login
+user name:biblioteca
+password: biblioteca
+=============================
+25-Mid-America Christian University 
+http://webserver.macu.edu:2048/menu
+user name:     123456 
+password:     123456
+=============================
+26-Hagerstown Community
+user name:Easterday
+password:0147042
+=============================
+27-Kapiolani Community College 
+http://library.kcc.hawaii.edu:2048/menu
+user name:21156717
+password:Fukunaga
+=============================
+28-Augustana College 
+http://fulla.augustana.edu:2048/login
+user name:augiebookstore
+password:augustana
+=============================
+29-The University of La Reunion 
+http://elgebar.univ-reunion.fr/menu
+user name: 23001633
+password: david
+=============================
+30-Arkansas State University
+http://swansong.asumh.edu:2048/menu
+Code:001289
+=============================
+31-Great Basin College
+http://library.gbcnv.edu:2048/login
+Library Card Number:21485000733111
+=============================
+32-Arizona Western College
+http://libproxy.azwestern.edu:8080/menu
+user name:mab32
+password:mab322008
+=============================
+33-Ohio University
+https://infotree.library.ohiou.edu/scripts/login.html
+user name:jw247105
+password:Nikeman40
+=============================
+34-Langston University
+http://proxy.lunet.edu:2048/menu
+user:will//pass:1521-----user:will//pass:1644-----user:mart//pass:2422
+=============================
+35-Framingham State University
+http://www.framingham.edu/wlibrary/finding/articles.htm
+user name:edeluca
+password:062284ha
+=============================
+36-Sterling College
+http://ezproxy.sterling.edu:2048/login
+user name:ktalley01
+password:65218
+=============================
+37-Harper College
+http://prox1.harpercollege.edu:2048/menu
+user name:LisaStev0100
+password:0100
+=============================
+38-Michigan eLibrary 
+http://ezproxy.twp.waterford.mi.us/login
+Library Card Number:29082000010236
+=============================
+39-AccessMedicine
+http://www.accessmedicine.com/login.aspx
+user name:mercyme
+password:medicine
+=============================
+40-Balme Library
+http://ezproxy.ug.edu.gh:2048/menu
+user name:foosae
+password:GBMO4G00
+=============================
+41-William M. Brish Library
+http://ezproxy.hagerstowncc.edu/menu
+user name:Easterday
+password: 0147042
+=============================
+42-Monterey Peninsula College 
+http://www.mpc.edu/library/Articles_Databases/Pages/ElectronicResources.aspx
+ Barcode :?????????????
+=============================
+43-Lewis-Clark State College
+http://ezproxy.lcsc.edu:2048/menu
+user name:kdleach
+password:021783
+=============================
+44-emerlad
+http://emeraldinsight.com/
+username:ecoz
+password:uplib
+=============================
+45-Jersey Clicks Home Page
+http://www.jerseyclicks.com/homepages/jclicks/jclicksclassic.asp
+Barcode:29304003525766
+=============================
+46-University of Stirling
+http://www.is.stir.ac.uk/resource-db/az-list.php
+username:ves00002
+password:crystal01
+=============================
+47-Mid-America Christian University
+http://webserver.macu.edu:2048/login
+username:123456 password:123456----username:1 password:1-----username:2 password:2
+Similarly to the end>>>>>>>>>>>> 1 up to 99999
+=============================
+48-elibrary-Electric Library
+http://www.elibrary.com/elibweb/elib/do/login
+username:submidsta60614
+password:12345
+=============================
+49-Monterey Peninsula College
+http://www.mpc.edu/library/Articles_Databases/Pages/ElectronicResources.aspx
+Barcode: 24262000427961
+=============================
+50-ebsco
+http://search.ebscohost.com/
+user:ns003876,password:password----user:kcollege,password:fall99
+=============================

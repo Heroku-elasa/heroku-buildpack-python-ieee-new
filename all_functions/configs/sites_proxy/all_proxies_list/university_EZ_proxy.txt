@@ -1,0 +1,7 @@
+http://ezproxy.ic.edu/login?user=administrator&pass=L43gh2I
+
+http://poptop.nwrls....l.us:2048/login
+
+Barcode: 26632001228454
+
+http://poptop.nwrls.....us:2048/logout

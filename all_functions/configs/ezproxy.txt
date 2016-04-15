@@ -1,0 +1,4 @@
+http://jnu:jnulib@164.100.247.17/ $ tag_username=USER|tag_password=password|
+http://refhelp:saintleo@ezproxy.saintleo.edu/login
+http://daniel.spear:Spear258@ezproxy.thomasu.edu/menu
+http://search.proquest.com  $ tag_username=M9GHM72J9K|tag_password=welcome

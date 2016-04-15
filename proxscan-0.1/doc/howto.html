@@ -1,0 +1,229 @@
+<html>
+<head>
+<title>
+proxscan A proxy hunter and a proxy scanner.
+</title>
+</head>
+
+<body>
+    <h1> <a href="https://sourceforge.net/projects/proxscan/files/"> Download</a></h1>
+    <h3> About </h3>
+    <p>
+    proxscan is a tool to perform checks on proxies. It can determine
+    whether a given ip is or not a proxy.
+    </p>
+    
+    <h3> Introduction </h3>
+    <p>
+    I was implementing a simple image uploader with rapidserv(a simple webserver on top of untwisted)
+    when i realized people could just do nasty stuff using proxies. 
+    </p>
+    <p>
+    So i just thought of implementing this library in order to refrain people using proxies 
+    to upload pictures to my site.
+    </p>
+    <p>
+    I use the following approach to determine whether a given ip is a proxy:
+    </p>
+    <p>
+    I first mount a listening server on a port.
+    </p> 
+    <p>
+    I try to connect to the proxy ip.
+    </p>
+    <p>
+    if it accepts i just send a request to the 'proxy' to connect to my listening server.
+    </p>
+    <p>
+    i wait for the request to be sent 
+    </p>
+    <p>
+    I send a cookie through the proxy.
+    </p>
+    <p>
+    I wait for the cookie in a given period of time.
+    </p>
+    If it runs out of time i spawn TIMEOUT.
+    </p>
+
+    <p>
+        In order to explain the api i will just go through examples.
+    </p>
+
+    <h3> usage </h3>
+    <pre>
+    """ Name:simple_usage.py
+        Description: It connects to a proxy ip and sends a request to the proxy
+        to connect to a separate server. If the server sends back a cookie
+        in this case '123' then it is likely to be a proxy.
+    """
+    # It imports the basic functions.
+    from proxscan import *
+
+    # In this case we are checking for HTTP proxy.
+    REQUEST_HTTP = 'CONNECT 67.164.8.83:8000 HTTP/1.0\r\n\r\n'
+
+    # These handles are called when the checkup is finished.
+    def is_good(con):
+        print 'it is a proxy'
+
+    def is_bad(con):
+        print 'it isnt a proxy'
+
+    # is_active returns a Spin instance that we must bind callbacks
+    # to DONE, TIMEOUT, CONNECT_ERR, CLOSE in order to check proxy activity.
+    # You have proxy_ip, proxy_port, REQUEST TYPE, cookie, and timeout
+    # if the server doesn't reply the cookie in timeout seconds
+    # then it runs TIMEOUT event. You can increase timeout as much as
+    # needed. When checking for tons of proxies it is interesting to
+    # increase timeout.
+    con = is_active('210.79.216.252', 8080, REQUEST_HTTP, '123', 10)
+    xmap(con, DONE, is_good)
+    xmap(con, TIMEOUT, is_bad)
+    xmap(con, CONNECT_ERR, is_bad)
+
+    # If the supposed proxy closes the connection before sending a cookie
+    # then it isn't a proxy server.
+    xmap(con, CLOSE, is_bad)
+    gear.mainloop()
+    </pre>
+
+    <h3> filter </h3>
+    <pre>
+
+    """
+        Name: check_proxy.py
+        Description: It parses a database of proxies and filters the good ones, bad ones
+        the ones which run timeout on and the ones which closed before sending the cookie.
+        Usage:
+        python check_proxy.py http xab 67.164.8.83 8001 123 100
+        http is the protocol
+        xab is the source containing ips.
+        67.164.8.83 8000 are the ip and port of the dummy server(. I actually use a shell to run the echo server.
+        123 is the cookie that the server must reply.
+        100 is the timeout that it must wait for the cookie before losing the connection.
+
+        Obs: If you want to run the server locally you can just run the dummy.py file
+        that is going to mount a listening socket on an specific port and pass
+        your ip to check_proxy.py as above.
+    """
+
+    from proxscan import *
+    import sys
+
+    # These are request types. These headers are sent to the proxy
+    # in order to stablish a connection with a third machine.
+    header = {
+                'http':lambda ip, port: 'CONNECT %s:%s HTTP/1.0\r\n\r\n' % (ip, port),
+                'squid':lambda ip, port:'GET http://%s:%s HTTP/1.0\r\n\r\n' % (ip, port),
+                'socks4': lambda ip, port: pack('!BBH4sB',
+                    4, # SOCK VERSION it is 4.
+                    1, # SOCK command, in this case 1 = CONNECT
+                    int(port), # It is the targer port.
+                    inet_aton(ip), # The target ip.
+                    0), # terminator for our user-id (empty string).
+                'socks5': lambda ip, port: '%s%s' % (struct.pack(
+                        '!BBB',
+                        5, # version
+                        1, # number of supported methods
+                        0, # anonymous
+                        )
+                # HACK: just send the CONNECT request straight away instead of
+                # waiting for the server to reply to our negotiation.
+                        , 
+                        struct.pack(
+                        '!BBBB4sH',
+                        5, # version
+                        1, # command (1 for CONNECT)
+                        0, # reserved
+                        1, # address type (1 for IPv4 address)
+                        inet_aton(ip), int(port)))
+             }
+
+    if __name__ == '__main__':
+        script, protocol, source, ip, port, cookie, timeout = sys.argv
+
+        # The function load_data automatically parses for ip:port pattern
+        # into a file. It is suitable when you just want to copy&paste proxies
+        # from your browser. They usually are shown on pages with no sane format
+        # so, it just formats all the thing for you.
+        database = load_data(source)
+
+        # It gets the actual request header.
+        request = header[protocol](ip, port)
+        # The function run_test returns a Mode instance that is used
+        # to wait for all the requests being sent and the process
+        # finishing. When all the proxies fire either TIMEOUT, CLOSE, DONE, CONNECT_ERR
+        # then task spawns COMPLETE and our function save_result is called.
+        task = run_test(database, request, cookie, int(timeout))
+
+        def save_result(task):
+            """ Called when COMPLETE is spawned. It means all the proxies
+            in the database were checked.
+            """
+            print task
+            done_list = task.get(DONE)
+            if done_list:
+                with open('good_http_proxy', 'a+') as fd:
+                    for ip, port in done_list:
+                        fd.write('%s:%s\n' % (ip, port))
+
+            connect_err_list = task.get(CONNECT_ERR)
+            if connect_err_list:
+                with open('bad_http_proxy', 'a+') as fd:
+                    for ip, port in connect_err_list:
+                        fd.write('%s:%s\n' % (ip, port))
+
+            timeout_list = task.get(TIMEOUT)
+            if timeout_list:
+                with open('timeout_http_proxy', 'a+') as fd:
+                    for ip, port in timeout_list:
+                        fd.write('%s:%s\n' % (ip, port))
+
+            close_list = task.get(CLOSE)
+            if close_list:
+                with open('close_http_proxy', 'a+') as fd:
+                    for ip, port in close_list:
+                        fd.write('%s:%s\n' % (ip, port))
+                   
+            raise Kill
+
+        xmap(task, COMPLETE, save_result)
+        gear.mainloop()
+
+    </pre>
+    
+    <p> The next file is the counter part of filter. You need to set a server with set_up_server
+    function when using is_active at all. I hope these examples clarify the usage.
+    </p>
+    <h3> dummy.py </h3>
+    <pre>
+    """ Name: dummy.py
+        Description: This is the counter part of check_proxy.py
+        If you are going to check for proxy active you need to run this server
+        either on your machine or in other machine.
+        Usage: 
+        python dummy.py port backlog
+    """
+
+    from proxscan import *
+    import sys
+    script, port, backlog = sys.argv
+    port = int(port)
+    backlog = int(backlog)
+
+    serv = set_up_server(port, backlog)
+    xmap(serv, ACCEPT, lambda serv, con: sys.stdout.write('Connected %s:%s.\r\n' % con.getpeername()))
+    gear.mainloop()
+            
+    </pre>
+    <p> So, keep in mind that to run check_proxy to test for proxy activity
+    you need to be running an echo server that is dummy.py. You do it either locally
+    or in other machine and you need to pass the ip of the dummy server to check_proxy.py
+    that will router the cookies and make sure the proxy is active.
+    </p>
+    <p> I believe that is all people.</p>
+    <p> I am sorry for the bad english but i really don't have the patience to fix all these grammar mistakes.
+    I will do it at next. </p>
+</body>
+</html>

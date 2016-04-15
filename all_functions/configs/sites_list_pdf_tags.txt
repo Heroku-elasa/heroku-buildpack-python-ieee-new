@@ -1,0 +1,23 @@
+# How to add tags :First Host name Then USe TAG1:blaba---Attr1:blabla---Href1:blabla---@@@@ and
+#Then You could add more tag for new link by name of TAG2:blaba---Attr2:blabla---Href2:blabla---@@@@
+#example: www.goole.com Tag1:<title>Google</title>---Attr:www---Href2:href---@@@Tag2:<title>Google</title>---Attr2:www---Href2:href---
+
+http://ieeexplore.ieee.org TAG1:+++Full Text as PDF---Attr1:+++a---Href1:+++href---@@@TAG2:+++<frame src="http://ieeexplore.ieee.org---Attr2:+++frame---Href2:+++src---
+#http://ieeexplore.ieee.org   TAG1:Access provided by:---TAG2:<frame src="http://ieeexplore.ieee.org'---Attr2:'frame'---Href2:'src'
+http://stackoverflow.com/ TAG1:<title>Stack Overflow</title>
+#http://dl.acm.org  TAG1::+++name=<a name="FullTextPDF" title="FullText PDF":---Attr1:+++a---Href1=:+++"ft_gateway.cfm?:---
+http://dl.acm.org  TAG1::+++name=<a name="FullTextPDF" title="FullText PDF":---Attr1:+++a---Href1=:+++"ft_gateway.cfm?:---
+
+#http://dl.acm.org/citation.cfm?id=99977.100000&coll=DL&dl=ACM TAG1:ft_gateway.cfm? Attr1:{"name"="citation_pdf_url"} CLASS:<meta name="citation_pdf_url" content=
+http://www.google.com TAG1:<title>Google</title>
+#http://127.0.0.1/  TAG1:+++.*pdf*?---Attr1:+++a---Href1:+++href---
+http://diy4ng4django4php-freepaper_rhcloud_com TAG1:+++PDF_Files2/---Attr1:+++a---Href1:+++href---@@@TAG2:+++.*pdf*?---Attr2:+++a---Href2:+++href---
+#http://127.0.0.1/  TAG1:+++new/---Attr1:+++a---Href1:+++href---@@@TAG2:+++.*pdf*?---Attr2:+++a---Href2:+++href---
+#http://it-ebooks.info TAG1:+++<tr><td>Download:</td><td>---Attr1:+++a---Href1:+++href---@@@TAG2:+++.*pdf*?---Attr2:+++a---Href2:+++href---
+http://www.reportlab.com  TAG1:+++---Attr1:+++a---Href1:+++href---@@@TAG2:+++diagra2_fundcharts_tutorial.pdf---Attr2:+++a---Href2:+++href---
+
+http://127.0.0.1/  TAG1:+++.*pdf*?---Attr1:+++a---Href1:+++href---@@@TAG2:+++.*pdf*?---Attr2:+++a---Href2:+++href---
+
+
+#http://127.0.0.1/ TAG1:+++<tr><td>Download:</td><td><a ---Attr1:+++td---Href1:+++href---@@@TAG2:+++.*pdf*?---Attr2:+++a---Href2:+++href---
+#http://127.0.0.1/ TAG1:+++Full Text as PDF---Attr1:+++a---Href1:+++href---@@@TAG2:+++<frame src="http://ieeexplore.ieee.org---Attr2:+++frame---Href2:+++src---

@@ -1,0 +1,6 @@
+#LWP-Cookies-2.0
+Set-Cookie3: JSESSIONID="976B64A6C64E4742326F5A6033B47F98.f03t02"; path="/"; domain=".onlinelibrary.wiley.com"; path_spec; domain_dot; discard; version=0
+Set-Cookie3: REPORTINGWOLSIGNATURE=1534275952228434226; path="/"; domain=".onlinelibrary.wiley.com"; path_spec; domain_dot; expires="2015-02-06 18:40:28Z"; version=0
+Set-Cookie3: WOLSIGNATURE="9643dfd2-f052-4851-a187-7efc072f54b9"; path="/"; domain=".onlinelibrary.wiley.com"; path_spec; domain_dot; expires="2015-02-06 18:40:28Z"; version=0
+Set-Cookie3: OLProdServerID=1026; path="/"; domain=".wiley.com"; path_spec; domain_dot; discard; version=0
+Set-Cookie3: EuCookie="\"this site uses cookies\""; path="/"; domain="onlinelibrary.wiley.com"; path_spec; expires="2083-01-25 21:54:19Z"; rfc2109; version=1
