@@ -195,7 +195,7 @@ if [ "$PYTHON_CURRENT" != "$PYTHON_VERSION" ]; then
 	OPENSHIFT_REPO_DIR=${OPENSHIFT_HOMEDIR}/app-root/runtime/repo
 	echo '---Install pip---'
 	cd $OPENSHIFT_TMP_DIR
-	wget https://raw.github.com/pypa/pip/master/contrib/get-pip.py
+	curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
 	${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/python/bin/python get-pip.py
 	mkdir trash
 	cd trash

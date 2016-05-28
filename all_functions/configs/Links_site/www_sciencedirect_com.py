@@ -2379,10 +2379,10 @@ class twill:
 
                     if self.log_out['METODE'] == '1+d':
                             try:
-                                # socket=import_mod(from_module='socket')
+                                socket=import_mod(from_module='socket')
                                 # twil__headers=t_brw._browser.addheaders
                                 # t_brw.set_agent_string(twil__headers)
-                                # t_brw.load_cookies(self.cookies)
+                                t_brw.load_cookies(self.cookies)
                                 t2=t_brw.find_link('Download PDF')
                                 t_brw.follow_link(t2)
                                 time_diff = str(round(time.time() - time0, 2))
