@@ -41,7 +41,7 @@
     <SUITE FILE_PATH="coverage/all_functions$wxpython_test.coverage" NAME="wxpython_test Coverage Results" MODIFIED="1456567036113" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/linux server/python GUI" />
     <SUITE FILE_PATH="coverage/all_functions$PIL_test___Copy__2_.coverage" NAME="PIL_test - Copy (2) Coverage Results" MODIFIED="1456413297246" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/linux server/python GUI" />
     <SUITE FILE_PATH="coverage/all_functions$exa2_show_possibilities.coverage" NAME="exa2_show-possibilities Coverage Results" MODIFIED="1456585412973" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/linux server/python GUI/Video capture/VideoCapture-0.9-5/Examples" />
-    <SUITE FILE_PATH="coverage/all_functions$tornado_get.coverage" NAME="tornado-get Coverage Results" MODIFIED="1464441467670" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/all_functions$tornado_get.coverage" NAME="tornado-get Coverage Results" MODIFIED="1464443551955" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/all_functions$check_proxy.coverage" NAME="check_proxy Coverage Results" MODIFIED="1442087830909" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/attack" />
     <SUITE FILE_PATH="coverage/all_functions$main_core.coverage" NAME="main_core Coverage Results" MODIFIED="1442267579981" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/all_functions$wxpython_screenshut.coverage" NAME="wxpython_screenshut Coverage Results" MODIFIED="1456585338991" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/linux server/python GUI" />
@@ -85,21 +85,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tornado-get.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="tornado-get.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tornado-get.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6748634" vertical-offset="23706" max-vertical-offset="25806">
+            <state vertical-scroll-proportion="0.0" vertical-offset="23706" max-vertical-offset="25806">
               <caret line="1413" column="155" selection-start-line="1413" selection-start-column="155" selection-end-line="1413" selection-end-column="201" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="www_sciencedirect_com.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="www_sciencedirect_com.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/configs/Links_site/www_sciencedirect_com.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.52" vertical-offset="21290" max-vertical-offset="71536">
-              <caret line="1259" column="0" selection-start-line="1259" selection-start-column="0" selection-end-line="1259" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.6304985" vertical-offset="40721" max-vertical-offset="71553">
+              <caret line="2408" column="20" selection-start-line="2408" selection-start-column="20" selection-end-line="2408" selection-end-column="20" />
               <folding>
                 <element signature="e#351#382#0" expanded="true" />
               </folding>
@@ -648,7 +648,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/configs/Links_site/www_sciencedirect_com.py</url>
-          <line>3169</line>
+          <line>3170</line>
           <option name="timeStamp" value="491" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
@@ -678,22 +678,22 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/configs/Links_site/www_sciencedirect_com.py</url>
-          <line>3187</line>
+          <line>3188</line>
           <option name="timeStamp" value="499" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/configs/Links_site/www_sciencedirect_com.py</url>
-          <line>3192</line>
+          <line>3193</line>
           <option name="timeStamp" value="500" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/configs/Links_site/www_sciencedirect_com.py</url>
-          <line>3191</line>
+          <line>3192</line>
           <option name="timeStamp" value="502" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/configs/Links_site/www_sciencedirect_com.py</url>
-          <line>3142</line>
+          <line>3143</line>
           <option name="timeStamp" value="504" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
@@ -853,12 +853,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/configs/Links_site/www_sciencedirect_com.py</url>
-          <line>3956</line>
+          <line>3957</line>
           <option name="timeStamp" value="571" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/configs/Links_site/www_sciencedirect_com.py</url>
-          <line>4079</line>
+          <line>4080</line>
           <option name="timeStamp" value="572" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
@@ -868,7 +868,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/configs/Links_site/www_sciencedirect_com.py</url>
-          <line>3015</line>
+          <line>3016</line>
           <option name="timeStamp" value="580" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
@@ -878,12 +878,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/configs/Links_site/www_sciencedirect_com.py</url>
-          <line>2502</line>
+          <line>2503</line>
           <option name="timeStamp" value="584" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/configs/Links_site/www_sciencedirect_com.py</url>
-          <line>2408</line>
+          <line>2409</line>
           <option name="timeStamp" value="585" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
@@ -898,12 +898,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/configs/Links_site/www_sciencedirect_com.py</url>
-          <line>2500</line>
+          <line>2501</line>
           <option name="timeStamp" value="588" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/configs/Links_site/www_sciencedirect_com.py</url>
-          <line>2461</line>
+          <line>2462</line>
           <option name="timeStamp" value="589" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
@@ -913,7 +913,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/configs/Links_site/www_sciencedirect_com.py</url>
-          <line>2440</line>
+          <line>2441</line>
           <option name="timeStamp" value="592" />
         </line-breakpoint>
       </breakpoints>
@@ -1291,21 +1291,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/configs/Links_site/www_sciencedirect_com.py">
+    <entry file="file://$PROJECT_DIR$/tornado-get.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.52" vertical-offset="21290" max-vertical-offset="71536">
-          <caret line="1259" column="0" selection-start-line="1259" selection-start-column="0" selection-end-line="1259" selection-end-column="0" />
-          <folding>
-            <element signature="e#351#382#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="23706" max-vertical-offset="25806">
+          <caret line="1413" column="155" selection-start-line="1413" selection-start-column="155" selection-end-line="1413" selection-end-column="201" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tornado-get.py">
+    <entry file="file://$PROJECT_DIR$/configs/Links_site/www_sciencedirect_com.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6748634" vertical-offset="23706" max-vertical-offset="25806">
-          <caret line="1413" column="155" selection-start-line="1413" selection-start-column="155" selection-end-line="1413" selection-end-column="201" />
-          <folding />
+        <state vertical-scroll-proportion="0.6304985" vertical-offset="40721" max-vertical-offset="71553">
+          <caret line="2408" column="20" selection-start-line="2408" selection-start-column="20" selection-end-line="2408" selection-end-column="20" />
+          <folding>
+            <element signature="e#351#382#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

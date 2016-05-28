@@ -215,7 +215,7 @@ if [ "$PYTHON_CURRENT" != "$PYTHON_VERSION" ]; then
 	cd
 	echo '---instlling tornado -----'
 	nohup sh -c "\
-	${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/python/bin/easy_install tornado==4.0.1 && \
+	${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/python/bin/easy_install tornado && \
 	${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/python/bin/easy_install BeautifulSoup==3.2.1 && \	
 	${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/python/bin/easy_install mechanize==0.2.5 && \	
 	${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/python/bin/easy_install pypdf==1.12 && \

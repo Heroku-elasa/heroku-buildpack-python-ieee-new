@@ -2406,6 +2406,7 @@ class twill:
                     else:
                         html0=''
                     # t_brw.load_cookies(self.cookies)
+                    print '@@@@@@@@@@@@@ html0 download by twill is @@@@@@@@@@@@\n'+html0
                     [links, title] = link_tag_find(html, base_url)
                     if len(links[0])!=1:links3=[];links3=links[0];links=[];links.append(links3)
 
