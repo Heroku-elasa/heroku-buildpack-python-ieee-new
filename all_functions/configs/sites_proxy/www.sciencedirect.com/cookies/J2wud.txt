@@ -1,6 +1,0 @@
-#LWP-Cookies-2.0
-Set-Cookie3: ezproxy=mrTMApWDSNO2Epf; path="/"; domain=".lcsc.edu"; path_spec; domain_dot; discard; version=0
-Set-Cookie3: ezproxy=D99OyUEBCLiQxzE; path="/"; domain=".macu.edu"; path_spec; domain_dot; discard; version=0
-Set-Cookie3: REAK=8t27g2jutn5d91neaomtb6de63; path="/"; domain=".uprm.edu"; path_spec; domain_dot; expires="2016-05-28 13:18:22Z"; version=0
-Set-Cookie3: ezproxy=n4gZOT23d5x4XVj; path="/"; domain=".uprm.edu"; path_spec; domain_dot; discard; version=0
-Set-Cookie3: RETURN_URL=fcf74dd786744d87fbaaaf8652a764ab4a79b0d3ed681139e910692376063105cac4b68b9ec80cda83e0305080161614c6a81a3a38a160a0ed6575f815b2a98b7a8f2177d3ef1c54; path="/"; domain="ezproxy.lcsc.edu"; path_spec; discard; version=0

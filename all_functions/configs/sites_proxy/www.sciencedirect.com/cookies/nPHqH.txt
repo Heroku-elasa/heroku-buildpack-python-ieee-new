@@ -1,2 +1,0 @@
-#LWP-Cookies-2.0
-Set-Cookie3: ezproxy=Ym8mK39v8r2USmC; path="/"; domain=".lcsc.edu"; path_spec; domain_dot; discard; version=0

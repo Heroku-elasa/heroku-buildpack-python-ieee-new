@@ -2436,8 +2436,10 @@ class twill:
                     if links == '' or links == []:
                         links1 = t_brw.find_link('Download PDF')
                     else:
-                        links1 = t_brw.find_link('Download PDF')
-                        links1.absolute_url = links
+                        try:
+                            links1 = t_brw.find_link('Download PDF')
+                            links1.absolute_url = links
+                        except:links1=[]
 
                     if links1 == '' or links1 == [] or links1 == None:
                         links = LINK().find_my_tilte(data=html, start_dash='<a id="pdfLink" href="', end_dash='"',

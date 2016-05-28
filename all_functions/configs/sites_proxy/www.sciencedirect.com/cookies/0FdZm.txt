@@ -1,4 +1,0 @@
-#LWP-Cookies-2.0
-Set-Cookie3: ezproxy=JOOQn1D1jAtagPW; path="/"; domain=".just.edu.jo"; path_spec; domain_dot; discard; version=0
-Set-Cookie3: ezproxy=eKBmgSUKWapnPUv; path="/"; domain=".lcsc.edu"; path_spec; domain_dot; discard; version=0
-Set-Cookie3: ezproxy=thZZ0yv7loVrIsf; path="/"; domain=".macu.edu"; path_spec; domain_dot; discard; version=0

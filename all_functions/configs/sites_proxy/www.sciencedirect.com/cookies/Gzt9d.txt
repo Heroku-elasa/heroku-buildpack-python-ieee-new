@@ -1,3 +1,0 @@
-#LWP-Cookies-2.0
-Set-Cookie3: ezproxy=WPmfVil3AZToUaN; path="/"; domain=".lcsc.edu"; path_spec; domain_dot; discard; version=0
-Set-Cookie3: RETURN_URL=fcf74dd786744d87fbaaaf8652a764ab4a79b0d3ed681139d8abe7d3361e26a0; path="/"; domain="ezproxy.lcsc.edu"; path_spec; discard; version=0

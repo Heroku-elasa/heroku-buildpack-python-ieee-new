@@ -1,4 +1,0 @@
-#LWP-Cookies-2.0
-Set-Cookie3: ezproxy=MYe4tvrvEKlatvy; path="/"; domain=".soas.ac.uk"; path_spec; domain_dot; discard; version=0
-Set-Cookie3: JSESSIONID=922ADEEC022E10CF6389340B703D1880; path="/shibboleth-idp"; domain="idp.soas.ac.uk"; path_spec; secure; discard; version=0
-Set-Cookie3: _idp_session="MTg4LjE1OC41OC4xNTY%3D%7CLQ%3D%3D%7CZGQ0ZjQ1ZjFkMDI3OWFiZDE2OWY3NDMzMTFkNjY4NmU3NTBjYTNkNmQ5MmQ2NTNmMGUwN2I4MDY1N2NkZTFiMg%3D%3D%7C0oCfd5m9WSr39MQEZp3DAzmNGJ0%3D"; path="/shibboleth-idp"; domain="idp.soas.ac.uk"; path_spec; secure; discard; rfc2109; version=1
