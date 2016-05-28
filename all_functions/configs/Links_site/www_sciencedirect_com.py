@@ -1255,7 +1255,8 @@ def twil_find_pdf_link(link):
                 [html, cookies, links, title, times, log_out] = tw.login_to_site(link, form[k], [], [])
 
             elif "%(METODE)s" % form[k] == '1' or "%(METODE)s" % form[
-                k] == '1+d': #direct find link or direct find link and download
+                k] == '1+d' or  "%(METODE)s" % form[
+                k] == '1+d+d': #direct find link or direct find link and download
                 [html, cookies, links, title, times, log_out] = tw.twill_find_link(link, form[k])
             elif "%(METODE)s" % form[k] == '3':
                 [html, cookies, links, title, times, log_out] = tw.twill_find_link(link, form[k])
@@ -1859,7 +1860,7 @@ class twill:
         # except:
         #     pass
         t_brw.set_agent_string(twil__headers)
-
+        # t_com.add_extra_header('Referer', ez_link) #used foe some exproxies
         # cookies=cookies.replace('/','\\')
         t_brw.load_cookies(cookies)
         # socket=import_mod(from_module='socket')
@@ -1872,10 +1873,33 @@ class twill:
         print link
         print '@@@@@@@@@@@@@ link download by twill is @@@@@@@@@@@@'
         try:
-            s = link.absolute_url
-            t_brw.follow_link(link)
+            if len(link.absolute_url[0])!=1:
+                s = link.absolute_url[0]
+                s2 = type('test', (object,), {})()
+                s2.absolute_url=link.absolute_url[0]
+                s2.base_url=link.base_url
+                print s2.absolute_url
+                t_brw.follow_link(s2)
+            else:
+                t_brw.follow_link(link)
         except:
-            t_brw.go(link)
+            # t_brw.set_agent_string(twil__headers)
+            # t_com.add_extra_header('Referer', ez_link)
+            try:
+               if len(link.absolute_url[0])!=1:
+                s = link.absolute_url[0]
+                s2 = type('test', (object,), {})()
+                s2.absolute_url=link.absolute_url[0]
+                s2.base_url=link.base_url
+                print s2.absolute_url
+                t_brw.go(s2.absolute_url)
+               else:
+                   t_brw.go(link.absolute_url)
+
+            except:
+                t_brw.set_agent_string(twil__headers)
+                t_com.add_extra_header('Referer', ez_link)
+                t_brw.go(link)
             # class link_n(object):
             #     def __init__(self):
             #         self.absolute_url = link
@@ -1898,7 +1922,10 @@ class twill:
         link2 = t_brw.result.url
         link2 = link.absolute_url
         if not (html0[:4] == '%PDF') or html0 == []:
+            t_brw.set_agent_string(twil__headers)
+            t_com.add_extra_header('Referer', ez_link)
             t_brw.go(link2)
+            html2 = t_brw.result.page
             html, cookies = MECAHNIZM('', '', cookies=cookies, url=link2).speed_download(link2)
             # html3,pr,upss,cookies=web().download_mechanism_link(link,'',cookies=cookies)
             if not (html[:4] == '%PDF') or html == []:
@@ -1988,6 +2015,8 @@ class twill:
         t_brw.load_cookies(self.cookies)
         # print t_com.show_extra_headers()
         # print t_com.show_cookies()
+        try:t_brw.go(self.log_out['log_out'])
+        except:pass
         try:
             t_brw.go(self.url)
         except:
@@ -2224,7 +2253,7 @@ class twill:
             except:
                 form_id = ''
 
-            if each_frm.method == 'POST' and (form_id == self.Form_id ):
+            if each_frm.method == 'POST' and ((form_id == self.Form_id ) or ( str(self.formnumber )== self.Form_id )):
 
 
                 t_com.formclear(formnumber)
@@ -2347,8 +2376,38 @@ class twill:
 
                     # html=t_brw.result.page[:14100]
                     t_com.save_cookies(self.cookies)
+
+                    if self.log_out['METODE'] == '1+d':
+                            try:
+                                # socket=import_mod(from_module='socket')
+                                # twil__headers=t_brw._browser.addheaders
+                                # t_brw.set_agent_string(twil__headers)
+                                # t_brw.load_cookies(self.cookies)
+                                t2=t_brw.find_link('Download PDF')
+                                t_brw.follow_link(t2)
+                                time_diff = str(round(time.time() - time0, 2))
+                                html0=t_brw.result.page
+                            except:
+                                try:
+                                    twil__headers=t_brw._browser.addheaders
+                                    t_brw.set_agent_string(twil__headers)
+                                    t_brw.load_cookies(self.cookies)
+                                    t_brw.follow_link(links1)
+                                    if len(links[0])!=1:pass
+                                    else:t_brw.follow_link(links1)
+                                    html0 = t_brw.result.page
+                                    if len(links[0])!=1:t_brw.go(links[0])
+                                    else:t_brw.go(links)
+                                    time_diff = str(round(time.time() - time0, 2))
+                                    html0 = t_brw.result.page
+                                except:
+                                    print 'error in downloading MEHOD=1+d';html0=''
+
+                    else:
+                        html0=''
                     # t_brw.load_cookies(self.cookies)
                     [links, title] = link_tag_find(html, base_url)
+                    if len(links[0])!=1:links3=[];links3=links[0];links=[];links.append(links3)
 
                     # if not (links == '' or links == []):
                     #     if self.pre_Link_part != '':
@@ -2390,7 +2449,7 @@ class twill:
                         # links =LINK().soap_my(data=html, tag="Download PDF", attr='a', href='href',url=base_url)
                         # if links==[] or links=='':
                         #     links=LINK().soap_my(data=html,tag='pdfLink',attr='a',href='href',url=base_url)
-                        if self.log_out['METODE'] == '1+d':
+                        if self.log_out['METODE'] == '1+d' and  (html0[:4]!='%PDF' or html0[-7:]!='%%EOF' ) :
                             t_brw.load_cookies(self.cookies)
                             t_brw.go(links)
                             time_diff = str(round(time.time() - time0, 2))
@@ -2400,15 +2459,33 @@ class twill:
                             links = links1.absolute_url
                         except:
                             links = links1
-                        if self.log_out['METODE'] == '1+d':
-                            twil__headers=t_brw._browser.addheaders
-                            t_brw.set_agent_string(twil__headers)
-                            t_brw.load_cookies(self.cookies)
-                            # t_brw.follow_link(links)
-                            html0 = t_brw.result.page
-                            t_brw.go(links)
-                            time_diff = str(round(time.time() - time0, 2))
-                            html = t_brw.result.page
+                        if self.log_out['METODE'] == '1+d'  and  (html0[:4]!='%PDF' or html0[-7:]!='%%EOF' ):
+                            try:
+                                socket=import_mod(from_module='socket')
+                                t2=t_brw.find_link('Download PDF')
+                                t_brw.follow_link(t2)
+                                time_diff = str(round(time.time() - time0, 2))
+                                html=t_brw.result.page
+                            except:
+                                try:
+                                    twil__headers=t_brw._browser.addheaders
+                                    t_brw.set_agent_string(twil__headers)
+                                    t_brw.load_cookies(self.cookies)
+                                    t_brw.follow_link(links1)
+                                    if len(links[0])!=1:pass
+                                    else:t_brw.follow_link(links1)
+                                    html0 = t_brw.result.page
+                                    if len(links[0])!=1:t_brw.go(links[0])
+                                    else:t_brw.go(links)
+                                    time_diff = str(round(time.time() - time0, 2))
+                                    html = t_brw.result.page
+                                except:
+                                    print 'error in downloading'
+                                    return [], self.cookies, [], [], 0, self.log_out
+
+
+
+
 
                         self.log_out = {
                             'log_out': "%(Log_out)s" % form_data,
@@ -2421,17 +2498,27 @@ class twill:
                         title = LINK().soap_my(data=html, tag='class="article-title"', attr='h1', href='', url=base_url)
                     if title == '' or title == []:
                         title = LINK().soap_my(data=html, tag='<title>', attr='', href='', url=base_url)
-                    if links != []:
+                    if    (html0[:4]=='%PDF' or html0[-7:]=='%%EOF' ):html=html0
+
+                    if links != [] and self.log_out['METODE'] == '1+d+d' and  (html0[:4]!='%PDF' or html0[-7:]!='%%EOF' ):
 
 
-                        # socket=import_mod(from_module='socket')
+                        socket=import_mod(from_module='socket')
                         # socket.setdefaulttimeout(3000)
-                        # t_brw.load_cookies(self.cookies)
-                        # # t_brw.go(links)
-                        # t=t_brw.find_link('Download PDF')
-                        # t_brw.follow_link(t)
-                        # html0=t_brw.result.page
-                        # print '@@@@@@@@@@@@@ html0 download by twill is @@@@@@@@@@@@'
+                        t_brw.load_cookies(self.cookies)
+                        # if len(links1.absolute_url[0])!=1:
+                        #     s = links1.absolute_url[0]
+                        #     s2 = type('test', (object,), {})()
+                        #     s2.absolute_url=links1.absolute_url[0]
+                        #     s2.base_url=links1.base_url
+                        #     print s2.absolute_url
+                        #     t_brw.follow_link(s2)
+                        #     t_brw.go(s2.absolute_url)
+                        # t_brw.go(links)
+                        t=t_brw.find_link('Download PDF')
+                        t_brw.follow_link(t)
+                        html0=t_brw.result.page
+                        print '@@@@@@@@@@@@@ html0 download by twill is @@@@@@@@@@@@'
                         # print html0
                         # print '@@@@@@@@@@@@@ html0 download by twill is @@@@@@@@@@@@'
                         # time.sleep(10)
@@ -2446,7 +2533,9 @@ class twill:
                         #     print html2
                         #     print '@@@@@@@@@@@@@ MECAHNIZM download by twill is @@@@@@@@@@@@'
                         #     time.sleep(10)
-                        return html, self.cookies, links, title, time_diff, self.log_out
+                        try:t_brw.go(self.log_out['log_out'])
+                        except:pass
+                        return html0, self.cookies, links, title, time_diff, self.log_out
                     else:
                         t_brw.go(self.log_out['log_out'])
         return html, self.cookies, [], [], 0, self.log_out
@@ -3442,6 +3531,7 @@ class LINK:
             }
             return responce
             # return links,[],[],cookies
+
     def get_pdf_link_two_state(self, proxy='', user_pass='',tag='', attr='', href=''):
 
         url = self.url
@@ -3846,6 +3936,94 @@ class LINK:
             return responce
             # return links,[],[],cookies
 
+    def curl_download(self, url, cookies='',proxy=''):
+        # self.url="%(ezproxy_host)s"%form_data
+        # self.database_link="%(database_link)s"%form_data
+        # self.username="%(user)s"%form_data
+        # self.password="%(pass)s"%form_data
+        # self.user_tag="%(user_tag)s"%form_data
+        # self.pass_tag="%(pass_tag)s"%form_data
+        # self.Form_id="%(Form_id)s"%form_data
+        # self.submit_tag_name="%(submit_tag_name)s"%form_data
+        # self.submit_tag_value="%(submit_tag_value)s"%form_data
+        # self.Form_Type="%(Form_Type)s"%form_data
+        # self.log_done="%(Log_test)s"%form_data
+        link = url;
+        # lg = url['log_out'];
+        # url_logout = lg['log_out'];
+        # ez_link = lg['ez_link']
+        # twil__headers = lg['headers']
+
+        if proxy!='':
+            import subprocess
+            #phantomjs --webdriver=8080 --webdriver-selenium-grid-hub=http://127.0.0.1:4444
+            #phantomjs --webdriver=8080 --webdriver-selenium-grid-hub=http://127.2.25.129:4444
+            #st='phantomjs --webdriver=8080 --webdriver-selenium-grid-hub=http://'+ip+':4444'
+            # st='export http_proxy="http://'+proxy+'"'
+            st='export HTTP_PROXY='+proxy
+            awk_sort = subprocess.Popen( [st ], stdin= subprocess.PIPE, stdout= subprocess.PIPE,shell=True)
+            awk_sort.wait()
+            output = awk_sort.communicate()[0]
+            print output.rstrip()
+
+        #!/usr/bin/python
+        #author: Bryan Bishop <kanzure@gmail.com>
+        #date: 2010-03-03
+        #purpose: given a link on the command line to sciencedirect.com, download the associated PDF and put it in "sciencedirect.pdf" or something
+        import os
+        import re
+        import pycurl
+        #from BeautifulSoup import BeautifulSoup
+        from lxml import etree
+        import lxml.html
+        from StringIO import StringIO
+        from string import join, split
+
+        user_agent = "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.1.5) Gecko/20091123 Iceweasel/3.5.5 (like Firefox/3.5.5; Debian-3.5.5-1)"
+
+        # def interscience(url):
+        '''downloads the PDF from sciencedirect given a link to an article'''
+        url = str(url)
+        buffer = StringIO()
+
+        curl = pycurl.Curl()
+        curl.setopt(curl.URL, url)
+        curl.setopt(curl.WRITEFUNCTION, buffer.write)
+        curl.setopt(curl.VERBOSE, 0)
+        curl.setopt(curl.USERAGENT, user_agent)
+        curl.setopt(curl.TIMEOUT, 20)
+        curl.perform()
+        curl.close()
+
+        buffer = buffer.getvalue().strip()
+        html = lxml.html.parse(StringIO(buffer))
+
+        pdf_href = []
+        for item in html.getroot().iter('a'):
+            if (('id' in item.attrib) and  ('href' in item.attrib) and item.attrib['id']=='pdfLink'):
+                pdf_href.append(item.attrib['href'])
+
+
+        pdf_href = pdf_href[0]
+        #now let's get the article title
+
+        title_div = html.find("head/title")
+        paper_title = title_div.text
+        paper_title = paper_title.replace("\n", "")
+        if paper_title[-1] == " ": paper_title = paper_title[:-1]
+        re.sub('[^a-zA-Z0-9_\-.() ]+', '', paper_title)
+        paper_title = paper_title.strip()
+        paper_title = re.sub(' ','_',paper_title)
+
+        #now fetch the document for the user
+        command = "wget --user-agent=\"pyscholar/blah\" --output-document=\"%s.pdf\" \"%s\"" % (paper_title, pdf_href)
+        os.system(command)
+        print "\n\n"
+            # interscience("http://www.sciencedirect.com/science/article/pii/S0163638307000628")
+        # os.remove(cookies)
+        return html
+
+
     def twill_download(self, url, cookies,proxy=''):
         # self.url="%(ezproxy_host)s"%form_data
         # self.database_link="%(database_link)s"%form_data
@@ -4008,8 +4186,9 @@ if __name__ == '__main__':
     # url = "http://127.0.0.1/"
     # url = "http://dl.acm.org/citation.cfm?id=99977.100000&coll=DL&dl=ACM"
     url='http://www.sciencedirect.com/science/article/pii/S0165176511002710'
-
-    link=LINK(url).get_pdf_link()
+    url="http://www.sciencedirect.com.lib.just.edu.jo/science/article/pii/S009630031630282X/pdfft?md5=a22b846cbebf75dd7e816d7586a1a797&pid=1-s2.0-S009630031630282X-main.pdf"
+    # link=LINK(url).get_pdf_link()
+    link=LINK(url).curl_download(url)
 
     from optparse import OptionParser
 

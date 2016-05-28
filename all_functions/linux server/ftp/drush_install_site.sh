@@ -1,5 +1,7 @@
 mkdir ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/composer
 curl -ss https://getcomposer.org/installer | php -- --install-dir=${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/composer
+
+export PATH=${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/composer:$PATH
 cd /tmp
 rm -rf tt
 mkdir tt
@@ -16,6 +18,9 @@ mkdir ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/drush
 mv  /tmp/tt/drush/* ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/drush && cd ../..
 rm -rf tt
 export PATH=${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/drush:$PATH
+
+curl -sS https://getcomposer.org/installer | php
+mv composer.phar ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/composer
 cd ~/app-root/runtime/repo/.openshift/action_hooks
 echo "export PATH=${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/drush:$PATH
 #export PATH=${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/composer:$PATH" >> ~/app-root/runtime/repo/.openshift/action_hooks/start

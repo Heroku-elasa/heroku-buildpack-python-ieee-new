@@ -1,4 +1,4 @@
-202.112.114.27:3128   For Site:www.sciencedirect.com Rs_Time 63.72 Success_try:0 Failed_try:106
+202.112.114.27:3128   For Site:www.sciencedirect.com Rs_Time 44.82 Success_try:0 Failed_try:110
 222.66.115.233:80  For Site:www.sciencedirect.com Rs_Time 32.53
 222.66.115.229:80  For Site:www.sciencedirect.com Rs_Time 1.14
 None:None  For Site  For Site:www.sciencedirect.com Rs_Time 394.41

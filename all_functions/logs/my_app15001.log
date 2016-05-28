@@ -20,3 +20,272 @@
 [W 160108 15:46:48 web:1908] 404 GET /favicon.ico (127.0.0.1) 6.00ms
 [W 160108 15:46:48 web:1908] 404 GET /favicon.ico (127.0.0.1) 6.00ms
 [I 160108 15:53:12 web:1908] 200 POST /index (127.0.0.1) 379084.00ms
+[I 160527 18:44:07 web:1908] 200 GET / (127.0.0.1) 170.00ms
+[E 160527 18:44:07 web:1496] Uncaught exception GET / (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:15001', method='GET', uri='/', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Connection': 'keep-alive', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate', 'Host': '127.0.0.1:15001', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:46.0) Gecko/20100101 Firefox/46.0'})
+    Traceback (most recent call last):
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 1369, in _stack_context_handle_exception
+        raise_exc_info((type, value, traceback))
+      File "C:\Python27\lib\site-packages\tornado\stack_context.py", line 314, in wrapped
+        ret = fn(*args, **kwargs)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 149, in final_callback
+        if future.result() is not None:
+      File "C:\Python27\lib\site-packages\tornado\concurrent.py", line 215, in result
+        raise_exc_info(self._exc_info)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 215, in wrapper
+        result = func(*args, **kwargs)
+      File "E:/soheil/web_site_root/ieee/all_functions/tornado-get.py", line 945, in get
+        self.finish()
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 905, in finish
+        raise RuntimeError("finish() called twice")
+    RuntimeError: finish() called twice
+[W 160527 18:44:07 web:1908] 404 GET /favicon.ico (127.0.0.1) 7.00ms
+[W 160527 18:44:07 web:1908] 404 GET /favicon.ico (127.0.0.1) 5.00ms
+[I 160527 18:51:09 web:1908] 200 POST /index (127.0.0.1) 384444.00ms
+[W 160527 18:51:09 web:1908] 404 GET /htmls/simple_cursor.css (127.0.0.1) 10.00ms
+[W 160527 18:51:09 web:1908] 404 GET /htmls/simple_cursor.css (127.0.0.1) 5.00ms
+[E 160527 19:29:20 web:2584] Could not open static file 'E:\\soheil\\web_site_root\\ieee\\all_functions\\static\\1-s2.0-S009630031630282X-main.pdf'
+[I 160527 19:29:20 web:1908] 200 POST /index (127.0.0.1) 1668360.00ms
+[W 160527 19:29:20 web:1908] 404 GET /htmls/simple_cursor.css (127.0.0.1) 13.00ms
+[I 160527 19:57:47 web:1908] 200 GET /index (127.0.0.1) 32.00ms
+[E 160527 19:57:47 web:1496] Uncaught exception GET /index (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:15001', method='GET', uri='/index', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Connection': 'keep-alive', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate', 'Host': '127.0.0.1:15001', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:46.0) Gecko/20100101 Firefox/46.0'})
+    Traceback (most recent call last):
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 1369, in _stack_context_handle_exception
+        raise_exc_info((type, value, traceback))
+      File "C:\Python27\lib\site-packages\tornado\stack_context.py", line 314, in wrapped
+        ret = fn(*args, **kwargs)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 149, in final_callback
+        if future.result() is not None:
+      File "C:\Python27\lib\site-packages\tornado\concurrent.py", line 215, in result
+        raise_exc_info(self._exc_info)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 215, in wrapper
+        result = func(*args, **kwargs)
+      File "E:/soheil/web_site_root/ieee/all_functions/tornado-get.py", line 945, in get
+        self.finish()
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 905, in finish
+        raise RuntimeError("finish() called twice")
+    RuntimeError: finish() called twice
+[I 160527 20:00:11 web:1908] 200 POST /index (127.0.0.1) 57845.00ms
+[W 160527 20:00:11 web:1908] 404 GET /htmls/simple_cursor.css (127.0.0.1) 11.00ms
+[I 160527 20:00:13 web:1908] 200 GET /index (127.0.0.1) 22.00ms
+[E 160527 20:00:13 web:1496] Uncaught exception GET /index (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:15001', method='GET', uri='/index', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Connection': 'keep-alive', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate', 'Host': '127.0.0.1:15001', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:46.0) Gecko/20100101 Firefox/46.0'})
+    Traceback (most recent call last):
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 1369, in _stack_context_handle_exception
+        raise_exc_info((type, value, traceback))
+      File "C:\Python27\lib\site-packages\tornado\stack_context.py", line 314, in wrapped
+        ret = fn(*args, **kwargs)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 149, in final_callback
+        if future.result() is not None:
+      File "C:\Python27\lib\site-packages\tornado\concurrent.py", line 215, in result
+        raise_exc_info(self._exc_info)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 215, in wrapper
+        result = func(*args, **kwargs)
+      File "E:/soheil/web_site_root/ieee/all_functions/tornado-get.py", line 945, in get
+        self.finish()
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 905, in finish
+        raise RuntimeError("finish() called twice")
+    RuntimeError: finish() called twice
+[I 160527 20:13:50 web:1908] 200 POST /index (127.0.0.1) 353807.00ms
+[W 160527 20:13:50 web:1908] 404 GET /htmls/simple_cursor.css (127.0.0.1) 15.00ms
+[I 160527 20:13:56 autoreload:204] E:/soheil/web_site_root/ieee/all_functions/configs/Links_site/www_sciencedirect_com.py modified; restarting server
+[I 160527 20:29:58 web:1908] 200 GET /index (127.0.0.1) 65.00ms
+[E 160527 20:29:58 web:1496] Uncaught exception GET /index (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:15001', method='GET', uri='/index', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Connection': 'keep-alive', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate', 'Host': '127.0.0.1:15001', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:46.0) Gecko/20100101 Firefox/46.0'})
+    Traceback (most recent call last):
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 1369, in _stack_context_handle_exception
+        raise_exc_info((type, value, traceback))
+      File "C:\Python27\lib\site-packages\tornado\stack_context.py", line 314, in wrapped
+        ret = fn(*args, **kwargs)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 149, in final_callback
+        if future.result() is not None:
+      File "C:\Python27\lib\site-packages\tornado\concurrent.py", line 215, in result
+        raise_exc_info(self._exc_info)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 215, in wrapper
+        result = func(*args, **kwargs)
+      File "E:/soheil/web_site_root/ieee/all_functions/tornado-get.py", line 945, in get
+        self.finish()
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 905, in finish
+        raise RuntimeError("finish() called twice")
+    RuntimeError: finish() called twice
+[E 160527 21:39:34 web:2584] Could not open static file 'E:\\soheil\\web_site_root\\ieee\\all_functions\\static\\1-s2.0-S0142061516303647-main.pdf'
+[I 160527 21:39:34 web:1908] 200 POST /index (127.0.0.1) 183988.00ms
+[W 160527 21:39:34 web:1908] 404 GET /htmls/simple_cursor.css (127.0.0.1) 23.00ms
+[I 160527 23:08:29 web:1908] 200 GET /index (127.0.0.1) 855.00ms
+[E 160527 23:08:30 web:1496] Uncaught exception GET /index (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:15001', method='GET', uri='/index', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Connection': 'keep-alive', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate', 'Host': '127.0.0.1:15001', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:46.0) Gecko/20100101 Firefox/46.0'})
+    Traceback (most recent call last):
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 1369, in _stack_context_handle_exception
+        raise_exc_info((type, value, traceback))
+      File "C:\Python27\lib\site-packages\tornado\stack_context.py", line 314, in wrapped
+        ret = fn(*args, **kwargs)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 149, in final_callback
+        if future.result() is not None:
+      File "C:\Python27\lib\site-packages\tornado\concurrent.py", line 215, in result
+        raise_exc_info(self._exc_info)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 215, in wrapper
+        result = func(*args, **kwargs)
+      File "E:/soheil/web_site_root/ieee/all_functions/tornado-get.py", line 945, in get
+        self.finish()
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 905, in finish
+        raise RuntimeError("finish() called twice")
+    RuntimeError: finish() called twice
+[I 160527 23:28:01 web:1908] 304 GET / (127.0.0.1) 53.00ms
+[E 160527 23:28:01 web:1496] Uncaught exception GET / (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:15001', method='GET', uri='/', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Connection': 'keep-alive', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate', 'If-None-Match': '"6e39e81c6d5a5f4e0ea711e7222945ee62e8549f"', 'Host': '127.0.0.1:15001', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:46.0) Gecko/20100101 Firefox/46.0'})
+    Traceback (most recent call last):
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 1369, in _stack_context_handle_exception
+        raise_exc_info((type, value, traceback))
+      File "C:\Python27\lib\site-packages\tornado\stack_context.py", line 314, in wrapped
+        ret = fn(*args, **kwargs)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 149, in final_callback
+        if future.result() is not None:
+      File "C:\Python27\lib\site-packages\tornado\concurrent.py", line 215, in result
+        raise_exc_info(self._exc_info)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 215, in wrapper
+        result = func(*args, **kwargs)
+      File "E:/soheil/web_site_root/ieee/all_functions/tornado-get.py", line 945, in get
+        self.finish()
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 905, in finish
+        raise RuntimeError("finish() called twice")
+    RuntimeError: finish() called twice
+[W 160527 23:28:02 web:1908] 404 GET /favicon.ico (127.0.0.1) 13.00ms
+[W 160527 23:28:02 web:1908] 404 GET /favicon.ico (127.0.0.1) 9.00ms
+[I 160527 23:28:05 web:1908] 200 GET / (127.0.0.1) 15.00ms
+[E 160527 23:28:05 web:1496] Uncaught exception GET / (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:15001', method='GET', uri='/', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate', 'Host': '127.0.0.1:15001', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:46.0) Gecko/20100101 Firefox/46.0', 'Connection': 'keep-alive', 'Pragma': 'no-cache', 'Cache-Control': 'no-cache'})
+    Traceback (most recent call last):
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 1369, in _stack_context_handle_exception
+        raise_exc_info((type, value, traceback))
+      File "C:\Python27\lib\site-packages\tornado\stack_context.py", line 314, in wrapped
+        ret = fn(*args, **kwargs)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 149, in final_callback
+        if future.result() is not None:
+      File "C:\Python27\lib\site-packages\tornado\concurrent.py", line 215, in result
+        raise_exc_info(self._exc_info)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 215, in wrapper
+        result = func(*args, **kwargs)
+      File "E:/soheil/web_site_root/ieee/all_functions/tornado-get.py", line 945, in get
+        self.finish()
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 905, in finish
+        raise RuntimeError("finish() called twice")
+    RuntimeError: finish() called twice
+[I 160527 23:39:38 web:1908] 200 POST /index (127.0.0.1) 198107.00ms
+[W 160527 23:39:38 web:1908] 404 GET /htmls/simple_cursor.css (127.0.0.1) 16.00ms
+[I 160527 23:39:39 autoreload:204] E:/soheil/web_site_root/ieee/all_functions/configs/Links_site/www_sciencedirect_com.py modified; restarting server
+[I 160527 23:57:12 web:1908] 200 POST /index (127.0.0.1) 185791.00ms
+[W 160527 23:57:12 web:1908] 404 GET /htmls/simple_cursor.css (127.0.0.1) 15.00ms
+[I 160528 10:00:42 web:1908] 200 POST /index (127.0.0.1) 33037898.00ms
+[E 160528 10:01:30 concurrent:124] Future exception was never retrieved: Traceback (most recent call last):
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 505, in Task
+        func(*args, callback=_argument_adapter(set_result), **kwargs)
+    TypeError: 'dict' object is not callable
+[E 160528 11:04:51 web:1496] Uncaught exception POST /index (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:15001', method='POST', uri='/index', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Content-Length': '167', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate', 'Host': '127.0.0.1:15001', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:46.0) Gecko/20100101 Firefox/46.0', 'Connection': 'keep-alive', 'Referer': 'http://127.0.0.1:15001/', 'Content-Type': 'application/x-www-form-urlencoded'})
+    Traceback (most recent call last):
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 1369, in _stack_context_handle_exception
+        raise_exc_info((type, value, traceback))
+      File "C:\Python27\lib\site-packages\tornado\stack_context.py", line 314, in wrapped
+        ret = fn(*args, **kwargs)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 149, in final_callback
+        if future.result() is not None:
+      File "C:\Python27\lib\site-packages\tornado\concurrent.py", line 215, in result
+        raise_exc_info(self._exc_info)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 215, in wrapper
+        result = func(*args, **kwargs)
+      File "E:/soheil/web_site_root/ieee/all_functions/tornado-get.py", line 521, in post
+        result = tornado.gen.Task(self.download(details))
+      File "E:/soheil/web_site_root/ieee/all_functions/tornado-get.py", line 592, in download
+        water_pdfdir=root+water_pdfdir,)
+      File "E:/soheil/web_site_root/ieee/all_functions\main_core.py", line 169, in valid_link
+        responce= self.Find_Link(self.url,pdfdir=pdf_download_location,water_pdfdir=wat_locatton,cookies=cookies).find_link(self.pr,self.us_pss)
+      File "E:/soheil/web_site_root/ieee/all_functions\find_link.py", line 262, in find_link
+        res = self.new_module.LINK(url).get_pdf_link(proxy, user_pass)
+      File "E:/soheil/web_site_root/ieee/all_functions/configs/Links_site/www_sciencedirect_com.py", line 3071, in get_pdf_link
+        [html, cookies, links, title, form, time_diff, log_out] = twil_find_pdf_link(url)
+      File "E:/soheil/web_site_root/ieee/all_functions/configs/Links_site/www_sciencedirect_com.py", line 1264, in twil_find_pdf_link
+        if links != []:
+    UnboundLocalError: local variable 'links' referenced before assignment
+[E 160528 11:04:51 web:1908] 500 POST /index (127.0.0.1) 977.00ms
+[E 160528 11:05:02 web:1496] Uncaught exception POST /index (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:15001', method='POST', uri='/index', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Content-Length': '167', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate', 'Host': '127.0.0.1:15001', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:46.0) Gecko/20100101 Firefox/46.0', 'Connection': 'keep-alive', 'Referer': 'http://127.0.0.1:15001/', 'Content-Type': 'application/x-www-form-urlencoded'})
+    Traceback (most recent call last):
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 1369, in _stack_context_handle_exception
+        raise_exc_info((type, value, traceback))
+      File "C:\Python27\lib\site-packages\tornado\stack_context.py", line 314, in wrapped
+        ret = fn(*args, **kwargs)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 149, in final_callback
+        if future.result() is not None:
+      File "C:\Python27\lib\site-packages\tornado\concurrent.py", line 215, in result
+        raise_exc_info(self._exc_info)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 215, in wrapper
+        result = func(*args, **kwargs)
+      File "E:/soheil/web_site_root/ieee/all_functions/tornado-get.py", line 521, in post
+        result = tornado.gen.Task(self.download(details))
+      File "E:/soheil/web_site_root/ieee/all_functions/tornado-get.py", line 592, in download
+        water_pdfdir=root+water_pdfdir,)
+      File "E:/soheil/web_site_root/ieee/all_functions\main_core.py", line 169, in valid_link
+        responce= self.Find_Link(self.url,pdfdir=pdf_download_location,water_pdfdir=wat_locatton,cookies=cookies).find_link(self.pr,self.us_pss)
+      File "E:/soheil/web_site_root/ieee/all_functions\find_link.py", line 262, in find_link
+        res = self.new_module.LINK(url).get_pdf_link(proxy, user_pass)
+      File "E:/soheil/web_site_root/ieee/all_functions/configs/Links_site/www_sciencedirect_com.py", line 3071, in get_pdf_link
+        [html, cookies, links, title, form, time_diff, log_out] = twil_find_pdf_link(url)
+      File "E:/soheil/web_site_root/ieee/all_functions/configs/Links_site/www_sciencedirect_com.py", line 1264, in twil_find_pdf_link
+        if links != []:
+    UnboundLocalError: local variable 'links' referenced before assignment
+[E 160528 11:05:02 web:1908] 500 POST /index (127.0.0.1) 57.00ms
+[E 160528 11:05:13 web:1496] Uncaught exception POST /index (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:15001', method='POST', uri='/index', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Content-Length': '167', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate', 'Host': '127.0.0.1:15001', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:46.0) Gecko/20100101 Firefox/46.0', 'Connection': 'keep-alive', 'Referer': 'http://127.0.0.1:15001/', 'Content-Type': 'application/x-www-form-urlencoded'})
+    Traceback (most recent call last):
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 1369, in _stack_context_handle_exception
+        raise_exc_info((type, value, traceback))
+      File "C:\Python27\lib\site-packages\tornado\stack_context.py", line 314, in wrapped
+        ret = fn(*args, **kwargs)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 149, in final_callback
+        if future.result() is not None:
+      File "C:\Python27\lib\site-packages\tornado\concurrent.py", line 215, in result
+        raise_exc_info(self._exc_info)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 215, in wrapper
+        result = func(*args, **kwargs)
+      File "E:/soheil/web_site_root/ieee/all_functions/tornado-get.py", line 521, in post
+        result = tornado.gen.Task(self.download(details))
+      File "E:/soheil/web_site_root/ieee/all_functions/tornado-get.py", line 592, in download
+        water_pdfdir=root+water_pdfdir,)
+      File "E:/soheil/web_site_root/ieee/all_functions\main_core.py", line 169, in valid_link
+        responce= self.Find_Link(self.url,pdfdir=pdf_download_location,water_pdfdir=wat_locatton,cookies=cookies).find_link(self.pr,self.us_pss)
+      File "E:/soheil/web_site_root/ieee/all_functions\find_link.py", line 262, in find_link
+        res = self.new_module.LINK(url).get_pdf_link(proxy, user_pass)
+      File "E:/soheil/web_site_root/ieee/all_functions/configs/Links_site/www_sciencedirect_com.py", line 3071, in get_pdf_link
+        [html, cookies, links, title, form, time_diff, log_out] = twil_find_pdf_link(url)
+      File "E:/soheil/web_site_root/ieee/all_functions/configs/Links_site/www_sciencedirect_com.py", line 1264, in twil_find_pdf_link
+        if links != []:
+    UnboundLocalError: local variable 'links' referenced before assignment
+[E 160528 11:05:13 web:1908] 500 POST /index (127.0.0.1) 789.00ms
+[E 160528 11:05:45 web:1496] Uncaught exception POST /index (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:15001', method='POST', uri='/index', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Content-Length': '167', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate', 'Host': '127.0.0.1:15001', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:46.0) Gecko/20100101 Firefox/46.0', 'Connection': 'keep-alive', 'Referer': 'http://127.0.0.1:15001/', 'Content-Type': 'application/x-www-form-urlencoded'})
+    Traceback (most recent call last):
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 1369, in _stack_context_handle_exception
+        raise_exc_info((type, value, traceback))
+      File "C:\Python27\lib\site-packages\tornado\stack_context.py", line 314, in wrapped
+        ret = fn(*args, **kwargs)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 149, in final_callback
+        if future.result() is not None:
+      File "C:\Python27\lib\site-packages\tornado\concurrent.py", line 215, in result
+        raise_exc_info(self._exc_info)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 215, in wrapper
+        result = func(*args, **kwargs)
+      File "E:/soheil/web_site_root/ieee/all_functions/tornado-get.py", line 521, in post
+        result = tornado.gen.Task(self.download(details))
+      File "E:/soheil/web_site_root/ieee/all_functions/tornado-get.py", line 592, in download
+        water_pdfdir=root+water_pdfdir,)
+      File "E:/soheil/web_site_root/ieee/all_functions\main_core.py", line 169, in valid_link
+        responce= self.Find_Link(self.url,pdfdir=pdf_download_location,water_pdfdir=wat_locatton,cookies=cookies).find_link(self.pr,self.us_pss)
+      File "E:/soheil/web_site_root/ieee/all_functions\find_link.py", line 262, in find_link
+        res = self.new_module.LINK(url).get_pdf_link(proxy, user_pass)
+      File "E:/soheil/web_site_root/ieee/all_functions/configs/Links_site/www_sciencedirect_com.py", line 3070, in get_pdf_link
+        [html, cookies, links, title, form, time_diff, log_out] = twil_find_pdf_link(url)
+      File "E:/soheil/web_site_root/ieee/all_functions/configs/Links_site/www_sciencedirect_com.py", line 1264, in twil_find_pdf_link
+        if links != []:
+    UnboundLocalError: local variable 'links' referenced before assignment
+[E 160528 11:05:45 web:1908] 500 POST /index (127.0.0.1) 921.00ms

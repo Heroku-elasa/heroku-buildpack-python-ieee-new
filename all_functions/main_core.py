@@ -362,7 +362,7 @@ class core(object):
             # file_name.url_watermark=url_watermark
 
             # [html,proxy,user_pass,cookies]=self.Find_Link(link,pdfdir=pdf_download_location,water_pdfdir=wat_locatton,cookies=cookies).dowload_basePr_userpass(pr,us_pss,cookies)
-            if (not (html.endswith('.pdf'))) and html[:4]!='%PDF' :
+            if (not (html.endswith('.pdf'))) and (html[:4]!='%PDF' or html[-7:]!='%%EOF' )  :
                 [html,proxy,user_pass,cookies]=self.Find_Link(main_url,pdfdir=pdf_download_location,water_pdfdir=wat_locatton,cookies=cookies).dowload_basePr_userpass(pr,us_pss,cookies,url=link)
             else:
                 proxy=pr;user_pass=us_pss;

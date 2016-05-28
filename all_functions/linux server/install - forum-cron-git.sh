@@ -42,24 +42,36 @@ rm  shopping.zip
  cd ~/app-root/runtime/repo/.openshift/cron/daily/
 # ~/app-root/data/sites
 #ln -s sites_new ~/app-root/data/sites
+#ln -s ~/app-root/data/sites sites
 
+
+~/app-root/data/downloads/drupal-7.43/.htaccess
 cat << 'EOF' > my-github.sh
-cd ~/app-root/runtime/repo/php
-#find . | grep .git | xargs rm -rf #remove git files  working
+cp ~/app-root/data/downloads/drupal-7.43/.htaccess
+cd ~/app-root/data/sites
+mkdir php
+
+cp ~/app-root/runtime/repo/php/* ~/app-root/data/sites/php -R
+
+( find . -type d -name ".git" \
+  && find . -name ".gitignore" \
+  && find . -name ".gitmodules" ) | xargs rm -rf #remove git files  working
 echo "# openshift-test" >> README.md
 git init
 
 git add README.md
 git add .
-git init
-cd ~/app-root/data/sites
-git add .
+#cd ~/app-root/data/sites
+# git --work-tree=/ add ~/app-root/runtime/repo/php/* -f # multiple folder
 git add shopping.zip
 #git config --global user.name "soheilpaper"
 #git config --global user.email soheil_paper@yahoo.com
  #git commit --amend --reset-author
 git commit -a  -m "first commit"
 
+git remote rm origin
+
+git remote add origin  https://github.com/3Phase-inverter/3phase-inverter.git
 #git remote add origin https://soheilpaper:ss123456@github.com/soheilpaper/openshift-test.git
 #git remote add origin https://github.com/soheilpaper/openshift-test.git
 git config remote.origin.url https://soheilpaper:ss123456@github.com/soheilpaper/elasa.ir.git
@@ -70,10 +82,11 @@ git config remote.origin.url https://soheilpaper:ss123456@github.com/soheilpaper
 #git config remote.origin.url  https://soheilpaper:ss123456@bitbucket.org/soheilpaper/shop2.elasa.ir.git
 
 
-#git config remote.origin.url https://elasa:ss123456@gitlab.com/elasa/ieee2.git
+#git config remote.origin.url https://elasa:ss123456@gitlab.com/elasa/pwm.git
 
 #git pull 
 git push -u origin master
+#git push -f origin master #when not pushing
 
 EOF
 #chmod 755 . -R
