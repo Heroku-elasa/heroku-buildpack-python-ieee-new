@@ -2539,8 +2539,10 @@ class twill:
                         return html0, self.cookies, links, title, time_diff, self.log_out
                     else:
                         t_brw.go(self.log_out['log_out'])
-        return html, self.cookies, [], [], 0, self.log_out
-
+        if links == '' or links == [] or links == None:
+            return html, self.cookies, [], [], 0, self.log_out
+        else:
+            return html, self.cookies, links, title, time_diff, self.log_out
 
 def link_tag_find0( html, base_url):
     try:
