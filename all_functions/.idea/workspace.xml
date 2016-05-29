@@ -18,7 +18,7 @@
     <SUITE FILE_PATH="coverage/all_functions$simple_proxy_scraper.coverage" NAME="simple_proxy_scraper Coverage Results" MODIFIED="1442185827615" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/configs/proxy_scraper" />
     <SUITE FILE_PATH="coverage/all_functions$player_skeleton__1_.coverage" NAME="player_skeleton (1) Coverage Results" MODIFIED="1456582229307" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/linux server/python GUI/Music_Player/music_player_v1" />
     <SUITE FILE_PATH="coverage/all_functions$pyside_menu.coverage" NAME="pyside-menu Coverage Results" MODIFIED="1462038055968" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/linux server/python GUI" />
-    <SUITE FILE_PATH="coverage/all_functions$www_sciencedirect_com.coverage" NAME="www_sciencedirect_com Coverage Results" MODIFIED="1464360668379" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/configs/Links_site" />
+    <SUITE FILE_PATH="coverage/all_functions$www_sciencedirect_com.coverage" NAME="www_sciencedirect_com Coverage Results" MODIFIED="1464512880811" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/configs/Links_site" />
     <SUITE FILE_PATH="coverage/all_functions$player_skeleton.coverage" NAME="player_skeleton Coverage Results" MODIFIED="1458899593968" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/linux server/python GUI/Music_Player/music_player_v1" />
     <SUITE FILE_PATH="coverage/all_functions$wxpython_media_player.coverage" NAME="wxpython_media_player Coverage Results" MODIFIED="1456581883512" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/linux server/python GUI" />
     <SUITE FILE_PATH="coverage/all_functions$PIL_test__2_.coverage" NAME="PIL_test (2) Coverage Results" MODIFIED="1456433731976" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/linux server/python GUI" />
@@ -41,7 +41,7 @@
     <SUITE FILE_PATH="coverage/all_functions$wxpython_test.coverage" NAME="wxpython_test Coverage Results" MODIFIED="1456567036113" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/linux server/python GUI" />
     <SUITE FILE_PATH="coverage/all_functions$PIL_test___Copy__2_.coverage" NAME="PIL_test - Copy (2) Coverage Results" MODIFIED="1456413297246" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/linux server/python GUI" />
     <SUITE FILE_PATH="coverage/all_functions$exa2_show_possibilities.coverage" NAME="exa2_show-possibilities Coverage Results" MODIFIED="1456585412973" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/linux server/python GUI/Video capture/VideoCapture-0.9-5/Examples" />
-    <SUITE FILE_PATH="coverage/all_functions$tornado_get.coverage" NAME="tornado-get Coverage Results" MODIFIED="1464447630233" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/all_functions$tornado_get.coverage" NAME="tornado-get Coverage Results" MODIFIED="1464515672359" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/all_functions$check_proxy.coverage" NAME="check_proxy Coverage Results" MODIFIED="1442087830909" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/attack" />
     <SUITE FILE_PATH="coverage/all_functions$main_core.coverage" NAME="main_core Coverage Results" MODIFIED="1442267579981" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/all_functions$wxpython_screenshut.coverage" NAME="wxpython_screenshut Coverage Results" MODIFIED="1456585338991" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/linux server/python GUI" />
@@ -75,31 +75,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pyside-menu.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/linux server/python GUI/pyside-menu.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="6052" max-vertical-offset="10064">
-              <caret line="365" column="16" selection-start-line="365" selection-start-column="16" selection-end-line="365" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tornado-get.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tornado-get.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="24137" max-vertical-offset="25806">
-              <caret line="1433" column="3" selection-start-line="1433" selection-start-column="3" selection-end-line="1433" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="www_sciencedirect_com.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="www_sciencedirect_com.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/configs/Links_site/www_sciencedirect_com.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.46627566" vertical-offset="40789" max-vertical-offset="71621">
-              <caret line="2390" column="26" selection-start-line="2390" selection-start-column="26" selection-end-line="2390" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="51711" max-vertical-offset="72556">
+              <caret line="3049" column="0" selection-start-line="3049" selection-start-column="0" selection-end-line="3049" selection-end-column="0" />
               <folding>
                 <element signature="e#351#382#0" expanded="true" />
               </folding>
@@ -107,31 +87,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="commands.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://C:/Python27/Lib/site-packages/twill-0.9.1-py2.7.egg/twill/commands.py">
+      <file leaf-file-name="_html.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://C:/Python27/Lib/site-packages/twill-0.9.1-py2.7.egg/twill/other_packages/_mechanize_dist/_html.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="7201" max-vertical-offset="15232">
-              <caret line="434" column="0" selection-start-line="434" selection-start-column="0" selection-end-line="434" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="4532" max-vertical-offset="10336">
+              <caret line="279" column="0" selection-start-line="279" selection-start-column="0" selection-end-line="279" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="browser.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://C:/Python27/Lib/site-packages/twill-0.9.1-py2.7.egg/twill/browser.py">
+      <file leaf-file-name="sgmllib.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://C:/Python27/Lib/sgmllib.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1931" max-vertical-offset="9435">
-              <caret line="121" column="0" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1625" max-vertical-offset="9503">
+              <caret line="103" column="0" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main_core.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main_core.py">
+      <file leaf-file-name="re.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://C:/Python27/Lib/re.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="6032" max-vertical-offset="12444">
-              <caret line="364" column="76" selection-start-line="364" selection-start-column="76" selection-end-line="364" selection-end-column="77" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="2458" max-vertical-offset="5848">
+              <caret line="154" column="0" selection-start-line="154" selection-start-column="0" selection-end-line="154" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -140,28 +120,38 @@
       <file leaf-file-name="find_link.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/find_link.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="4264" max-vertical-offset="6562">
-              <caret line="261" column="0" selection-start-line="261" selection-start-column="0" selection-end-line="262" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="3686" max-vertical-offset="6562">
+              <caret line="227" column="0" selection-start-line="227" selection-start-column="0" selection-end-line="227" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PIL_test.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/linux server/python GUI/PIL_test.py">
+      <file leaf-file-name="main_core.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main_core.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2601" max-vertical-offset="3570">
-              <caret line="153" column="50" selection-start-line="153" selection-start-column="50" selection-end-line="153" selection-end-column="50" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="6576" max-vertical-offset="12444">
+              <caret line="397" column="0" selection-start-line="397" selection-start-column="0" selection-end-line="397" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="player_skeleton.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/linux server/python GUI/Music_Player/music_player_v1/player_skeleton.py">
+      <file leaf-file-name="save_source.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/save_source.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2499" max-vertical-offset="2720">
-              <caret line="147" column="32" selection-start-line="16" selection-start-column="25" selection-end-line="147" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="5403" max-vertical-offset="6613">
+              <caret line="327" column="0" selection-start-line="327" selection-start-column="0" selection-end-line="327" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tornado-get.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tornado-get.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.33333334" vertical-offset="11115" max-vertical-offset="25806">
+              <caret line="665" column="0" selection-start-line="665" selection-start-column="0" selection-end-line="665" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -205,6 +195,7 @@
         <option value="$PROJECT_DIR$/linux server/python GUI/Music_Player/music_player_v2/player_skeleton2.py" />
         <option value="$PROJECT_DIR$/linux server/python GUI/Music_Player/music_player_v2/player_skeleton2-working.py" />
         <option value="$PROJECT_DIR$/linux server/python GUI/Video capture/Webcam-Face-Detect-master/webcam.py" />
+        <option value="C:/Python27/Lib/urllib.py" />
         <option value="$PROJECT_DIR$/main_core.py" />
         <option value="$PROJECT_DIR$/configs/Links_site/www_sciencedirect_com.py" />
       </list>
@@ -580,15 +571,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32888147" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3134441" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3074913" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" x="516" y="178" width="334" height="372" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3050571" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3074018" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" x="516" y="178" width="334" height="372" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3050571" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -642,416 +633,68 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/configs/Links_site/ieeexplore_ieee_org.py</url>
-          <line>2393</line>
-          <option name="timeStamp" value="490" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/configs/Links_site/www_sciencedirect_com.py</url>
-          <line>3174</line>
-          <option name="timeStamp" value="491" />
+          <line>2524</line>
+          <option name="timeStamp" value="612" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/tornado-get.py</url>
           <line>662</line>
-          <option name="timeStamp" value="492" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/main_core.py</url>
-          <line>179</line>
-          <option name="timeStamp" value="493" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/main_core.py</url>
-          <line>352</line>
-          <option name="timeStamp" value="494" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/main_core.py</url>
-          <line>351</line>
-          <option name="timeStamp" value="495" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/main_core.py</url>
-          <line>384</line>
-          <option name="timeStamp" value="496" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/configs/Links_site/www_sciencedirect_com.py</url>
-          <line>3192</line>
-          <option name="timeStamp" value="499" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/configs/Links_site/www_sciencedirect_com.py</url>
-          <line>3197</line>
-          <option name="timeStamp" value="500" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/configs/Links_site/www_sciencedirect_com.py</url>
-          <line>3196</line>
-          <option name="timeStamp" value="502" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/configs/Links_site/www_sciencedirect_com.py</url>
-          <line>3147</line>
-          <option name="timeStamp" value="504" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/main_core.py</url>
-          <line>365</line>
-          <option name="timeStamp" value="505" />
+          <option name="timeStamp" value="613" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/main_core.py</url>
           <line>364</line>
-          <option name="timeStamp" value="506" />
+          <option name="timeStamp" value="614" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/configs/proxy_scraper/IPProxyScraper.py</url>
-          <line>1742</line>
-          <option name="timeStamp" value="507" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/configs/proxy_scraper/IPProxyScraper.py</url>
-          <line>273</line>
-          <option name="timeStamp" value="511" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/uploading/dropbox/my_dropbox.py</url>
-          <line>121</line>
-          <option name="timeStamp" value="515" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/uploading/uploader.py</url>
-          <line>123</line>
-          <option name="timeStamp" value="518" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/uploading/uploader.py</url>
-          <line>19</line>
-          <option name="timeStamp" value="520" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/uploading/dropbox/my_dropbox.py</url>
-          <line>193</line>
-          <option name="timeStamp" value="521" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/uploading/dropbox/my_dropbox.py</url>
-          <line>191</line>
-          <option name="timeStamp" value="522" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/uploading/dropbox/my_dropbox.py</url>
-          <line>151</line>
-          <option name="timeStamp" value="525" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/uploading/dropbox/my_dropbox.py</url>
-          <line>150</line>
-          <option name="timeStamp" value="526" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/uploading/dropbox/my_dropbox.py</url>
-          <line>144</line>
-          <option name="timeStamp" value="527" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/PIL_test.py</url>
-          <line>113</line>
-          <option name="timeStamp" value="530" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/PIL_test.py</url>
-          <line>98</line>
-          <option name="timeStamp" value="532" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/PIL_test.py</url>
-          <line>82</line>
-          <option name="timeStamp" value="534" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/PIL_test.py</url>
-          <line>70</line>
-          <option name="timeStamp" value="535" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/PIL_test.py</url>
-          <line>65</line>
-          <option name="timeStamp" value="538" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/PIL_test.py</url>
-          <line>56</line>
-          <option name="timeStamp" value="539" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/PIL_test.py</url>
-          <line>28</line>
-          <option name="timeStamp" value="541" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/PIL_test.py</url>
-          <line>11</line>
-          <option name="timeStamp" value="543" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/linux server/PIL_test.py</url>
-          <line>96</line>
-          <option name="timeStamp" value="544" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/PIL_test.py</url>
-          <line>5</line>
-          <option name="timeStamp" value="546" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/linux server/PIL_test.py</url>
-          <line>4</line>
-          <option name="timeStamp" value="550" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/linux server/python GUI/pyside-menu.py</url>
-          <line>353</line>
-          <option name="timeStamp" value="555" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/linux server/python GUI/PIL_test.py</url>
-          <line>194</line>
-          <option name="timeStamp" value="556" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/linux server/python GUI/PIL_test.py</url>
-          <line>149</line>
-          <option name="timeStamp" value="558" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/linux server/python GUI/wxpython_flash.py</url>
-          <line>98</line>
-          <option name="timeStamp" value="561" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/linux server/python GUI/wxpython_media_player.py</url>
-          <line>24</line>
-          <option name="timeStamp" value="564" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/linux server/python GUI/Video capture/VideoCapture-0.9-5/Examples/exa1_snapshot.py</url>
-          <line>2</line>
-          <option name="timeStamp" value="566" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/linux server/python GUI/Video capture/Webcam-Face-Detect-master/webcam.py</url>
-          <line>8</line>
-          <option name="timeStamp" value="568" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/linux server/python GUI/PIL_test.py</url>
-          <line>112</line>
-          <option name="timeStamp" value="570" />
+          <url>file://C:/Python27/Lib/site-packages/twill-0.9.1-py2.7.egg/twill/other_packages/_mechanize_dist/_html.py</url>
+          <line>276</line>
+          <option name="timeStamp" value="615" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/configs/Links_site/www_sciencedirect_com.py</url>
-          <line>3961</line>
-          <option name="timeStamp" value="571" />
+          <line>2572</line>
+          <option name="timeStamp" value="616" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/configs/Links_site/www_sciencedirect_com.py</url>
-          <line>4084</line>
-          <option name="timeStamp" value="572" />
+          <line>2558</line>
+          <option name="timeStamp" value="617" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/configs/Links_site/www_sciencedirect_com.py</url>
-          <line>1804</line>
-          <option name="timeStamp" value="573" />
+          <line>1863</line>
+          <option name="timeStamp" value="618" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/configs/Links_site/www_sciencedirect_com.py</url>
-          <line>3020</line>
-          <option name="timeStamp" value="580" />
+          <url>file://$PROJECT_DIR$/save_source.py</url>
+          <line>319</line>
+          <option name="timeStamp" value="619" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/configs/Links_site/www_sciencedirect_com.py</url>
-          <line>1873</line>
-          <option name="timeStamp" value="583" />
+          <url>file://$PROJECT_DIR$/save_source.py</url>
+          <line>327</line>
+          <option name="timeStamp" value="620" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/configs/Links_site/www_sciencedirect_com.py</url>
-          <line>2505</line>
-          <option name="timeStamp" value="584" />
+          <url>file://$PROJECT_DIR$/save_source.py</url>
+          <line>163</line>
+          <option name="timeStamp" value="621" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/configs/Links_site/www_sciencedirect_com.py</url>
-          <line>2409</line>
-          <option name="timeStamp" value="585" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/configs/Links_site/www_sciencedirect_com.py</url>
-          <line>2379</line>
-          <option name="timeStamp" value="586" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/configs/Links_site/www_sciencedirect_com.py</url>
-          <line>2017</line>
-          <option name="timeStamp" value="587" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/configs/Links_site/www_sciencedirect_com.py</url>
-          <line>2464</line>
-          <option name="timeStamp" value="589" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/configs/Links_site/www_sciencedirect_com.py</url>
-          <line>2405</line>
-          <option name="timeStamp" value="591" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/configs/Links_site/www_sciencedirect_com.py</url>
-          <line>2443</line>
-          <option name="timeStamp" value="592" />
+          <url>file://$PROJECT_DIR$/save_source.py</url>
+          <line>110</line>
+          <option name="timeStamp" value="622" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="593" />
+      <option name="time" value="623" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/configs/Links_site/ieeexplore_ieee_org.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="40469" max-vertical-offset="46580">
-          <caret line="2393" column="0" selection-start-line="2393" selection-start-column="0" selection-end-line="2393" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/proxy_checker3_all_function.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="7454" max-vertical-offset="23681">
-          <caret line="445" column="0" selection-start-line="445" selection-start-column="0" selection-end-line="445" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/configs/proxy_scraper/IPProxyScraper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3290" max-vertical-offset="34153">
-          <caret line="208" column="31" selection-start-line="208" selection-start-column="31" selection-end-line="208" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python27/Lib/site-packages/urllib3/util/retry.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334" vertical-offset="4322" max-vertical-offset="4777">
-          <caret line="270" column="0" selection-start-line="270" selection-start-column="0" selection-end-line="270" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python27/Lib/site-packages/dropbox/client.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4968" max-vertical-offset="28220">
-          <caret line="312" column="59" selection-start-line="312" selection-start-column="44" selection-end-line="312" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uploading/dropbox/my_dropbox.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34729493" vertical-offset="1518" max-vertical-offset="3485">
-          <caret line="101" column="4" selection-start-line="101" selection-start-column="4" selection-end-line="101" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python27/Lib/site-packages/dropbox/rest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3757" max-vertical-offset="7174">
-          <caret line="234" column="0" selection-start-line="234" selection-start-column="0" selection-end-line="234" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm30/system/python_stubs/-762174762/nt.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33236995" vertical-offset="1126" max-vertical-offset="13481">
-          <caret line="73" column="4" selection-start-line="73" selection-start-column="4" selection-end-line="73" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydev_monkey.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33242506" vertical-offset="3363" max-vertical-offset="5304">
-          <caret line="209" column="0" selection-start-line="209" selection-start-column="0" selection-end-line="209" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python27/Lib/lib-tk/Tkinter.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="35402" max-vertical-offset="65586">
-          <caret line="2089" column="0" selection-start-line="2089" selection-start-column="0" selection-end-line="2089" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/linux server/PIL_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="527" max-vertical-offset="3553">
-          <caret line="32" column="0" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="17" />
-          <folding>
-            <element signature="e#21#41#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uploading/mega.co.nz/lib/mega.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="8897" max-vertical-offset="13957">
-          <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uploading/uploader.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="2244">
-          <caret line="30" column="24" selection-start-line="0" selection-start-column="0" selection-end-line="126" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm30/system/python_stubs/-762174762/PySide/QtGui/QStatusBar.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33246073" vertical-offset="944" max-vertical-offset="1360">
-          <caret line="67" column="8" selection-start-line="67" selection-start-column="8" selection-end-line="67" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python27/Lib/site-packages/PySide/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="799">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm30/system/python_stubs/-762174762/PySide/QtCore/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28412256" vertical-offset="0" max-vertical-offset="4862">
-          <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python27/Lib/site-packages/PIL/Image.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33147633" vertical-offset="8687" max-vertical-offset="36210">
-          <caret line="521" column="8" selection-start-line="521" selection-start-column="8" selection-end-line="521" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm30/system/python_stubs/-762174762/PySide/QtGui/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33147633" vertical-offset="0" max-vertical-offset="6800">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.PyCharm30/system/python_stubs/-762174762/PySide/QtGui/QImageReader.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.35097492" vertical-offset="44" max-vertical-offset="2584">
@@ -1246,22 +889,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Python27/Lib/site-packages/twill-0.9.1-py2.7.egg/twill/commands.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="7201" max-vertical-offset="15232">
-          <caret line="434" column="0" selection-start-line="434" selection-start-column="0" selection-end-line="434" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python27/Lib/site-packages/twill-0.9.1-py2.7.egg/twill/browser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1931" max-vertical-offset="9435">
-          <caret line="121" column="0" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/linux server/python GUI/pyside-menu.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="9333" max-vertical-offset="10064">
@@ -1270,37 +897,197 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/tornado/web.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="25973" max-vertical-offset="53873">
+          <caret line="1572" column="0" selection-start-line="1572" selection-start-column="0" selection-end-line="1572" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/twill-0.9.1-py2.7.egg/twill/other_packages/_mechanize_dist/_request.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="673" max-vertical-offset="1547">
+          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/twill-0.9.1-py2.7.egg/twill/other_packages/_mechanize_dist/_opener.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3121" max-vertical-offset="7259">
+          <caret line="191" column="0" selection-start-line="191" selection-start-column="0" selection-end-line="191" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/proxy_checker3_all_function.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="9075" max-vertical-offset="23681">
+          <caret line="542" column="0" selection-start-line="542" selection-start-column="0" selection-end-line="543" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/twill-0.9.1-py2.7.egg/twill/other_packages/_mechanize_dist/_http.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="11179" max-vertical-offset="12308">
+          <caret line="676" column="0" selection-start-line="676" selection-start-column="0" selection-end-line="676" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Python27/Lib/site-packages/mechanize-0.2.5-py2.7.egg!/mechanize/_mechanize.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.26912928" vertical-offset="2261" max-vertical-offset="11339">
+          <caret line="147" column="32" selection-start-line="147" selection-start-column="32" selection-end-line="147" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Python27/Lib/site-packages/mechanize-0.2.5-py2.7.egg!/mechanize/_urllib2_fork.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33245382" vertical-offset="4090" max-vertical-offset="23902">
+          <caret line="262" column="13" selection-start-line="262" selection-start-column="13" selection-end-line="262" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/urllib2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334" vertical-offset="5441" max-vertical-offset="25177">
+          <caret line="340" column="13" selection-start-line="340" selection-start-column="13" selection-end-line="340" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/google/appengine/dist27/urllib.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19788918" vertical-offset="2016" max-vertical-offset="27132">
+          <caret line="130" column="13" selection-start-line="130" selection-start-column="13" selection-end-line="130" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/urllib.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33245382" vertical-offset="2118" max-vertical-offset="27880">
+          <caret line="140" column="13" selection-start-line="140" selection-start-column="13" selection-end-line="140" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/twill-0.9.1-py2.7.egg/twill/other_packages/_mechanize_dist/_mechanize.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="129" max-vertical-offset="11509">
+          <caret line="22" column="6" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/twill-0.9.1-py2.7.egg/twill/browser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33245382" vertical-offset="316" max-vertical-offset="9435">
+          <caret line="26" column="6" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/twill-0.9.1-py2.7.egg/twill/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1064" max-vertical-offset="1598">
+          <caret line="75" column="15" selection-start-line="75" selection-start-column="15" selection-end-line="75" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/twill-0.9.1-py2.7.egg/twill/commands.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="13287" max-vertical-offset="15232">
+          <caret line="799" column="36" selection-start-line="799" selection-start-column="4" selection-end-line="799" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/tornado/gen.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3376" max-vertical-offset="17374">
+          <caret line="219" column="0" selection-start-line="219" selection-start-column="0" selection-end-line="219" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/re.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2458" max-vertical-offset="5848">
+          <caret line="154" column="0" selection-start-line="154" selection-start-column="0" selection-end-line="154" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/sgmllib.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1625" max-vertical-offset="9503">
+          <caret line="103" column="0" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/find_link.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4264" max-vertical-offset="6562">
-          <caret line="261" column="0" selection-start-line="261" selection-start-column="0" selection-end-line="262" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="3686" max-vertical-offset="6562">
+          <caret line="227" column="0" selection-start-line="227" selection-start-column="0" selection-end-line="227" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main_core.py">
+    <entry file="file://C:/Python27/Lib/os.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="6032" max-vertical-offset="12444">
-          <caret line="364" column="76" selection-start-line="364" selection-start-column="76" selection-end-line="364" selection-end-column="77" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="12716">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tornado-get.py">
+    <entry file="file://C:/Python27/Lib/site-packages/twill-0.9.1-py2.7.egg/twill/other_packages/_mechanize_dist/_html.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="24137" max-vertical-offset="25806">
-          <caret line="1433" column="3" selection-start-line="1433" selection-start-column="3" selection-end-line="1433" selection-end-column="3" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="4532" max-vertical-offset="10336">
+          <caret line="279" column="0" selection-start-line="279" selection-start-column="0" selection-end-line="279" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/configs/Links_site/www_sciencedirect_com.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.46627566" vertical-offset="40789" max-vertical-offset="71621">
-          <caret line="2390" column="26" selection-start-line="2390" selection-start-column="26" selection-end-line="2390" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="51711" max-vertical-offset="72556">
+          <caret line="3049" column="0" selection-start-line="3049" selection-start-column="0" selection-end-line="3049" selection-end-column="0" />
           <folding>
             <element signature="e#351#382#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/save_source.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="5403" max-vertical-offset="6613">
+          <caret line="327" column="0" selection-start-line="327" selection-start-column="0" selection-end-line="327" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main_core.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="6576" max-vertical-offset="12444">
+          <caret line="397" column="0" selection-start-line="397" selection-start-column="0" selection-end-line="397" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tornado-get.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334" vertical-offset="11115" max-vertical-offset="25806">
+          <caret line="665" column="0" selection-start-line="665" selection-start-column="0" selection-end-line="665" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -1250,7 +1250,7 @@ def twil_find_pdf_link(link):
     form = tw.find_form()
     for k in range(0, len(form)):
         # METHOD = "%(METODE)s" % form[k]
-        try:
+        if True:
             if "%(METODE)s" % form[k] == '2':
                 [html, cookies, links, title, times, log_out] = tw.login_to_site(link, form[k], [], [])
 
@@ -1260,9 +1260,11 @@ def twil_find_pdf_link(link):
                 [html, cookies, links, title, times, log_out] = tw.twill_find_link(link, form[k])
             elif "%(METODE)s" % form[k] == '3':
                 [html, cookies, links, title, times, log_out] = tw.twill_find_link(link, form[k])
-        except:
+        else:
+            os.remove(cookies)
             html=[];cookies='';links=[]; title=''; times=0; log_out=[]
-        if links != []:
+
+        if links != [] and  (html !=[] and html !=''):
             break
     os.chdir(fo)
     return html, cookies, links, title, form[k], times, log_out
@@ -1860,6 +1862,10 @@ class twill:
         # except:
         #     pass
         t_brw.set_agent_string(twil__headers)
+        # t_brw._browser.addheaders = []
+        # del twil__headers[-1]
+        # twil__headers += [('Referer', ez_link)]
+        # t_brw._browser.addheaderst=twil__headers
         # t_com.add_extra_header('Referer', ez_link) #used foe some exproxies
         # cookies=cookies.replace('/','\\')
         t_brw.load_cookies(cookies)
@@ -1872,15 +1878,28 @@ class twill:
         print '@@@@@@@@@@@@@ link download by twill is @@@@@@@@@@@@'
         print link
         print '@@@@@@@@@@@@@ link download by twill is @@@@@@@@@@@@'
+        # import sys
+        # sys.exit(1)
+        # t2=t_brw.find_link('Download PDF')
+        # t_brw.follow_link(t2)
+
         try:
-            if len(link.absolute_url[0])!=1:
+            try:
+                t2=t_brw.find_link('Download PDF')
+                t_brw.follow_link(t2)
+            except:
+              t_brw = t_com.get_browser()
+              t_brw.set_agent_string(twil__headers)
+              t_brw.load_cookies(cookies)
+
+              if len(link.absolute_url[0])!=1:
                 s = link.absolute_url[0]
                 s2 = type('test', (object,), {})()
                 s2.absolute_url=link.absolute_url[0]
                 s2.base_url=link.base_url
                 print s2.absolute_url
                 t_brw.follow_link(s2)
-            else:
+              else:
                 t_brw.follow_link(link)
         except:
             # t_brw.set_agent_string(twil__headers)
@@ -1986,7 +2005,7 @@ class twill:
         # self.b.set_agent_string("Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.8.1.14) Gecko/20080404 Firefox/2.0.0.14")
         # self.b.clear_cookies()
         twill = import_mod(from_module='twill')
-
+        import twill
         t_com = twill.commands
         t_com.reset_browser
         t_com.reset_output
@@ -1994,19 +2013,26 @@ class twill:
         ## get the default browser
         t_brw = t_com.get_browser()
         # t_brw.set_agent_string("Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.8.1.14) Gecko/20080404 Firefox/2.0.0.14")
+        # t_com.add_extra_header('User-agent',
+        #                        'Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.1) Gecko/2008071615 Fedora/3.0.1-1.fc9 Firefox/3.0.1')
         t_com.add_extra_header('User-agent',
-                               'Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.1) Gecko/2008071615 Fedora/3.0.1-1.fc9 Firefox/3.0.1')
+                               'Mozilla/5.0 (Windows NT 6.1; rv:18.0) Gecko/20100101 Firefox/18.0')
+
         t_com.add_extra_header('Accept',
-                               'text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5;application/json;text/javascript;*/*')
+                               'text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5;application/json;application/atom+xml;text/javascript;*/*')
         t_com.add_extra_header('Accept-Language', 'en,hu;q=0.8,en-us;q=0.5,hu-hu;q=0.3')
         t_com.add_extra_header('Accept-Encoding', 'gzip, deflate')
         t_com.add_extra_header('Accept-Charset', 'ISO-8859-1,utf-8;q=0.7,*;q=0.7')
-        t_com.add_extra_header('Keep-Alive', '300')
+        t_com.add_extra_header('Keep-Alive', '3000')
         t_com.add_extra_header('Connection', 'keep-alive')
-        t_com.add_extra_header('Cache-Control', 'max-age=0')
-        t_com.add_extra_header('Referer', self.url)
-        t_com.add_extra_header('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8')
+        t_com.add_extra_header('Cache-Control', 'max-age=0, no-cache, no-store')
+
+        # t_com.add_extra_header('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8')
+        t_com.add_extra_header('Content-Type', 'application/x-www-form-urlencoded; charset=latin-1')
         t_com.add_extra_header('X-Requested-With', 'XMLHttpRequest')
+
+        t_com.add_extra_header('X-ELS-ResourceVersion', 'XOCS')
+        t_com.add_extra_header('Referer', self.url)
 
         ## open the url
         # url = 'http://google.com'
@@ -2015,8 +2041,8 @@ class twill:
         t_brw.load_cookies(self.cookies)
         # print t_com.show_extra_headers()
         # print t_com.show_cookies()
-        try:t_brw.go(self.log_out['log_out'])
-        except:pass
+        # try:t_brw.go(self.log_out['log_out'])
+        # except:pass
         try:
             t_brw.go(self.url)
         except:
@@ -2377,9 +2403,13 @@ class twill:
                     # html=t_brw.result.page[:14100]
                     t_com.save_cookies(self.cookies)
 
+
+                    # t2=t_brw.find_link('Download PDF')
+                    # t_brw.follow_link(t2)
                     if self.log_out['METODE'] == '1+d':
                             try:
                                 socket=import_mod(from_module='socket')
+                                socket.setdefaulttimeout(3000)
                                 # twil__headers=t_brw._browser.addheaders
                                 # t_brw.set_agent_string(twil__headers)
                                 t_brw.load_cookies(self.cookies)
@@ -2453,10 +2483,14 @@ class twill:
                         # if links==[] or links=='':
                         #     links=LINK().soap_my(data=html,tag='pdfLink',attr='a',href='href',url=base_url)
                         if self.log_out['METODE'] == '1+d' and  (html0[:4]!='%PDF' or html0[-7:]!='%%EOF' ) :
-                            t_brw.load_cookies(self.cookies)
-                            t_brw.go(links)
-                            time_diff = str(round(time.time() - time0, 2))
-                            html = t_brw.result.page
+                            try:
+                                t_brw.load_cookies(self.cookies)
+                                t_brw.go(links)
+                                time_diff = str(round(time.time() - time0, 2))
+                                html = t_brw.result.page
+                            except:
+                                print "error in METOD 1+d"
+                                html=[]
                     else:
                         try:
                             links = links1.absolute_url
@@ -2488,14 +2522,17 @@ class twill:
 
 
 
-
-
+                        twil__headers=t_brw._browser.addheaders
+                        del twil__headers[-1]
+                        twil__headers += [('Referer', ez_link)]
                         self.log_out = {
                             'log_out': "%(Log_out)s" % form_data,
                             'METODE': form_data['METODE'],
                             'ez_link': ez_link,
-                            'headers': t_brw._browser.addheaders,
+                            # 'headers': t_brw._browser.addheaders,
+                            'headers': twil__headers,
                             'pdf_link': links1}
+
 
                     if title == '' or title == []:
                         title = LINK().soap_my(data=html, tag='class="article-title"', attr='h1', href='', url=base_url)
@@ -2518,8 +2555,22 @@ class twill:
                         #     t_brw.follow_link(s2)
                         #     t_brw.go(s2.absolute_url)
                         # t_brw.go(links)
+                        # content = t_com.show()
+                        headers = t_com.show_extra_headers()
+                        twil__headers=t_brw._browser.addheaders
+                        # t_brw.set_agent_string(twil__headers)
+                        t_brw._browser.addheaders = []
+                        del twil__headers[-1]
+                        twil__headers += [('Referer', ez_link)]
+                        t_brw._browser.addheaderst=twil__headers
                         t=t_brw.find_link('Download PDF')
+                        # t_com.add_extra_header('Referer', t.absolute_url[0])
+                        # reffe='http://library.uprm.edu:2221/S0165176511002710/1-s2.0-S0165176511002710-main.pdf?_tid=ef4c2cd0-24fb-11e6-a3f1-00000aacb361&acdnat=1464457695_083096c5266459084e056213deaf4ba7'
+                        # t_com.add_extra_header('Referer', reffe)
+                        # t_brw.response()
+                        # t_brw.click_link(t)
                         t_brw.follow_link(t)
+                        # content = t_com.show()
                         html0=t_brw.result.page
                         print '@@@@@@@@@@@@@ html0 download by twill is @@@@@@@@@@@@'
                         # print html0
@@ -2538,9 +2589,12 @@ class twill:
                         #     time.sleep(10)
                         try:t_brw.go(self.log_out['log_out'])
                         except:pass
+                        if    (html0[:4]=='%PDF' or html0[-7:]=='%%EOF' ):html=html0
+                        else:html0=''
                         return html0, self.cookies, links, title, time_diff, self.log_out
                     else:
-                        t_brw.go(self.log_out['log_out'])
+                        pass
+                        # t_brw.go(self.log_out['log_out'])
         if links == '' or links == [] or links == None:
             return html, self.cookies, [], [], 0, self.log_out
         else:
@@ -4191,9 +4245,10 @@ if __name__ == '__main__':
     # url = "http://127.0.0.1/"
     # url = "http://dl.acm.org/citation.cfm?id=99977.100000&coll=DL&dl=ACM"
     url='http://www.sciencedirect.com/science/article/pii/S0165176511002710'
-    url="http://www.sciencedirect.com.lib.just.edu.jo/science/article/pii/S009630031630282X/pdfft?md5=a22b846cbebf75dd7e816d7586a1a797&pid=1-s2.0-S009630031630282X-main.pdf"
-    # link=LINK(url).get_pdf_link()
-    link=LINK(url).curl_download(url)
+    url='http://www.sciencedirect.com/science/article/pii/S2214629616300354'
+    # url="http://www.sciencedirect.com.lib.just.edu.jo/science/article/pii/S009630031630282X/pdfft?md5=a22b846cbebf75dd7e816d7586a1a797&pid=1-s2.0-S009630031630282X-main.pdf"
+    link=LINK(url).get_pdf_link()
+    # link=LINK(url).curl_download(url)
 
     from optparse import OptionParser
 

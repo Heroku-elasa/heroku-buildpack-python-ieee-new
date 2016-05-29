@@ -289,3 +289,265 @@
         if links != []:
     UnboundLocalError: local variable 'links' referenced before assignment
 [E 160528 11:05:45 web:1908] 500 POST /index (127.0.0.1) 921.00ms
+[E 160528 19:50:25 web:1496] Uncaught exception POST /index (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:15001', method='POST', uri='/index', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Content-Length': '167', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate', 'Host': '127.0.0.1:15001', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:46.0) Gecko/20100101 Firefox/46.0', 'Connection': 'keep-alive', 'Referer': 'http://127.0.0.1:15001/', 'Content-Type': 'application/x-www-form-urlencoded'})
+    Traceback (most recent call last):
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 1369, in _stack_context_handle_exception
+        raise_exc_info((type, value, traceback))
+      File "C:\Python27\lib\site-packages\tornado\stack_context.py", line 314, in wrapped
+        ret = fn(*args, **kwargs)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 149, in final_callback
+        if future.result() is not None:
+      File "C:\Python27\lib\site-packages\tornado\concurrent.py", line 215, in result
+        raise_exc_info(self._exc_info)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 215, in wrapper
+        result = func(*args, **kwargs)
+      File "E:/soheil/web_site_root/ieee/all_functions/tornado-get.py", line 521, in post
+        result = tornado.gen.Task(self.download(details))
+      File "E:/soheil/web_site_root/ieee/all_functions/tornado-get.py", line 592, in download
+        water_pdfdir=root+water_pdfdir,)
+      File "E:/soheil/web_site_root/ieee/all_functions\main_core.py", line 169, in valid_link
+        responce= self.Find_Link(self.url,pdfdir=pdf_download_location,water_pdfdir=wat_locatton,cookies=cookies).find_link(self.pr,self.us_pss)
+      File "E:/soheil/web_site_root/ieee/all_functions\find_link.py", line 133, in __init__
+        self.new_module = __import__(site.replace('.', '_'), {}, {}, [], 2)
+      File "E:/soheil/web_site_root/ieee/all_functions/configs/Links_site/www_sciencedirect_com.py", line 2544
+        if links == '' or links == [] or links == None:
+        ^
+    IndentationError: expected an indented block
+[E 160528 19:50:25 web:1908] 500 POST /index (127.0.0.1) 1083.00ms
+[I 160528 19:53:54 web:1908] 200 POST /index (127.0.0.1) 191551.00ms
+[W 160528 19:53:54 web:1908] 404 GET /htmls/simple_cursor.css (127.0.0.1) 12.00ms
+[I 160528 20:02:56 web:1908] 200 POST /index (127.0.0.1) 218569.00ms
+[W 160528 20:02:59 web:1908] 404 GET /htmls/simple_cursor.css (127.0.0.1) 597.00ms
+[E 160528 21:03:16 web:1496] Uncaught exception POST /index (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:15001', method='POST', uri='/index', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Content-Length': '167', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate', 'Host': '127.0.0.1:15001', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:46.0) Gecko/20100101 Firefox/46.0', 'Connection': 'keep-alive', 'Referer': 'http://127.0.0.1:15001/', 'Content-Type': 'application/x-www-form-urlencoded'})
+    Traceback (most recent call last):
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 1369, in _stack_context_handle_exception
+        raise_exc_info((type, value, traceback))
+      File "C:\Python27\lib\site-packages\tornado\stack_context.py", line 314, in wrapped
+        ret = fn(*args, **kwargs)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 149, in final_callback
+        if future.result() is not None:
+      File "C:\Python27\lib\site-packages\tornado\concurrent.py", line 215, in result
+        raise_exc_info(self._exc_info)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 215, in wrapper
+        result = func(*args, **kwargs)
+      File "E:/soheil/web_site_root/ieee/all_functions/tornado-get.py", line 521, in post
+        result = tornado.gen.Task(self.download(details))
+      File "E:/soheil/web_site_root/ieee/all_functions/tornado-get.py", line 592, in download
+        water_pdfdir=root+water_pdfdir,)
+      File "E:/soheil/web_site_root/ieee/all_functions\main_core.py", line 169, in valid_link
+        responce= self.Find_Link(self.url,pdfdir=pdf_download_location,water_pdfdir=wat_locatton,cookies=cookies).find_link(self.pr,self.us_pss)
+      File "E:/soheil/web_site_root/ieee/all_functions\find_link.py", line 262, in find_link
+        res = self.new_module.LINK(url).get_pdf_link(proxy, user_pass)
+      File "E:/soheil/web_site_root/ieee/all_functions/configs/Links_site/www_sciencedirect_com.py", line 3136, in get_pdf_link
+        [html, cookies, links, title, form, time_diff, log_out] = twil_find_pdf_link(url)
+      File "E:/soheil/web_site_root/ieee/all_functions/configs/Links_site/www_sciencedirect_com.py", line 1260, in twil_find_pdf_link
+        [html, cookies, links, title, times, log_out] = tw.twill_find_link(link, form[k])
+      File "E:/soheil/web_site_root/ieee/all_functions/configs/Links_site/www_sciencedirect_com.py", line 2395, in twill_find_link
+        t_brw.follow_link(t2)
+      File "C:\Python27\lib\site-packages\twill-0.9.1-py2.7.egg\twill\browser.py", line 207, in follow_link
+        self._journey('follow_link', link)
+      File "C:\Python27\lib\site-packages\twill-0.9.1-py2.7.egg\twill\browser.py", line 523, in _journey
+        r = func(*args, **kwargs)
+      File "C:\Python27\lib\site-packages\twill-0.9.1-py2.7.egg\twill\other_packages\_mechanize_dist\_mechanize.py", line 577, in follow_link
+        return self.open(self.click_link(link, **kwds))
+      File "C:\Python27\lib\site-packages\twill-0.9.1-py2.7.egg\twill\other_packages\_mechanize_dist\_mechanize.py", line 212, in open
+        return self._mech_open(url, data)
+      File "C:\Python27\lib\site-packages\twill-0.9.1-py2.7.egg\twill\other_packages\_mechanize_dist\_mechanize.py", line 257, in _mech_open
+        self._set_response(response, False)
+      File "C:\Python27\lib\site-packages\twill-0.9.1-py2.7.egg\twill\other_packages\_mechanize_dist\_mechanize.py", line 316, in _set_response
+        self._factory.set_response(response)
+      File "C:\Python27\lib\site-packages\twill-0.9.1-py2.7.egg\twill\utils.py", line 325, in set_response
+        self.factory.set_response(cleaned_response)
+      File "C:\Python27\lib\site-packages\twill-0.9.1-py2.7.egg\twill\other_packages\_mechanize_dist\_html.py", line 602, in set_response
+        soup = self._soup_class(self.encoding, data)
+      File "C:\Python27\lib\site-packages\twill-0.9.1-py2.7.egg\twill\other_packages\_mechanize_dist\_html.py", line 314, in __init__
+        self, text, avoidParserProblems, initialTextIsEverything)
+      File "C:\Python27\lib\site-packages\twill-0.9.1-py2.7.egg\twill\other_packages\_mechanize_dist\_beautifulsoup.py", line 674, in __init__
+        self.feed(text)
+      File "C:\Python27\lib\site-packages\twill-0.9.1-py2.7.egg\twill\other_packages\_mechanize_dist\_beautifulsoup.py", line 693, in feed
+        SGMLParser.feed(self, text)
+      File "C:\Python27\lib\sgmllib.py", line 104, in feed
+        self.goahead(0)
+      File "C:\Python27\lib\sgmllib.py", line 186, in goahead
+        self.handle_charref(name)
+      File "C:\Python27\lib\site-packages\twill-0.9.1-py2.7.egg\twill\other_packages\_mechanize_dist\_html.py", line 317, in handle_charref
+        t = unescape("&#%s;"%ref, self._entitydefs, self._encoding)
+      File "C:\Python27\lib\site-packages\twill-0.9.1-py2.7.egg\twill\other_packages\_mechanize_dist\_html.py", line 274, in unescape
+        return re.sub(r"&#?[A-Za-z0-9]+?;", replace_entities, data)
+      File "C:\Python27\lib\re.py", line 155, in sub
+        return _compile(pattern, flags).sub(repl, string, count)
+      File "C:\Python27\lib\site-packages\twill-0.9.1-py2.7.egg\twill\other_packages\_mechanize_dist\_html.py", line 260, in replace_entities
+        return unescape_charref(ent[2:-1], encoding)
+      File "C:\Python27\lib\site-packages\twill-0.9.1-py2.7.egg\twill\other_packages\_mechanize_dist\_html.py", line 280, in unescape_charref
+        uc = unichr(int(name, base))
+    ValueError: invalid literal for int() with base 10: 'd'
+[E 160528 21:03:16 web:1908] 500 POST /index (127.0.0.1) 91070.00ms
+[I 160528 21:03:23 autoreload:204] E:/soheil/web_site_root/ieee/all_functions/configs/Links_site/www_sciencedirect_com.py modified; restarting server
+[I 160528 21:16:38 autoreload:204] C:\Python27\lib\urllib.py modified; restarting server
+[I 160528 22:47:14 autoreload:204] C:\Python27\lib\urllib.py modified; restarting server
+[E 160529 12:39:07 web:1496] Uncaught exception POST /index (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:15001', method='POST', uri='/index', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Content-Length': '167', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate', 'Host': '127.0.0.1:15001', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:46.0) Gecko/20100101 Firefox/46.0', 'Connection': 'keep-alive', 'Referer': 'http://127.0.0.1:15001/', 'Content-Type': 'application/x-www-form-urlencoded'})
+    Traceback (most recent call last):
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 1369, in _stack_context_handle_exception
+        raise_exc_info((type, value, traceback))
+      File "C:\Python27\lib\site-packages\tornado\stack_context.py", line 314, in wrapped
+        ret = fn(*args, **kwargs)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 149, in final_callback
+        if future.result() is not None:
+      File "C:\Python27\lib\site-packages\tornado\concurrent.py", line 215, in result
+        raise_exc_info(self._exc_info)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 215, in wrapper
+        result = func(*args, **kwargs)
+      File "E:/soheil/web_site_root/ieee/all_functions/tornado-get.py", line 521, in post
+        result = tornado.gen.Task(self.download(details))
+      File "E:/soheil/web_site_root/ieee/all_functions/tornado-get.py", line 592, in download
+        water_pdfdir=root+water_pdfdir,)
+      File "E:/soheil/web_site_root/ieee/all_functions\main_core.py", line 169, in valid_link
+        responce= self.Find_Link(self.url,pdfdir=pdf_download_location,water_pdfdir=wat_locatton,cookies=cookies).find_link(self.pr,self.us_pss)
+      File "E:/soheil/web_site_root/ieee/all_functions\find_link.py", line 262, in find_link
+        res = self.new_module.LINK(url).get_pdf_link(proxy, user_pass)
+      File "E:/soheil/web_site_root/ieee/all_functions/configs/Links_site/www_sciencedirect_com.py", line 3162, in get_pdf_link
+        [html, cookies, links, title, form, time_diff, log_out] = twil_find_pdf_link(url)
+      File "E:/soheil/web_site_root/ieee/all_functions/configs/Links_site/www_sciencedirect_com.py", line 1260, in twil_find_pdf_link
+        [html, cookies, links, title, times, log_out] = tw.twill_find_link(link, form[k])
+      File "E:/soheil/web_site_root/ieee/all_functions/configs/Links_site/www_sciencedirect_com.py", line 2566, in twill_find_link
+        t_brw.follow_link(t)
+      File "C:\Python27\lib\site-packages\twill-0.9.1-py2.7.egg\twill\browser.py", line 207, in follow_link
+        self._journey('follow_link', link)
+      File "C:\Python27\lib\site-packages\twill-0.9.1-py2.7.egg\twill\browser.py", line 523, in _journey
+        r = func(*args, **kwargs)
+      File "C:\Python27\lib\site-packages\twill-0.9.1-py2.7.egg\twill\other_packages\_mechanize_dist\_mechanize.py", line 577, in follow_link
+        return self.open(self.click_link(link, **kwds))
+      File "C:\Python27\lib\site-packages\twill-0.9.1-py2.7.egg\twill\other_packages\_mechanize_dist\_mechanize.py", line 212, in open
+        return self._mech_open(url, data)
+      File "C:\Python27\lib\site-packages\twill-0.9.1-py2.7.egg\twill\other_packages\_mechanize_dist\_mechanize.py", line 257, in _mech_open
+        self._set_response(response, False)
+      File "C:\Python27\lib\site-packages\twill-0.9.1-py2.7.egg\twill\other_packages\_mechanize_dist\_mechanize.py", line 316, in _set_response
+        self._factory.set_response(response)
+      File "C:\Python27\lib\site-packages\twill-0.9.1-py2.7.egg\twill\utils.py", line 325, in set_response
+        self.factory.set_response(cleaned_response)
+      File "C:\Python27\lib\site-packages\twill-0.9.1-py2.7.egg\twill\other_packages\_mechanize_dist\_html.py", line 602, in set_response
+        soup = self._soup_class(self.encoding, data)
+      File "C:\Python27\lib\site-packages\twill-0.9.1-py2.7.egg\twill\other_packages\_mechanize_dist\_html.py", line 314, in __init__
+        self, text, avoidParserProblems, initialTextIsEverything)
+      File "C:\Python27\lib\site-packages\twill-0.9.1-py2.7.egg\twill\other_packages\_mechanize_dist\_beautifulsoup.py", line 674, in __init__
+        self.feed(text)
+      File "C:\Python27\lib\site-packages\twill-0.9.1-py2.7.egg\twill\other_packages\_mechanize_dist\_beautifulsoup.py", line 693, in feed
+        SGMLParser.feed(self, text)
+      File "C:\Python27\lib\sgmllib.py", line 104, in feed
+        self.goahead(0)
+      File "C:\Python27\lib\sgmllib.py", line 186, in goahead
+        self.handle_charref(name)
+      File "C:\Python27\lib\site-packages\twill-0.9.1-py2.7.egg\twill\other_packages\_mechanize_dist\_html.py", line 317, in handle_charref
+        t = unescape("&#%s;"%ref, self._entitydefs, self._encoding)
+      File "C:\Python27\lib\site-packages\twill-0.9.1-py2.7.egg\twill\other_packages\_mechanize_dist\_html.py", line 274, in unescape
+        return re.sub(r"&#?[A-Za-z0-9]+?;", replace_entities, data)
+      File "C:\Python27\lib\re.py", line 155, in sub
+        return _compile(pattern, flags).sub(repl, string, count)
+      File "C:\Python27\lib\site-packages\twill-0.9.1-py2.7.egg\twill\other_packages\_mechanize_dist\_html.py", line 260, in replace_entities
+        return unescape_charref(ent[2:-1], encoding)
+      File "C:\Python27\lib\site-packages\twill-0.9.1-py2.7.egg\twill\other_packages\_mechanize_dist\_html.py", line 280, in unescape_charref
+        uc = unichr(int(name, base))
+    ValueError: invalid literal for int() with base 10: 'd'
+[E 160529 12:39:07 web:1908] 500 POST /index (127.0.0.1) 888715.00ms
+[I 160529 13:02:34 web:1908] 200 POST /index (127.0.0.1) 109923.00ms
+[W 160529 13:02:35 web:1908] 404 GET /htmls/simple_cursor.css (127.0.0.1) 34.00ms
+[E 160529 13:03:44 concurrent:124] Future exception was never retrieved: Traceback (most recent call last):
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 505, in Task
+        func(*args, callback=_argument_adapter(set_result), **kwargs)
+    TypeError: 'dict' object is not callable
+[E 160529 13:29:43 web:2584] Could not open static file 'E:\\soheil\\web_site_root\\ieee\\all_functions\\static\\1-s2.0-S0147596715001304-main.pdf'
+[I 160529 13:29:43 web:1908] 200 POST /index (127.0.0.1) 830410.00ms
+[W 160529 13:29:44 web:1908] 404 GET /htmls/simple_cursor.css (127.0.0.1) 19.00ms
+[I 160529 13:38:01 autoreload:204] E:/soheil/web_site_root/ieee/all_functions/configs/Links_site/www_sciencedirect_com.py modified; restarting server
+[E 160529 13:51:18 web:2584] Could not open static file 'E:\\soheil\\web_site_root\\ieee\\all_functions\\static\\1-s2.0-S0147596715001304-main.pdf'
+[I 160529 13:51:18 web:1908] 200 POST /index (127.0.0.1) 123374.00ms
+[W 160529 13:51:19 web:1908] 404 GET /htmls/simple_cursor.css (127.0.0.1) 97.00ms
+[E 160529 13:52:13 concurrent:124] Future exception was never retrieved: Traceback (most recent call last):
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 505, in Task
+        func(*args, callback=_argument_adapter(set_result), **kwargs)
+    TypeError: 'dict' object is not callable
+[E 160529 13:59:04 web:1496] Uncaught exception POST /index (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:15001', method='POST', uri='/index', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Content-Length': '173', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate', 'Host': '127.0.0.1:15001', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:46.0) Gecko/20100101 Firefox/46.0', 'Connection': 'keep-alive', 'Referer': 'http://127.0.0.1:15001/', 'Content-Type': 'application/x-www-form-urlencoded'})
+    Traceback (most recent call last):
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 1369, in _stack_context_handle_exception
+        raise_exc_info((type, value, traceback))
+      File "C:\Python27\lib\site-packages\tornado\stack_context.py", line 314, in wrapped
+        ret = fn(*args, **kwargs)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 149, in final_callback
+        if future.result() is not None:
+      File "C:\Python27\lib\site-packages\tornado\concurrent.py", line 215, in result
+        raise_exc_info(self._exc_info)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 215, in wrapper
+        result = func(*args, **kwargs)
+      File "E:/soheil/web_site_root/ieee/all_functions/tornado-get.py", line 521, in post
+        result = tornado.gen.Task(self.download(details))
+      File "E:/soheil/web_site_root/ieee/all_functions/tornado-get.py", line 666, in download
+        proxy=proxy,user_pass=user_pass,cookies=cookies,log_out=log_out,ftp_upload=ftp_upload,html=html)
+      File "E:/soheil/web_site_root/ieee/all_functions\main_core.py", line 398, in download_link
+        pdf_dw_dir, pdf_dw_Wr_dir = PDF_File(url,pdf_download_location,wat_locatton).finall_file_saving(html, file_name,pdf_download_location,no_watermarker=0)
+      File "E:/soheil/web_site_root/ieee/all_functions\save_source.py", line 328, in finall_file_saving
+        self.pdf_watermark_fast(localName.pdf_Folder_filename, localName.W_pdf_Folder_filename,url_wtm=url_watermark)
+      File "E:/soheil/web_site_root/ieee/all_functions\save_source.py", line 171, in pdf_watermark_fast
+        wt1 = self.watermark_file(self.Watermarked_PDF_Dir+"/" + "watermarker_slow"+url_watermark+".pdf", url_watermark,center_text=False)
+      File "E:/soheil/web_site_root/ieee/all_functions\save_source.py", line 116, in watermark_file
+        from reportlab.pdfgen import canvas
+    ImportError: No module named reportlab.pdfgen
+[E 160529 13:59:04 web:1908] 500 POST /index (127.0.0.1) 440554.00ms
+[I 160529 13:59:04 autoreload:204] E:/soheil/web_site_root/ieee/all_functions/configs/Links_site/www_sciencedirect_com.py modified; restarting server
+[E 160529 14:12:45 web:1496] Uncaught exception POST /index (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:15001', method='POST', uri='/index', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Content-Length': '173', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate', 'Host': '127.0.0.1:15001', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:46.0) Gecko/20100101 Firefox/46.0', 'Connection': 'keep-alive', 'Referer': 'http://127.0.0.1:15001/', 'Content-Type': 'application/x-www-form-urlencoded'})
+    Traceback (most recent call last):
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 1369, in _stack_context_handle_exception
+        raise_exc_info((type, value, traceback))
+      File "C:\Python27\lib\site-packages\tornado\stack_context.py", line 314, in wrapped
+        ret = fn(*args, **kwargs)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 149, in final_callback
+        if future.result() is not None:
+      File "C:\Python27\lib\site-packages\tornado\concurrent.py", line 215, in result
+        raise_exc_info(self._exc_info)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 215, in wrapper
+        result = func(*args, **kwargs)
+      File "E:/soheil/web_site_root/ieee/all_functions/tornado-get.py", line 521, in post
+        result = tornado.gen.Task(self.download(details))
+      File "E:/soheil/web_site_root/ieee/all_functions/tornado-get.py", line 666, in download
+        proxy=proxy,user_pass=user_pass,cookies=cookies,log_out=log_out,ftp_upload=ftp_upload,html=html)
+      File "E:/soheil/web_site_root/ieee/all_functions\main_core.py", line 398, in download_link
+        pdf_dw_dir, pdf_dw_Wr_dir = PDF_File(url,pdf_download_location,wat_locatton).finall_file_saving(html, file_name,pdf_download_location,no_watermarker=0)
+      File "E:/soheil/web_site_root/ieee/all_functions\save_source.py", line 328, in finall_file_saving
+        self.pdf_watermark_fast(localName.pdf_Folder_filename, localName.W_pdf_Folder_filename,url_wtm=url_watermark)
+      File "E:/soheil/web_site_root/ieee/all_functions\save_source.py", line 171, in pdf_watermark_fast
+        wt1 = self.watermark_file(self.Watermarked_PDF_Dir+"/" + "watermarker_slow"+url_watermark+".pdf", url_watermark,center_text=False)
+      File "E:/soheil/web_site_root/ieee/all_functions\save_source.py", line 116, in watermark_file
+        from reportlab.pdfgen import canvas
+    ImportError: No module named reportlab.pdfgen
+[E 160529 14:12:45 web:1908] 500 POST /index (127.0.0.1) 640228.00ms
+[E 160529 14:24:20 web:1496] Uncaught exception POST /index (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:15001', method='POST', uri='/index', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Content-Length': '173', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate', 'Host': '127.0.0.1:15001', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:46.0) Gecko/20100101 Firefox/46.0', 'Connection': 'keep-alive', 'Referer': 'http://127.0.0.1:15001/', 'Content-Type': 'application/x-www-form-urlencoded'})
+    Traceback (most recent call last):
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 1369, in _stack_context_handle_exception
+        raise_exc_info((type, value, traceback))
+      File "C:\Python27\lib\site-packages\tornado\stack_context.py", line 314, in wrapped
+        ret = fn(*args, **kwargs)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 149, in final_callback
+        if future.result() is not None:
+      File "C:\Python27\lib\site-packages\tornado\concurrent.py", line 215, in result
+        raise_exc_info(self._exc_info)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 215, in wrapper
+        result = func(*args, **kwargs)
+      File "E:/soheil/web_site_root/ieee/all_functions/tornado-get.py", line 521, in post
+        result = tornado.gen.Task(self.download(details))
+      File "E:/soheil/web_site_root/ieee/all_functions/tornado-get.py", line 666, in download
+        proxy=proxy,user_pass=user_pass,cookies=cookies,log_out=log_out,ftp_upload=ftp_upload,html=html)
+      File "E:/soheil/web_site_root/ieee/all_functions\main_core.py", line 398, in download_link
+        pdf_dw_dir, pdf_dw_Wr_dir = PDF_File(url,pdf_download_location,wat_locatton).finall_file_saving(html, file_name,pdf_download_location,no_watermarker=0)
+      File "E:/soheil/web_site_root/ieee/all_functions\save_source.py", line 328, in finall_file_saving
+        self.pdf_watermark_fast(localName.pdf_Folder_filename, localName.W_pdf_Folder_filename,url_wtm=url_watermark)
+      File "E:/soheil/web_site_root/ieee/all_functions\save_source.py", line 171, in pdf_watermark_fast
+        wt1 = self.watermark_file(self.Watermarked_PDF_Dir+"/" + "watermarker_slow"+url_watermark+".pdf", url_watermark,center_text=False)
+      File "E:/soheil/web_site_root/ieee/all_functions\save_source.py", line 116, in watermark_file
+        from reportlab.pdfgen import canvas
+    ImportError: No module named reportlab.pdfgen
+[E 160529 14:24:20 web:1908] 500 POST /index (127.0.0.1) 469269.00ms
