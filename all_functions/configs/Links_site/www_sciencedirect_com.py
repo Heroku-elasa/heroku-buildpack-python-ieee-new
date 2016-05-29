@@ -2572,7 +2572,7 @@ class twill:
                         # t_brw.response()
                         # t_brw.click_link(t)
                         try:t_brw.follow_link(t)
-                        except:return html, self.cookies, [], [], 0, self.log_out
+                        except:return [], self.cookies, [], [], 0, self.log_out
 
                         # content = t_com.show()
                         html0=t_brw.result.page
