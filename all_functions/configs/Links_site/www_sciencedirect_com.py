@@ -2571,7 +2571,9 @@ class twill:
                         # t_com.add_extra_header('Referer', reffe)
                         # t_brw.response()
                         # t_brw.click_link(t)
-                        t_brw.follow_link(t)
+                        try:t_brw.follow_link(t)
+                        except:return html, self.cookies, [], [], 0, self.log_out
+
                         # content = t_com.show()
                         html0=t_brw.result.page
                         print '@@@@@@@@@@@@@ html0 download by twill is @@@@@@@@@@@@'
