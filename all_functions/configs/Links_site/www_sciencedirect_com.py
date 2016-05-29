@@ -1250,7 +1250,8 @@ def twil_find_pdf_link(link):
     form = tw.find_form()
     for k in range(0, len(form)):
         # METHOD = "%(METODE)s" % form[k]
-        if True:
+        # if True:
+        try:
             if "%(METODE)s" % form[k] == '2':
                 [html, cookies, links, title, times, log_out] = tw.login_to_site(link, form[k], [], [])
 
@@ -1260,7 +1261,8 @@ def twil_find_pdf_link(link):
                 [html, cookies, links, title, times, log_out] = tw.twill_find_link(link, form[k])
             elif "%(METODE)s" % form[k] == '3':
                 [html, cookies, links, title, times, log_out] = tw.twill_find_link(link, form[k])
-        else:
+        # else:
+        except:
             os.remove(cookies)
             html=[];cookies='';links=[]; title=''; times=0; log_out=[]
 
