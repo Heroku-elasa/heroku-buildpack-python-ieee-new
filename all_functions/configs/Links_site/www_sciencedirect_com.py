@@ -2498,7 +2498,7 @@ class twill:
                             links = links1.absolute_url
                         except:
                             links = links1
-                        if self.log_out['METODE'] == '1+d'  and  (html0[:4]!='%PDF' or html0[-7:]!='%%EOF' ):
+                        if self.log_out['METODE'] == '1+d'  and  (html0[:4]!='%PDF' or len ( re.findall('%%EOF', html ))==0 ):
                             try:
                                 socket=import_mod(from_module='socket')
                                 t2=t_brw.find_link('Download PDF')
@@ -2540,7 +2540,7 @@ class twill:
                         title = LINK().soap_my(data=html, tag='class="article-title"', attr='h1', href='', url=base_url)
                     if title == '' or title == []:
                         title = LINK().soap_my(data=html, tag='<title>', attr='', href='', url=base_url)
-                    if    (html0[:4]=='%PDF' or html0[-7:]=='%%EOF' ):html=html0
+                    if    (html0[:4]=='%PDF' or len ( re.findall('%%EOF', html ))!=0):html=html0
 
                     if links != [] and self.log_out['METODE'] == '1+d+d' and  (html0[:4]!='%PDF' or html0[-7:]!='%%EOF' ):
 
@@ -2572,7 +2572,7 @@ class twill:
                         # t_brw.response()
                         # t_brw.click_link(t)
                         try:t_brw.follow_link(t)
-                        except:return [], self.cookies, [], [], 0, self.log_out
+                        except:os.remove(self.cookies);return [], self.cookies, [], [], 0, self.log_out
 
                         # content = t_com.show()
                         html0=t_brw.result.page
@@ -2592,8 +2592,8 @@ class twill:
                         #     print '@@@@@@@@@@@@@ MECAHNIZM download by twill is @@@@@@@@@@@@'
                         #     time.sleep(10)
                         try:t_brw.go(self.log_out['log_out'])
-                        except:pass
-                        if    (html0[:4]=='%PDF' or html0[-7:]=='%%EOF' ):html=html0
+                        except:os.remove(self.cookies)
+                        if    (html0[:4]=='%PDF' or len ( re.findall('%%EOF', html ))!=0):html=html0
                         else:html0=''
                         return html0, self.cookies, links, title, time_diff, self.log_out
                     else:
