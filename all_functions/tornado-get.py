@@ -1343,13 +1343,17 @@ def main(**kwargs):
                                               # (r"/Watermarked_PDF_Files/([A-Za-z0-9\_\.\-]+)", MyFileHandler, {'path': 'C:/nginx/html/Watermarked_PDF_Files/'}),
                                               # (r'/Watermarked_PDF_Files/\.pdf', MyFileHandler, {'path': 'C:/nginx/html/Watermarked_PDF_Files/'}),
                                               # ('.*', SocketHandler)],
+                                              (r'/static/(.*)', tornado.web.StaticFileHandler, {'path': root+water_pdfdir}),
+                                              (r'/PDF_Files/(.*)', tornado.web.StaticFileHandler, {'path': root+pdfdir})
                                           ],
                                           # template_path=os.path.join(os.path.dirname(__file__), "htmls").replace('\\','/'),
                                           template_path=os.path.join(os.path.dirname(__file__), '').replace('\\','/'),
                                           # static_path=os.path.join(os.path.dirname(__file__).replace('\\','/'), "Watermarked_PDF_Files"),
                                           # static_path=os.path.dirname('C:/nginx/html/Watermarked_PDF_Files/'),
-                                          static_path=root+water_pdfdir,
+                                          # static_path=root+water_pdfdir,
+                                          static_path=root+pdfdir,
                                           debug=True
+
                                           # ui_modules={'download_modle', download}
     )
     CurrentDir = os.path.dirname(os.path.realpath(__file__))

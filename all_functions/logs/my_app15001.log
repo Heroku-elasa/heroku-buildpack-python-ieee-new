@@ -551,3 +551,53 @@
         from reportlab.pdfgen import canvas
     ImportError: No module named reportlab.pdfgen
 [E 160529 14:24:20 web:1908] 500 POST /index (127.0.0.1) 469269.00ms
+[W 160529 15:11:42 web:1908] 404 GET /Watermarked_PDF_Files (127.0.0.1) 7.00ms
+[W 160529 15:12:02 web:1908] 404 GET /Watermarked_PDF_Files (127.0.0.1) 4.00ms
+[I 160529 15:12:21 web:1908] 200 GET /download (127.0.0.1) 32.00ms
+[I 160529 15:22:22 autoreload:204] E:/soheil/web_site_root/ieee/all_functions/tornado-get.py modified; restarting server
+[E 160529 15:25:46 web:1496] Uncaught exception GET /static (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:15001', method='GET', uri='/static', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Connection': 'keep-alive', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate', 'Host': '127.0.0.1:15001', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:46.0) Gecko/20100101 Firefox/46.0'})
+    Traceback (most recent call last):
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 1415, in _execute
+        result = yield result
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 870, in run
+        value = future.result()
+      File "C:\Python27\lib\site-packages\tornado\concurrent.py", line 215, in result
+        raise_exc_info(self._exc_info)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 215, in wrapper
+        result = func(*args, **kwargs)
+    TypeError: get() takes at least 2 arguments (1 given)
+[E 160529 15:25:46 web:1908] 500 GET /static (127.0.0.1) 155.00ms
+[I 160529 15:26:29 web:1908] 200 GET /static/watermarker_slowsoheil.pdf (127.0.0.1) 11699.00ms
+[W 160529 15:27:38 web:1908] 404 GET /PDF_Files/watermarker_slowsoheil.pdf (127.0.0.1) 8.00ms
+[W 160529 15:27:38 web:1908] 404 GET /PDF_Files/watermarker_slowsoheil.pdf (127.0.0.1) 3.00ms
+[W 160529 15:27:38 web:1908] 404 GET /PDF_Files/watermarker_slowsoheil.pdf (127.0.0.1) 3.00ms
+[W 160529 15:27:42 web:1908] 404 GET /PDF_Files/watermarker_slowsoheil.pdf (127.0.0.1) 4.00ms
+[W 160529 15:27:51 web:1908] 404 GET /PDF_Files/watermarker_slowsoheil.pdf (127.0.0.1) 3.00ms
+[W 160529 15:27:51 web:1908] 404 GET /PDF_Files/watermarker_slowsoheil.pdf (127.0.0.1) 3.00ms
+[W 160529 15:27:51 web:1908] 404 GET /PDF_Files/watermarker_slowsoheil.pdf (127.0.0.1) 3.00ms
+[I 160529 15:28:12 autoreload:204] E:/soheil/web_site_root/ieee/all_functions/tornado-get.py modified; restarting server
+[W 160529 15:29:22 web:1908] 404 GET /PDF_Files/watermarker_slowsoheil.pdf (127.0.0.1) 10.00ms
+[W 160529 15:29:22 web:1908] 404 GET /PDF_Files/watermarker_slowsoheil.pdf (127.0.0.1) 7.00ms
+[W 160529 15:29:22 web:1908] 404 GET /PDF_Files/watermarker_slowsoheil.pdf (127.0.0.1) 4.00ms
+[W 160529 15:29:29 web:1908] 404 GET /PDF_Files/watermarker_slowsoheil.pdf (127.0.0.1) 7.00ms
+[W 160529 15:29:29 web:1908] 404 GET /PDF_Files/watermarker_slowsoheil.pdf (127.0.0.1) 4.00ms
+[W 160529 15:29:29 web:1908] 404 GET /PDF_Files/watermarker_slowsoheil.pdf (127.0.0.1) 5.00ms
+[I 160529 15:29:43 web:1908] 200 GET /static/watermarker_slowsoheil.pdf (127.0.0.1) 993.00ms
+[W 160529 15:29:59 web:1908] 404 GET /static/watermarker_slowsoheil.pdf (127.0.0.1) 8.00ms
+[W 160529 15:29:59 web:1908] 404 GET /static/watermarker_slowsoheil.pdf (127.0.0.1) 6.00ms
+[W 160529 15:29:59 web:1908] 404 GET /static/watermarker_slowsoheil.pdf (127.0.0.1) 6.00ms
+[I 160529 15:30:21 web:1908] 200 GET /static/watermarker_slowsoheil.pdf (127.0.0.1) 9.00ms
+[W 160529 15:30:56 web:1908] 404 GET /static/watermarker_slowsoheil.pdf (127.0.0.1) 10.00ms
+[W 160529 15:30:56 web:1908] 404 GET /static/watermarker_slowsoheil.pdf (127.0.0.1) 5.00ms
+[W 160529 15:30:56 web:1908] 404 GET /static/watermarker_slowsoheil.pdf (127.0.0.1) 4.00ms
+[I 160529 15:31:17 autoreload:204] E:/soheil/web_site_root/ieee/all_functions/tornado-get.py modified; restarting server
+[I 160529 15:31:36 web:1908] 200 GET /static/watermarker_slowsoheil.pdf (127.0.0.1) 833.00ms
+[I 160529 15:31:54 autoreload:204] E:/soheil/web_site_root/ieee/all_functions/tornado-get.py modified; restarting server
+[W 160529 15:32:23 web:1908] 404 GET /PDF_Files/watermarker_slowsoheil.pdf (127.0.0.1) 7.00ms
+[W 160529 15:32:23 web:1908] 404 GET /PDF_Files/watermarker_slowsoheil.pdf (127.0.0.1) 5.00ms
+[W 160529 15:32:23 web:1908] 404 GET /PDF_Files/watermarker_slowsoheil.pdf (127.0.0.1) 5.00ms
+[W 160529 15:32:26 web:1908] 404 GET /PDF_Files/watermarker_slowsoheil.pdf (127.0.0.1) 3.00ms
+[I 160529 15:36:14 web:1908] 200 GET /PDF_Files/watermarker_slowsoheil.pdf (127.0.0.1) 887.00ms
+[I 160529 15:36:37 web:1908] 200 GET /PDF_Files/watermarker_slowsoheil.pdf (127.0.0.1) 766.00ms
+[I 160529 15:36:43 web:1908] 200 GET /static/watermarker_slowsoheil.pdf (127.0.0.1) 11.00ms
