@@ -625,3 +625,4 @@
 [I 160529 16:23:05 web:1908] 200 POST /index (127.0.0.1) 246985.00ms
 [W 160529 16:23:05 web:1908] 404 GET /htmls/simple_cursor.css (127.0.0.1) 5.00ms
 [W 160529 16:23:05 web:1908] 404 GET /htmls/simple_cursor.css (127.0.0.1) 3.00ms
+[I 160529 17:12:39 autoreload:204] E:/soheil/web_site_root/ieee/all_functions/configs/Links_site/www_sciencedirect_com.py modified; restarting server

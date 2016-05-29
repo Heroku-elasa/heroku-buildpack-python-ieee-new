@@ -2029,8 +2029,8 @@ class twill:
         t_com.add_extra_header('Connection', 'keep-alive')
         t_com.add_extra_header('Cache-Control', 'max-age=0, no-cache, no-store')
 
-        # t_com.add_extra_header('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8')
-        t_com.add_extra_header('Content-Type', 'application/x-www-form-urlencoded; charset=latin-1')
+        t_com.add_extra_header('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8')
+        # t_com.add_extra_header('Content-Type', 'application/x-www-form-urlencoded; charset=latin-1')
         t_com.add_extra_header('X-Requested-With', 'XMLHttpRequest')
 
         t_com.add_extra_header('X-ELS-ResourceVersion', 'XOCS')
