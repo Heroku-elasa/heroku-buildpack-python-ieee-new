@@ -221,6 +221,8 @@ class PDF_File:
         url_watermark2=url_watermark2.replace("://","__")
         # CurrentDir=os.path.dirname(os.path.realpath(__file__)).replace('\\','/')
         if wt1 == '':
+            try:wt1 = self.watermark_file(self.Watermarked_PDF_Dir+"/" + "watermarker_slow_"+url_watermark2+".pdf", url_watermark,center_text=True)
+            except:pass
             if not os.path.isfile(self.Watermarked_PDF_Dir+"/" + "watermarker_slow_"+url_watermark2+".pdf"):
                 wt1 = self.watermark_file(self.Watermarked_PDF_Dir+"/" + "watermarker_slow_"+url_watermark2+".pdf", url_watermark,center_text=True)
             else:
