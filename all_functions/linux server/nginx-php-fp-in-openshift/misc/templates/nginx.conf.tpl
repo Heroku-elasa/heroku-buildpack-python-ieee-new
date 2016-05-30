@@ -51,7 +51,7 @@ http {
         
 		server {{OPENSHIFT_INTERNAL_IP}}:15001 weight=1;
 		server {{OPENSHIFT_INTERNAL_IP}}:15002 weight=2;
-		server {{OPENSHIFT_INTERNAL_IP}}:15002 weight=3;
+		server {{OPENSHIFT_INTERNAL_IP}}:15003 weight=3;
 		
     }
 	upstream comment {
@@ -72,7 +72,7 @@ http {
 
         #access_log  logs/host.access.log  main;
 
-        location / {
+        location /main {
             root   {{OPENSHIFT_REPO_DIR}};
             index  index.html index.htm;
 			try_files $uri $uri/ =404;
@@ -90,9 +90,10 @@ http {
 
         }
 		location ~* ^/(.*) {
-			proxy_set_header Host vb2-fishsmarkets.rhcloud.com;
-			proxy_redirect  http://vb2-fishsmarkets.rhcloud.com/ http://diy-elasa2.rhcloud.com/;
-			proxy_pass http://comment/$1$is_args$args;
+			#proxy_set_header Host vb2-fishsmarkets.rhcloud.com;
+			#proxy_redirect  http://vb2-fishsmarkets.rhcloud.com/ http://diy-elasa2.rhcloud.com/;
+			#proxy_pass http://comment/$1$is_args$args;
+			proxy_pass http://index/$1$is_args$args;
 		}
 		location ^~ /admincp {
                 if (!-f $request_filename) {
