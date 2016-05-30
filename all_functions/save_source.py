@@ -165,16 +165,18 @@ class PDF_File:
         # fo=os.getcwd()
         # CurrentDir=os.path.dirname(os.path.realpath(__file__))
         import watter_marker
+        url_watermark2=url_watermark.replace(".","_")
+        url_watermark2=url_watermark2.replace("://","__")
         # CurrentDir=os.path.dirname(os.path.realpath(__file__)).replace('\\','/')
         if wt1 == '':
-            if not os.path.isfile(self.Watermarked_PDF_Dir+"/" + "watermarker_slow"+url_watermark+".pdf"):
-                wt1 = self.watermark_file(self.Watermarked_PDF_Dir+"/" + "watermarker_slow"+url_watermark+".pdf", url_watermark,center_text=False)
+            if not os.path.isfile(self.Watermarked_PDF_Dir+"/" + "watermarker_slow"+url_watermark2+".pdf"):
+                wt1 = self.watermark_file(self.Watermarked_PDF_Dir+"/" + "watermarker_slow"+url_watermark2+".pdf", url_watermark,center_text=False)
             else:
                 wt1=self.Watermarked_PDF_Dir+"/" + "watermarker_fast.pdf"
             if True:
                 watermark1 = PdfFileReader(file(wt1, 'rb'))
             else:
-                wt1 = self.watermark_file(self.Watermarked_PDF_Dir+"/" + "watermarker_slow"+url_watermark+".pdf", url_watermark,center_text=False)
+                wt1 = self.watermark_file(self.Watermarked_PDF_Dir+"/" + "watermarker_slow"+url_watermark2+".pdf", url_watermark,center_text=False)
                 watermark1 = PdfFileReader(file(wt1, 'rb'))
             wtt = watermark1.getPage(0)
 
@@ -215,12 +217,14 @@ class PDF_File:
             url_watermark=kwargs['url_wtm']
         except:
             pass
+        url_watermark2=url_watermark.replace(".","_")
+        url_watermark2=url_watermark2.replace("://","__")
         # CurrentDir=os.path.dirname(os.path.realpath(__file__)).replace('\\','/')
         if wt1 == '':
-            if not os.path.isfile(self.Watermarked_PDF_Dir+"/" + "watermarker_slow_"+url_watermark+".pdf"):
-                wt1 = self.watermark_file(self.Watermarked_PDF_Dir+"/" + "watermarker_slow_"+url_watermark+".pdf", url_watermark,center_text=True)
+            if not os.path.isfile(self.Watermarked_PDF_Dir+"/" + "watermarker_slow_"+url_watermark2+".pdf"):
+                wt1 = self.watermark_file(self.Watermarked_PDF_Dir+"/" + "watermarker_slow_"+url_watermark2+".pdf", url_watermark,center_text=True)
             else:
-                wt1=self.Watermarked_PDF_Dir+"/" + "watermarker_slow_"+url_watermark+".pdf"
+                wt1=self.Watermarked_PDF_Dir+"/" + "watermarker_slow_"+url_watermark2+".pdf"
                 sa=file(wt1, 'rb')
                 watermark1 = PdfFileReader(sa)
                 wtt = watermark1.getPage(0)
