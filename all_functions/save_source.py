@@ -171,9 +171,9 @@ class PDF_File:
                 wt1 = self.watermark_file(self.Watermarked_PDF_Dir+"/" + "watermarker_slow"+url_watermark+".pdf", url_watermark,center_text=False)
             else:
                 wt1=self.Watermarked_PDF_Dir+"/" + "watermarker_fast.pdf"
-            try:
+            if True:
                 watermark1 = PdfFileReader(file(wt1, 'rb'))
-            except:
+            else:
                 wt1 = self.watermark_file(self.Watermarked_PDF_Dir+"/" + "watermarker_slow"+url_watermark+".pdf", url_watermark,center_text=False)
                 watermark1 = PdfFileReader(file(wt1, 'rb'))
             wtt = watermark1.getPage(0)
@@ -329,7 +329,7 @@ class PDF_File:
                     # os.remove(location+'/'+localName.filename)
                     pdf_size=(os.path.getsize(localName.pdf_Folder_filename))
                     try:
-                        if pdf_size>=707200: # >=300 KB
+                        if pdf_size>=607200: # >=300 KB
                             self.pdf_watermark_fast(localName.pdf_Folder_filename, localName.W_pdf_Folder_filename,url_wtm=url_watermark)
                         else:
                             self.pdf_watermark_slow(localName.pdf_Folder_filename, localName.W_pdf_Folder_filename,url_wtm=url_watermark)
