@@ -368,7 +368,7 @@ if __name__ == '__main__':
     url = "http://127.0.0.1/1752-153X-2-5%20-%20Copy.pdf"
     url = "http://127.0.0.1/1752-153X-2-5.pdf"
     url='http://ieeexplore.ieee.org/xpl/articleDetails.jsp?tp=&arnumber=6180383&queryText%3Dpower' #91 KB
-
+    url_watermark="http://free-papers.elasa.ir"
     file_name = PDF_File().filename(url)
     # html=''
     # pdf='E:/Program Files win 7 2nd/Ampps/www/cgi-bin2/wrapper work/all_functions/PDF_Files/1752-153X-2-5%20-%20Copy.pdf'

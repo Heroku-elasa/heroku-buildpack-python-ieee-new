@@ -1,9 +1,9 @@
 #!/usr/bin/python
 #----------------------------------------------------------------------
 #
-# Author:      soheil sabzevari
+# Author:      Laszlo Nagy
 #
-# Copyright:   (c) 2015 by Elasa Co. LTD
+# Copyright:   (c) 2005 by Szoftver Messias Bt.
 # Licence:     BSD style
 #
 #
@@ -1263,8 +1263,7 @@ def twil_find_pdf_link(link):
                 [html, cookies, links, title, times, log_out] = tw.twill_find_link(link, form[k])
         # else:
         except:
-            try:os.remove(cookies)
-            except:pass
+            os.remove(cookies)
             html=[];cookies='';links=[]; title=''; times=0; log_out=[]
 
         if links != [] and  (html !=[] and html !=''):
@@ -1942,34 +1941,13 @@ class twill:
 
 
         link2 = t_brw.result.url
-        try:
-            link2 = link.absolute_url
-        except:
-            pass
+        link2 = link.absolute_url
         if not (html0[:4] == '%PDF') or html0 == []:
-
-            try:
-                t_brw.showlinks();link22=[]
-                for n, link in enumerate(t_brw._browser.links()):
-                    link22.append(link.url)
-                for links3 in link22:
-                    if len(re.findall('pdf',links3))!=0:
-                        print 'find links';link_f=links3
-                    else:
-                        link_f=''
-                if link_f!='':
-                   t_brw.go(link_f)
-                   html = t_brw.result.page
-
-            except:
-                pass;
-                # links2 = LINK().soap_my(data=html0, tag='<frame src="', attr='a', href='href', url='http://')
-
-                t_brw.set_agent_string(twil__headers)
-                t_com.add_extra_header('Referer', ez_link)
-                t_brw.go(link2)
-                html2 = t_brw.result.page
-                html, cookies = MECAHNIZM('', '', cookies=cookies, url=link2).speed_download(link2)
+            t_brw.set_agent_string(twil__headers)
+            t_com.add_extra_header('Referer', ez_link)
+            t_brw.go(link2)
+            html2 = t_brw.result.page
+            html, cookies = MECAHNIZM('', '', cookies=cookies, url=link2).speed_download(link2)
             # html3,pr,upss,cookies=web().download_mechanism_link(link,'',cookies=cookies)
             if not (html[:4] == '%PDF') or html == []:
                 t_brw.save_cookies(cookies)
@@ -1989,10 +1967,7 @@ class twill:
                 # time.sleep(10)
         else:
             html = html0
-        if  (html[:4] == '%PDF') :
-            t_brw.go(url_logout)
-        else:
-            html=[]
+        t_brw.go(url_logout)
         os.remove(cookies)
         return html
 
@@ -2322,21 +2297,8 @@ class twill:
                 # html=t_brw.result.page
                 # print html
                 # content = t_com.show()
-                try:
-                    content1 = t_brw.result.page
-                    # print 'debug twill post content:', content
-                    # print 'debug twill post content:', content
-                    import StringIO
-
-                    content1 = StringIO.StringIO(content1)
-                    import gzip
-
-                    gzipper = gzip.GzipFile(fileobj=content1)
-                    content = gzipper.read()
-                except:
-                    content = t_brw.result.page
-
-
+                content = t_brw.result.page
+                # print 'debug twill post content:', content
                 t_com.save_cookies(self.cookies)
                 # t_brw.load_cookies(self.cookies)
                 if re.findall(self.log_done, content):
@@ -2366,20 +2328,7 @@ class twill:
                     time0 = time.time()
                     t_brw.go(ez_link)
                     time_diff = str(round(time.time() - time0, 2))
-                    try:
-                        content1 = t_brw.result.page
-                        # print 'debug twill post content:', content
-                        # print 'debug twill post content:', content
-                        import StringIO
-
-                        content1 = StringIO.StringIO(content1)
-                        import gzip
-
-                        gzipper = gzip.GzipFile(fileobj=content1)
-                        html = gzipper.read()
-                    except:
-                        html = t_brw.result.page
-                    # html = t_brw.result.page
+                    html = t_brw.result.page
                     t_com.save_cookies(self.cookies)
                     # t_brw.load_cookies(self.cookies)
                     # if self.submit_tag_name2!=''and not re.findall ( "SDM.pageType",html ):
@@ -2466,7 +2415,7 @@ class twill:
                                 # twil__headers=t_brw._browser.addheaders
                                 # t_brw.set_agent_string(twil__headers)
                                 t_brw.load_cookies(self.cookies)
-                                t2=t_brw.find_link('full-text-pdf')
+                                t2=t_brw.find_link('Download PDF')
                                 t_brw.follow_link(t2)
                                 time_diff = str(round(time.time() - time0, 2))
                                 html0=t_brw.result.page
@@ -2517,18 +2466,16 @@ class twill:
                         except:
                             title = ''
                     if links == '' or links == []:
-                        links1 = t_brw.find_link('full-text-pdf')
+                        links1 = t_brw.find_link('Download PDF')
                     else:
                         try:
-                            print t_brw.showlinks()
-                            links2 = t_brw.showlinks()
-                            links1 = t_brw.find_link('Full Text as PDF')
+                            links1 = t_brw.find_link('Download PDF')
                             links1.absolute_url = links
                         except:links1=[]
 
                     if links1 == '' or links1 == [] or links1 == None:
-                        links = LINK().soap_my(data=html, tag='id="full-text-pdf"', attr='a', href='href', url=base_url)
-
+                        links = LINK().find_my_tilte(data=html, start_dash='<a id="pdfLink" href="', end_dash='"',
+                                                     make_url=True)
                         if links == '' or links == []:
                             [links, title] = link_tag_find(html, base_url)
                             # links =LINK().soap_my(data=html, tag='title="Download PDF" ', attr='a', href='href',url=base_url)
@@ -2618,19 +2565,14 @@ class twill:
                         del twil__headers[-1]
                         twil__headers += [('Referer', ez_link)]
                         t_brw._browser.addheaderst=twil__headers
-                        t=t_brw.find_link('Full Text as PDF')
+                        t=t_brw.find_link('Download PDF')
                         # t_com.add_extra_header('Referer', t.absolute_url[0])
                         # reffe='http://library.uprm.edu:2221/S0165176511002710/1-s2.0-S0165176511002710-main.pdf?_tid=ef4c2cd0-24fb-11e6-a3f1-00000aacb361&acdnat=1464457695_083096c5266459084e056213deaf4ba7'
                         # t_com.add_extra_header('Referer', reffe)
                         # t_brw.response()
                         # t_brw.click_link(t)
                         try:t_brw.follow_link(t)
-                        except:
-                            try:
-                                t_brw.go(links)
-                            except:
-                                os.remove(self.cookies);
-                                return [], self.cookies, [], [], 0, self.log_out
+                        except:os.remove(self.cookies);return [], self.cookies, [], [], 0, self.log_out
 
                         # content = t_com.show()
                         html0=t_brw.result.page
@@ -2660,18 +2602,6 @@ class twill:
         if links == '' or links == [] or links == None:
             return html, self.cookies, [], [], 0, self.log_out
         else:
-            twil__headers=t_brw._browser.addheaders
-            # t_brw.set_agent_string(twil__headers)
-            t_brw._browser.addheaders = []
-            del twil__headers[-1]
-            twil__headers += [('Referer', ez_link)]
-            self.log_out = {
-                            'log_out': "%(Log_out)s" % form_data,
-                            'METODE': form_data['METODE'],
-                            'ez_link': ez_link,
-                            # 'headers': t_brw._browser.addheaders,
-                            'headers': twil__headers,
-                            'pdf_link': links}
             return html, self.cookies, links, title, time_diff, self.log_out
 
 def link_tag_find0( html, base_url):
@@ -2749,7 +2679,7 @@ def link_tag_find01( html, base_url):
 def link_tag_find( html, base_url):
     try:
         # title=LINK().find_my_tilte(data=html,start_dash='<h1 class="article-title"',end_dash='1>',make_url=False)
-        title = LINK().find_my_tilte(data=html, start_dash='"og:title" content="', end_dash='" />',
+        title = LINK().find_my_tilte(data=html, start_dash='type="<title>', end_dash='</title>',
                                      make_url=False)
     except:
         title = ''
@@ -2796,22 +2726,14 @@ def link_tag_find( html, base_url):
     # if links == [] or links == '':
     #     links = LINK().soap_my(data=html, tag='pdfLink', attr='a', href='href', url=base_url)
     if links == '' or links == []:
-        links = LINK().soap_my(data=html, tag='id="full-text-pdf"', attr='a', href='href', url=base_url)
+        links = LINK().soap_my(data=html, tag='title="FullText PDF"', attr='a', href='href', url=url)
     if title == '' or title == []:
-        title = LINK().soap_my(data=html, tag='class="article-title"', attr='h1', href='', url=base_url)
+        title = LINK().soap_my(data=html, tag='class="mediumb-text" style="margin-top:0px; margin-bottom:0px;"',attr='h1', href='href', url=url)
     if title == '' or title == []:
-        title=LINK().find_my_tilte(data=html,start_dash='<meta property="og:title" content="',end_dash='" />',make_url=False)
+        title = LINK().soap_my(data=html, tag='<title>', attr='', href='', url=base_url)
 
-    if links == []:
-
-
-
-
-
-                    links=LINK().find_my_tilte(data=html,start_dash='<a aria-label="Download or View Full Text as PDF" id="full-text-pdf" href='+"'",end_dash="'"+' class',make_url=True)
-                    if links==[] or links=='':
-                        links =LINK().soap_my(data=html, tag='title="FullText PDF"', attr='a', href='href',url=base_url)
-                    if links!=[]:pass
+    if links != []:
+        pass
     return links, title
 
 
@@ -2886,8 +2808,6 @@ class LINK:
                 self.file_name_decode = urllib2.unquote(pdf_url).decode('utf8').split('/')[-1]
                 # self.filename = urlparse.urlsplit(pdf_url).path.split('/')[-1]
                 self.filename = str(self.file_name_decode).split('?_tid=')[0]
-                if len(re.findall("arnumber=",self.filename))!=0:
-                    self.filename = str(self.filename).split('arnumber=')[1]+".pdf"
                 # if self.filename.endswith('.jsp'):
                 #     self.filename=(self.suffix).split('arnumber=')[1]+'.pdf'
 
@@ -3250,20 +3170,6 @@ class LINK:
 
                     if re.findall('None', pr_h[j]):
                         [html, cookies, links, title, form, time_diff, log_out] = twil_find_pdf_link(url)
-
-                        # try:
-                        #     res = self.dowload_basePr_userpass_link(url, [], [], cookies='',
-                        #                                             piece_size=1024 * 3)
-                        #     # res=self.dowload_basePr_userpass(url,pr_h[j],user_pass_h[j],cookies='')
-                        #     html = res['html'];
-                        #     proxy0 = res['proxy'];
-                        #     user_pass = res['user_pass'];
-                        #     cookies = res['cookies'];
-                        #     mech = res['mechanizm']
-                        # except:
-                        #     pass
-
-
                         # time_diff = str(round(time.time() - time0, 2))
                         if links != []:
                             try:
@@ -4343,8 +4249,8 @@ if __name__ == '__main__':
     # url = "http://127.0.0.1/"
     # url = "http://dl.acm.org/citation.cfm?id=99977.100000&coll=DL&dl=ACM"
     url='http://www.sciencedirect.com/science/article/pii/S0165176511002710'
-    url='http://www.sciencedirect.com/science/article/pii/S2214629616300354'
-    url='http://ieeexplore.ieee.org/xpl/articleDetails.jsp?tp=&arnumber=6180383&queryText%3Dpower' #91 KB
+    url = "http://dl.acm.org/citation.cfm?id=99977.100000&coll=DL&dl=ACM"
+    # url="http://www.sciencedirect.com.lib.just.edu.jo/science/article/pii/S009630031630282X/pdfft?md5=a22b846cbebf75dd7e816d7586a1a797&pid=1-s2.0-S009630031630282X-main.pdf"
     link=LINK(url).get_pdf_link()
     # link=LINK(url).curl_download(url)
 

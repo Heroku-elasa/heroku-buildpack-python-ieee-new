@@ -2297,8 +2297,21 @@ class twill:
                 # html=t_brw.result.page
                 # print html
                 # content = t_com.show()
-                content = t_brw.result.page
+                # content = t_brw.result.page
                 # print 'debug twill post content:', content
+                try:
+                    content1 = t_brw.result.page
+                    # print 'debug twill post content:', content
+                    # print 'debug twill post content:', content
+                    import StringIO
+
+                    content1 = StringIO.StringIO(content1)
+                    import gzip
+
+                    gzipper = gzip.GzipFile(fileobj=content1)
+                    content = gzipper.read()
+                except:
+                    content = t_brw.result.page
                 t_com.save_cookies(self.cookies)
                 # t_brw.load_cookies(self.cookies)
                 if re.findall(self.log_done, content):

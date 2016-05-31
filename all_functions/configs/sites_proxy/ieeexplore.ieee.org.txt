@@ -1,6 +1,6 @@
-None:None For Site:ieeexplore.ieee.org Rs_Time 1.0
-222.66.115.233:80 For Site:ieeexplore.ieee.org Rs_Time 1.0
+
 119.40.116.28:80  For Site:ieeexplore.ieee.org Rs_Time 3.93
 202.213.2.140:80  For Site:ieeexplore.ieee.org Rs_Time 18.78
-196.220.96.112:3128  For Site:ieeexplore.ieee.org Rs_Time 3.93
-222.66.115.229:80 For Site:ieeexplore.ieee.org Rs_Time 1.2
+222.66.115.229:80 For Site:ieeexplore.ieee.org Rs_Time 1.2196.220.96.112:3128  For Site:ieeexplore.ieee.org Rs_Time 3.93
+222.66.115.233:80 For Site:ieeexplore.ieee.org Rs_Time 1.0
+None:None For Site:ieeexplore.ieee.org Rs_Time 1.0  For Site:ieeexplore.ieee.org Rs_Time 3.11

@@ -1,4 +1,4 @@
 151.236.14.48:80  For Site:dl.acm.org Rs_Time 0.48
 202.202.0.163:3128   For Site:dl.acm.org Rs_Time 18.91
 222.66.115.233:80   For Site:dl.acm.org Rs_Time 3.34
-None:None  For Site  For Site:dl.acm.org Rs_Time 17.6
+None:None  For Site  For Site:dl.acm.org Rs_Time 6.61
