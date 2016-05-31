@@ -4345,8 +4345,11 @@ if __name__ == '__main__':
     url='http://www.sciencedirect.com/science/article/pii/S0165176511002710'
     url='http://www.sciencedirect.com/science/article/pii/S2214629616300354'
     url='http://ieeexplore.ieee.org/xpl/articleDetails.jsp?tp=&arnumber=6180383&queryText%3Dpower' #91 KB
+    url='http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=645065&queryText=Exploring%20the%20design%20space%20of%20mixed%20swing%20quadrail%20for%20low-power%20digital%20circuits&newsearch=true'
     link=LINK(url).get_pdf_link()
     # link=LINK(url).curl_download(url)
+    print "LINk IS:"
+    print link
 
     from optparse import OptionParser
 

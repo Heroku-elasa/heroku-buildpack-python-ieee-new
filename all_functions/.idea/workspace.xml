@@ -35,6 +35,7 @@
     <SUITE FILE_PATH="coverage/all_functions$elite_proxy_finder.coverage" NAME="elite-proxy-finder Coverage Results" MODIFIED="1442092928235" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/configs/proxy_scraper" />
     <SUITE FILE_PATH="coverage/all_functions$scraper_proxy.coverage" NAME="scraper-proxy Coverage Results" MODIFIED="1442092165326" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/attack/news-scraper-master" />
     <SUITE FILE_PATH="coverage/all_functions$wxpython_flash_Simple_working.coverage" NAME="wxpython_flash_Simple_working Coverage Results" MODIFIED="1458233470543" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/linux server/python GUI" />
+    <SUITE FILE_PATH="coverage/all_functions$ieeexplore_ieee_org.coverage" NAME="ieeexplore_ieee_org Coverage Results" MODIFIED="1464690883648" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/configs/Links_site" />
     <SUITE FILE_PATH="coverage/all_functions$player_skeleton2_working.coverage" NAME="player_skeleton2-working Coverage Results" MODIFIED="1456591588907" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/linux server/python GUI" />
     <SUITE FILE_PATH="coverage/all_functions$player_skeleton2.coverage" NAME="player_skeleton2 Coverage Results" MODIFIED="1456582241491" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/linux server/python GUI/Music_Player/music_player_v2" />
     <SUITE FILE_PATH="coverage/all_functions$Unittests_in_wxpython_flash.coverage" NAME="Unittests in wxpython_flash Coverage Results" MODIFIED="1456567443822" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/linux server/python GUI" />
@@ -126,11 +127,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ieeexplore_ieee_org.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="ieeexplore_ieee_org.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/configs/Links_site/ieeexplore_ieee_org.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.56" vertical-offset="49305" max-vertical-offset="74222">
-              <caret line="2907" column="0" selection-start-line="2907" selection-start-column="0" selection-end-line="2907" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.46571428" vertical-offset="73804" max-vertical-offset="74273">
+              <caret line="4351" column="9" selection-start-line="4351" selection-start-column="0" selection-end-line="4352" selection-end-column="0" />
               <folding>
                 <element signature="e#349#380#0" expanded="true" />
               </folding>
@@ -148,10 +149,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main_core.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="main_core.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main_core.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33333334" vertical-offset="7017" max-vertical-offset="12444">
+            <state vertical-scroll-proportion="0.0" vertical-offset="7017" max-vertical-offset="12444">
               <caret line="423" column="0" selection-start-line="423" selection-start-column="0" selection-end-line="423" selection-end-column="0" />
               <folding />
             </state>
@@ -263,26 +264,7 @@
       <console-settings />
     </option>
   </component>
-  <component name="RunManager" selected="Python.tornado-get">
-    <configuration default="false" name="player_skeleton" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/linux server/python GUI/Music_Player/music_player_v1" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="all_functions" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/linux server/python GUI/Music_Player/music_player_v1/player_skeleton.py" />
-      <option name="PARAMETERS" value="" />
-      <RunnerSettings RunnerId="PyDebugRunner" />
-      <ConfigurationWrapper RunnerId="PyDebugRunner" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python.ieeexplore_ieee_org">
     <configuration default="false" name="pyside-menu" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -356,6 +338,25 @@
       <module name="all_functions" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/save_source.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PyDebugRunner" />
+      <ConfigurationWrapper RunnerId="PyDebugRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ieeexplore_ieee_org" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/configs/Links_site" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="all_functions" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/configs/Links_site/ieeexplore_ieee_org.py" />
       <option name="PARAMETERS" value="" />
       <RunnerSettings RunnerId="PyDebugRunner" />
       <ConfigurationWrapper RunnerId="PyDebugRunner" />
@@ -512,19 +513,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.player_skeleton" />
-      <item index="1" class="java.lang.String" itemvalue="Python.pyside-menu" />
-      <item index="2" class="java.lang.String" itemvalue="Python.tornado-get" />
-      <item index="3" class="java.lang.String" itemvalue="Python.www_sciencedirect_com" />
-      <item index="4" class="java.lang.String" itemvalue="Python.save_source" />
+      <item index="0" class="java.lang.String" itemvalue="Python.pyside-menu" />
+      <item index="1" class="java.lang.String" itemvalue="Python.tornado-get" />
+      <item index="2" class="java.lang.String" itemvalue="Python.www_sciencedirect_com" />
+      <item index="3" class="java.lang.String" itemvalue="Python.save_source" />
+      <item index="4" class="java.lang.String" itemvalue="Python.ieeexplore_ieee_org" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.tornado-get" />
-        <item index="1" class="java.lang.String" itemvalue="Python.save_source" />
-        <item index="2" class="java.lang.String" itemvalue="Python.www_sciencedirect_com" />
-        <item index="3" class="java.lang.String" itemvalue="Python.pyside-menu" />
-        <item index="4" class="java.lang.String" itemvalue="Python.player_skeleton" />
+        <item index="0" class="java.lang.String" itemvalue="Python.ieeexplore_ieee_org" />
+        <item index="1" class="java.lang.String" itemvalue="Python.tornado-get" />
+        <item index="2" class="java.lang.String" itemvalue="Python.save_source" />
+        <item index="3" class="java.lang.String" itemvalue="Python.www_sciencedirect_com" />
+        <item index="4" class="java.lang.String" itemvalue="Python.pyside-menu" />
       </list>
     </recent_temporary>
   </component>
@@ -570,7 +571,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32175228" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3074018" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" x="516" y="178" width="334" height="372" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30016312" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2903752" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -648,11 +649,16 @@
           <line>2857</line>
           <option name="timeStamp" value="691" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/configs/Links_site/ieeexplore_ieee_org.py</url>
+          <line>4350</line>
+          <option name="timeStamp" value="692" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="692" />
+      <option name="time" value="693" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -1009,16 +1015,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/configs/Links_site/ieeexplore_ieee_org.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.56" vertical-offset="49305" max-vertical-offset="74222">
-          <caret line="2907" column="0" selection-start-line="2907" selection-start-column="0" selection-end-line="2907" selection-end-column="0" />
-          <folding>
-            <element signature="e#349#380#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/find_link.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="3804" max-vertical-offset="6562">
@@ -1029,9 +1025,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main_core.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334" vertical-offset="7017" max-vertical-offset="12444">
+        <state vertical-scroll-proportion="0.0" vertical-offset="7017" max-vertical-offset="12444">
           <caret line="423" column="0" selection-start-line="423" selection-start-column="0" selection-end-line="423" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configs/Links_site/ieeexplore_ieee_org.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46571428" vertical-offset="73804" max-vertical-offset="74273">
+          <caret line="4351" column="9" selection-start-line="4351" selection-start-column="0" selection-end-line="4352" selection-end-column="0" />
+          <folding>
+            <element signature="e#349#380#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
