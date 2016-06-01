@@ -30,6 +30,8 @@ if [ ! -d "$OPENSHIFT_HOMEDIR/app-root/runtime/srv/phantomjs/bin" ]; then
 	rm phantomjs-1.9.8-linux-x86_64.tar.bz2
 	mv phantomjs-1.9.8-linux-x86_64/ phantomjs
 	cd phantomjs
+	mv * ..
+	rm -rf phantomjs
 	./bin/phantomjs -v
 	
 	export PATH=${PATH}:$OPENSHIFT_HOMEDIR/app-root/runtime/srv/phantomjs/bin/  
@@ -44,7 +46,15 @@ if [ ! -d "$OPENSHIFT_HOMEDIR/app-root/runtime/srv/phantomjs/bin" ]; then
 	
 
 fi
+if [[ `lsof -n -P | grep 8080` ]];then
+	  kill -9 `lsof -t -i :8080`
+	  lsof -n -P | grep 8080
+    fi
 
+	#$OPENSHIFT_HOMEDIR/app-root/runtime/srv/phantomjs/bin/phantomjs --webdriver=8080 --webdriver-selenium-grid-hub=http://127.0.0.1:4444
+	#$OPENSHIFT_HOMEDIR/app-root/runtime/srv/phantomjs/bin/phantomjs --webdriver=$OPENSHIFT_DIY_IP:8080 --webdriver-selenium-grid-hub=http://$OPENSHIFT_DIY_IP:15044
+	
+	
 echo "*****************************"
 echo "***  		  USAGE         ***"
 echo "{firefox_dir}/rtf/run.sh http://www.adobe.com/software/flash/about/ http://javatester.org/"

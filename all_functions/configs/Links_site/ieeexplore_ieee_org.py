@@ -2657,7 +2657,7 @@ class twill:
                     else:
                         pass
                         # t_brw.go(self.log_out['log_out'])
-        if links == '' or links == [] or links == None:
+        if links == '' or links == [] or links == None or html=='':
             return html, self.cookies, [], [], 0, self.log_out
         else:
             twil__headers=t_brw._browser.addheaders

@@ -2043,7 +2043,7 @@ class twill:
             # fm=browser.get_forms()
             # your_form_variable = browser.get_form(your_form_id="create_event")
             # your_form_variable = browser.get_form(action='/login')
-            your_form_variable = browser.get_forms()[1]
+            your_form_variable = browser.get_forms()[int(self.Form_id)]
             # complete form
             your_form_variable [self.user_tag] = self.username #
             try:
@@ -2540,7 +2540,19 @@ class twill:
                     time0 = time.time()
                     t_brw.go(ez_link)
                     time_diff = str(round(time.time() - time0, 2))
-                    html = t_brw.result.page
+                    try:
+                        content1 = t_brw.result.page
+                        # print 'debug twill post content:', content
+                        # print 'debug twill post content:', content
+                        import StringIO
+
+                        content1 = StringIO.StringIO(content1)
+                        import gzip
+
+                        gzipper = gzip.GzipFile(fileobj=content1)
+                        html = gzipper.read()
+                    except:
+                        html = t_brw.result.page
                     t_com.save_cookies(self.cookies)
                     # t_brw.load_cookies(self.cookies)
                     # if self.submit_tag_name2!=''and not re.findall ( "SDM.pageType",html ):
@@ -2685,9 +2697,10 @@ class twill:
                             links1.absolute_url = links
                         except:links1=[]
 
-                    if links1 == '' or links1 == [] or links1 == None:
-                        links = LINK().find_my_tilte(data=html, start_dash='<a id="pdfLink" href="', end_dash='"',
-                                                     make_url=True)
+                    if (links1 == '' or links1 == [] or links1 == None  )and (links==[] or links==""):
+                        # links = LINK().find_my_tilte(data=html, start_dash='<a id="pdfLink" href="', end_dash='"',
+                        #                              make_url=True)
+                        links = LINK().soap_my(data=html, tag='id="pdfLink"', attr='a', href='href', url=base_url)
                         if links == '' or links == []:
                             [links, title] = link_tag_find(html, base_url)
                             # links =LINK().soap_my(data=html, tag='title="Download PDF" ', attr='a', href='href',url=base_url)
@@ -2706,10 +2719,11 @@ class twill:
                                 print "error in METOD 1+d"
                                 html=[]
                     else:
-                        try:
-                            links = links1.absolute_url
-                        except:
-                            links = links1
+                        if (links==[] or links==""):
+                            try:
+                                links = links1.absolute_url
+                            except:
+                                links = links1
                         if self.log_out['METODE'] == '1+d'  and  (html0[:4]!='%PDF' or len ( re.findall('%%EOF', html ))==0 ):
                             try:
                                 socket=import_mod(from_module='socket')
@@ -2754,7 +2768,7 @@ class twill:
                         title = LINK().soap_my(data=html, tag='<title>', attr='', href='', url=base_url)
                     if    (html0[:4]=='%PDF' or len ( re.findall('%%EOF', html ))!=0):html=html0
 
-                    if links != [] and self.log_out['METODE'] == '1+d+d' and  (html0[:4]!='%PDF' or html0[-7:]!='%%EOF' ):
+                    if links != [] and self.log_out['METODE'] == '1+d+d' and( html0=='' or  (html0[:4]!='%PDF' or html0[-7:]!='%%EOF' )):
 
 
                         socket=import_mod(from_module='socket')
@@ -2811,7 +2825,7 @@ class twill:
                     else:
                         pass
                         # t_brw.go(self.log_out['log_out'])
-        if links == '' or links == [] or links == None:
+        if links == '' or links == [] or links == None or html=='':
             return html, self.cookies, [], [], 0, self.log_out
         else:
             return html, self.cookies, links, title, time_diff, self.log_out

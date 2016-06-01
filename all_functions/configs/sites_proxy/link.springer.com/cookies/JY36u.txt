@@ -1,2 +1,0 @@
-#LWP-Cookies-2.0
-Set-Cookie3: ezproxy=ZLDZFgvPobRiT3w; path="/"; domain=".just.edu.jo"; path_spec; domain_dot; discard; version=0

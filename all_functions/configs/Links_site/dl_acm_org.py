@@ -2076,7 +2076,7 @@ class twill:
             # fm=browser.get_forms()
             # your_form_variable = browser.get_form(your_form_id="create_event")
             # your_form_variable = browser.get_form(action='/login')
-            your_form_variable = browser.get_forms()[1]
+            your_form_variable = browser.get_forms()[int(self.Form_id)]
             # complete form
             your_form_variable [self.user_tag] = self.username #
             try:
@@ -3021,7 +3021,7 @@ class twill:
                     else:
                         pass
                         # t_brw.go(self.log_out['log_out'])
-        if links == '' or links == [] or links == None:
+        if links == '' or links == [] or links == None or html=='':
             return html, self.cookies, [], [], 0, self.log_out
         else:
             return html, self.cookies, links, title, time_diff, self.log_out
