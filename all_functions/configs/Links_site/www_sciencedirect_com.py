@@ -1261,6 +1261,8 @@ def twil_find_pdf_link(link):
                 [html, cookies, links, title, times, log_out] = tw.twill_find_link(link, form[k])
             elif "%(METODE)s" % form[k] == '3':
                 [html, cookies, links, title, times, log_out] = tw.twill_find_link(link, form[k])
+            elif "%(METODE)s" % form[k] == 'robobrowser':
+                [html, cookies, links, title, times, log_out] = tw.twill_find_link_robobrowser(link, form[k])
         # else:
         except:
             os.remove(cookies)
@@ -1971,6 +1973,200 @@ class twill:
         os.remove(cookies)
         return html
 
+    def twill_find_link_robobrowser(self, link, form_data):
+        # from goto import goto, label
+        self.url = "%(ezproxy_host)s" % form_data
+        self.database_link = "%(database_link)s" % form_data
+        self.Link_part = "%(Link_part)s" % form_data
+        self.pre_Link_part = "%(pre_Link_part)s" % form_data
+        self.username = "%(user)s" % form_data
+        self.password = "%(pass)s" % form_data
+        self.user_tag = "%(user_tag)s" % form_data
+        self.pass_tag = "%(pass_tag)s" % form_data
+        self.Form_id = "%(Form_id)s" % form_data
+        self.submit_tag_name = "%(submit_tag_name)s" % form_data
+        self.submit_tag_value = "%(submit_tag_value)s" % form_data
+        self.Form_Type = "%(Form_Type)s" % form_data
+        self.Log_test2 = "%(Log_test2)s" % form_data
+        self.input_type2 = form_data['input_type2']
+        self.log_done = "%(Log_test)s" % form_data
+        self.log_out = {
+            'log_out': "%(Log_out)s" % form_data,
+            'METODE': form_data['METODE']}
+
+        self.submit_tag_name2 = '%(submit_tag_name2)s' % form_data
+
+        site = urlparse2(link).hostname
+
+        self.cookies_dir = os.getcwd().replace('\\', '/') + '/sites_proxy/' + site + '/cookies'
+        if not os.path.isdir(self.cookies_dir):
+            os.mkdir(self.cookies_dir)
+        chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        self.cookies = self.cookies_dir + '/' + ''.join([random.choice(chars) for x in range(5)]) + ".txt"
+        # self.a.config("readonly_controls_writeable", 1)
+        # self.b = self.a.get_browser()
+        # self.b.set_agent_string("Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.8.1.14) Gecko/20080404 Firefox/2.0.0.14")
+        # self.b.clear_cookies()
+        time0 = time.time()
+
+        try:
+            i=o
+        except:
+            # from  robobrowser import RoboBrowser
+            RoboBrowser = import_mod(from_module='robobrowser',from_module2="RoboBrowser")
+            # import requests
+            requests = import_mod(from_module='requests')
+            # browser = RoboBrowser(history=False)
+            # user_agent2 = "Mozilla/5.0 (Windows NT 6.1; rv:18.0) Gecko/20100101 Firefox/18.0"
+            s = requests.Session()
+            s.headers['User-Agent'] = 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:46.0) Gecko/20100101 Firefox/46.0'
+            s.headers['Referer']= self.url
+
+            s.headers['Accept']='text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+            s.headers['Accept-Language']= 'en-US,en;q=0.5'
+            s.headers['Accept-Encoding']= 'gzip, deflate'
+            # s.headers['Accept-Charset']= 'ISO-8859-1,utf-8;q=0.7,*;q=0.7'
+            # s.headers['Keep-Alive']= '300'
+            s.headers['Connection']= 'keep-alive'
+            # s.headers['Cache-Control']= 'max-age=0, no-cache, no-store'
+
+            # s.headers['Content-Type']= 'application/x-www-form-urlencoded; charset=UTF-8'
+
+            # s.headers['X-Requested-With']= 'XMLHttpRequest'
+            # s.headers["Host"]= "consultaremota.upb.edu.co"
+
+            browser = RoboBrowser(session=s,history=True,allow_redirects=True,cache=True,tries=10)
+
+            browser.open(self.url)
+            # request = browser.session.get(self.url, stream=True)
+            # get form
+            # fm=browser.get_forms()
+            # your_form_variable = browser.get_form(your_form_id="create_event")
+            # your_form_variable = browser.get_form(action='/login')
+            your_form_variable = browser.get_forms()[1]
+            # complete form
+            your_form_variable [self.user_tag] = self.username #
+            try:
+                your_form_variable [self.pass_tag] = self.password #string or int?
+            except:
+                print "no password in forms"
+            #  submit form & log out
+            browser.submit_form(your_form_variable)
+            html = str(browser.parsed)
+            if self.submit_tag_name2 != '' and re.findall(self.Log_test2, html):
+                song_link = browser.get_link(self.log_done)
+                browser.follow_link(song_link)
+
+            site2 = self.Link_part
+            if self.pre_Link_part != '':
+                        base_url = 'http://' + site + '.' + site2
+                        ez_link = 'http://' + site + '.' + site2 + link.split(site)[1]
+                        if site2 == '':
+                            base_url = 'http://' + self.pre_Link_part
+                            ez_link = 'http://' + self.pre_Link_part + link.split(site)[1]
+            else:
+                        if site2 == '':
+                            base_url = 'http://'
+                            ez_link = 'http://' + link.split(site)[1]
+                        else:
+                            base_url = 'http://' + site2
+                            ez_link = 'http://' + site2 + link.split(site)[1]
+
+
+            # s.headers["Host"]= "dl.acm.org.consultaremota.upb.edu.co"
+            # browser.session.headers["Host"]= "dl.acm.org.consultaremota.upb.edu.co"
+            browser.open(ez_link)
+            song_link = browser.get_links()
+
+            html0 = unicode(browser.parsed)
+            html=str(html0.encode('utf-8'))
+            [links, title] = link_tag_find(html, base_url)
+            for link in song_link:
+                if len(re.findall('pdfLink',str(link)))!=0:
+                    link_new=link;
+                    break
+
+            url_new=str(link_new).split('href="')[1].split('"')[0]
+            url_new=url_new.replace('amp;','')
+            # ue='ft_gateway.cfm?id=100000&ftid=75414&dwn=1&CFID=793464469&CFTOKEN=31448951'
+            url=browser._build_url(url_new)
+            headers=browser.session.headers;print browser.session.headers
+            # headers.replace(self.url,ez_link)
+            # headers._store["referer"]=("Referer",ez_link)
+            # re_link='http://consultaremota.upb.edu.co/login?url=http://dl.acm.org/'+url_new
+            # browser.session.headers['Referer'] =re_link
+            browser.session.headers['Referer'] =ez_link
+
+            # browser.session.headers['Referer'] ='http://dl.acm.org.consultaremota.upb.edu.co'
+            # browser.session.headers["Host"]= "dl.acm.org.consultaremota.upb.edu.co"
+            # browser.session.headers=headers;
+            print browser.session.headers
+            cookies=browser.session.cookies;print browser.session.cookies
+            # headers = {
+            # "Accept-Encoding": "gzip, deflate",
+            # "Accept-Language": "en-US,en;q=0.8,ru;q=0.6",
+            # "User-Agent": "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.65 Safari/537.36",
+            # "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+            # 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+            # "Referer": ez_link,
+            # "X-Requested-With": "XMLHttpRequest",
+            # "Connection": "keep-alive",
+            # "Cache-Control": "max-age=0",
+            # "Host": "dl.acm.org.consultaremota.upb.edu.co"
+            #
+            # }
+            # headers._store["Host"]=("Host",'dl.acm.org.consultaremota.upb.edu.co')
+            # browser.session.headers['Host'] ='dl.acm.org.consultaremota.upb.edu.co'
+            headers=browser.session.headers;print browser.session.headers
+
+            # browser.session.headers["Host"]= "delivery.acm.org"
+            browser.follow_link(link_new, stream=True,timeout=300)
+            html0 = unicode(browser.parsed._most_recent_element)
+            html=str(html0.encode('utf-8'))
+            # print song_link2
+            if False:
+                request =browser.session.get(str(url), stream=True, allow_redirects=True, headers=headers,cookies=cookies)
+                url2=str(request.url)
+                cookies2=browser.session.cookies;
+                print browser.session.cookies
+                # headers._store["Host"]=("Host",'delivery.acm.org')
+                # browser.session.headers=headers
+                # url3='http://delivery.acm.org/10.1145/100000/100000/p170-neumann.pdf?ip=200.3.144.114&id=100000&acc=ACTIVE%20SERVICE&key=4D9619BEF5D5941F%2EA6DE646D1D737837%2E4D4702B0C3E38B35%2E4D4702B0C3E38B35&CFID=793190669&CFTOKEN=12845451&__acm__=1464765630_14e7a0892ee2d0e1edce5edc224ce9b0'
+                request =browser.session.get(str(url2), allow_redirects=True,stream=True, headers=headers)
+
+                # song_link = browser.get_link(self.log_done)
+
+
+                # browser.session.headers["Host"]= "delivery.acm.org"
+                # browser.follow_link(link_new, stream=True)
+                # song_link2 = browser.parsed
+                # print song_link2
+
+                # song_link = browser.get_links()request =browser.session.get(str(url), stream=True)
+                # your_form_variable2 = browser.get_forms()[0]
+                # your_form_variable2 ["Go"] = "Inside risks: the clock grows at midnight"
+                # browser.submit_form(your_form_variable2)
+                # song_link22 = browser.parsed
+                # print song_link22
+                #
+                # your_form_variable2 = browser.get_forms()[1]
+                # your_form_variable2 ["Go"] = "Inside risks: the clock grows at midnight"
+                # browser.submit_form(your_form_variable2)
+                # song_link22 = browser.parsed
+                # print song_link22
+        # [links, title] = link_tag_find(html, base_url)
+        self.log_out = {
+                    'log_out': "%(Log_out)s" % form_data,
+                    'METODE': form_data['METODE'],
+                    'ez_link': ez_link,
+                    'headers': headers,
+                    'pdf_link': links}
+        time_diff = str(round(time.time() - time0, 2))
+        return html, self.cookies, links, title, time_diff, self.log_out
+
+
+
+
 
     def twill_find_link(self, link, form_data):
         # from goto import goto, label
@@ -2007,7 +2203,7 @@ class twill:
         # self.b.set_agent_string("Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.8.1.14) Gecko/20080404 Firefox/2.0.0.14")
         # self.b.clear_cookies()
         twill = import_mod(from_module='twill')
-        import twill
+        # import twill
         t_com = twill.commands
         t_com.reset_browser
         t_com.reset_output
@@ -2265,15 +2461,18 @@ class twill:
             else:
                 return html, self.cookies, links, title, time_diff, self.log_out
             ## get all forms from that URL
-        all_forms = t_brw.get_all_forms()         ## this returns list of form objects
-        print "Forms:"
-        t_brw.showforms()
+        try:
+          # s=uti
+          all_forms = t_brw.get_all_forms()         ## this returns list of form objects
+          print "Forms:"
+          t_brw.showforms()
 
-        ## now, you have to choose only that form, which is having POST method
+          ## now, you have to choose only that form, which is having POST method
 
-        self.formnumber = 0
-        formnumber = 1
-        for each_frm in all_forms:
+          self.formnumber = 0
+          formnumber = 1
+
+          for each_frm in all_forms:
             self.formnumber = 1 + self.formnumber
             attr = each_frm.attrs             ## all attributes of form
             try:
@@ -2297,8 +2496,6 @@ class twill:
                 # html=t_brw.result.page
                 # print html
                 # content = t_com.show()
-                # content = t_brw.result.page
-                # print 'debug twill post content:', content
                 try:
                     content1 = t_brw.result.page
                     # print 'debug twill post content:', content
@@ -2314,7 +2511,9 @@ class twill:
                     content = t_brw.result.page
                 t_com.save_cookies(self.cookies)
                 # t_brw.load_cookies(self.cookies)
-                if re.findall(self.log_done, content):
+
+        except:pass
+        if re.findall(self.log_done, content):
                     # label .find
                     print ("You are logged on to the Public Access to Court Electronic "
                            "Records (PACER) Case Search website as " + self.url + ". All costs "
@@ -2694,59 +2893,64 @@ def link_tag_find( html, base_url):
         # title=LINK().find_my_tilte(data=html,start_dash='<h1 class="article-title"',end_dash='1>',make_url=False)
         title = LINK().find_my_tilte(data=html, start_dash='type="<title>', end_dash='</title>',
                                      make_url=False)
+        links = LINK().soap_my(data=html, tag='id="pdfLink"', attr='a', href='href', url=base_url)
+        if title==[]:
+            title = LINK().find_my_tilte(data=html, start_dash='<title>', end_dash='</title>',
+                                         make_url=False)
     except:
         title = ''
 
-    urls = re.findall('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', html)
-    links_1 = []
-    try:
-        for url in urls:
-            if url.endswith('.pdf') and url.split(base_url)[0]=='':
-                links_1.append(url)
-                print url
-    except:
-        pass
-    if len(links_1)==1:links=links_1[0]
-    elif len(links_1)>=1:links=links_1
-    else :links=''
+    if links==[] or title=='' or title==[]:
+        if title == '' or title == []:
+            title = LINK().find_my_tilte(data=html, start_dash='<title>', end_dash='</title>', make_url=False)
+            # if links == [] or links == '':
+        #     links = LINK().soap_my(data=html, tag='pdfLink', attr='a', href='href', url=base_url)
+        if links == '' or links == []:
+            links = LINK().soap_my(data=html, tag='title="Download PDF" ', attr='a', href='href', url=base_url)
+        if title == '' or title == []:
+            title = LINK().soap_my(data=html, tag='class="article-title"', attr='h1', href='', url=base_url)
+        if title == '' or title == []:
+            title = LINK().soap_my(data=html, tag='<title>', attr='', href='', url=base_url)
 
-    if links == '' or links == []:
-        #http://stackoverflow.com/questions/6222911/how-can-i-grab-pdf-links-from-website-with-python-script
-        import lxml.html, urllib2, urlparse
+        if links != []:
+            pass
+        urls = re.findall('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', html)
+        links_1 = []
+        try:
+            for url in urls:
+                if url.endswith('.pdf') and url.split(base_url)[0]=='':
+                    links_1.append(url)
+                    print url
+        except:
+            pass
+        if len(links_1)==1:links=links_1[0]
+        elif len(links_1)>=1:links=links_1
+        else :links=''
 
-        # the url of the page you want to scrape
-        # base_url = 'http://www.renderx.com/demos/examples.html'
+        if links == '' or links == []:
+            #http://stackoverflow.com/questions/6222911/how-can-i-grab-pdf-links-from-website-with-python-script
+            import lxml.html, urllib2, urlparse
 
-        # fetch the page
-        # res = urllib2.urlopen(base_url)
-        #
-        # # parse the response into an xml tree
-        tree = lxml.html.fromstring(html)
+            # the url of the page you want to scrape
+            # base_url = 'http://www.renderx.com/demos/examples.html'
 
-        # construct a namespace dictionary to pass to the xpath() call
-        # this lets us use regular expressions in the xpath
-        ns = {'re': 'http://exslt.org/regular-expressions'}
+            # fetch the page
+            # res = urllib2.urlopen(base_url)
+            #
+            # # parse the response into an xml tree
+            tree = lxml.html.fromstring(html)
 
-        # iterate over all <a> tags whose href ends in ".pdf" (case-insensitive)
-        for node in tree.xpath('//a[re:test(@href, "\.pdf$", "i")]', namespaces=ns):
-            # print the href, joining it to the base_url
-            print urlparse.urljoin(base_url, node.attrib['href'])
+            # construct a namespace dictionary to pass to the xpath() call
+            # this lets us use regular expressions in the xpath
+            ns = {'re': 'http://exslt.org/regular-expressions'}
 
-            #///////////////////////
+            # iterate over all <a> tags whose href ends in ".pdf" (case-insensitive)
+            for node in tree.xpath('//a[re:test(@href, "\.pdf$", "i")]', namespaces=ns):
+                # print the href, joining it to the base_url
+                print urlparse.urljoin(base_url, node.attrib['href'])
 
-    if title == '' or title == []:
-        title = LINK().find_my_tilte(data=html, start_dash='<title>', end_dash='</title>', make_url=False)
-    # if links == [] or links == '':
-    #     links = LINK().soap_my(data=html, tag='pdfLink', attr='a', href='href', url=base_url)
-    if links == '' or links == []:
-        links = LINK().soap_my(data=html, tag='title="Download PDF" ', attr='a', href='href', url=base_url)
-    if title == '' or title == []:
-        title = LINK().soap_my(data=html, tag='class="article-title"', attr='h1', href='', url=base_url)
-    if title == '' or title == []:
-        title = LINK().soap_my(data=html, tag='<title>', attr='', href='', url=base_url)
+                #///////////////////////
 
-    if links != []:
-        pass
     return links, title
 
 

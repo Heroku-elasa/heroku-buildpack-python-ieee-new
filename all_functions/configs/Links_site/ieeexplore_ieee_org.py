@@ -2339,7 +2339,7 @@ class twill:
 
                 t_com.save_cookies(self.cookies)
                 # t_brw.load_cookies(self.cookies)
-                if re.findall(self.log_done, content):
+        if re.findall(self.log_done, content):
                     # label .find
                     print ("You are logged on to the Public Access to Court Electronic "
                            "Records (PACER) Case Search website as " + self.url + ". All costs "

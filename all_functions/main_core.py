@@ -367,11 +367,11 @@ class core(object):
             else:
                 proxy=pr;user_pass=us_pss;
             try:
-                os.path.isfile(html)
-                file_is=1
+                if os.path.isfile(html):
+                    file_is=1
+                else:file_is=0
             except:
                 file_is=0
-
             if (html!=[] and html[:4]=='%PDF')or file_is==1 :
                 PDF_File=import_mod(from_module='save_source',from_module2='PDF_File')
                 if  not (html.endswith('.pdf')):
