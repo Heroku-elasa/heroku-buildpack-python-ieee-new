@@ -5,20 +5,30 @@
     <title>FREE ScienceDirect -- ACM -- IEEE Explore Paper Downloader </title>
 </head>
 <body>
-<h1><label class="grey" for="log">FREE ScienceDirect -- ACM -- IEEE Explore Paper Downloader</label><br /></h1>
-<form id="download_form" action="/index" method="post">
-    <h3><label class="grey" for="log">Download  Address :</label><br /></h3>
-    <input type="text" name="url_to_download" style="width:99%" id="download"><br>
-	<h3><label class="grey" for="log"> Your Email Adress for downloading(Optinal)</label><br /></h3>
-	<input type="text" name="email" style="width:50%" id="email"><br>	
-	<h3><label class="grey" for="log"> your site to watermark pdf file (Optinal)</label><br /></h3>
-	<input type="text" name="url_watermark" style="width:50%" id="email" ><br>
-    <h3><label class="grey" for="log"> Upload file to ftp or localy(Optinal : 1=ftp,2=locally)</label><br /></h3>
-    <input type="text" name="ftp_local_upload" style="width:50%" id="email" value="2"><br>
-    <h3><label class="grey" for="log"> Show getting method</label><br /></h3>
-    <input type="text" name="ip_method" style="width:50%" id="email"  value="yes"><br>
 
-    <input type="submit" id="downloadbtn" name="download" value="Submit" class="button"><br />
+<center dir="rtl" style="letter-spacing:0">
+<span class="text-warning" dir="rtl">محدودیت دانلود رایگان: نامحدود</span>
+<br>
+<span class="text-muted" dir="rtl" style="font-size: 14px;">برای مقالات sciencedirect ، IEEE و ACM</span>
+<br>
+</center>
+
+<h1 style="direction: rtl;font-size:16px; text-align:right;width:100%;" class="pull-right"><span style="font-size:10px;margin:0 6px 0 3px">|</span>    لینک چکیده مقاله را وارد کنید | Download  Address :</h1>
+
+<!--  <h1><label class="grey" for="log">FREE ScienceDirect -- ACM -- IEEE Explore Paper Downloader</label><br /></h1> -->
+<form id="download_form" action="/index" method="post">
+    
+    <input type="text" name="url_to_download" style="width:99%" id="download"><br>
+	<h3 style="direction: rtl;font-size:16px; text-align:right;width:100%;" ><label class="grey" for="log"> Your Email Adress for downloading(Optinal) | ایمیل شما (انتخابی )</label><br /></h3>
+	<input type="text" name="email" style="width:50%; float:right" id="email"><br>	
+	<h3 style="direction: rtl;font-size:16px; text-align:right;width:100%;"><label class="grey" for="log"> your site to watermark pdf file (Optinal) | لوگوی درج شونده روی مقاله (انتخابی)</label><br /></h3>
+	<input type="text" name="url_watermark" style="width:50%; float:right" id="email" ><br>
+    <h3 style="direction: rtl;font-size:16px; text-align:right;width:100%;"><label class="grey" for="log"> Upload file to ftp or localy(Optinal : 1=ftp,2=locally)</label><br /></h3>
+    <input type="text" name="ftp_local_upload" style="width:50%; float:right" id="email" value="2"><br>
+    <h3 style="direction: rtl;font-size:16px; text-align:right;width:100%;"><label class="grey" for="log"> Show getting method</label><br /></h3>
+    <input type="text" name="ip_method" style=" width:50%;float:right" id="email"  value="yes"><br>
+
+    <input  style="float: right; position: relative; transform: scale(2.1); bottom: -32px; right: -47%;" type="submit" id="downloadbtn" name="download" value="Submit" class="button"><br />
 </form>
 </body>
 </html>
