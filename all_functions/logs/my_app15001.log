@@ -4252,3 +4252,404 @@
       File "C:\Python27\lib\site-packages\tornado\web.py", line 905, in finish
         raise RuntimeError("finish() called twice")
     RuntimeError: finish() called twice
+[I 160604 00:11:28 web:1908] 200 GET / (127.0.0.1) 11.00ms
+[E 160604 00:11:28 web:1496] Uncaught exception GET / (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:15001', method='GET', uri='/', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate', 'Host': '127.0.0.1:15001', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:46.0) Gecko/20100101 Firefox/46.0', 'Connection': 'keep-alive', 'Cookie': 'bb_sessionhash=5cb5c3835384744d5eda42c002afc318; bb_lastvisit=1464870179; bb_lastactivity=0; _ga=GA1.1.1387388534.1464870170', 'If-None-Match': '"3e21f07db6c51ebb4ff523683377635562186114"'})
+    Traceback (most recent call last):
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 1369, in _stack_context_handle_exception
+        raise_exc_info((type, value, traceback))
+      File "C:\Python27\lib\site-packages\tornado\stack_context.py", line 314, in wrapped
+        ret = fn(*args, **kwargs)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 149, in final_callback
+        if future.result() is not None:
+      File "C:\Python27\lib\site-packages\tornado\concurrent.py", line 215, in result
+        raise_exc_info(self._exc_info)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 215, in wrapper
+        result = func(*args, **kwargs)
+      File "E:/soheil/web_site_root/ieee/all_functions/tornado-get.py", line 945, in get
+        self.finish()
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 905, in finish
+        raise RuntimeError("finish() called twice")
+    RuntimeError: finish() called twice
+[W 160604 00:11:28 web:1908] 404 GET /css/style.css (127.0.0.1) 4.00ms
+[W 160604 00:11:28 web:1908] 404 GET /css/slideshow.css (127.0.0.1) 4.00ms
+[W 160604 00:11:28 web:1908] 404 GET /js/jquery-1.7.1.min.js (127.0.0.1) 4.00ms
+[W 160604 00:11:28 web:1908] 404 GET /css/responsive.css (127.0.0.1) 4.00ms
+[W 160604 00:11:28 web:1908] 404 GET /js/jquery.nivo.slider.pack.js (127.0.0.1) 3.00ms
+[W 160604 00:11:28 web:1908] 404 GET /images/news3.jpg (127.0.0.1) 4.00ms
+[W 160604 00:11:28 web:1908] 404 GET /images/news1.jpg (127.0.0.1) 4.00ms
+[W 160604 00:11:28 web:1908] 404 GET /images/slider/slider3.jpg (127.0.0.1) 4.00ms
+[W 160604 00:11:28 web:1908] 404 GET /images/slider/slider1.jpg (127.0.0.1) 3.00ms
+[W 160604 00:11:28 web:1908] 404 GET /images/news2.jpg (127.0.0.1) 3.00ms
+[W 160604 00:11:28 web:1908] 404 GET /images/slider/slider2.jpg (127.0.0.1) 3.00ms
+[W 160604 00:11:28 web:1908] 404 GET /images/footer-simple.png (127.0.0.1) 4.00ms
+[E 160604 00:12:33 web:1496] Uncaught exception GET / (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:15001', method='GET', uri='/', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate', 'Host': '127.0.0.1:15001', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:46.0) Gecko/20100101 Firefox/46.0', 'Connection': 'keep-alive', 'Cookie': 'bb_sessionhash=5cb5c3835384744d5eda42c002afc318; bb_lastvisit=1464870179; bb_lastactivity=0; _ga=GA1.1.1387388534.1464870170', 'Pragma': 'no-cache', 'Cache-Control': 'no-cache'})
+    Traceback (most recent call last):
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 1369, in _stack_context_handle_exception
+        raise_exc_info((type, value, traceback))
+      File "C:\Python27\lib\site-packages\tornado\stack_context.py", line 314, in wrapped
+        ret = fn(*args, **kwargs)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 149, in final_callback
+        if future.result() is not None:
+      File "C:\Python27\lib\site-packages\tornado\concurrent.py", line 215, in result
+        raise_exc_info(self._exc_info)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 215, in wrapper
+        result = func(*args, **kwargs)
+      File "E:/soheil/web_site_root/ieee/all_functions/tornado-get.py", line 943, in get
+        self.render(htmls + '/index.html')
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 704, in render
+        html = self.render_string(template_name, **kwargs)
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 808, in render_string
+        t = loader.load(template_name)
+      File "C:\Python27\lib\site-packages\tornado\template.py", line 343, in load
+        self.templates[name] = self._create_template(name)
+      File "C:\Python27\lib\site-packages\tornado\template.py", line 370, in _create_template
+        with open(path, "rb") as f:
+    IOError: [Errno 2] No such file or directory: 'E:/soheil/web_site_root/ieee/all_functions/htmls/index.html'
+[E 160604 00:12:33 web:1908] 500 GET / (127.0.0.1) 82.00ms
+[I 160604 00:13:32 web:1908] 200 GET / (127.0.0.1) 20.00ms
+[E 160604 00:13:32 web:1496] Uncaught exception GET / (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:15001', method='GET', uri='/', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate', 'Host': '127.0.0.1:15001', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:46.0) Gecko/20100101 Firefox/46.0', 'Connection': 'keep-alive', 'Cookie': 'bb_sessionhash=5cb5c3835384744d5eda42c002afc318; bb_lastvisit=1464870179; bb_lastactivity=0; _ga=GA1.1.1387388534.1464870170', 'Pragma': 'no-cache', 'Cache-Control': 'no-cache'})
+    Traceback (most recent call last):
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 1369, in _stack_context_handle_exception
+        raise_exc_info((type, value, traceback))
+      File "C:\Python27\lib\site-packages\tornado\stack_context.py", line 314, in wrapped
+        ret = fn(*args, **kwargs)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 149, in final_callback
+        if future.result() is not None:
+      File "C:\Python27\lib\site-packages\tornado\concurrent.py", line 215, in result
+        raise_exc_info(self._exc_info)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 215, in wrapper
+        result = func(*args, **kwargs)
+      File "E:/soheil/web_site_root/ieee/all_functions/tornado-get.py", line 945, in get
+        self.finish()
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 905, in finish
+        raise RuntimeError("finish() called twice")
+    RuntimeError: finish() called twice
+[I 160604 00:13:34 web:1908] 200 GET / (127.0.0.1) 10.00ms
+[E 160604 00:13:34 web:1496] Uncaught exception GET / (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:15001', method='GET', uri='/', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate', 'Host': '127.0.0.1:15001', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:46.0) Gecko/20100101 Firefox/46.0', 'Connection': 'keep-alive', 'Cookie': 'bb_sessionhash=5cb5c3835384744d5eda42c002afc318; bb_lastvisit=1464870179; bb_lastactivity=0; _ga=GA1.1.1387388534.1464870170', 'Pragma': 'no-cache', 'Cache-Control': 'no-cache'})
+    Traceback (most recent call last):
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 1369, in _stack_context_handle_exception
+        raise_exc_info((type, value, traceback))
+      File "C:\Python27\lib\site-packages\tornado\stack_context.py", line 314, in wrapped
+        ret = fn(*args, **kwargs)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 149, in final_callback
+        if future.result() is not None:
+      File "C:\Python27\lib\site-packages\tornado\concurrent.py", line 215, in result
+        raise_exc_info(self._exc_info)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 215, in wrapper
+        result = func(*args, **kwargs)
+      File "E:/soheil/web_site_root/ieee/all_functions/tornado-get.py", line 945, in get
+        self.finish()
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 905, in finish
+        raise RuntimeError("finish() called twice")
+    RuntimeError: finish() called twice
+[I 160604 00:14:15 web:1908] 200 GET / (127.0.0.1) 11.00ms
+[E 160604 00:14:15 web:1496] Uncaught exception GET / (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:15001', method='GET', uri='/', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate', 'Host': '127.0.0.1:15001', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:46.0) Gecko/20100101 Firefox/46.0', 'Connection': 'keep-alive', 'Cookie': 'bb_sessionhash=5cb5c3835384744d5eda42c002afc318; bb_lastvisit=1464870179; bb_lastactivity=0; _ga=GA1.1.1387388534.1464870170', 'Pragma': 'no-cache', 'Cache-Control': 'no-cache'})
+    Traceback (most recent call last):
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 1369, in _stack_context_handle_exception
+        raise_exc_info((type, value, traceback))
+      File "C:\Python27\lib\site-packages\tornado\stack_context.py", line 314, in wrapped
+        ret = fn(*args, **kwargs)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 149, in final_callback
+        if future.result() is not None:
+      File "C:\Python27\lib\site-packages\tornado\concurrent.py", line 215, in result
+        raise_exc_info(self._exc_info)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 215, in wrapper
+        result = func(*args, **kwargs)
+      File "E:/soheil/web_site_root/ieee/all_functions/tornado-get.py", line 945, in get
+        self.finish()
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 905, in finish
+        raise RuntimeError("finish() called twice")
+    RuntimeError: finish() called twice
+[W 160604 00:14:15 web:1908] 404 GET /vader/jquery.ui.all.css (127.0.0.1) 3.00ms
+[W 160604 00:14:15 web:1908] 404 GET /jquery.ui.core.min.js (127.0.0.1) 4.00ms
+[W 160604 00:14:15 web:1908] 404 GET /jquery.ui.widget.min.js (127.0.0.1) 4.00ms
+[W 160604 00:14:15 web:1908] 404 GET /jquery.ui.accordion.min.js (127.0.0.1) 2.00ms
+[W 160604 00:14:15 web:1908] 404 GET /jquery-1.4.2.min.js (127.0.0.1) 4.00ms
+[W 160604 00:14:15 web:1908] 404 GET /jquery.effects.core.min.js (127.0.0.1) 5.00ms
+[W 160604 00:14:15 web:1908] 404 GET /images/img0001.gif (127.0.0.1) 3.00ms
+[W 160604 00:14:15 web:1908] 404 GET /images/glow-bottom.gif (127.0.0.1) 3.00ms
+[W 160604 00:14:15 web:1908] 404 GET /jquery.ui.core.min.js (127.0.0.1) 4.00ms
+[W 160604 00:14:15 web:1908] 404 GET /jquery.ui.widget.min.js (127.0.0.1) 3.00ms
+[W 160604 00:14:15 web:1908] 404 GET /jquery.ui.accordion.min.js (127.0.0.1) 3.00ms
+[W 160604 00:14:15 web:1908] 404 GET /jquery.effects.core.min.js (127.0.0.1) 3.00ms
+[W 160604 00:14:15 web:1908] 404 GET /images/index_bkgrnd.png (127.0.0.1) 4.00ms
+[W 160604 00:14:15 web:1908] 404 GET /images/glow-bottom.gif (127.0.0.1) 4.00ms
+[W 160604 00:14:15 web:1908] 404 GET /images/img0001.gif (127.0.0.1) 3.00ms
+[I 160604 00:17:02 web:1908] 200 GET / (127.0.0.1) 9.00ms
+[E 160604 00:17:02 web:1496] Uncaught exception GET / (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:15001', method='GET', uri='/', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate', 'Host': '127.0.0.1:15001', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:46.0) Gecko/20100101 Firefox/46.0', 'Connection': 'keep-alive', 'Cookie': 'bb_sessionhash=5cb5c3835384744d5eda42c002afc318; bb_lastvisit=1464870179; bb_lastactivity=0; _ga=GA1.1.1387388534.1464870170', 'If-None-Match': '"c9d6339ba70b613e8eae5da2d535cfa0563a57ff"'})
+    Traceback (most recent call last):
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 1369, in _stack_context_handle_exception
+        raise_exc_info((type, value, traceback))
+      File "C:\Python27\lib\site-packages\tornado\stack_context.py", line 314, in wrapped
+        ret = fn(*args, **kwargs)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 149, in final_callback
+        if future.result() is not None:
+      File "C:\Python27\lib\site-packages\tornado\concurrent.py", line 215, in result
+        raise_exc_info(self._exc_info)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 215, in wrapper
+        result = func(*args, **kwargs)
+      File "E:/soheil/web_site_root/ieee/all_functions/tornado-get.py", line 945, in get
+        self.finish()
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 905, in finish
+        raise RuntimeError("finish() called twice")
+    RuntimeError: finish() called twice
+[W 160604 00:17:02 web:1908] 404 GET /images/glow-bottom.gif (127.0.0.1) 3.00ms
+[W 160604 00:17:02 web:1908] 404 GET /images/img0001.gif (127.0.0.1) 2.00ms
+[I 160604 00:17:45 web:1908] 200 GET / (127.0.0.1) 8.00ms
+[E 160604 00:17:45 web:1496] Uncaught exception GET / (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:15001', method='GET', uri='/', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate', 'Host': '127.0.0.1:15001', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:46.0) Gecko/20100101 Firefox/46.0', 'Connection': 'keep-alive', 'Cookie': 'bb_sessionhash=5cb5c3835384744d5eda42c002afc318; bb_lastvisit=1464870179; bb_lastactivity=0; _ga=GA1.1.1387388534.1464870170', 'If-None-Match': '"5a77e81749af51f438580a424d9a4f8c2e12e00c"'})
+    Traceback (most recent call last):
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 1369, in _stack_context_handle_exception
+        raise_exc_info((type, value, traceback))
+      File "C:\Python27\lib\site-packages\tornado\stack_context.py", line 314, in wrapped
+        ret = fn(*args, **kwargs)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 149, in final_callback
+        if future.result() is not None:
+      File "C:\Python27\lib\site-packages\tornado\concurrent.py", line 215, in result
+        raise_exc_info(self._exc_info)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 215, in wrapper
+        result = func(*args, **kwargs)
+      File "E:/soheil/web_site_root/ieee/all_functions/tornado-get.py", line 945, in get
+        self.finish()
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 905, in finish
+        raise RuntimeError("finish() called twice")
+    RuntimeError: finish() called twice
+[W 160604 00:17:46 web:1908] 404 GET /vader/jquery.ui.all.css (127.0.0.1) 3.00ms
+[W 160604 00:17:46 web:1908] 404 GET /jquery-1.4.2.min.js (127.0.0.1) 2.00ms
+[W 160604 00:17:46 web:1908] 404 GET /jquery.ui.core.min.js (127.0.0.1) 3.00ms
+[W 160604 00:17:46 web:1908] 404 GET /jquery.ui.widget.min.js (127.0.0.1) 2.00ms
+[W 160604 00:17:46 web:1908] 404 GET /jquery.ui.accordion.min.js (127.0.0.1) 3.00ms
+[W 160604 00:17:46 web:1908] 404 GET /jquery.effects.core.min.js (127.0.0.1) 4.00ms
+[W 160604 00:17:46 web:1908] 404 GET /images/img0001.gif (127.0.0.1) 3.00ms
+[W 160604 00:17:46 web:1908] 404 GET /images/glow-bottom.gif (127.0.0.1) 3.00ms
+[W 160604 00:17:46 web:1908] 404 GET /jquery.ui.core.min.js (127.0.0.1) 3.00ms
+[W 160604 00:17:46 web:1908] 404 GET /jquery.ui.widget.min.js (127.0.0.1) 4.00ms
+[W 160604 00:17:46 web:1908] 404 GET /jquery.ui.accordion.min.js (127.0.0.1) 5.00ms
+[W 160604 00:17:46 web:1908] 404 GET /jquery.effects.core.min.js (127.0.0.1) 2.00ms
+[W 160604 00:17:46 web:1908] 404 GET /images/index_bkgrnd.png (127.0.0.1) 3.00ms
+[W 160604 00:17:46 web:1908] 404 GET /images/img0001.gif (127.0.0.1) 4.00ms
+[W 160604 00:17:46 web:1908] 404 GET /images/glow-bottom.gif (127.0.0.1) 3.00ms
+[I 160604 00:18:28 web:1908] 200 GET / (127.0.0.1) 11.00ms
+[E 160604 00:18:28 web:1496] Uncaught exception GET / (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:15001', method='GET', uri='/', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate', 'Host': '127.0.0.1:15001', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:46.0) Gecko/20100101 Firefox/46.0', 'Connection': 'keep-alive', 'Cookie': 'bb_sessionhash=5cb5c3835384744d5eda42c002afc318; bb_lastvisit=1464870179; bb_lastactivity=0; _ga=GA1.1.1387388534.1464870170', 'Pragma': 'no-cache', 'Cache-Control': 'no-cache'})
+    Traceback (most recent call last):
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 1369, in _stack_context_handle_exception
+        raise_exc_info((type, value, traceback))
+      File "C:\Python27\lib\site-packages\tornado\stack_context.py", line 314, in wrapped
+        ret = fn(*args, **kwargs)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 149, in final_callback
+        if future.result() is not None:
+      File "C:\Python27\lib\site-packages\tornado\concurrent.py", line 215, in result
+        raise_exc_info(self._exc_info)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 215, in wrapper
+        result = func(*args, **kwargs)
+      File "E:/soheil/web_site_root/ieee/all_functions/tornado-get.py", line 945, in get
+        self.finish()
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 905, in finish
+        raise RuntimeError("finish() called twice")
+    RuntimeError: finish() called twice
+[W 160604 00:18:28 web:1908] 404 GET /vader/jquery.ui.all.css (127.0.0.1) 3.00ms
+[W 160604 00:18:28 web:1908] 404 GET /jquery-1.4.2.min.js (127.0.0.1) 2.00ms
+[W 160604 00:18:28 web:1908] 404 GET /jquery.ui.core.min.js (127.0.0.1) 2.00ms
+[W 160604 00:18:28 web:1908] 404 GET /jquery.ui.accordion.min.js (127.0.0.1) 2.00ms
+[W 160604 00:18:28 web:1908] 404 GET /jquery.ui.widget.min.js (127.0.0.1) 2.00ms
+[W 160604 00:18:28 web:1908] 404 GET /jquery.effects.core.min.js (127.0.0.1) 4.00ms
+[W 160604 00:18:28 web:1908] 404 GET /images/img0001.gif (127.0.0.1) 4.00ms
+[W 160604 00:18:28 web:1908] 404 GET /images/glow-bottom.gif (127.0.0.1) 3.00ms
+[W 160604 00:18:28 web:1908] 404 GET /jquery.ui.core.min.js (127.0.0.1) 2.00ms
+[W 160604 00:18:28 web:1908] 404 GET /jquery.ui.widget.min.js (127.0.0.1) 4.00ms
+[W 160604 00:18:29 web:1908] 404 GET /jquery.ui.accordion.min.js (127.0.0.1) 4.00ms
+[W 160604 00:18:29 web:1908] 404 GET /jquery.effects.core.min.js (127.0.0.1) 3.00ms
+[W 160604 00:18:29 web:1908] 404 GET /images/index_bkgrnd.png (127.0.0.1) 3.00ms
+[W 160604 00:18:29 web:1908] 404 GET /images/glow-bottom.gif (127.0.0.1) 3.00ms
+[W 160604 00:18:29 web:1908] 404 GET /images/img0001.gif (127.0.0.1) 3.00ms
+[W 160604 00:19:21 web:1908] 404 GET /images/index_bkgrnd.png (127.0.0.1) 3.00ms
+[I 160604 00:19:40 web:1908] 200 GET / (127.0.0.1) 8.00ms
+[E 160604 00:19:40 web:1496] Uncaught exception GET / (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:15001', method='GET', uri='/', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate', 'Host': '127.0.0.1:15001', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:46.0) Gecko/20100101 Firefox/46.0', 'Connection': 'keep-alive', 'Cookie': 'bb_sessionhash=5cb5c3835384744d5eda42c002afc318; bb_lastvisit=1464870179; bb_lastactivity=0; _ga=GA1.1.1387388534.1464870170', 'Pragma': 'no-cache', 'Cache-Control': 'no-cache'})
+    Traceback (most recent call last):
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 1369, in _stack_context_handle_exception
+        raise_exc_info((type, value, traceback))
+      File "C:\Python27\lib\site-packages\tornado\stack_context.py", line 314, in wrapped
+        ret = fn(*args, **kwargs)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 149, in final_callback
+        if future.result() is not None:
+      File "C:\Python27\lib\site-packages\tornado\concurrent.py", line 215, in result
+        raise_exc_info(self._exc_info)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 215, in wrapper
+        result = func(*args, **kwargs)
+      File "E:/soheil/web_site_root/ieee/all_functions/tornado-get.py", line 945, in get
+        self.finish()
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 905, in finish
+        raise RuntimeError("finish() called twice")
+    RuntimeError: finish() called twice
+[W 160604 00:19:41 web:1908] 404 GET /vader/jquery.ui.all.css (127.0.0.1) 3.00ms
+[W 160604 00:19:41 web:1908] 404 GET /jquery-1.4.2.min.js (127.0.0.1) 3.00ms
+[W 160604 00:19:41 web:1908] 404 GET /jquery.ui.core.min.js (127.0.0.1) 3.00ms
+[W 160604 00:19:41 web:1908] 404 GET /jquery.ui.widget.min.js (127.0.0.1) 3.00ms
+[W 160604 00:19:41 web:1908] 404 GET /jquery.ui.accordion.min.js (127.0.0.1) 3.00ms
+[W 160604 00:19:41 web:1908] 404 GET /jquery.effects.core.min.js (127.0.0.1) 3.00ms
+[W 160604 00:19:41 web:1908] 404 GET /images/img0001.gif (127.0.0.1) 2.00ms
+[W 160604 00:19:41 web:1908] 404 GET /images/glow-bottom.gif (127.0.0.1) 3.00ms
+[W 160604 00:19:41 web:1908] 404 GET /jquery.ui.core.min.js (127.0.0.1) 3.00ms
+[W 160604 00:19:41 web:1908] 404 GET /jquery.ui.widget.min.js (127.0.0.1) 3.00ms
+[W 160604 00:19:41 web:1908] 404 GET /jquery.ui.accordion.min.js (127.0.0.1) 3.00ms
+[W 160604 00:19:41 web:1908] 404 GET /jquery.effects.core.min.js (127.0.0.1) 3.00ms
+[W 160604 00:19:41 web:1908] 404 GET /images/index_bkgrnd.png (127.0.0.1) 3.00ms
+[W 160604 00:19:41 web:1908] 404 GET /images/glow-bottom.gif (127.0.0.1) 3.00ms
+[W 160604 00:19:41 web:1908] 404 GET /images/img0001.gif (127.0.0.1) 2.00ms
+[W 160604 00:19:50 web:1908] 404 GET /images/index_bkgrnd.png (127.0.0.1) 3.00ms
+[W 160604 00:24:22 web:1908] 404 GET /images/index_bkgrnd.png (127.0.0.1) 5.00ms
+[I 160604 00:25:08 web:1908] 200 GET / (127.0.0.1) 10.00ms
+[E 160604 00:25:08 web:1496] Uncaught exception GET / (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:15001', method='GET', uri='/', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate', 'Host': '127.0.0.1:15001', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:46.0) Gecko/20100101 Firefox/46.0', 'Connection': 'keep-alive', 'Cookie': 'bb_sessionhash=5cb5c3835384744d5eda42c002afc318; bb_lastvisit=1464870179; bb_lastactivity=0; _ga=GA1.1.1387388534.1464870170', 'Pragma': 'no-cache', 'Cache-Control': 'no-cache'})
+    Traceback (most recent call last):
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 1369, in _stack_context_handle_exception
+        raise_exc_info((type, value, traceback))
+      File "C:\Python27\lib\site-packages\tornado\stack_context.py", line 314, in wrapped
+        ret = fn(*args, **kwargs)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 149, in final_callback
+        if future.result() is not None:
+      File "C:\Python27\lib\site-packages\tornado\concurrent.py", line 215, in result
+        raise_exc_info(self._exc_info)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 215, in wrapper
+        result = func(*args, **kwargs)
+      File "E:/soheil/web_site_root/ieee/all_functions/tornado-get.py", line 945, in get
+        self.finish()
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 905, in finish
+        raise RuntimeError("finish() called twice")
+    RuntimeError: finish() called twice
+[W 160604 00:25:08 web:1908] 404 GET /images/glow-bottom.gif (127.0.0.1) 5.00ms
+[W 160604 00:25:08 web:1908] 404 GET /images/img0001.gif (127.0.0.1) 3.00ms
+[I 160604 00:25:31 web:1908] 200 GET / (127.0.0.1) 11.00ms
+[E 160604 00:25:31 web:1496] Uncaught exception GET / (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:15001', method='GET', uri='/', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate', 'Host': '127.0.0.1:15001', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:46.0) Gecko/20100101 Firefox/46.0', 'Connection': 'keep-alive', 'Cookie': 'bb_sessionhash=5cb5c3835384744d5eda42c002afc318; bb_lastvisit=1464870179; bb_lastactivity=0; _ga=GA1.1.1387388534.1464870170', 'Pragma': 'no-cache', 'Cache-Control': 'no-cache'})
+    Traceback (most recent call last):
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 1369, in _stack_context_handle_exception
+        raise_exc_info((type, value, traceback))
+      File "C:\Python27\lib\site-packages\tornado\stack_context.py", line 314, in wrapped
+        ret = fn(*args, **kwargs)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 149, in final_callback
+        if future.result() is not None:
+      File "C:\Python27\lib\site-packages\tornado\concurrent.py", line 215, in result
+        raise_exc_info(self._exc_info)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 215, in wrapper
+        result = func(*args, **kwargs)
+      File "E:/soheil/web_site_root/ieee/all_functions/tornado-get.py", line 945, in get
+        self.finish()
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 905, in finish
+        raise RuntimeError("finish() called twice")
+    RuntimeError: finish() called twice
+[W 160604 00:25:31 web:1908] 404 GET /images/glow-bottom.gif (127.0.0.1) 3.00ms
+[W 160604 00:25:31 web:1908] 404 GET /images/img0001.gif (127.0.0.1) 3.00ms
+[I 160604 00:25:56 web:1908] 200 GET / (127.0.0.1) 7.00ms
+[E 160604 00:25:56 web:1496] Uncaught exception GET / (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:15001', method='GET', uri='/', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate', 'Host': '127.0.0.1:15001', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:46.0) Gecko/20100101 Firefox/46.0', 'Connection': 'keep-alive', 'Cookie': 'bb_sessionhash=5cb5c3835384744d5eda42c002afc318; bb_lastvisit=1464870179; bb_lastactivity=0; _ga=GA1.1.1387388534.1464870170', 'Pragma': 'no-cache', 'Cache-Control': 'no-cache'})
+    Traceback (most recent call last):
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 1369, in _stack_context_handle_exception
+        raise_exc_info((type, value, traceback))
+      File "C:\Python27\lib\site-packages\tornado\stack_context.py", line 314, in wrapped
+        ret = fn(*args, **kwargs)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 149, in final_callback
+        if future.result() is not None:
+      File "C:\Python27\lib\site-packages\tornado\concurrent.py", line 215, in result
+        raise_exc_info(self._exc_info)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 215, in wrapper
+        result = func(*args, **kwargs)
+      File "E:/soheil/web_site_root/ieee/all_functions/tornado-get.py", line 945, in get
+        self.finish()
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 905, in finish
+        raise RuntimeError("finish() called twice")
+    RuntimeError: finish() called twice
+[W 160604 00:25:56 web:1908] 404 GET /images/glow-bottom.gif (127.0.0.1) 3.00ms
+[W 160604 00:25:56 web:1908] 404 GET /images/img0001.gif (127.0.0.1) 3.00ms
+[I 160604 00:28:25 web:1908] 200 GET / (127.0.0.1) 450.00ms
+[E 160604 00:28:25 web:1496] Uncaught exception GET / (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:15001', method='GET', uri='/', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate', 'Host': '127.0.0.1:15001', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:46.0) Gecko/20100101 Firefox/46.0', 'Connection': 'keep-alive', 'Cookie': 'bb_sessionhash=5cb5c3835384744d5eda42c002afc318; bb_lastvisit=1464870179; bb_lastactivity=0; _ga=GA1.1.1387388534.1464870170', 'Pragma': 'no-cache', 'Cache-Control': 'no-cache'})
+    Traceback (most recent call last):
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 1369, in _stack_context_handle_exception
+        raise_exc_info((type, value, traceback))
+      File "C:\Python27\lib\site-packages\tornado\stack_context.py", line 314, in wrapped
+        ret = fn(*args, **kwargs)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 149, in final_callback
+        if future.result() is not None:
+      File "C:\Python27\lib\site-packages\tornado\concurrent.py", line 215, in result
+        raise_exc_info(self._exc_info)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 215, in wrapper
+        result = func(*args, **kwargs)
+      File "E:/soheil/web_site_root/ieee/all_functions/tornado-get.py", line 945, in get
+        self.finish()
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 905, in finish
+        raise RuntimeError("finish() called twice")
+    RuntimeError: finish() called twice
+[W 160604 00:28:27 web:1908] 404 GET /images/glow-bottom.gif (127.0.0.1) 4.00ms
+[W 160604 00:28:27 web:1908] 404 GET /images/img0001.gif (127.0.0.1) 4.00ms
+[I 160604 00:28:58 web:1908] 200 GET / (127.0.0.1) 7.00ms
+[E 160604 00:28:58 web:1496] Uncaught exception GET / (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:15001', method='GET', uri='/', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate', 'Host': '127.0.0.1:15001', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:46.0) Gecko/20100101 Firefox/46.0', 'Connection': 'keep-alive', 'Cookie': 'bb_sessionhash=5cb5c3835384744d5eda42c002afc318; bb_lastvisit=1464870179; bb_lastactivity=0; _ga=GA1.1.1387388534.1464870170', 'Pragma': 'no-cache', 'Cache-Control': 'no-cache'})
+    Traceback (most recent call last):
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 1369, in _stack_context_handle_exception
+        raise_exc_info((type, value, traceback))
+      File "C:\Python27\lib\site-packages\tornado\stack_context.py", line 314, in wrapped
+        ret = fn(*args, **kwargs)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 149, in final_callback
+        if future.result() is not None:
+      File "C:\Python27\lib\site-packages\tornado\concurrent.py", line 215, in result
+        raise_exc_info(self._exc_info)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 215, in wrapper
+        result = func(*args, **kwargs)
+      File "E:/soheil/web_site_root/ieee/all_functions/tornado-get.py", line 945, in get
+        self.finish()
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 905, in finish
+        raise RuntimeError("finish() called twice")
+    RuntimeError: finish() called twice
+[W 160604 00:28:58 web:1908] 404 GET /images/glow-bottom.gif (127.0.0.1) 2.00ms
+[W 160604 00:28:58 web:1908] 404 GET /images/img0001.gif (127.0.0.1) 3.00ms
+[I 160604 00:31:44 web:1908] 200 GET / (127.0.0.1) 13.00ms
+[E 160604 00:31:44 web:1496] Uncaught exception GET / (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:15001', method='GET', uri='/', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate', 'Host': '127.0.0.1:15001', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:46.0) Gecko/20100101 Firefox/46.0', 'Connection': 'keep-alive', 'Cookie': 'bb_sessionhash=5cb5c3835384744d5eda42c002afc318; bb_lastvisit=1464870179; bb_lastactivity=0; _ga=GA1.1.1387388534.1464870170', 'Pragma': 'no-cache', 'Cache-Control': 'no-cache'})
+    Traceback (most recent call last):
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 1369, in _stack_context_handle_exception
+        raise_exc_info((type, value, traceback))
+      File "C:\Python27\lib\site-packages\tornado\stack_context.py", line 314, in wrapped
+        ret = fn(*args, **kwargs)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 149, in final_callback
+        if future.result() is not None:
+      File "C:\Python27\lib\site-packages\tornado\concurrent.py", line 215, in result
+        raise_exc_info(self._exc_info)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 215, in wrapper
+        result = func(*args, **kwargs)
+      File "E:/soheil/web_site_root/ieee/all_functions/tornado-get.py", line 945, in get
+        self.finish()
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 905, in finish
+        raise RuntimeError("finish() called twice")
+    RuntimeError: finish() called twice
+[W 160604 00:31:45 web:1908] 404 GET /images/glow-bottom.gif (127.0.0.1) 4.00ms
+[W 160604 00:31:45 web:1908] 404 GET /images/img0001.gif (127.0.0.1) 2.00ms
+[I 160604 00:32:18 web:1908] 200 GET / (127.0.0.1) 13.00ms
+[E 160604 00:32:18 web:1496] Uncaught exception GET / (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:15001', method='GET', uri='/', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate', 'Host': '127.0.0.1:15001', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:46.0) Gecko/20100101 Firefox/46.0', 'Connection': 'keep-alive', 'Cookie': 'bb_sessionhash=5cb5c3835384744d5eda42c002afc318; bb_lastvisit=1464870179; bb_lastactivity=0; _ga=GA1.1.1387388534.1464870170', 'Pragma': 'no-cache', 'Cache-Control': 'no-cache'})
+    Traceback (most recent call last):
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 1369, in _stack_context_handle_exception
+        raise_exc_info((type, value, traceback))
+      File "C:\Python27\lib\site-packages\tornado\stack_context.py", line 314, in wrapped
+        ret = fn(*args, **kwargs)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 149, in final_callback
+        if future.result() is not None:
+      File "C:\Python27\lib\site-packages\tornado\concurrent.py", line 215, in result
+        raise_exc_info(self._exc_info)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 215, in wrapper
+        result = func(*args, **kwargs)
+      File "E:/soheil/web_site_root/ieee/all_functions/tornado-get.py", line 945, in get
+        self.finish()
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 905, in finish
+        raise RuntimeError("finish() called twice")
+    RuntimeError: finish() called twice
+[W 160604 00:32:18 web:1908] 404 GET /images/glow-bottom.gif (127.0.0.1) 2.00ms
+[W 160604 00:32:18 web:1908] 404 GET /images/img0001.gif (127.0.0.1) 3.00ms
