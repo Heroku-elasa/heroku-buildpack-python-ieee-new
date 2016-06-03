@@ -1,10 +1,10 @@
 #!/bin/sh
 # Change this to the last working Libs (may be you have to try and error)
-
+mkdir  $OPENSHIFT_HOMEDIR/app-root/runtime/srv
 mkdir $OPENSHIFT_HOMEDIR/app-root/runtime/tmp/
 mkdir  $OPENSHIFT_HOMEDIR/app-root/runtime/srv/siege
 
-if [ ! -d "$OPENSHIFT_HOMEDIR/app-root/runtime/srv/siege/bin" ]; then
+if [ ! -d ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/siege/bin ]; then
 	cd $OPENSHIFT_HOMEDIR/app-root/runtime/tmp
 	rm -rf *
 
@@ -14,16 +14,16 @@ if [ ! -d "$OPENSHIFT_HOMEDIR/app-root/runtime/srv/siege/bin" ]; then
     cd siege-3.0.6/
 	
 	nohup sh -c "./configure --prefix=$OPENSHIFT_HOMEDIR/app-root/runtime/srv/siege"  > $OPENSHIFT_LOG_DIR/siege_install_conf.log /dev/null 2>&1 &  
-	tail -f $OPENSHIFT_LOG_DIR/siege_install_conf.log
+	bash -i -c 'tail -f $OPENSHIFT_LOG_DIR/siege_install_conf.log'
 	nohup sh -c "make && make install && make clean"  > $OPENSHIFT_LOG_DIR/siege_install.log 2>&1 &  
-	tail -f $OPENSHIFT_LOG_DIR/siege_install.log
+	bash -i -c 'tail -f $OPENSHIFT_LOG_DIR/siege_install.log'
 	
 
 fi
 
 mkdir  $OPENSHIFT_HOMEDIR/app-root/runtime/srv/sproxy
 
-if [ ! -d "$OPENSHIFT_HOMEDIR/app-root/runtime/srv/sproxy/bin" ]; then
+if [ ! -d ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/sproxy/bin ]; then
 	cd $OPENSHIFT_HOMEDIR/app-root/runtime/tmp
 	rm -rf *
 
@@ -32,9 +32,9 @@ if [ ! -d "$OPENSHIFT_HOMEDIR/app-root/runtime/srv/sproxy/bin" ]; then
 	tar xzvf  sproxy-latest.tar.gz
 	cd sproxy*
 	nohup sh -c "./configure --prefix=$OPENSHIFT_HOMEDIR/app-root/runtime/srv/sproxy"  > $OPENSHIFT_LOG_DIR/sproxy_install_conf.log /dev/null 2>&1 &  
-	tail -f $OPENSHIFT_LOG_DIR/sproxy_install_conf.log
+	bash -i -c 'tail -f $OPENSHIFT_LOG_DIR/sproxy_install_conf.log'
 	nohup sh -c "make && make install && make clean"  > $OPENSHIFT_LOG_DIR/sproxy_install.log 2>&1 &  
-	tail -f $OPENSHIFT_LOG_DIR/sproxy_install.log
+	bash -i -c 'tail -f $OPENSHIFT_LOG_DIR/sproxy_install.log'
 	
 fi
 cd $OPENSHIFT_HOMEDIR/app-root/runtime/tmp
@@ -51,6 +51,7 @@ echo "***  		  USAGE         ***"
 #$OPENSHIFT_HOMEDIR/app-root/runtime/srv/siege/bin/siege -u http://elasa2ir.tk -d1 -r200 -c25
 
 #$OPENSHIFT_HOMEDIR/app-root/runtime/srv/siege/bin/siege -u http://arianeng.ir 
+#$OPENSHIFT_HOMEDIR/app-root/runtime/srv/siege/bin/siege -u http://free-papers.elasa.ir -d1 -r200 -c25
 
 #$OPENSHIFT_HOMEDIR/app-root/runtime/srv/siege/bin/siege -u http://arianeng.ir -d1 -r20000 -c20
 #$OPENSHIFT_HOMEDIR/app-root/runtime/srv/siege/bin/siege -u http://shop.arianeng.ir -d1 -r200 -c15 --time=300H
@@ -58,7 +59,7 @@ echo "***  		  USAGE         ***"
 #$OPENSHIFT_HOMEDIR/app-root/runtime/srv/siege/bin/siege  --header='Host: arianeng.ir' --reps=500 --time=300H --concurrent=10 --quiet --delay=1 http://arianeng.ir
 
 #$OPENSHIFT_HOMEDIR/app-root/runtime/srv/siege/bin/siege  --header='Host: ponisha.ir' --reps=1000 --time=300H --concurrent=10 --quiet --delay=1 http://ponisha.ir 
-#$OPENSHIFT_HOMEDIR/app-root/runtime/srv/siege/bin/siege  --header='Host: ponisha.ir' --reps=1000 --time=300H --concurrent=1 --quiet --delay=0 http://bigfishs.tk/
+#$OPENSHIFT_HOMEDIR/app-root/runtime/srv/siege/bin/siege  --header='Host: free-papers.elasa.ir' --reps=1000 --time=300H --concurrent=1 --quiet --delay=0 http://free-papers.elasa.ir/
 
  ps ax | grep siege
 ###FROM https://usu.li/simulate-real-users-load-on-a-webserver-using-siege-and-sproxy/

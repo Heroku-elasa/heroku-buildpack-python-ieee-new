@@ -583,7 +583,7 @@ class IndexHandler(tornado.web.RequestHandler):
         address['link'] = ''
         done = 0
         donw_done=0
-        if url_to_download != '':
+        if url_to_download != '' and (url_to_download.startswith("http") or url_to_download.startswith("www.")) :
 
             self.core = import_mod(from_module='main_core', from_module2='core')
             if (re.findall('www', url_to_download) or re.findall('http://', url_to_download)) \
@@ -921,6 +921,8 @@ class IndexHandler(tornado.web.RequestHandler):
                 url = self.request.arguments.get('url')
                 # url2=self.get_query_argument(input)
                 link = self.request.query
+                req=self.request.uri;
+                link=req
                 url_watermark='';email='';
                 url = link.split('url=')[1]
                 if re.findall('wt_url=',url)or re.findall('email_adress=',url):
@@ -936,7 +938,7 @@ class IndexHandler(tornado.web.RequestHandler):
                 url_watermark = url_watermark.replace(' ', '%20')
 
                 # self.write(url + ', \nfriendly user!\n')
-                url = url.replace(' ', '%20')
+                url = url.replace(' ', '%20').replace("'","").replace("\\","")
 
             except:
                 url = []
@@ -1329,8 +1331,11 @@ def main(**kwargs):
     print log
     tornado.options.parse_command_line(log)
     application = tornado.web.Application([
-                                              # (r"/", MainHandler),
+                                              ('.*', IndexHandler),
                                               (r"/", IndexHandler),
+                                              # (r"/(\d+$)", IndexHandler),
+                                              # (r"/(\d{4})/(\d{2})/(\d{2})/([a-zA-Z\-0-9\.:,_]+)/?", IndexHandler),
+                                              # (r"/(\d+)$", IndexHandler),
                                               (r"/main", MainHandler),
                                               (r"/login", LoginHandler),
                                               (r"/download", DownloadHandler),
