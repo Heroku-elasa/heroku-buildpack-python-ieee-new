@@ -1,7 +1,0 @@
-#LWP-Cookies-2.0
-Set-Cookie3: REAK=g53t55t8415qotrp8rr3mfaei0; path="/"; domain=".uprm.edu"; path_spec; domain_dot; expires="2016-06-03 14:38:00Z"; version=0
-Set-Cookie3: ezproxy=TODCP8hL6hPaqV5; path="/"; domain=".uprm.edu"; path_spec; domain_dot; discard; version=0
-Set-Cookie3: CFID=794627907; path="/"; domain="library.uprm.edu"; path_spec; discard; version=0
-Set-Cookie3: CFTOKEN=71250665; path="/"; domain="library.uprm.edu"; path_spec; discard; version=0
-Set-Cookie3: IP_CLIENT=9031895; path="/"; domain="library.uprm.edu"; path_spec; discard; version=0
-Set-Cookie3: SITE_CLIENT=1988512; path="/"; domain="library.uprm.edu"; path_spec; discard; version=0

@@ -665,6 +665,8 @@ class IndexHandler(tornado.web.RequestHandler):
                                                             water_pdfdir=root+water_pdfdir,url_watermark=url_watermark,
                                                             proxy=proxy,user_pass=user_pass,cookies=cookies,log_out=log_out,ftp_upload=ftp_upload,html=html)
                         donw_done=1
+                        try:os.remove(cookies)
+                        except:pass
                         print 'adress in tornado downloaded line 368 tornado-get.py'
                         # try:path = url2Path(url=address['pdf_dw_li'])
                         path=address['wt_pdf_dir']
