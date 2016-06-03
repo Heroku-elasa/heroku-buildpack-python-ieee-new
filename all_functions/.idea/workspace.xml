@@ -121,7 +121,7 @@
         <entry file="file://$PROJECT_DIR$/tornado-get.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.46933332" vertical-offset="15736" max-vertical-offset="25993">
-              <caret line="940" column="56" selection-start-line="940" selection-start-column="56" selection-end-line="940" selection-end-column="56" />
+              <caret line="940" column="74" selection-start-line="940" selection-start-column="74" selection-end-line="940" selection-end-column="74" />
               <folding />
             </state>
           </provider>
@@ -1023,7 +1023,7 @@
     <entry file="file://$PROJECT_DIR$/tornado-get.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.46933332" vertical-offset="15736" max-vertical-offset="25993">
-          <caret line="940" column="56" selection-start-line="940" selection-start-column="56" selection-end-line="940" selection-end-column="56" />
+          <caret line="940" column="74" selection-start-line="940" selection-start-column="74" selection-end-line="940" selection-end-column="74" />
           <folding />
         </state>
       </provider>

@@ -938,7 +938,7 @@ class IndexHandler(tornado.web.RequestHandler):
                 url_watermark = url_watermark.replace(' ', '%20')
 
                 # self.write(url + ', \nfriendly user!\n')
-                url = url.replace(' ', '%20').replace("%22","")#.replace("\\","")
+                url = url.replace(' ', '%20').replace("%22","").replace('"',"")
 
             except:
                 url = []
