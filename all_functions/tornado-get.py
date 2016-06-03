@@ -939,7 +939,12 @@ class IndexHandler(tornado.web.RequestHandler):
 
                 # self.write(url + ', \nfriendly user!\n')
                 url = url.replace(' ', '%20').replace("%22","").replace('"',"")
-
+                if len(re.findall("http://",url))==0:
+                    if len(re.findall("http:/",url))!=0:
+                       url.replace("http:/","http://")
+                if len(re.findall("https://",url))==0:
+                    if len(re.findall("https:/",url))!=0:
+                       url.replace("https:/","https://")
             except:
                 url = []
                 host = (socket.gethostname())
