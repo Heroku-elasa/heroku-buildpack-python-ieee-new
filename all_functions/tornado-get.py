@@ -460,8 +460,8 @@ class IndexHandler(tornado.web.RequestHandler):
     #     else:
     #         self.set_status(404)
 
-    @tornado.web.asynchronous
-    @tornado.gen.engine
+    # @tornado.web.asynchronous
+    # @tornado.gen.engine
     def post(self):
     # client = Client("vvc2y7nAjkx6fUaJqQ94FT7nAdZCWQrA", "CJYFj8Sy3WwDL2sFfQXJnDdyXh7BqDU2")
     # client.places.search(41.773847,-72.672477, callback=self.on_search_complete)
