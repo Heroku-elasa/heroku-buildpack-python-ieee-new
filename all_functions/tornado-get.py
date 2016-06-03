@@ -1331,7 +1331,7 @@ def main(**kwargs):
     print log
     tornado.options.parse_command_line(log)
     application = tornado.web.Application([
-                                              ('.*', IndexHandler),
+                                              # (r'', IndexHandler),
                                               (r"/", IndexHandler),
                                               # (r"/(\d+$)", IndexHandler),
                                               # (r"/(\d{4})/(\d{2})/(\d{2})/([a-zA-Z\-0-9\.:,_]+)/?", IndexHandler),
@@ -1340,7 +1340,7 @@ def main(**kwargs):
                                               (r"/login", LoginHandler),
                                               (r"/download", DownloadHandler),
                                               (r"/reverse/(\d+)", ReverseHandler),
-                                              (r"/index/", IndexHandler),
+                                              (r"/index/.*", IndexHandler),
                                               (r"/add/", AddHandler),
                                               (r"/" + index, IndexHandler),
                                               (r'/api', ApiHandler),
