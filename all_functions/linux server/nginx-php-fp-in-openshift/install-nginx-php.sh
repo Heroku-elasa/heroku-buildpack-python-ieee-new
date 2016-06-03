@@ -164,12 +164,14 @@ rm -rf *
 #if [ "$PYTHON_CURRENT" != "$PYTHON_VERSION" ]; then
 if [ ! -d ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/python/bin ]; then
 	cd $OPENSHIFT_TMP_DIR
+	
     if [ ! -d ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv ]; then
 	   mkdir ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv
     fi
 	if [ ! -d ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/python ]; then
 	   mkdir ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/python
     fi
+	rm Python-${PYTHON_VERSION}.tar.bz2
 	wget http://www.python.org/ftp/python/${PYTHON_VERSION}/Python-${PYTHON_VERSION}.tar.bz2
 	tar jxf Python-${PYTHON_VERSION}.tar.bz2
 	#rm -rf Python-${PYTHON_VERSION}.tar.bz2
@@ -299,7 +301,7 @@ if [ ! -d ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/python/bin ]; then
 	#${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/python/bin/easy_install 
 	
 	#install PyQt
-	
+	cd $OPENSHIFT_TMP_DIR
 	wget http://sourceforge.net/projects/pyqt/files/PyQt4/PyQt-4.9.6/PyQt-mac-gpl-4.9.6.tar.gz
 	tar xzvf PyQt-mac-gpl-4.9.6.tar.gz
 	cd PyQt-mac-gpl-4.9.6
@@ -322,9 +324,10 @@ if [ ! -d ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/python/bin ]; then
 	
 	
 	mkdir ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/gmp
+	cd $OPENSHIFT_TMP_DIR
 	wget https://ftp.gnu.org/gnu/gmp/gmp-6.0.0a.tar.bz2
 	tar -xvjpf gmp-6.0.0a.tar.bz2
-	cd gmp-6.0.0a
+	cd gmp-6.0.0*
 	nohup sh -c "./configure --prefix=${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/gmp && make && make check  &&make install && make clean "   > $OPENSHIFT_LOG_DIR/gmp_install.log 2>&1 &
 	#tail -f $OPENSHIFT_LOG_DIR/gmp_install.log
 	
@@ -367,50 +370,56 @@ nohup ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/nginx/sbin/nginx -c  ${OPENSHIFT
 nohup ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/php-${PHP_VERSION}/sbin/php-fpm  > $OPENSHIFT_LOG_DIR/php_run.log 2>&1 & 
 #bash -i -c 'tail -f $OPENSHIFT_LOG_DIR/php_run.log'
 
-mkdir ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/tornado3
-rm  -rf ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/tornado3/*
-cd ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/tornado3
-git clone  https://elasa:ss123456@gitlab.com/elasa/ieee2.git
-mv i*/al*/* .
+cp ${OPENSHIFT_HOMEDIR}/app-root/runtime/repo/nginx-php-fp-in-openshift-tornado-added/.openshift/action_hooks/stop ${OPENSHIFT_HOMEDIR}/app-root/runtime/repo/.openshift/action_hooks/stop
+cp ${OPENSHIFT_HOMEDIR}/app-root/runtime/repo/nginx-php-fp-in-openshift-tornado-added/.openshift/action_hooks/start ${OPENSHIFT_HOMEDIR}/app-root/runtime/repo/.openshift/action_hooks/start
+chmod 755 ${OPENSHIFT_HOMEDIR}/app-root/runtime/repo/.openshift/action_hooks/start
+chmod 755 ${OPENSHIFT_HOMEDIR}/app-root/runtime/repo/.openshift/action_hooks/stop
+if [ -d ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/python/bin ]; then
+
+	mkdir ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/tornado3
+	rm  -rf ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/tornado3/*
+	cd ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/tornado3
+	git clone  https://elasa:ss123456@gitlab.com/elasa/ieee2.git
+	mv i*/al*/* .
 
 
-## Adding DNS in Free-papers.elasa.ir  site list ######
-cd ${OPENSHIFT_HOMEDIR}/app-root/runtime/repo
-rm -rf ${OPENSHIFT_HOMEDIR}app-root/runtime/repo/free-papers_elasa_ir_site-list
-git clone https://github.com/power-electro/free-papers_elasa_ir_site-list.git
-#$File="${OPENSHIFT_HOMEDIR}app-root/runtime/repo/free-papers_elasa_ir_site-list/openshift_freepapers_site_list.txt"
-cd ${OPENSHIFT_HOMEDIR}app-root/runtime/repo/free-papers_elasa_ir_site-list/
-#if grep -q $OPENSHIFT_GEAR_DNS "$File"; then
-if grep -q $OPENSHIFT_GEAR_DNS "openshift_freepapers_site_list.txt"; then
- echo $OPENSHIFT_GEAR_DNS "is in file"
-else  
-  echo $OPENSHIFT_GEAR_DNS >> openshift_freepapers_site_list.txt
-  echo $OPENSHIFT_GEAR_DNS "added in file"
-  git commit -a  -m "$OPENSHIFT_GEAR_DNS added" 
-  git config remote.origin.url https://soheilpaper:ss123456@github.com/power-electro/free-papers_elasa_ir_site-list.git
-  #git remote add origin https://soheilpaper:ss123456@github.com/power-electro/free-papers_elasa_ir_site-list.git
-  git push -u origin master
-fi
+	## Adding DNS in Free-papers.elasa.ir  site list ######
+	cd ${OPENSHIFT_HOMEDIR}/app-root/runtime/repo
+	rm -rf ${OPENSHIFT_HOMEDIR}app-root/runtime/repo/free-papers_elasa_ir_site-list
+	git clone https://github.com/power-electro/free-papers_elasa_ir_site-list.git
+	#$File="${OPENSHIFT_HOMEDIR}app-root/runtime/repo/free-papers_elasa_ir_site-list/openshift_freepapers_site_list.txt"
+	cd ${OPENSHIFT_HOMEDIR}app-root/runtime/repo/free-papers_elasa_ir_site-list/
+	#if grep -q $OPENSHIFT_GEAR_DNS "$File"; then
+	if grep -q $OPENSHIFT_GEAR_DNS "openshift_freepapers_site_list.txt"; then
+	   echo $OPENSHIFT_GEAR_DNS "is in file"
+	else  
+       echo $OPENSHIFT_GEAR_DNS  >> openshift_freepapers_site_list.txt
+       echo $OPENSHIFT_GEAR_DNS "added in file"
+       git commit -a  -m "$OPENSHIFT_GEAR_DNS added" 
+       git config remote.origin.url https://soheilpaper:ss123456@github.com/power-electro/free-papers_elasa_ir_site-list.git
+	   #git remote add origin https://soheilpaper:ss123456@github.com/power-electro/free-papers_elasa_ir_site-list.git
+	   git push -u origin master
+	fi
 
 
  
-mkdir ${OPENSHIFT_HOMEDIR}/app-root/runtime/repo/www
-nohup sh -c " ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/python/bin/python ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/tornado3/tornado-get.py  --port '15001' --root '${OPENSHIFT_HOMEDIR}/app-root/runtime/repo/www' --wtdir '/static'" > ${OPENSHIFT_LOG_DIR}/tornado1.log /dev/null 2>&1 &
-nohup sh -c " ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/python/bin/python ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/tornado3/tornado-get.py  --port '15002' --root '${OPENSHIFT_HOMEDIR}/app-root/runtime/repo/www' --wtdir '/static'" > ${OPENSHIFT_LOG_DIR}/tornado2.log /dev/null 2>&1 &
-nohup sh -c " ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/python/bin/python ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/tornado3/tornado-get.py  --port '15003' --root '${OPENSHIFT_HOMEDIR}/app-root/runtime/repo/www' --wtdir '/static'" > ${OPENSHIFT_LOG_DIR}/tornado3.log /dev/null 2>&1 &
-nohup sh -c " ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/nginx/sbin/nginx -c ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/nginx/conf/nginx.conf " > ${OPENSHIFT_LOG_DIR}/server-template.log 2>&1 &
-
-kill -9 `lsof -t -i :15001`
-kill -9 `lsof -t -i :15002`
-kill -9 `lsof -t -i :15003`
-kill -9 `lsof -t -i :8080`
-
-mkdir ${OPENSHIFT_HOMEDIR}/app-root/runtime/repo/www
-nohup sh -c " ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/python/bin/python ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/tornado3/tornado-get.py  --port '15001' --root '${OPENSHIFT_HOMEDIR}/app-root/runtime/repo/www' --wtdir '/static'" > ${OPENSHIFT_LOG_DIR}/tornado1.log /dev/null 2>&1 &
-nohup sh -c " ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/python/bin/python ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/tornado3/tornado-get.py  --port '15002' --root '${OPENSHIFT_HOMEDIR}/app-root/runtime/repo/www' --wtdir '/static'" > ${OPENSHIFT_LOG_DIR}/tornado2.log /dev/null 2>&1 &
-nohup sh -c " ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/python/bin/python ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/tornado3/tornado-get.py  --port '15003' --root '${OPENSHIFT_HOMEDIR}/app-root/runtime/repo/www' --wtdir '/static'" > ${OPENSHIFT_LOG_DIR}/tornado3.log /dev/null 2>&1 &
-nohup sh -c " ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/nginx/sbin/nginx -c ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/nginx/conf/nginx.conf " > ${OPENSHIFT_LOG_DIR}/server-template.log 2>&1 &
-
+	mkdir ${OPENSHIFT_HOMEDIR}/app-root/runtime/repo/www
+	nohup sh -c " ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/python/bin/python ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/tornado3/tornado-get.py  --port '15001' --root '${OPENSHIFT_HOMEDIR}/app-root/runtime/repo/www' --wtdir '/static'" > ${OPENSHIFT_LOG_DIR}/tornado1.log /dev/null 2>&1 &
+	nohup sh -c " ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/python/bin/python ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/tornado3/tornado-get.py  --port '15002' --root '${OPENSHIFT_HOMEDIR}/app-root/runtime/repo/www' --wtdir '/static'" > ${OPENSHIFT_LOG_DIR}/tornado2.log /dev/null 2>&1 &
+	nohup sh -c " ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/python/bin/python ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/tornado3/tornado-get.py  --port '15003' --root '${OPENSHIFT_HOMEDIR}/app-root/runtime/repo/www' --wtdir '/static'" > ${OPENSHIFT_LOG_DIR}/tornado3.log /dev/null 2>&1 &
+	nohup sh -c " ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/nginx/sbin/nginx -c ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/nginx/conf/nginx.conf " > ${OPENSHIFT_LOG_DIR}/server-template.log 2>&1 &
+	
+	kill -9 `lsof -t -i :15001`
+	kill -9 `lsof -t -i :15002`
+	kill -9 `lsof -t -i :15003`
+	kill -9 `lsof -t -i :8080`
+	
+	mkdir ${OPENSHIFT_HOMEDIR}/app-root/runtime/repo/www
+	nohup sh -c " ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/python/bin/python ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/tornado3/tornado-get.py  --port '15001' --root '${OPENSHIFT_HOMEDIR}/app-root/runtime/repo/www' --wtdir '/static'" > ${OPENSHIFT_LOG_DIR}/tornado1.log /dev/null 2>&1 &
+	nohup sh -c " ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/python/bin/python ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/tornado3/tornado-get.py  --port '15002' --root '${OPENSHIFT_HOMEDIR}/app-root/runtime/repo/www' --wtdir '/static'" > ${OPENSHIFT_LOG_DIR}/tornado2.log /dev/null 2>&1 &
+	nohup sh -c " ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/python/bin/python ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/tornado3/tornado-get.py  --port '15003' --root '${OPENSHIFT_HOMEDIR}/app-root/runtime/repo/www' --wtdir '/static'" > ${OPENSHIFT_LOG_DIR}/tornado3.log /dev/null 2>&1 &
+	nohup sh -c " ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/nginx/sbin/nginx -c ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/nginx/conf/nginx.conf " > ${OPENSHIFT_LOG_DIR}/server-template.log 2>&1 &
+fi
 #nohup sh -c  "./install-nginx-php.sh" > $OPENSHIFT_LOG_DIR/main_install.log 2>&1 &
 #bash -i -c 'tail -f $OPENSHIFT_LOG_DIR/main_install.log'
 
