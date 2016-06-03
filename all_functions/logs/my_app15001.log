@@ -3835,3 +3835,51 @@
       File "C:\Python27\lib\site-packages\tornado\web.py", line 905, in finish
         raise RuntimeError("finish() called twice")
     RuntimeError: finish() called twice
+[E 160603 20:34:17 web:1496] Uncaught exception POST /index (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:15001', method='POST', uri='/index', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Content-Length': '167', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate', 'Host': '127.0.0.1:15001', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:46.0) Gecko/20100101 Firefox/46.0', 'Connection': 'keep-alive', 'Referer': 'http://127.0.0.1:15001/index', 'Cookie': 'bb_sessionhash=5cb5c3835384744d5eda42c002afc318; bb_lastvisit=1464870179; bb_lastactivity=0; _ga=GA1.1.1387388534.1464870170', 'Content-Type': 'application/x-www-form-urlencoded'})
+    Traceback (most recent call last):
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 1369, in _stack_context_handle_exception
+        raise_exc_info((type, value, traceback))
+      File "C:\Python27\lib\site-packages\tornado\stack_context.py", line 314, in wrapped
+        ret = fn(*args, **kwargs)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 149, in final_callback
+        if future.result() is not None:
+      File "C:\Python27\lib\site-packages\tornado\concurrent.py", line 215, in result
+        raise_exc_info(self._exc_info)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 215, in wrapper
+        result = func(*args, **kwargs)
+      File "E:/soheil/web_site_root/ieee/all_functions/tornado-get.py", line 521, in post
+        result = tornado.gen.Task(self.download(details))
+      File "E:/soheil/web_site_root/ieee/all_functions/tornado-get.py", line 592, in download
+        water_pdfdir=root+water_pdfdir,)
+      File "E:/soheil/web_site_root/ieee/all_functions\main_core.py", line 169, in valid_link
+        responce= self.Find_Link(self.url,pdfdir=pdf_download_location,water_pdfdir=wat_locatton,cookies=cookies).find_link(self.pr,self.us_pss)
+      File "E:/soheil/web_site_root/ieee/all_functions\find_link.py", line 262, in find_link
+        res = self.new_module.LINK(url).get_pdf_link(proxy, user_pass)
+      File "E:/soheil/web_site_root/ieee/all_functions/configs/Links_site/www_sciencedirect_com.py", line 3403, in get_pdf_link
+        [html, cookies, links, title, form, time_diff, log_out] = twil_find_pdf_link(url)
+      File "E:/soheil/web_site_root/ieee/all_functions/configs/Links_site/www_sciencedirect_com.py", line 1268, in twil_find_pdf_link
+        os.remove(cookies)
+    WindowsError: [Error 2] The system cannot find the file specified: 'E:/soheil/web_site_root/ieee/all_functions/configs/sites_proxy/www.sciencedirect.com/cookies/C7aKS.txt'
+[E 160603 20:34:17 web:1908] 500 POST /index (127.0.0.1) 170937.00ms
+[I 160603 20:43:12 web:1908] 200 GET /index (127.0.0.1) 24.00ms
+[E 160603 20:43:12 web:1496] Uncaught exception GET /index (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:15001', method='GET', uri='/index', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Connection': 'keep-alive', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate', 'Cookie': 'bb_sessionhash=5cb5c3835384744d5eda42c002afc318; bb_lastvisit=1464870179; bb_lastactivity=0; _ga=GA1.1.1387388534.1464870170', 'Host': '127.0.0.1:15001', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:46.0) Gecko/20100101 Firefox/46.0'})
+    Traceback (most recent call last):
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 1369, in _stack_context_handle_exception
+        raise_exc_info((type, value, traceback))
+      File "C:\Python27\lib\site-packages\tornado\stack_context.py", line 314, in wrapped
+        ret = fn(*args, **kwargs)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 149, in final_callback
+        if future.result() is not None:
+      File "C:\Python27\lib\site-packages\tornado\concurrent.py", line 215, in result
+        raise_exc_info(self._exc_info)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 215, in wrapper
+        result = func(*args, **kwargs)
+      File "E:/soheil/web_site_root/ieee/all_functions/tornado-get.py", line 945, in get
+        self.finish()
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 905, in finish
+        raise RuntimeError("finish() called twice")
+    RuntimeError: finish() called twice
+[I 160603 20:50:23 connectionpool:203] Starting new HTTP connection (1): consultaremota.upb.edu.co
+[I 160603 20:50:24 cache:61] Stored response in cache

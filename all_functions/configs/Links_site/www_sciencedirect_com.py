@@ -1265,7 +1265,10 @@ def twil_find_pdf_link(link):
                 [html, cookies, links, title, times, log_out] = tw.twill_find_link_robobrowser(link, form[k])
         # else:
         except:
-            os.remove(cookies)
+            try:
+                os.remove(cookies)
+            except:
+                pass
             html=[];cookies='';links=[]; title=''; times=0; log_out=[]
 
         if links != [] and  (html !=[] and html !=''):
@@ -1888,6 +1891,10 @@ class twill:
         # t_brw.follow_link(t2)
 
         try:
+            t_brw._browser.addheaders = []
+            del twil__headers[-1]
+            twil__headers += [('Referer', ez_link)]
+            t_brw._browser.addheaderst=twil__headers
             try:
                 t2=t_brw.find_link('Download PDF')
                 t_brw.follow_link(t2)
@@ -2512,7 +2519,7 @@ class twill:
                 t_com.save_cookies(self.cookies)
                 # t_brw.load_cookies(self.cookies)
 
-        except:pass
+        except:content=''
         if re.findall(self.log_done, content):
                     # label .find
                     print ("You are logged on to the Public Access to Court Electronic "
@@ -2632,12 +2639,18 @@ class twill:
 
                     # t2=t_brw.find_link('Download PDF')
                     # t_brw.follow_link(t2)
+                    # print '@@@@@@@@@@@@@ html0 download by twill is @@@@@@@@@@@@\n'
+                    [links, title] = link_tag_find(html, base_url)
                     if self.log_out['METODE'] == '1+d':
                             try:
                                 socket=import_mod(from_module='socket')
                                 socket.setdefaulttimeout(3000)
-                                # twil__headers=t_brw._browser.addheaders
+                                twil__headers=t_brw._browser.addheaders
                                 # t_brw.set_agent_string(twil__headers)
+                                t_brw._browser.addheaders = []
+                                del twil__headers[-1]
+                                twil__headers += [('Referer', ez_link)]
+                                t_brw._browser.addheaderst=twil__headers
                                 t_brw.load_cookies(self.cookies)
                                 t2=t_brw.find_link('Download PDF')
                                 t_brw.follow_link(t2)
@@ -2662,8 +2675,7 @@ class twill:
                     else:
                         html0=''
                     # t_brw.load_cookies(self.cookies)
-                    print '@@@@@@@@@@@@@ html0 download by twill is @@@@@@@@@@@@\n'+html0
-                    [links, title] = link_tag_find(html, base_url)
+
                     if len(links[0])!=1:links3=[];links3=links[0];links=[];links.append(links3)
 
                     # if not (links == '' or links == []):
@@ -2725,16 +2737,23 @@ class twill:
                             except:
                                 links = links1
                         if self.log_out['METODE'] == '1+d'  and  (html0[:4]!='%PDF' or len ( re.findall('%%EOF', html ))==0 ):
+                            twil__headers=t_brw._browser.addheaders
+                            t_brw._browser.addheaders = []
+                            del twil__headers[-1]
+                            twil__headers += [('Referer', ez_link)]
+                            t_brw._browser.addheaderst=twil__headers
                             try:
                                 socket=import_mod(from_module='socket')
+                                # t_brw.reload()
                                 t2=t_brw.find_link('Download PDF')
                                 t_brw.follow_link(t2)
                                 time_diff = str(round(time.time() - time0, 2))
                                 html=t_brw.result.page
                             except:
+
                                 try:
-                                    twil__headers=t_brw._browser.addheaders
-                                    t_brw.set_agent_string(twil__headers)
+                                    # twil__headers=t_brw._browser.addheaders
+                                    # t_brw.set_agent_string(twil__headers)
                                     t_brw.load_cookies(self.cookies)
                                     t_brw.follow_link(links1)
                                     if len(links[0])!=1:pass
@@ -2913,7 +2932,8 @@ def link_tag_find( html, base_url):
                                          make_url=False)
     except:
         title = ''
-
+    try:print links
+    except:links=[]
     if links==[] or title=='' or title==[]:
         if title == '' or title == []:
             title = LINK().find_my_tilte(data=html, start_dash='<title>', end_dash='</title>', make_url=False)
