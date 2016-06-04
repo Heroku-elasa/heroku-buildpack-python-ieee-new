@@ -451,7 +451,7 @@ class download(tornado.web.UIModule):
 class IndexHandler(tornado.web.RequestHandler):
 
     def write_error(self, status_code, **kwargs):
-        self.write("Gosh darnit, user! You caused a %d error." % status_code)
+        self.write("Please Try in another time Error code is :" % status_code)
 
     # def head(self, frob_id):
     #     frob = retrieve_from_db(frob_id)
