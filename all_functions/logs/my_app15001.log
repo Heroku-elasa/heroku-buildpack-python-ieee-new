@@ -5271,3 +5271,22 @@
       File "C:\Python27\lib\site-packages\tornado\web.py", line 905, in finish
         raise RuntimeError("finish() called twice")
     RuntimeError: finish() called twice
+[I 160604 11:09:30 web:1908] 304 GET /index (127.0.0.1) 101.00ms
+[E 160604 11:09:30 web:1496] Uncaught exception GET /index (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:15001', method='GET', uri='/index', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate', 'Host': '127.0.0.1:15001', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:46.0) Gecko/20100101 Firefox/46.0', 'Connection': 'keep-alive', 'Cookie': 'bb_lastvisit=1464870179; bb_lastactivity=0; _ga=GA1.1.1387388534.1464870170', 'If-None-Match': '"9b66f22feb21283cf718b78b7e3852e3d4e9f2c2"'})
+    Traceback (most recent call last):
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 1369, in _stack_context_handle_exception
+        raise_exc_info((type, value, traceback))
+      File "C:\Python27\lib\site-packages\tornado\stack_context.py", line 314, in wrapped
+        ret = fn(*args, **kwargs)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 149, in final_callback
+        if future.result() is not None:
+      File "C:\Python27\lib\site-packages\tornado\concurrent.py", line 215, in result
+        raise_exc_info(self._exc_info)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 215, in wrapper
+        result = func(*args, **kwargs)
+      File "E:/soheil/web_site_root/ieee/all_functions/tornado-get.py", line 954, in get
+        self.finish()
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 905, in finish
+        raise RuntimeError("finish() called twice")
+    RuntimeError: finish() called twice

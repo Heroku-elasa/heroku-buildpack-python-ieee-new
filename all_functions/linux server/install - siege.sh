@@ -51,7 +51,8 @@ echo "***  		  USAGE         ***"
 #$OPENSHIFT_HOMEDIR/app-root/runtime/srv/siege/bin/siege -u http://elasa2ir.tk -d1 -r200 -c25
 
 #$OPENSHIFT_HOMEDIR/app-root/runtime/srv/siege/bin/siege -u http://arianeng.ir 
-#$OPENSHIFT_HOMEDIR/app-root/runtime/srv/siege/bin/siege -u http://free-papers.elasa.ir -d1 -r200 -c25
+#$OPENSHIFT_HOMEDIR/app-root/runtime/srv/siege/bin/siege -u http://free-papers.elasa.ir/index/url=%22http://dl.acm.org/citation.cfm?id=99977.100000&coll=DL&dl=ACM%22 -d1 -r200 -c25
+#$OPENSHIFT_HOMEDIR/app-root/runtime/srv/siege/bin/siege -u http://diy2-elasa2.rhcloud.com/index/url="http://dl.acm.org/citation.cfm?id=99977.100000&coll=DL&dl=ACM" -d1 -r225 -c25
 
 #$OPENSHIFT_HOMEDIR/app-root/runtime/srv/siege/bin/siege -u http://arianeng.ir -d1 -r20000 -c20
 #$OPENSHIFT_HOMEDIR/app-root/runtime/srv/siege/bin/siege -u http://shop.arianeng.ir -d1 -r200 -c15 --time=300H
