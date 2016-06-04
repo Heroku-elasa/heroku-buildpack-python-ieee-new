@@ -1,5 +1,5 @@
-None:None   For Site:www.sciencedirect.com Rs_Time 2.3
 193.140.229.249:3128   For Site:www.sciencedirect.com Rs_Time 10.45
+None:None   For Site:www.sciencedirect.com Rs_Time 18.95
 202.202.121.138:3128   For Site:www.sciencedirect.com Rs_Time 25.05
 202.112.114.27:3128   For Site:www.sciencedirect.com Rs_Time 88.76
 159.226.170.79:8080    For Site:www.sciencedirect.com Rs_Time 343.86

@@ -2898,10 +2898,11 @@ class twill:
                     if links == '' or links == []:
                         links1 = t_brw.find_link('Download PDF')
                     else:
-                        try:
-                            links1 = t_brw.find_link('FullText PDF')
-                            links1.absolute_url = links
-                        except:links1=[]
+                        if links1 ==[] or links1=='':
+                            try:
+                                links1 = t_brw.find_link('FullText PDF')
+                                links1.absolute_url = links
+                            except:links1=[]
 
                     if links1 == '' or links1 == [] or links1 == None and (links==[] or links ==''):
                         links = LINK().find_my_tilte(data=html, start_dash='<a id="pdfLink" href="', end_dash='"',
@@ -3113,7 +3114,7 @@ def link_tag_find01( html, base_url):
     return links, title
 
 
-def link_tag_find( html, base_url):
+def link_tag_find( html, base_url,links=[]):
     try:
         # title=LINK().find_my_tilte(data=html,start_dash='<h1 class="article-title"',end_dash='1>',make_url=False)
         title = LINK().find_my_tilte(data=html, start_dash='type="<title>', end_dash='</title>',
@@ -3121,15 +3122,17 @@ def link_tag_find( html, base_url):
     except:
         title = ''
 
-    urls = re.findall('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', html)
-    links_1 = []
-    try:
-        for url in urls:
-            if url.endswith('.pdf') and url.split(base_url)[0]=='':
-                links_1.append(url)
-                print url
-    except:
-        pass
+    if links==[] :
+        urls = re.findall('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', html)
+        links_1 = []
+        try:
+            for url in urls:
+                if url.endswith('.pdf') and url.split(base_url)[0]=='':
+                    links_1.append(url)
+                    print url
+        except:
+            pass
+
     if len(links_1)==1:links=links_1[0]
     elif len(links_1)>=1:links=links_1
     else :links=''

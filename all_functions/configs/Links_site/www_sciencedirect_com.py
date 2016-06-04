@@ -2645,14 +2645,21 @@ class twill:
                     # t2=t_brw.find_link('Download PDF')
                     # t_brw.follow_link(t2)
                     # print '@@@@@@@@@@@@@ html0 download by twill is @@@@@@@@@@@@\n'
-                    [links, title] = link_tag_find(html, base_url)
-                    if links == '' or links == []:
-                        links1 = t_brw.find_link('Download PDF')
-                    else:
+
+                    # if links == '' or links == []:
+                    if True:
+                        # links1 = t_brw.find_link('Download PDF')
+
+                    # else:
                         try:
                             links1 = t_brw.find_link('Download PDF')
-                            links1.absolute_url = links
-                        except:links1=[]
+                            # links1.absolute_url = links
+                            links=links1.absolute_url
+                        except:links1=[];links=[]
+                    if links==[]:
+                        [links, title] = link_tag_find(html, base_url)
+                    else:
+                        [links, title] = link_tag_find(html, base_url,links)
                     twil__headers=t_brw._browser.addheaders
                     del twil__headers[-1]
                     twil__headers += [('Referer', ez_link)]
@@ -2730,10 +2737,11 @@ class twill:
                     if links == '' or links == []:
                         links1 = t_brw.find_link('Download PDF')
                     else:
-                        try:
-                            links1 = t_brw.find_link('Download PDF')
-                            links1.absolute_url = links
-                        except:links1=[]
+                        if links1 ==[] or links1=='':
+                            try:
+                                links1 = t_brw.find_link('Download PDF')
+                                links1.absolute_url = links
+                            except:links1=[]
 
                     if (links1 == '' or links1 == [] or links1 == None  )and (links==[] or links==""):
                         # links = LINK().find_my_tilte(data=html, start_dash='<a id="pdfLink" href="', end_dash='"',
@@ -2807,9 +2815,9 @@ class twill:
                                         except:
                                             pass
                                     return [], self.cookies, [], [], 0, self.log_out
-                        twil__headers=t_brw._browser.addheaders
-                        del twil__headers[-1]
-                        twil__headers += [('Referer', ez_link)]
+                        # twil__headers=t_brw._browser.addheaders
+                        # del twil__headers[-1]
+                        # twil__headers += [('Referer', ez_link)]
                         self.log_out = {
                             'log_out': "%(Log_out)s" % form_data,
                             'METODE': form_data['METODE'],
@@ -2960,12 +2968,13 @@ def link_tag_find01( html, base_url):
     return links, title
 
 
-def link_tag_find( html, base_url):
+def link_tag_find( html, base_url,links=[]):
     try:
         # title=LINK().find_my_tilte(data=html,start_dash='<h1 class="article-title"',end_dash='1>',make_url=False)
         title = LINK().find_my_tilte(data=html, start_dash='type="<title>', end_dash='</title>',
                                      make_url=False)
-        links = LINK().soap_my(data=html, tag='id="pdfLink"', attr='a', href='href', url=base_url)
+        if links==[] :
+                links = LINK().soap_my(data=html, tag='id="pdfLink"', attr='a', href='href', url=base_url)
         if title==[]:
             title = LINK().find_my_tilte(data=html, start_dash='<title>', end_dash='</title>',
                                          make_url=False)
