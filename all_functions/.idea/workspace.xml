@@ -43,7 +43,7 @@
     <SUITE FILE_PATH="coverage/all_functions$wxpython_test.coverage" NAME="wxpython_test Coverage Results" MODIFIED="1456567036113" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/linux server/python GUI" />
     <SUITE FILE_PATH="coverage/all_functions$exa2_show_possibilities.coverage" NAME="exa2_show-possibilities Coverage Results" MODIFIED="1456585412973" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/linux server/python GUI/Video capture/VideoCapture-0.9-5/Examples" />
     <SUITE FILE_PATH="coverage/all_functions$PIL_test___Copy__2_.coverage" NAME="PIL_test - Copy (2) Coverage Results" MODIFIED="1456413297246" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/linux server/python GUI" />
-    <SUITE FILE_PATH="coverage/all_functions$tornado_get.coverage" NAME="tornado-get Coverage Results" MODIFIED="1465077550361" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/all_functions$tornado_get.coverage" NAME="tornado-get Coverage Results" MODIFIED="1465078674353" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/all_functions$main_core.coverage" NAME="main_core Coverage Results" MODIFIED="1442267579981" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/all_functions$check_proxy.coverage" NAME="check_proxy Coverage Results" MODIFIED="1442087830909" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/attack" />
     <SUITE FILE_PATH="coverage/all_functions$wxpython_screenshut.coverage" NAME="wxpython_screenshut Coverage Results" MODIFIED="1456585338991" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/linux server/python GUI" />
@@ -77,11 +77,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="www_sciencedirect_com.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="www_sciencedirect_com.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/configs/Links_site/www_sciencedirect_com.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.24" vertical-offset="48950" max-vertical-offset="77673">
-              <caret line="2903" column="28" selection-start-line="2896" selection-start-column="12" selection-end-line="2903" selection-end-column="28" />
+            <state vertical-scroll-proportion="0.32" vertical-offset="48797" max-vertical-offset="77673">
+              <caret line="2887" column="83" selection-start-line="2887" selection-start-column="83" selection-end-line="2887" selection-end-column="83" />
               <folding />
             </state>
           </provider>
@@ -90,18 +90,18 @@
       <file leaf-file-name="dl_acm_org.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/configs/Links_site/dl_acm_org.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="50314" max-vertical-offset="80104">
-              <caret line="2979" column="79" selection-start-line="2979" selection-start-column="79" selection-end-line="2979" selection-end-column="79" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="51283" max-vertical-offset="80104">
+              <caret line="3033" column="83" selection-start-line="3033" selection-start-column="83" selection-end-line="3033" selection-end-column="83" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ieeexplore_ieee_org.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ieeexplore_ieee_org.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/configs/Links_site/ieeexplore_ieee_org.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7733333" vertical-offset="45389" max-vertical-offset="74545">
-              <caret line="2697" column="28" selection-start-line="2697" selection-start-column="28" selection-end-line="2697" selection-end-column="28" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="45389" max-vertical-offset="74545">
+              <caret line="2669" column="83" selection-start-line="2669" selection-start-column="83" selection-end-line="2669" selection-end-column="83" />
               <folding />
             </state>
           </provider>
@@ -209,9 +209,9 @@
         <option value="$PROJECT_DIR$/configs/Links_site/onlinelibrary_wiley_com.py" />
         <option value="$PROJECT_DIR$/configs/Links_site/www_springer_com.py" />
         <option value="$PROJECT_DIR$/tornado-get.py" />
-        <option value="$PROJECT_DIR$/configs/Links_site/www_sciencedirect_com.py" />
-        <option value="$PROJECT_DIR$/configs/Links_site/dl_acm_org.py" />
         <option value="$PROJECT_DIR$/configs/Links_site/ieeexplore_ieee_org.py" />
+        <option value="$PROJECT_DIR$/configs/Links_site/dl_acm_org.py" />
+        <option value="$PROJECT_DIR$/configs/Links_site/www_sciencedirect_com.py" />
       </list>
     </option>
   </component>
@@ -1059,26 +1059,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/configs/Links_site/www_sciencedirect_com.py">
+    <entry file="file://$PROJECT_DIR$/configs/Links_site/ieeexplore_ieee_org.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.24" vertical-offset="48950" max-vertical-offset="77673">
-          <caret line="2903" column="28" selection-start-line="2896" selection-start-column="12" selection-end-line="2903" selection-end-column="28" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="45389" max-vertical-offset="74545">
+          <caret line="2669" column="83" selection-start-line="2669" selection-start-column="83" selection-end-line="2669" selection-end-column="83" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/configs/Links_site/dl_acm_org.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="50314" max-vertical-offset="80104">
-          <caret line="2979" column="79" selection-start-line="2979" selection-start-column="79" selection-end-line="2979" selection-end-column="79" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="51283" max-vertical-offset="80104">
+          <caret line="3033" column="83" selection-start-line="3033" selection-start-column="83" selection-end-line="3033" selection-end-column="83" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/configs/Links_site/ieeexplore_ieee_org.py">
+    <entry file="file://$PROJECT_DIR$/configs/Links_site/www_sciencedirect_com.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7733333" vertical-offset="45389" max-vertical-offset="74545">
-          <caret line="2697" column="28" selection-start-line="2697" selection-start-column="28" selection-end-line="2697" selection-end-column="28" />
+        <state vertical-scroll-proportion="0.32" vertical-offset="48797" max-vertical-offset="77673">
+          <caret line="2887" column="83" selection-start-line="2887" selection-start-column="83" selection-end-line="2887" selection-end-column="83" />
           <folding />
         </state>
       </provider>

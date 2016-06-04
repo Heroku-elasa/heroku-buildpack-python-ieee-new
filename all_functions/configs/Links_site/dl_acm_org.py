@@ -3031,7 +3031,7 @@ class twill:
                         #     time.sleep(10)
                         try:t_brw.go(self.log_out['log_out'])
                         except:os.remove(self.cookies)
-                        if    (html0[:4]=='%PDF' or len ( re.findall('%%EOF', html ))!=0):html=html0
+                        if    (html0[:4]=='%PDF' or len ( re.findall('%%EOF', html0 ))!=0):html=html0
                         else:html0=''
                         return html0, self.cookies, links, title, time_diff, self.log_out
                     else:
@@ -3042,7 +3042,7 @@ class twill:
         else:
             if    (html[:4]=='%PDF' or len ( re.findall('%%EOF', html ))!=0):
                 try:
-                    t_brw.go(self.log_out['log_out'])
+                    t_brw.go(self.log_out['log_out']);os.remove(self.cookies)
                 except:
                     try:
                         os.remove(self.cookies)
