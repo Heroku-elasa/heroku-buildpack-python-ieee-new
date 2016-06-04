@@ -13,8 +13,8 @@ if [ ! -d ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/siege/bin ]; then
     tar -xvpzf siege-3.0.6.tar.gz
     cd siege-3.0.6/
 	
-	nohup sh -c "./configure --prefix=$OPENSHIFT_HOMEDIR/app-root/runtime/srv/siege"  > $OPENSHIFT_LOG_DIR/siege_install_conf.log /dev/null 2>&1 &  
-	bash -i -c 'tail -f $OPENSHIFT_LOG_DIR/siege_install_conf.log'
+	./configure --prefix=$OPENSHIFT_HOMEDIR/app-root/runtime/srv/siege #"  > $OPENSHIFT_LOG_DIR/siege_install_conf.log /dev/null 2>&1 &  
+	#bash -i -c 'tail -f $OPENSHIFT_LOG_DIR/siege_install_conf.log'
 	nohup sh -c "make && make install && make clean"  > $OPENSHIFT_LOG_DIR/siege_install.log 2>&1 &  
 	bash -i -c 'tail -f $OPENSHIFT_LOG_DIR/siege_install.log'
 	
@@ -31,8 +31,8 @@ if [ ! -d ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/sproxy/bin ]; then
 	wget http://download.joedog.org/sproxy/sproxy-latest.tar.gz
 	tar xzvf  sproxy-latest.tar.gz
 	cd sproxy*
-	nohup sh -c "./configure --prefix=$OPENSHIFT_HOMEDIR/app-root/runtime/srv/sproxy"  > $OPENSHIFT_LOG_DIR/sproxy_install_conf.log /dev/null 2>&1 &  
-	bash -i -c 'tail -f $OPENSHIFT_LOG_DIR/sproxy_install_conf.log'
+	./configure --prefix=$OPENSHIFT_HOMEDIR/app-root/runtime/srv/sproxy #"  > $OPENSHIFT_LOG_DIR/sproxy_install_conf.log /dev/null 2>&1 &  
+	#bash -i -c 'tail -f $OPENSHIFT_LOG_DIR/sproxy_install_conf.log'
 	nohup sh -c "make && make install && make clean"  > $OPENSHIFT_LOG_DIR/sproxy_install.log 2>&1 &  
 	bash -i -c 'tail -f $OPENSHIFT_LOG_DIR/sproxy_install.log'
 	
@@ -51,8 +51,10 @@ echo "***  		  USAGE         ***"
 #$OPENSHIFT_HOMEDIR/app-root/runtime/srv/siege/bin/siege -u http://elasa2ir.tk -d1 -r200 -c25
 
 #$OPENSHIFT_HOMEDIR/app-root/runtime/srv/siege/bin/siege -u http://arianeng.ir 
-#$OPENSHIFT_HOMEDIR/app-root/runtime/srv/siege/bin/siege -u http://free-papers.elasa.ir/index/url=%22http://dl.acm.org/citation.cfm?id=99977.100000&coll=DL&dl=ACM%22 -d1 -r200 -c25
-#$OPENSHIFT_HOMEDIR/app-root/runtime/srv/siege/bin/siege -u http://free-papers.elasa.ir/index/url="http://dl.acm.org/citation.cfm?id=99977.100000&coll=DL&dl=ACM" -d1 -r225 -c25
+#$OPENSHIFT_HOMEDIR/app-root/runtime/srv/siege/bin/siege -u http://free-papers.elasa.ir/ -d1 -r200 -c25
+#$OPENSHIFT_HOMEDIR/app-root/runtime/srv/siege/bin/siege -u http://free-papers.elasa.ir/index/url=%22http://www.sciencedirect.com/science/article/pii/S1364032116301538%22 -d1 -r225 -c25
+#$OPENSHIFT_HOMEDIR/app-root/runtime/srv/siege/bin/siege -u http://diy-tornado4ss.rhcloud.com/index/url=%22http://dl.acm.org/citation.cfm?id=99977.100000&coll=DL&dl=ACM%22 -d1 -r15 -c25
+
 
 #$OPENSHIFT_HOMEDIR/app-root/runtime/srv/siege/bin/siege -u http://arianeng.ir -d1 -r20000 -c20
 #$OPENSHIFT_HOMEDIR/app-root/runtime/srv/siege/bin/siege -u http://shop.arianeng.ir -d1 -r200 -c15 --time=300H
