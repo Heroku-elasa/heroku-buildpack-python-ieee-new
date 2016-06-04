@@ -941,8 +941,10 @@ class IndexHandler(tornado.web.RequestHandler):
                 url = url.replace(' ', '%20').replace("%22","").replace('"',"")
                 if len(re.findall(str("http://"),url))==0:
                     if len(re.findall(str("http:/"),url))!=0:
+                       print "Url is :"+url
                        url.replace("http:/","http://")
-                if len(re.findall(str("http://"),url))==0:
+                       print "Url NEW is :"+url
+                if len(re.findall(str("https://"),url))==0:
                     if len(re.findall(str("https:/"),url))!=0:
                        url.replace("https:/","https://")
             except:
