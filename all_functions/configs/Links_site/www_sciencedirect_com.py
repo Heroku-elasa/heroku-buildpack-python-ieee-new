@@ -1273,6 +1273,11 @@ def twil_find_pdf_link(link):
 
         if links != [] and  (html !=[] and html !=''):
             break
+        else:
+            try:
+                os.remove(cookies)
+            except:
+                pass
     os.chdir(fo)
     return html, cookies, links, title, form[k], times, log_out
 
