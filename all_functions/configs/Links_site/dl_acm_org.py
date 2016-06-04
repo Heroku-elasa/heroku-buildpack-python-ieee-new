@@ -2977,7 +2977,7 @@ class twill:
                         title = LINK().soap_my(data=html, tag='class="article-title"', attr='h1', href='', url=base_url)
                     if title == '' or title == []:
                         title = LINK().soap_my(data=html, tag='<title>', attr='', href='', url=base_url)
-                    if    (html0[:4]=='%PDF' or len ( re.findall('%%EOF', html ))!=0):html=html0
+                    if    (html0[:4]=='%PDF' or len ( re.findall('%%EOF', html0 ))!=0):html=html0
 
                     if links != [] and self.log_out['METODE'] == '1+d+d' and  (html0[:4]!='%PDF' or html0[-7:]!='%%EOF' ):
 
@@ -3040,6 +3040,14 @@ class twill:
         if links == '' or links == [] or links == None or html=='':
             return html, self.cookies, [], [], 0, self.log_out
         else:
+            if    (html[:4]=='%PDF' or len ( re.findall('%%EOF', html ))!=0):
+                try:
+                    t_brw.go(self.log_out['log_out'])
+                except:
+                    try:
+                        os.remove(self.cookies)
+                    except:
+                        pass
             return html, self.cookies, links, title, time_diff, self.log_out
 
 def link_tag_find0( html, base_url):
