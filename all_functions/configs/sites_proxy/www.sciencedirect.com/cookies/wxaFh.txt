@@ -1,0 +1,3 @@
+#LWP-Cookies-2.0
+Set-Cookie3: REAK=1proi75gmh42otkgo9jsrjbgd0; path="/"; domain=".uprm.edu"; path_spec; domain_dot; expires="2016-06-04 21:22:49Z"; version=0
+Set-Cookie3: ezproxy=jzT6Tqz6ygpOCRT; path="/"; domain=".uprm.edu"; path_spec; domain_dot; discard; version=0

@@ -2641,15 +2641,35 @@ class twill:
                     # t_brw.follow_link(t2)
                     # print '@@@@@@@@@@@@@ html0 download by twill is @@@@@@@@@@@@\n'
                     [links, title] = link_tag_find(html, base_url)
+                    if links == '' or links == []:
+                        links1 = t_brw.find_link('Download PDF')
+                    else:
+                        try:
+                            links1 = t_brw.find_link('Download PDF')
+                            links1.absolute_url = links
+                        except:links1=[]
+                    twil__headers=t_brw._browser.addheaders
+                    del twil__headers[-1]
+                    twil__headers += [('Referer', ez_link)]
+                    t_brw._browser.addheaders = []
+                    t_brw._browser.addheaderst=twil__headers
+                    self.log_out = {
+                            'log_out': "%(Log_out)s" % form_data,
+                            'METODE': form_data['METODE'],
+                            'ez_link': ez_link,
+                            # 'headers': t_brw._browser.addheaders,
+                            'headers': twil__headers,
+                            'pdf_link': links1}
                     if self.log_out['METODE'] == '1+d':
                             try:
                                 socket=import_mod(from_module='socket')
-                                socket.setdefaulttimeout(3000)
-                                twil__headers=t_brw._browser.addheaders
+                                socket.setdefaulttimeout(300)
+                                # twil__headers=t_brw._browser.addheaders
                                 # t_brw.set_agent_string(twil__headers)
+                                # t_brw._browser.addheaders = []
+                                # del twil__headers[-1]
+                                # twil__headers += [('Referer', ez_link)]
                                 t_brw._browser.addheaders = []
-                                del twil__headers[-1]
-                                twil__headers += [('Referer', ez_link)]
                                 t_brw._browser.addheaderst=twil__headers
                                 t_brw.load_cookies(self.cookies)
                                 t2=t_brw.find_link('Download PDF')
@@ -2658,9 +2678,10 @@ class twill:
                                 html0=t_brw.result.page
                             except:
                                 try:
-                                    twil__headers=t_brw._browser.addheaders
-                                    t_brw.set_agent_string(twil__headers)
+                                    t_brw._browser.addheaders = []
+                                    t_brw._browser.addheaderst=twil__headers
                                     t_brw.load_cookies(self.cookies)
+                                    t_brw.go(ez_link)
                                     t_brw.follow_link(links1)
                                     if len(links[0])!=1:pass
                                     else:t_brw.follow_link(links1)
@@ -2721,7 +2742,7 @@ class twill:
                         # links =LINK().soap_my(data=html, tag="Download PDF", attr='a', href='href',url=base_url)
                         # if links==[] or links=='':
                         #     links=LINK().soap_my(data=html,tag='pdfLink',attr='a',href='href',url=base_url)
-                        if self.log_out['METODE'] == '1+d' and  (html0[:4]!='%PDF' or html0[-7:]!='%%EOF' ) :
+                        if self.log_out['METODE'] == '1+d' and  (html0[:4]!='%PDF' or len (re.findall('%%EOF',html0))==0 ) :
                             try:
                                 t_brw.load_cookies(self.cookies)
                                 t_brw.go(links)
@@ -2736,11 +2757,13 @@ class twill:
                                 links = links1.absolute_url
                             except:
                                 links = links1
-                        if self.log_out['METODE'] == '1+d'  and  (html0[:4]!='%PDF' or len ( re.findall('%%EOF', html ))==0 ):
-                            twil__headers=t_brw._browser.addheaders
+                        if self.log_out['METODE'] == '1+d'  and  (html0[:4]!='%PDF' or len ( re.findall('%%EOF', html0 ))==0 ):
+                            # twil__headers=t_brw._browser.addheaders
+                            # t_brw._browser.addheaders = []
+                            # del twil__headers[-1]
+                            # twil__headers += [('Referer', ez_link)]
+                            # t_brw._browser.addheaderst=twil__headers
                             t_brw._browser.addheaders = []
-                            del twil__headers[-1]
-                            twil__headers += [('Referer', ez_link)]
                             t_brw._browser.addheaderst=twil__headers
                             try:
                                 socket=import_mod(from_module='socket')
@@ -2765,10 +2788,20 @@ class twill:
                                     html = t_brw.result.page
                                 except:
                                     print 'error in downloading'
+                                    self.log_out = {
+                                        'log_out': "%(Log_out)s" % form_data,
+                                        'METODE': form_data['METODE'],
+                                        'ez_link': ez_link,
+                                        # 'headers': t_brw._browser.addheaders,
+                                        'headers': twil__headers,
+                                        'pdf_link': links1}
+                                    try:t_brw.go(self.log_out['log_out'])
+                                    except:
+                                        try:
+                                            os.remove(self.cookies)
+                                        except:
+                                            pass
                                     return [], self.cookies, [], [], 0, self.log_out
-
-
-
                         twil__headers=t_brw._browser.addheaders
                         del twil__headers[-1]
                         twil__headers += [('Referer', ez_link)]
@@ -2779,6 +2812,7 @@ class twill:
                             # 'headers': t_brw._browser.addheaders,
                             'headers': twil__headers,
                             'pdf_link': links1}
+                        # if  (html0[:4]=='%PDF' or len ( re.findall('%%EOF', html ))!=0 ):
 
 
                     if title == '' or title == []:

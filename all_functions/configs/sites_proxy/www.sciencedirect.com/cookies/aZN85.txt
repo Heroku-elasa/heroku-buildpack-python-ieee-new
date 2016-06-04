@@ -1,0 +1,4 @@
+#LWP-Cookies-2.0
+Set-Cookie3: ezproxy=gAxhEutvgrjiDOM; path="/"; domain=".just.edu.jo"; path_spec; domain_dot; discard; version=0
+Set-Cookie3: REAK=38ugc3g7m2p4t8e0faqao6bq01; path="/"; domain=".uprm.edu"; path_spec; domain_dot; expires="2016-06-04 21:49:46Z"; version=0
+Set-Cookie3: ezproxy=zXhf0t8h0TIsZW0; path="/"; domain=".uprm.edu"; path_spec; domain_dot; discard; version=0

@@ -2829,6 +2829,14 @@ class twill:
 
                     # t2=t_brw.find_link('Download PDF')
                     # t_brw.follow_link(t2)
+                    [links, title] = link_tag_find(html, base_url)
+                    if links == '' or links == []:
+                        links1 = t_brw.find_link('Download PDF')
+                    else:
+                        try:
+                            links1 = t_brw.find_link('Download PDF')
+                            links1.absolute_url = links
+                        except:links1=[]
                     if self.log_out['METODE'] == '1+d':
                             try:
                                 socket=import_mod(from_module='socket')
@@ -2845,6 +2853,7 @@ class twill:
                                     twil__headers=t_brw._browser.addheaders
                                     t_brw.set_agent_string(twil__headers)
                                     t_brw.load_cookies(self.cookies)
+                                    t_brw.go(ez_link)
                                     t_brw.follow_link(links1)
                                     if len(links[0])!=1:pass
                                     else:t_brw.follow_link(links1)
@@ -2859,8 +2868,8 @@ class twill:
                     else:
                         html0=''
                     # t_brw.load_cookies(self.cookies)
-                    print '@@@@@@@@@@@@@ html0 download by twill is @@@@@@@@@@@@\n'+html0
-                    [links, title] = link_tag_find(html, base_url)
+                    # print '@@@@@@@@@@@@@ html0 download by twill is @@@@@@@@@@@@\n'+html0
+                    # [links, title] = link_tag_find(html, base_url)
                     if len(links[0])!=1:links3=[];links3=links[0];links=[];links.append(links3)
 
                     # if not (links == '' or links == []):
@@ -2905,7 +2914,7 @@ class twill:
                         # links =LINK().soap_my(data=html, tag="Download PDF", attr='a', href='href',url=base_url)
                         # if links==[] or links=='':
                         #     links=LINK().soap_my(data=html,tag='pdfLink',attr='a',href='href',url=base_url)
-                        if self.log_out['METODE'] == '1+d' and  (html0[:4]!='%PDF' or html0[-7:]!='%%EOF' ) :
+                        if self.log_out['METODE'] == '1+d' and  (html0[:4]!='%PDF' or len (re.findall('%%EOF',html0))==0 ) :
                             try:
                                 t_brw.load_cookies(self.cookies)
                                 t_brw.go(links)
@@ -2919,7 +2928,7 @@ class twill:
                             links = links1.absolute_url
                         except:
                             links = links1
-                        if self.log_out['METODE'] == '1+d'  and  (html0[:4]!='%PDF' or len ( re.findall('%%EOF', html ))==0 ):
+                        if self.log_out['METODE'] == '1+d'  and  (html0[:4]!='%PDF' or len ( re.findall('%%EOF', html0 ))==0 ):
                             try:
                                 socket=import_mod(from_module='socket')
                                 t2=t_brw.find_link('Download PDF')
@@ -2941,6 +2950,12 @@ class twill:
                                     html = t_brw.result.page
                                 except:
                                     print 'error in downloading'
+                                    try:t_brw.go(self.log_out['log_out'])
+                                    except:
+                                        try:
+                                            os.remove(self.cookies)
+                                        except:
+                                            pass
                                     return [], self.cookies, [], [], 0, self.log_out
 
 
