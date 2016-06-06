@@ -411,6 +411,7 @@ class PDF_File:
             # if len(frontpage)<= 4194304 :# 4*1024*1024=4194304 4MB
             #     doc = self.pdf_cheker(localName.pdf_Folder_filename)
             if no_watermarker==0:
+                print "no_watermarker==0"
                 if url_watermark!='':
                     # os.remove(location+'/'+localName.filename)
                     pdf_size=(os.path.getsize(localName.pdf_Folder_filename))
