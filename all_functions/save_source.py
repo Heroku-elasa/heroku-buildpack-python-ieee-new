@@ -334,7 +334,7 @@ class PDF_File:
             outputStream = open(Wm_f, 'wb')
             # outputStream=StringIO.StringIO()
             # output.write(open(Wm_f, 'wb'))
-            import sys;sys.setrecursionlimit(5500)
+            import sys;sys.setrecursionlimit(11500)
             output.write(outputStream)
             outputStream.close()
         except:
@@ -404,8 +404,10 @@ class PDF_File:
             try:
                 if not os.path.isfile(frontpage):
                     pdf = self.file_save(frontpage, location, localName.filename)
+                    print "we have saved html to pdf file"
             except:
                 pdf = self.file_save(frontpage, location, localName.filename)
+                print "we have saved html to pdf file"
             # if len(frontpage)<= 4194304 :# 4*1024*1024=4194304 4MB
             #     doc = self.pdf_cheker(localName.pdf_Folder_filename)
             if no_watermarker==0:
