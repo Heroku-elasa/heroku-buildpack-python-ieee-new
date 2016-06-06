@@ -361,7 +361,10 @@ class PDF_File:
                 pdf_dw_li = localName.pdf_Folder_filename
                 pdf_dw_Wr_li = ''
         except:
-            if not os.path.isfile(frontpage):
+            try:
+                if not os.path.isfile(frontpage):
+                    pdf = self.file_save(frontpage, location, localName.filename)
+            except:
                 pdf = self.file_save(frontpage, location, localName.filename)
             # if len(frontpage)<= 4194304 :# 4*1024*1024=4194304 4MB
             #     doc = self.pdf_cheker(localName.pdf_Folder_filename)
