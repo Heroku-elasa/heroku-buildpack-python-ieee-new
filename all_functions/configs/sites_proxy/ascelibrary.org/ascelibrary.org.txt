@@ -1,0 +1,7 @@
+None:None  For Site:dl.acm.org Rs_Time 4.62
+#143.89.225.246:3128 For Site: dl.acm.org Rs_Time  62.1
+#140.137.62.184:9064 For Site: dl.acm.org Rs_Time 12.34
+#222.66.115.233:80 For Site: dl.acm.org Rs_Time 12.34
+#151.236.14.48:80@ user:pass   For Site:dl.acm.org Rs_Time 2.14
+#202.202.0.163:3128 For Site: dl.acm.org Rs_Time 2.4
+

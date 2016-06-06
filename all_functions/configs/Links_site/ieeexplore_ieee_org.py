@@ -2645,8 +2645,10 @@ class twill:
                             try:
                                 t_brw.go(links)
                             except:
-                                os.remove(self.cookies);
-                                return [], self.cookies, [], [], 0, self.log_out
+
+                                try:t_brw.go(self.log_out['log_out'])
+                                except:pass
+                                os.remove(self.cookies);return [], self.cookies, [], [], 0, self.log_out
 
                         # content = t_com.show()
                         html0=t_brw.result.page

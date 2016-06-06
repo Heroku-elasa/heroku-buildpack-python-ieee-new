@@ -1,0 +1,6 @@
+#LWP-Cookies-2.0
+Set-Cookie3: REAK=cu7v5jfuj0nj0bcja7usl7v535; path="/"; domain=".uprm.edu"; path_spec; domain_dot; expires="2016-06-05 23:02:12Z"; version=0
+Set-Cookie3: ezproxy=upttMDmmLLOXcLo; path="/"; domain=".uprm.edu"; path_spec; domain_dot; discard; version=0
+Set-Cookie3: JSESSIONID=aaaO_ycSeX2c97FIdkruv; path="/"; domain="library.uprm.edu"; path_spec; discard; version=0
+Set-Cookie3: MAID="BWzwj96xcfFiaXXY5v1L3g=="; path="/"; domain="library.uprm.edu"; path_spec; expires="2017-04-01 22:42:15Z"; version=0
+Set-Cookie3: SERVER="WZ6myaEXBLEcZv1pIhVX+g=="; path="/"; domain="library.uprm.edu"; path_spec; discard; version=0

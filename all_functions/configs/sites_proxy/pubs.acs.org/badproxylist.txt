@@ -1,0 +1,4 @@
+151.236.14.48:80  For Site:dl.acm.orgRs_Time 21.12 Success_try:0 Failed_try:2
+202.202.0.163:3128   For Site:dl.acm.org Rs_Time 18.91
+222.66.115.233:80   For Site:dl.acm.org Rs_Time 3.34
+None:None  For Site  For Site:dl.acm.org Rs_Time 6.61

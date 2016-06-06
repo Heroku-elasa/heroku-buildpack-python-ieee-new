@@ -3030,7 +3030,10 @@ class twill:
                         #     print '@@@@@@@@@@@@@ MECAHNIZM download by twill is @@@@@@@@@@@@'
                         #     time.sleep(10)
                         try:t_brw.go(self.log_out['log_out'])
-                        except:os.remove(self.cookies)
+                        except:
+                            try:t_brw.go(self.log_out['log_out'])
+                            except:pass
+                            os.remove(self.cookies);return [], self.cookies, [], [], 0, self.log_out
                         if    (html0[:4]=='%PDF' or len ( re.findall('%%EOF', html0 ))!=0):html=html0
                         else:html0=''
                         return html0, self.cookies, links, title, time_diff, self.log_out

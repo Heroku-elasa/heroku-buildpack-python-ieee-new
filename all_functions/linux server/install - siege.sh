@@ -54,6 +54,7 @@ echo "***  		  USAGE         ***"
 #$OPENSHIFT_HOMEDIR/app-root/runtime/srv/siege/bin/siege -u http://free-papers.elasa.ir/ -d1 -r200 -c25
 #$OPENSHIFT_HOMEDIR/app-root/runtime/srv/siege/bin/siege -u http://free-papers.elasa.ir/index/url=%22http://www.sciencedirect.com/science/article/pii/S1364032116301538%22 -d1 -r225 -c25
 #$OPENSHIFT_HOMEDIR/app-root/runtime/srv/siege/bin/siege -u http://diy-tornado4ss.rhcloud.com/index/url=%22http://dl.acm.org/citation.cfm?id=99977.100000&coll=DL&dl=ACM%22 -d1 -r15 -c25
+#$OPENSHIFT_HOMEDIR/app-root/runtime/srv/siege/bin/siege -u http://diy-phantomjs4so.rhcloud.com/index/url=%22http://dl.acm.org/citation.cfm?id=99977.100000&coll=DL&dl=ACM%22 -d1 -r15 -c25
 
 
 #$OPENSHIFT_HOMEDIR/app-root/runtime/srv/siege/bin/siege -u http://arianeng.ir -d1 -r20000 -c20

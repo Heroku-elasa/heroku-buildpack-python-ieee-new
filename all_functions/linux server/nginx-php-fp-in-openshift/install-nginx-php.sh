@@ -2,7 +2,8 @@
 
 PYTHON_VERSION="2.7.4"
 PCRE_VERSION="8.35"
-NGINX_VERSION="1.6.0"
+#NGINX_VERSION="1.6.0"
+NGINX_VERSION="1.10.1"
 MEMCACHED_VERSION="1.4.15"
 ZLIB_VERSION="1.2.8"
 #PHP_VERSION="5.5.9"
@@ -86,9 +87,12 @@ rm -rf $OPENSHIFT_TMP_DIR/*
 
 if [ ! -d ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/nginx/sbin ]; then	
 	cd $OPENSHIFT_TMP_DIR
+	#git clone https://github.com/cep21/healthcheck_nginx_upstreams.git
+	git clone https://github.com/gnosek/nginx-upstream-fair.git
+	
 	wget http://nginx.org/download/nginx-${NGINX_VERSION}.tar.gz
 	tar zxf nginx-${NGINX_VERSION}.tar.gz
-	rm zxf nginx-${NGINX_VERSION}.tar.gz
+	rm  nginx-${NGINX_VERSION}.tar.gz
 	wget http://ftp.cs.stanford.edu/pub/exim/pcre/pcre-${PCRE_VERSION}.tar.gz
 	#wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-${PCRE_VERSION}.tar.gz
 	tar zxf pcre-${PCRE_VERSION}.tar.gz
@@ -119,7 +123,10 @@ if [ ! -d ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/nginx/sbin ]; then
 	   --with-mail \
 	   --with-mail_ssl_module \
 	   --with-file-aio\
-	   --with-ipv6	&& make && make install && make clean   # " > $OPENSHIFT_LOG_DIR/Nginx_config.log 2>&1 & 
+	   --with-ipv6\
+	   --add-module=$OPENSHIFT_TMP_DIR/nginx-upstream-fair
+	   #--add-module=$OPENSHIFT_TMP_DIR/healthcheck_nginx_upstreams\
+	   make && make install && make clean   # " > $OPENSHIFT_LOG_DIR/Nginx_config.log 2>&1 & 
 	#bash -i -c 'tail -f $OPENSHIFT_LOG_DIR/Nginx_config.log'
 	
 	#nohup sh -c "make && make install && make clean"  > $OPENSHIFT_LOG_DIR/nginx_install.log /dev/null 2>&1 &  
