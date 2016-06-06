@@ -223,13 +223,16 @@ class PDF_File:
         if wt1 == '':
             try:wt1 = self.watermark_file(self.Watermarked_PDF_Dir+"/" + "watermarker_slow_"+url_watermark2+".pdf", url_watermark,center_text=True)
             except:print "erro in writing new watermarker files"
-            if not os.path.isfile(self.Watermarked_PDF_Dir+"/" + "watermarker_slow_"+url_watermark2+".pdf"):
-                wt1 = self.watermark_file(self.Watermarked_PDF_Dir+"/" + "watermarker_slow_"+url_watermark2+".pdf", url_watermark,center_text=True)
-            else:
-                wt1=self.Watermarked_PDF_Dir+"/" + "watermarker_slow_"+url_watermark2+".pdf"
-                sa=file(wt1, 'rb')
-                watermark1 = PdfFileReader(sa)
-                wtt = watermark1.getPage(0)
+            try:
+                if not os.path.isfile(self.Watermarked_PDF_Dir+"/" + "watermarker_slow_"+url_watermark2+".pdf"):
+                    wt1 = self.watermark_file(self.Watermarked_PDF_Dir+"/" + "watermarker_slow_"+url_watermark2+".pdf", url_watermark,center_text=True)
+                else:
+                    wt1=self.Watermarked_PDF_Dir+"/" + "watermarker_slow_"+url_watermark2+".pdf"
+                    sa=file(wt1, 'rb')
+                    watermark1 = PdfFileReader(sa)
+                    wtt = watermark1.getPage(0)
+            except:
+                print 'if not os.path.isfile(self.Watermarked_PDF_Dir+"/" + "watermarker_slow_"+url_watermark2+".pdf"): is not working'
 
         else:
             watermark1 = PdfFileReader(wt1)
