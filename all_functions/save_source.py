@@ -370,7 +370,7 @@ class PDF_File:
 if __name__ == '__main__':
     #HOW TO USE:
     url = "http://127.0.0.1/1752-153X-2-5%20-%20Copy.pdf"
-    url = "http://127.0.0.1/75414.pdf"
+    url = "http://127.0.0.1/1-s2.0-S0142061516305774-main.pdf"
     # url='http://ieeexplore.ieee.org/xpl/articleDetails.jsp?tp=&arnumber=6180383&queryText%3Dpower' #91 KB
     url_watermark="http://test"
     file_name = PDF_File().filename(url)
@@ -378,7 +378,7 @@ if __name__ == '__main__':
         html=os.environ['OPENSHIFT_HOMEDIR']+"app-root/runtime/srv/tornado3/PDF_Files/1-s2.0-S0142061516305774-main.pdf"
     except:
         CurrentDir = os.path.dirname(os.path.realpath(__file__)).replace('\\','/')
-        html=CurrentDir+"/static/watermarker_fast.pdf"
+        html=CurrentDir+"/PDF_Files/1-s2.0-S0142061516305774-main.pdf"
     # pdf='E:/Program Files win 7 2nd/Ampps/www/cgi-bin2/wrapper work/all_functions/PDF_Files/1752-153X-2-5%20-%20Copy.pdf'
     # from  download_mozilla import web
     # html=web().download(url)
