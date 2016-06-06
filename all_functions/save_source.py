@@ -375,7 +375,7 @@ if __name__ == '__main__':
     url_watermark="http://test"
     file_name = PDF_File().filename(url)
     try:
-        html=os.environ['OPENSHIFT_HOMEDIR']+"app-root/runtime/srv/tornado3/PDF_Files/75414.pdf"
+        html=os.environ['OPENSHIFT_HOMEDIR']+"app-root/runtime/srv/tornado3/PDF_Files/1-s2.0-S0142061516305774-main.pdf"
     except:
         CurrentDir = os.path.dirname(os.path.realpath(__file__)).replace('\\','/')
         html=CurrentDir+"/static/watermarker_fast.pdf"
