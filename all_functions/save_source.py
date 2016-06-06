@@ -26,7 +26,7 @@ class PDF_File:
 
         CurrentDir = os.path.dirname(os.path.realpath(__file__)).replace('\\','/')
         if PDF_Dir=='':PDF_Dir=CurrentDir+'/PDF_Files'
-        if Watermarked_PDF_Files_Dir=='':CurrentDir+'/Watermarked_PDF_Files'
+        if Watermarked_PDF_Files_Dir=='':Watermarked_PDF_Files_Dir=CurrentDir+'/static'
         self.Watermarked_PDF_Dir=Watermarked_PDF_Files_Dir
         self.PDF_Files_Dir=PDF_Dir
         self.url = url
@@ -64,6 +64,7 @@ class PDF_File:
             self.pdf_Folder_filename = self.PDF_Files_Dir+"/" + self.filename
             self.W_pdf_Folder_filename =self.Watermarked_PDF_Dir+"/" + self.filename
             self.chdir=CurrentDir
+            self.url_watermark="http://free-papers.elasa.ir"
         else:
             self.filename = urlparse.urlsplit(pdf_url).path.split('\\')[-1]
             self.chdir=CurrentDir
@@ -71,7 +72,7 @@ class PDF_File:
             # self.W_pdf_Folder_filename = CurrentDir + "/"+self.Watermarked_PDF_Dir+"/" + self.filename
             self.pdf_Folder_filename =self.PDF_Files_Dir+"/" + self.filename
             self.W_pdf_Folder_filename =self.Watermarked_PDF_Dir+"/" + self.filename
-
+            self.url_watermark="http://free-papers.elasa.ir"
 
         return self
 
@@ -369,11 +370,15 @@ class PDF_File:
 if __name__ == '__main__':
     #HOW TO USE:
     url = "http://127.0.0.1/1752-153X-2-5%20-%20Copy.pdf"
-    url = "http://127.0.0.1/1752-153X-2-5.pdf"
-    url='http://ieeexplore.ieee.org/xpl/articleDetails.jsp?tp=&arnumber=6180383&queryText%3Dpower' #91 KB
+    url = "http://127.0.0.1/75414.pdf"
+    # url='http://ieeexplore.ieee.org/xpl/articleDetails.jsp?tp=&arnumber=6180383&queryText%3Dpower' #91 KB
     url_watermark="http://test"
     file_name = PDF_File().filename(url)
-    html=os.environ['OPENSHIFT_HOMEDIR']+"app-root/runtime/srv/tornado3/PDF_Files/75414.pdf"
+    try:
+        html=os.environ['OPENSHIFT_HOMEDIR']+"app-root/runtime/srv/tornado3/PDF_Files/75414.pdf"
+    except:
+        CurrentDir = os.path.dirname(os.path.realpath(__file__)).replace('\\','/')
+        html=CurrentDir+"/static/watermarker_fast.pdf"
     # pdf='E:/Program Files win 7 2nd/Ampps/www/cgi-bin2/wrapper work/all_functions/PDF_Files/1752-153X-2-5%20-%20Copy.pdf'
     # from  download_mozilla import web
     # html=web().download(url)
