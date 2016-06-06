@@ -176,12 +176,50 @@ class PDF_File:
 
             # cpdf -stamp-on watermark.pdf in.pdf -o out.pdf
             import subprocess
-            home_dir=os.environ['OPENSHIFT_HOMEDIR']
-            st=home_dir+'/app-root/runtime/srv/cpdf/cpdf -stamp-on '+wt1+ " "+pathname+' -o '+Wm_f
+
+            try:
+                home_dir=os.environ['OPENSHIFT_HOMEDIR']
+                st=home_dir+'/app-root/runtime/srv/cpdf/cpdf -stamp-on '+wt1+ " "+pathname+' -o '+Wm_f
+            except:
+                home_dir='C:/Users/Hamed/IGC/Desktop/CNC DIY/cpdfdemo/cpdf.exe'
+                st=home_dir+' -stamp-on '+wt1+ " "+pathname+' -o '+Wm_f
+
             awk_sort = subprocess.Popen( [st ], stdin= subprocess.PIPE, stdout= subprocess.PIPE,shell=True)
             awk_sort.wait()
             output = awk_sort.communicate()[0]
             print output.rstrip()
+        return Wm_f
+
+    def pdf_watermark_fast_first_page(self, pathname, Wm_f, wt1='',**kwargs):
+        try :
+            url_watermark=kwargs['url_wtm']
+        except:pass
+        from pyPdf import PdfFileWriter, PdfFileReader
+        import StringIO
+        from reportlab.pdfgen import canvas
+        from reportlab.lib.pagesizes import letter
+
+        packet = StringIO.StringIO()
+        # create a new PDF with Reportlab
+        can = canvas.Canvas(packet, pagesize=letter)
+        can.drawString(10, 100, url_watermark)
+        can.save()
+
+        #move to the beginning of the StringIO buffer
+        packet.seek(0)
+        new_pdf = PdfFileReader(packet)
+        # read your existing PDF
+        existing_pdf = PdfFileReader(file(pathname, "rb"))
+        output = PdfFileWriter()
+        # add the "watermark" (which is the new pdf) on the existing page
+        page = existing_pdf.getPage(0)
+        page.mergePage(new_pdf.getPage(0))
+        output.addPage(page)
+        # finally, write "output" to a real file
+        outputStream = file(Wm_f, "wb")
+        # import sys;sys.setrecursionlimit(11500)
+        output.write(outputStream)
+        outputStream.close()
         return Wm_f
 
     def pdf_watermark_fast(self, pathname, Wm_f, wt1='',**kwargs):
@@ -296,6 +334,7 @@ class PDF_File:
             outputStream = open(Wm_f, 'wb')
             # outputStream=StringIO.StringIO()
             # output.write(open(Wm_f, 'wb'))
+            import sys;sys.setrecursionlimit(5500)
             output.write(outputStream)
             outputStream.close()
         except:
@@ -348,9 +387,10 @@ class PDF_File:
                 test=pp
             if no_watermarker==0 and frontpage.endswith('.pdf') :
                 pdf_size=(os.path.getsize(frontpage))
-                if pdf_size>=10: # >=10 KB
+                if pdf_size>=190000: # >=190,00 KB
                     # self.pdf_watermark_fast(localName.pdf_Folder_filename, localName.W_pdf_Folder_filename,url_wtm=url_watermark)
-                    self.pdf_watermark_fast_sell_cpdf(localName.pdf_Folder_filename, localName.W_pdf_Folder_filename,url_wtm=url_watermark)
+                    # self.pdf_watermark_fast_sell_cpdf(localName.pdf_Folder_filename, localName.W_pdf_Folder_filename,url_wtm=url_watermark)
+                    self.pdf_watermark_fast_first_page(localName.pdf_Folder_filename, localName.W_pdf_Folder_filename,url_wtm=url_watermark)
                 else:
                     self.pdf_watermark_slow(localName.pdf_Folder_filename, localName.W_pdf_Folder_filename,url_wtm=url_watermark)
                 # self.pdf_watermark_slow(localName.pdf_Folder_filename, localName.W_pdf_Folder_filename,url_wtm=url_watermark)
@@ -373,9 +413,10 @@ class PDF_File:
                     # os.remove(location+'/'+localName.filename)
                     pdf_size=(os.path.getsize(localName.pdf_Folder_filename))
                     try:
-                        if pdf_size>=10: # >=10 KB
+                        if pdf_size>=190000: # >=10 KB
                             # self.pdf_watermark_fast(localName.pdf_Folder_filename, localName.W_pdf_Folder_filename,url_wtm=url_watermark)
-                            self.pdf_watermark_fast_sell_cpdf(localName.pdf_Folder_filename, localName.W_pdf_Folder_filename,url_wtm=url_watermark)
+                            # self.pdf_watermark_fast_sell_cpdf(localName.pdf_Folder_filename, localName.W_pdf_Folder_filename,url_wtm=url_watermark)
+                            self.pdf_watermark_fast_first_page(localName.pdf_Folder_filename, localName.W_pdf_Folder_filename,url_wtm=url_watermark)
                         else:
                             self.pdf_watermark_slow(localName.pdf_Folder_filename, localName.W_pdf_Folder_filename,url_wtm=url_watermark)
                     except:
