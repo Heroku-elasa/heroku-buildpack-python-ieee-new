@@ -87,11 +87,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tornado-get.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="tornado-get.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tornado-get.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.56" vertical-offset="24862" max-vertical-offset="26129">
-              <caret line="1474" column="59" selection-start-line="1474" selection-start-column="29" selection-end-line="1474" selection-end-column="59" />
+            <state vertical-scroll-proportion="0.7987805" vertical-offset="22943" max-vertical-offset="26129">
+              <caret line="1369" column="52" selection-start-line="1369" selection-start-column="52" selection-end-line="1369" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -107,10 +107,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="save_source.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="save_source.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/save_source.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5132275" vertical-offset="6045" max-vertical-offset="7820">
+            <state vertical-scroll-proportion="0.0" vertical-offset="6045" max-vertical-offset="7820">
               <caret line="367" column="77" selection-start-line="367" selection-start-column="77" selection-end-line="367" selection-end-column="77" />
               <folding>
                 <element signature="e#351#371#0" expanded="true" />
@@ -207,7 +207,6 @@
         <option value="$PROJECT_DIR$/linux server/python GUI/Video capture/Webcam-Face-Detect-master/webcam.py" />
         <option value="C:/Python27/Lib/urllib.py" />
         <option value="$PROJECT_DIR$/configs/Links_site/www_springer_com.py" />
-        <option value="$PROJECT_DIR$/tornado-get.py" />
         <option value="$PROJECT_DIR$/configs/Links_site/dl_acm_org.py" />
         <option value="$PROJECT_DIR$/configs/Links_site/ieeexplore_ieee_org.py" />
         <option value="$PROJECT_DIR$/configs/Links_site/www_sciencedirect_com.py" />
@@ -220,6 +219,7 @@
         <option value="$PROJECT_DIR$/main_core.py" />
         <option value="$PROJECT_DIR$/watter_marker.py" />
         <option value="$PROJECT_DIR$/save_source.py" />
+        <option value="$PROJECT_DIR$/tornado-get.py" />
       </list>
     </option>
   </component>
@@ -1265,21 +1265,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tornado-get.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.56" vertical-offset="24862" max-vertical-offset="26129">
-          <caret line="1474" column="59" selection-start-line="1474" selection-start-column="29" selection-end-line="1474" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/save_source.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5132275" vertical-offset="6045" max-vertical-offset="7820">
+        <state vertical-scroll-proportion="0.0" vertical-offset="6045" max-vertical-offset="7820">
           <caret line="367" column="77" selection-start-line="367" selection-start-column="77" selection-end-line="367" selection-end-column="77" />
           <folding>
             <element signature="e#351#371#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tornado-get.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7987805" vertical-offset="22943" max-vertical-offset="26129">
+          <caret line="1369" column="52" selection-start-line="1369" selection-start-column="52" selection-end-line="1369" selection-end-column="52" />
+          <folding />
         </state>
       </provider>
     </entry>

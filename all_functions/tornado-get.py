@@ -1365,8 +1365,8 @@ def main(**kwargs):
                                           template_path=os.path.join(os.path.dirname(__file__), '').replace('\\','/'),
                                           # static_path=os.path.join(os.path.dirname(__file__).replace('\\','/'), "Watermarked_PDF_Files"),
                                           # static_path=os.path.dirname('C:/nginx/html/Watermarked_PDF_Files/'),
-                                          # static_path=root+water_pdfdir,
-                                          static_path=root+pdfdir,
+                                          static_path=root+water_pdfdir,
+                                          # static_path=root+pdfdir,
                                           debug=True
 
                                           # ui_modules={'download_modle', download}
