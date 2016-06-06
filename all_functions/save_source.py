@@ -177,7 +177,7 @@ class PDF_File:
             # cpdf -stamp-on watermark.pdf in.pdf -o out.pdf
             import subprocess
             home_dir=os.environ['OPENSHIFT_HOMEDIR']
-            st=home_dir+'/app-root/runtime/srv/cpdf/cpdf -stamp-on '+wt1+pathname+' -o '+Wm_f
+            st=home_dir+'/app-root/runtime/srv/cpdf/cpdf -stamp-on '+wt1+pathname+ " "+pathname+' -o '+Wm_f
             awk_sort = subprocess.Popen( [st ], stdin= subprocess.PIPE, stdout= subprocess.PIPE,shell=True)
             awk_sort.wait()
             output = awk_sort.communicate()[0]
