@@ -334,8 +334,9 @@ class PDF_File:
             outputStream = open(Wm_f, 'wb')
             # outputStream=StringIO.StringIO()
             # output.write(open(Wm_f, 'wb'))
-            import sys;sys.setrecursionlimit(11500)
+            # import sys;sys.setrecursionlimit(11500)
             output.write(outputStream)
+            print ('output.write(outputStream) is done'+'wtl is :'+wt1)
             outputStream.close()
         except:
             print ('Please make correct Wattermarket')
