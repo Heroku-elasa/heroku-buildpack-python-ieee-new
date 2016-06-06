@@ -120,8 +120,8 @@
       <file leaf-file-name="save_source.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/save_source.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.4528795" vertical-offset="2930" max-vertical-offset="6885">
-              <caret line="207" column="0" selection-start-line="207" selection-start-column="0" selection-end-line="207" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.2984293" vertical-offset="6193" max-vertical-offset="6885">
+              <caret line="373" column="30" selection-start-line="373" selection-start-column="30" selection-end-line="373" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -130,8 +130,8 @@
       <file leaf-file-name="watter_marker.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/watter_marker.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="461" max-vertical-offset="3281">
-              <caret line="156" column="4" selection-start-line="156" selection-start-column="4" selection-end-line="156" selection-end-column="4" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="2654" max-vertical-offset="3281">
+              <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
               <folding>
                 <element signature="e#225#235#0" expanded="true" />
               </folding>
@@ -154,16 +154,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-18.96" vertical-offset="49370" max-vertical-offset="78370">
               <caret line="2942" column="4" selection-start-line="2942" selection-start-column="4" selection-end-line="2942" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="www_nature_com.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/configs/Links_site/www_nature_com.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="42399" max-vertical-offset="77928">
-              <caret line="2510" column="20" selection-start-line="2510" selection-start-column="20" selection-end-line="2510" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -835,13 +825,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/proxy_checker3_all_function.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="9075" max-vertical-offset="23681">
-          <caret line="542" column="0" selection-start-line="542" selection-start-column="0" selection-end-line="543" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Python27/Lib/site-packages/twill-0.9.1-py2.7.egg/twill/other_packages/_mechanize_dist/_http.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="11179" max-vertical-offset="12308">
@@ -1189,13 +1172,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/watter_marker.py">
+    <entry file="file://$PROJECT_DIR$/tornado-get.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="461" max-vertical-offset="3281">
-          <caret line="156" column="4" selection-start-line="156" selection-start-column="4" selection-end-line="156" selection-end-column="4" />
-          <folding>
-            <element signature="e#225#235#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="-2.2" vertical-offset="11076" max-vertical-offset="26129">
+          <caret line="662" column="0" selection-start-line="662" selection-start-column="0" selection-end-line="662" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1207,18 +1188,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tornado-get.py">
+    <entry file="file://$PROJECT_DIR$/watter_marker.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.2" vertical-offset="11076" max-vertical-offset="26129">
-          <caret line="662" column="0" selection-start-line="662" selection-start-column="0" selection-end-line="662" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="2654" max-vertical-offset="3281">
+          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding>
+            <element signature="e#225#235#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/optparse.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4177215" vertical-offset="18841" max-vertical-offset="29036">
+          <caret line="1120" column="7" selection-start-line="1120" selection-start-column="7" selection-end-line="1120" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/save_source.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.4528795" vertical-offset="2930" max-vertical-offset="6885">
-          <caret line="207" column="0" selection-start-line="207" selection-start-column="0" selection-end-line="207" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.2984293" vertical-offset="6193" max-vertical-offset="6885">
+          <caret line="373" column="30" selection-start-line="373" selection-start-column="30" selection-end-line="373" selection-end-column="30" />
           <folding />
         </state>
       </provider>
