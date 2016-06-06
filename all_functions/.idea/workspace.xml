@@ -80,8 +80,8 @@
       <file leaf-file-name="www_sciencedirect_com.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/configs/Links_site/www_sciencedirect_com.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.8" vertical-offset="73440" max-vertical-offset="77741">
-              <caret line="4340" column="33" selection-start-line="4331" selection-start-column="12" selection-end-line="4340" selection-end-column="33" />
+            <state vertical-scroll-proportion="25.92" vertical-offset="21575" max-vertical-offset="77741">
+              <caret line="1241" column="4" selection-start-line="1241" selection-start-column="4" selection-end-line="1241" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -1267,14 +1267,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/configs/Links_site/www_sciencedirect_com.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.8" vertical-offset="73440" max-vertical-offset="77741">
-          <caret line="4340" column="33" selection-start-line="4331" selection-start-column="12" selection-end-line="4340" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/save_source.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="282" max-vertical-offset="8585">
@@ -1282,6 +1274,14 @@
           <folding>
             <element signature="e#351#371#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configs/Links_site/www_sciencedirect_com.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="25.92" vertical-offset="21575" max-vertical-offset="77741">
+          <caret line="1241" column="4" selection-start-line="1241" selection-start-column="4" selection-end-line="1241" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
