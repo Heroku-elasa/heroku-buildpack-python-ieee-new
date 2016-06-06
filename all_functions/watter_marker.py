@@ -111,7 +111,8 @@ def op_w_input(input_fname=None,watermark_fname=None,outfn0=os.getcwd()+"/Waterm
         # # output.write(open(Wm_f, 'wb'))
         # output.write(outputStream)
         #     outputStream.close()
-        PdfWriter().addpages([fixpage(x,watermark) for x in pages]).write(outfn0)
+        test=PdfWriter().addpages([fixpage(x,watermark) for x in pages])
+        test.write(outfn0)
 
     elif pdfdir and watermark_fname:
         batch_watermark(pdfdir, watermark_fname, outdir)

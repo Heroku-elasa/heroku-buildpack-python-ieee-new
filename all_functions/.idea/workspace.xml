@@ -15,7 +15,7 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/all_functions$save_source.coverage" NAME="save_source Coverage Results" MODIFIED="1465223781800" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/all_functions$save_source.coverage" NAME="save_source Coverage Results" MODIFIED="1465224541660" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/all_functions$simple_proxy_scraper.coverage" NAME="simple_proxy_scraper Coverage Results" MODIFIED="1442185827615" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/configs/proxy_scraper" />
     <SUITE FILE_PATH="coverage/all_functions$player_skeleton__1_.coverage" NAME="player_skeleton (1) Coverage Results" MODIFIED="1456582229307" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/linux server/python GUI/Music_Player/music_player_v1" />
     <SUITE FILE_PATH="coverage/all_functions$pyside_menu.coverage" NAME="pyside-menu Coverage Results" MODIFIED="1462038055968" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/linux server/python GUI" />
@@ -110,8 +110,28 @@
       <file leaf-file-name="save_source.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/save_source.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33246073" vertical-offset="6401" max-vertical-offset="6970">
-              <caret line="386" column="0" selection-start-line="386" selection-start-column="0" selection-end-line="386" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.59947646" vertical-offset="5551" max-vertical-offset="6970">
+              <caret line="342" column="45" selection-start-line="342" selection-start-column="45" selection-end-line="342" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="watter_marker.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/watter_marker.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1777" max-vertical-offset="3281">
+              <caret line="113" column="0" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pdfwriter.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://C:/Python27/Lib/site-packages/pdfrw/pdfwriter.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="3711" max-vertical-offset="5797">
+              <caret line="232" column="0" selection-start-line="232" selection-start-column="0" selection-end-line="232" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -121,7 +141,7 @@
         <entry file="file://$PROJECT_DIR$/main_core.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="6571" max-vertical-offset="12495">
-              <caret line="397" column="0" selection-start-line="397" selection-start-column="0" selection-end-line="397" selection-end-column="0" />
+              <caret line="397" column="106" selection-start-line="397" selection-start-column="106" selection-end-line="397" selection-end-column="106" />
               <folding />
             </state>
           </provider>
@@ -132,26 +152,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="19593" max-vertical-offset="28458">
               <caret line="1225" column="0" selection-start-line="1225" selection-start-column="0" selection-end-line="1225" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="os.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://C:/Python27/Lib/os.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="7077" max-vertical-offset="12716">
-              <caret line="424" column="0" selection-start-line="424" selection-start-column="0" selection-end-line="424" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="download_mozilla.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/download_mozilla.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="7642" max-vertical-offset="11628">
-              <caret line="462" column="8" selection-start-line="462" selection-start-column="8" selection-end-line="462" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -216,6 +216,7 @@
         <option value="$PROJECT_DIR$/configs/Links_site/onlinelibrary_wiley_com.py" />
         <option value="$PROJECT_DIR$/configs/Links_site/link_springer_com.py" />
         <option value="$PROJECT_DIR$/main_core.py" />
+        <option value="$PROJECT_DIR$/watter_marker.py" />
         <option value="$PROJECT_DIR$/save_source.py" />
       </list>
     </option>
@@ -593,8 +594,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -602,7 +603,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35120845" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3074018" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" x="516" y="178" width="334" height="372" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27895597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27895597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -855,11 +856,21 @@
           <line>242</line>
           <option name="timeStamp" value="873" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/watter_marker.py</url>
+          <line>99</line>
+          <option name="timeStamp" value="874" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/watter_marker.py</url>
+          <line>33</line>
+          <option name="timeStamp" value="875" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="874" />
+      <option name="time" value="876" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -895,13 +906,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.22183098" vertical-offset="3682" max-vertical-offset="9860">
           <caret line="227" column="0" selection-start-line="227" selection-start-column="0" selection-end-line="227" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python27/Lib/site-packages/pdfrw/pdfwriter.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33159268" vertical-offset="3562" max-vertical-offset="5797">
-          <caret line="223" column="15" selection-start-line="223" selection-start-column="6" selection-end-line="223" selection-end-column="15" />
         </state>
       </provider>
     </entry>
@@ -1158,16 +1162,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/watter_marker.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2654" max-vertical-offset="3281">
-          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-          <folding>
-            <element signature="e#225#235#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Python27/Lib/optparse.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4177215" vertical-offset="18841" max-vertical-offset="29036">
@@ -1243,15 +1237,31 @@
     <entry file="file://$PROJECT_DIR$/main_core.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="6571" max-vertical-offset="12495">
-          <caret line="397" column="0" selection-start-line="397" selection-start-column="0" selection-end-line="397" selection-end-column="0" />
+          <caret line="397" column="106" selection-start-line="397" selection-start-column="106" selection-end-line="397" selection-end-column="106" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/pdfrw/pdfwriter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3711" max-vertical-offset="5797">
+          <caret line="232" column="0" selection-start-line="232" selection-start-column="0" selection-end-line="232" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/watter_marker.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1777" max-vertical-offset="3281">
+          <caret line="113" column="0" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/save_source.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33246073" vertical-offset="6401" max-vertical-offset="6970">
-          <caret line="386" column="0" selection-start-line="386" selection-start-column="0" selection-end-line="386" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.59947646" vertical-offset="5551" max-vertical-offset="6970">
+          <caret line="342" column="45" selection-start-line="342" selection-start-column="45" selection-end-line="342" selection-end-column="45" />
           <folding />
         </state>
       </provider>

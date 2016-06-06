@@ -320,7 +320,7 @@ class PDF_File:
             os.path.isfile(frontpage)
             if no_watermarker==0 and frontpage.endswith('.pdf') :
                 pdf_size=(os.path.getsize(frontpage))
-                if pdf_size>=307200: # >=300 KB
+                if pdf_size>=11307200: # >=11,300 KB
                     self.pdf_watermark_fast(localName.pdf_Folder_filename, localName.W_pdf_Folder_filename,url_wtm=url_watermark)
                 else:
                     self.pdf_watermark_slow(localName.pdf_Folder_filename, localName.W_pdf_Folder_filename,url_wtm=url_watermark)
@@ -339,7 +339,7 @@ class PDF_File:
                     # os.remove(location+'/'+localName.filename)
                     pdf_size=(os.path.getsize(localName.pdf_Folder_filename))
                     try:
-                        if pdf_size>=607200: # >=300 KB
+                        if pdf_size>=200200: # >=200,300 KB
                             self.pdf_watermark_fast(localName.pdf_Folder_filename, localName.W_pdf_Folder_filename,url_wtm=url_watermark)
                         else:
                             self.pdf_watermark_slow(localName.pdf_Folder_filename, localName.W_pdf_Folder_filename,url_wtm=url_watermark)
