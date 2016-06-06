@@ -392,6 +392,17 @@ fi
 	
 nohup sh -c " wget http://projects.unbit.it/downloads/uwsgi-latest.tar.gz &	tar zxvf uwsgi-latest.tar.gz & cd uwsgi-2.0.7"  > $OPENSHIFT_LOG_DIR/uwsgi_install.log 2>&1 &
 
+
+
+if [ ! -d ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/cpdf ]; then
+	echo "installing cpdf"
+	mkdir ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/cpdf
+	cd  ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/cpdf
+	git clone https://github.com/coherentgraphics/cpdf-binaries.git
+	mv cpdf-binaries/Linux-Intel-64bit/* .
+	rm -rf cpdf-binaries
+fi
+
 rm -rf $OPENSHIFT_TMP_DIR/*
 
 	

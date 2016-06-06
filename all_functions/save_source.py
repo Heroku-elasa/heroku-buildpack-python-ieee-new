@@ -156,6 +156,33 @@ class PDF_File:
         p.save()
         return packet
 
+    def pdf_watermark_fast_sell_cpdf(self, pathname, Wm_f, wt1='',**kwargs):
+        try :
+            url_watermark=kwargs['url_wtm']
+        except:pass
+
+
+        url_watermark2=url_watermark.replace(".","_")
+        url_watermark2=url_watermark2.replace("://","__")
+        # CurrentDir=os.path.dirname(os.path.realpath(__file__)).replace('\\','/')
+        if wt1 == '':
+            import os
+            if not os.path.isfile(self.Watermarked_PDF_Dir+"/" + "watermarker_slow"+url_watermark2+".pdf"):
+                wt1 = self.watermark_file(self.Watermarked_PDF_Dir+"/" + "watermarker_slow"+url_watermark2+".pdf", url_watermark,center_text=False)
+            else:
+                wt1=self.Watermarked_PDF_Dir+"/" + "watermarker_slow"+url_watermark2+".pdf"
+            # if True:
+            #     wt1 = self.watermark_file(self.Watermarked_PDF_Dir+"/" + "watermarker_slow"+url_watermark2+".pdf", url_watermark,center_text=False)
+
+            # cpdf -stamp-on watermark.pdf in.pdf -o out.pdf
+            import subprocess
+            home_dir=os.environ['OPENSHIFT_HOMEDIR']
+            st=home_dir+'/app-root/runtime/srv/cpdf -stamp-on '+wt1+pathname+' -o '+Wm_f
+            awk_sort = subprocess.Popen( [st ], stdin= subprocess.PIPE, stdout= subprocess.PIPE,shell=True)
+            awk_sort.wait()
+            output = awk_sort.communicate()[0]
+            print output.rstrip()
+        return Wm_f
 
     def pdf_watermark_fast(self, pathname, Wm_f, wt1='',**kwargs):
         try :
@@ -321,11 +348,12 @@ class PDF_File:
                 test=pp
             if no_watermarker==0 and frontpage.endswith('.pdf') :
                 pdf_size=(os.path.getsize(frontpage))
-                # if pdf_size>=11307200: # >=11,300 KB
-                #     self.pdf_watermark_fast(localName.pdf_Folder_filename, localName.W_pdf_Folder_filename,url_wtm=url_watermark)
-                # else:
-                #     self.pdf_watermark_slow(localName.pdf_Folder_filename, localName.W_pdf_Folder_filename,url_wtm=url_watermark)
-                self.pdf_watermark_slow(localName.pdf_Folder_filename, localName.W_pdf_Folder_filename,url_wtm=url_watermark)
+                if pdf_size>=10: # >=10 KB
+                    # self.pdf_watermark_fast(localName.pdf_Folder_filename, localName.W_pdf_Folder_filename,url_wtm=url_watermark)
+                    self.pdf_watermark_fast_sell_cpdf(localName.pdf_Folder_filename, localName.W_pdf_Folder_filename,url_wtm=url_watermark)
+                else:
+                    self.pdf_watermark_slow(localName.pdf_Folder_filename, localName.W_pdf_Folder_filename,url_wtm=url_watermark)
+                # self.pdf_watermark_slow(localName.pdf_Folder_filename, localName.W_pdf_Folder_filename,url_wtm=url_watermark)
                 pdf_dw_li = localName.pdf_Folder_filename
                 pdf_dw_Wr_li = localName.W_pdf_Folder_filename
             else:
@@ -333,22 +361,29 @@ class PDF_File:
                 pdf_dw_li = localName.pdf_Folder_filename
                 pdf_dw_Wr_li = ''
         except:
-            pdf = self.file_save(frontpage, location, localName.filename)
+            if not os.path.isfile(frontpage):
+                pdf = self.file_save(frontpage, location, localName.filename)
             # if len(frontpage)<= 4194304 :# 4*1024*1024=4194304 4MB
             #     doc = self.pdf_cheker(localName.pdf_Folder_filename)
             if no_watermarker==0:
                 if url_watermark!='':
                     # os.remove(location+'/'+localName.filename)
                     pdf_size=(os.path.getsize(localName.pdf_Folder_filename))
-                    # try:
-                    #     if pdf_size>=200200: # >=200,300 KB
-                    #         self.pdf_watermark_fast(localName.pdf_Folder_filename, localName.W_pdf_Folder_filename,url_wtm=url_watermark)
-                    #     else:
-                    #         self.pdf_watermark_slow(localName.pdf_Folder_filename, localName.W_pdf_Folder_filename,url_wtm=url_watermark)
-                    # except:
-                    #     self.pdf_watermark_slow(localName.pdf_Folder_filename, localName.W_pdf_Folder_filename,url_wtm=url_watermark)
+                    try:
+                        if pdf_size>=10: # >=10 KB
+                            # self.pdf_watermark_fast(localName.pdf_Folder_filename, localName.W_pdf_Folder_filename,url_wtm=url_watermark)
+                            self.pdf_watermark_fast_sell_cpdf(localName.pdf_Folder_filename, localName.W_pdf_Folder_filename,url_wtm=url_watermark)
+                        else:
+                            self.pdf_watermark_slow(localName.pdf_Folder_filename, localName.W_pdf_Folder_filename,url_wtm=url_watermark)
+                    except:
+                        # self.pdf_watermark_slow(localName.pdf_Folder_filename, localName.W_pdf_Folder_filename,url_wtm=url_watermark)
+                        self.pdf_watermark_fast_sell_cpdf(localName.pdf_Folder_filename, localName.W_pdf_Folder_filename,url_wtm=url_watermark)
 
-                    self.pdf_watermark_slow(localName.pdf_Folder_filename, localName.W_pdf_Folder_filename,url_wtm=url_watermark)
+
+
+                    # self.pdf_watermark_fast_sell_cpdf(localName.pdf_Folder_filename, localName.W_pdf_Folder_filename,url_wtm=url_watermark)
+
+                    # self.pdf_watermark_slow(localName.pdf_Folder_filename, localName.W_pdf_Folder_filename,url_wtm=url_watermark)
                     pdf_dw_li = localName.pdf_Folder_filename
                     pdf_dw_Wr_li = localName.W_pdf_Folder_filename
                 else:
@@ -395,10 +430,10 @@ if __name__ == '__main__':
     except:
         CurrentDir = os.path.dirname(os.path.realpath(__file__)).replace('\\','/')
         html=CurrentDir+"/PDF_Files/1-s2.0-S0142061516305774-main.pdf"
-        dir=CurrentDir+"/htmls/paper.txt"
-        f = open(dir, 'r')
-        html=f.read()
-        f.close()
+        # dir=CurrentDir+"/htmls/paper.txt"
+        # f = open(dir, 'r')
+        # html=f.read()
+        # f.close()
 
     # pdf='E:/Program Files win 7 2nd/Ampps/www/cgi-bin2/wrapper work/all_functions/PDF_Files/1752-153X-2-5%20-%20Copy.pdf'
     # from  download_mozilla import web
