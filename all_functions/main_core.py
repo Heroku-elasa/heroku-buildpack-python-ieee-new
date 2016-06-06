@@ -411,7 +411,10 @@ class core(object):
                         wt_pdf_size=size(os.path.getsize(pdf_dw_Wr_dir))
                         pdf_dw_Wr_li = self.path2url(file_name.W_pdf_Folder_filename,server_cdn,wat_locatton,root)
 
-                    os.remove(cookies)
+                    try:
+                        os.remove(cookies)
+                    except:
+                        pass
                     print "fetching main paper link url ...\n\t%s" % pdf_dw_li[:]
                     print "fetching waterarker paper link url ...\n\t%s" % pdf_dw_Wr_li
                 else:

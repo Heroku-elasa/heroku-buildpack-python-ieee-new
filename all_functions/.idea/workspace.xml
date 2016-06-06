@@ -43,7 +43,7 @@
     <SUITE FILE_PATH="coverage/all_functions$wxpython_test.coverage" NAME="wxpython_test Coverage Results" MODIFIED="1456567036113" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/linux server/python GUI" />
     <SUITE FILE_PATH="coverage/all_functions$PIL_test___Copy__2_.coverage" NAME="PIL_test - Copy (2) Coverage Results" MODIFIED="1456413297246" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/linux server/python GUI" />
     <SUITE FILE_PATH="coverage/all_functions$exa2_show_possibilities.coverage" NAME="exa2_show-possibilities Coverage Results" MODIFIED="1456585412973" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/linux server/python GUI/Video capture/VideoCapture-0.9-5/Examples" />
-    <SUITE FILE_PATH="coverage/all_functions$tornado_get.coverage" NAME="tornado-get Coverage Results" MODIFIED="1465212163094" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/all_functions$tornado_get.coverage" NAME="tornado-get Coverage Results" MODIFIED="1465222186481" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/all_functions$check_proxy.coverage" NAME="check_proxy Coverage Results" MODIFIED="1442087830909" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/attack" />
     <SUITE FILE_PATH="coverage/all_functions$main_core.coverage" NAME="main_core Coverage Results" MODIFIED="1442267579981" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/all_functions$wxpython_screenshut.coverage" NAME="wxpython_screenshut Coverage Results" MODIFIED="1456585338991" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/linux server/python GUI" />
@@ -77,11 +77,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tornado-get.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="www_sciencedirect_com.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/configs/Links_site/www_sciencedirect_com.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="44804" max-vertical-offset="77741">
+              <caret line="2653" column="0" selection-start-line="2653" selection-start-column="0" selection-end-line="2653" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tornado-get.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tornado-get.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.2" vertical-offset="24319" max-vertical-offset="26129">
-              <caret line="1441" column="78" selection-start-line="1441" selection-start-column="4" selection-end-line="1441" selection-end-column="78" />
+            <state vertical-scroll-proportion="0.21868788" vertical-offset="7523" max-vertical-offset="26129">
+              <caret line="453" column="0" selection-start-line="453" selection-start-column="0" selection-end-line="453" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -97,21 +107,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main_core.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main_core.py">
+      <file leaf-file-name="save_source.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/save_source.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="6571" max-vertical-offset="12444">
-              <caret line="397" column="0" selection-start-line="397" selection-start-column="0" selection-end-line="398" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="6061" max-vertical-offset="6970">
+              <caret line="366" column="0" selection-start-line="366" selection-start-column="0" selection-end-line="366" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="save_source.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/save_source.py">
+      <file leaf-file-name="main_core.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main_core.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33246073" vertical-offset="4548" max-vertical-offset="6970">
-              <caret line="277" column="0" selection-start-line="277" selection-start-column="0" selection-end-line="277" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="6843" max-vertical-offset="12495">
+              <caret line="413" column="0" selection-start-line="413" selection-start-column="0" selection-end-line="413" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -143,18 +153,6 @@
             <state vertical-scroll-proportion="0.0" vertical-offset="7642" max-vertical-offset="11628">
               <caret line="462" column="8" selection-start-line="462" selection-start-column="8" selection-end-line="462" selection-end-column="8" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="watter_marker.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/watter_marker.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2654" max-vertical-offset="3281">
-              <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-              <folding>
-                <element signature="e#225#235#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -206,7 +204,6 @@
         <option value="$PROJECT_DIR$/linux server/python GUI/Music_Player/music_player_v2/player_skeleton2-working.py" />
         <option value="$PROJECT_DIR$/linux server/python GUI/Video capture/Webcam-Face-Detect-master/webcam.py" />
         <option value="C:/Python27/Lib/urllib.py" />
-        <option value="$PROJECT_DIR$/main_core.py" />
         <option value="$PROJECT_DIR$/configs/Links_site/www_springer_com.py" />
         <option value="$PROJECT_DIR$/tornado-get.py" />
         <option value="$PROJECT_DIR$/configs/Links_site/dl_acm_org.py" />
@@ -219,6 +216,7 @@
         <option value="$PROJECT_DIR$/configs/Links_site/onlinelibrary_wiley_com.py" />
         <option value="$PROJECT_DIR$/configs/Links_site/link_springer_com.py" />
         <option value="$PROJECT_DIR$/save_source.py" />
+        <option value="$PROJECT_DIR$/main_core.py" />
       </list>
     </option>
   </component>
@@ -554,8 +552,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.save_source" />
-        <item index="1" class="java.lang.String" itemvalue="Python.tornado-get" />
+        <item index="0" class="java.lang.String" itemvalue="Python.tornado-get" />
+        <item index="1" class="java.lang.String" itemvalue="Python.save_source" />
         <item index="2" class="java.lang.String" itemvalue="Python.ieeexplore_ieee_org" />
         <item index="3" class="java.lang.String" itemvalue="Python.www_sciencedirect_com" />
         <item index="4" class="java.lang.String" itemvalue="Python.pyside-menu" />
@@ -596,7 +594,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -604,7 +602,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35120845" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3074018" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" x="516" y="178" width="334" height="372" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27895597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27895597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -809,7 +807,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/main_core.py</url>
-          <line>420</line>
+          <line>423</line>
           <option name="timeStamp" value="858" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
@@ -842,21 +840,19 @@
           <line>26</line>
           <option name="timeStamp" value="868" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/save_source.py</url>
+          <line>268</line>
+          <option name="timeStamp" value="870" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="869" />
+      <option name="time" value="871" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://C:/Python27/Lib/urllib2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334" vertical-offset="5441" max-vertical-offset="25177">
-          <caret line="340" column="13" selection-start-line="340" selection-start-column="13" selection-end-line="340" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Python27/Lib/site-packages/google/appengine/dist27/urllib.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.19788918" vertical-offset="2016" max-vertical-offset="27132">
@@ -1038,14 +1034,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/configs/Links_site/www_sciencedirect_com.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40050378" vertical-offset="48444" max-vertical-offset="77741">
-          <caret line="2869" column="39" selection-start-line="2869" selection-start-column="39" selection-end-line="2869" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/linux server/python GUI/Music_Player/music_player_v2/player_skeleton2-working.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="4403">
@@ -1160,20 +1148,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main_core.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="5298" max-vertical-offset="12444">
-          <caret line="397" column="0" selection-start-line="397" selection-start-column="0" selection-end-line="398" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/watter_marker.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2654" max-vertical-offset="3281">
           <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
           <folding>
-            <element signature="e#225#235#0" expanded="true" />
+            <element signature="e#225#235#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1226,18 +1206,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tornado-get.py">
+    <entry file="file://C:/Python27/Lib/decimal.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.2" vertical-offset="24319" max-vertical-offset="26129">
-          <caret line="1441" column="78" selection-start-line="1441" selection-start-column="4" selection-end-line="1441" selection-end-column="78" />
+        <state vertical-scroll-proportion="0.33164558" vertical-offset="29891" max-vertical-offset="105519">
+          <caret line="1767" column="0" selection-start-line="1767" selection-start-column="0" selection-end-line="1767" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configs/Links_site/www_sciencedirect_com.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="44804" max-vertical-offset="77741">
+          <caret line="2653" column="0" selection-start-line="2653" selection-start-column="0" selection-end-line="2653" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/save_source.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33246073" vertical-offset="4548" max-vertical-offset="6970">
-          <caret line="277" column="0" selection-start-line="277" selection-start-column="0" selection-end-line="277" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="6061" max-vertical-offset="6970">
+          <caret line="366" column="0" selection-start-line="366" selection-start-column="0" selection-end-line="366" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main_core.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="6843" max-vertical-offset="12495">
+          <caret line="413" column="0" selection-start-line="413" selection-start-column="0" selection-end-line="413" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tornado-get.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21868788" vertical-offset="7523" max-vertical-offset="26129">
+          <caret line="453" column="0" selection-start-line="453" selection-start-column="0" selection-end-line="453" selection-end-column="0" />
           <folding />
         </state>
       </provider>

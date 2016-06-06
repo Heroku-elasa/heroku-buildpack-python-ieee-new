@@ -5692,3 +5692,56 @@
     RuntimeError: finish() called twice
 [I 160606 13:51:59 web:1908] 200 POST /index (127.0.0.1) 504571.00ms
 [I 160606 13:53:35 autoreload:204] E:/soheil/web_site_root/ieee/all_functions/configs/Links_site/onlinelibrary_wiley_com.py modified; restarting server
+[I 160606 18:33:21 web:1908] 200 POST /index (127.0.0.1) 123317.00ms
+[W 160606 18:33:22 web:1908] 404 GET /htmls/simple_cursor.css (127.0.0.1) 18.00ms
+[I 160606 18:35:41 web:1908] 200 GET /index (127.0.0.1) 226.00ms
+[E 160606 18:35:41 web:1496] Uncaught exception GET /index (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:15001', method='GET', uri='/index', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Connection': 'keep-alive', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate', 'Cookie': 'bb_lastvisit=1464870179; bb_lastactivity=0; _ga=GA1.1.1387388534.1464870170', 'Host': '127.0.0.1:15001', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:46.0) Gecko/20100101 Firefox/46.0'})
+    Traceback (most recent call last):
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 1369, in _stack_context_handle_exception
+        raise_exc_info((type, value, traceback))
+      File "C:\Python27\lib\site-packages\tornado\stack_context.py", line 314, in wrapped
+        ret = fn(*args, **kwargs)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 149, in final_callback
+        if future.result() is not None:
+      File "C:\Python27\lib\site-packages\tornado\concurrent.py", line 215, in result
+        raise_exc_info(self._exc_info)
+      File "C:\Python27\lib\site-packages\tornado\gen.py", line 215, in wrapper
+        result = func(*args, **kwargs)
+      File "E:/soheil/web_site_root/ieee/all_functions/tornado-get.py", line 957, in get
+        self.finish()
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 905, in finish
+        raise RuntimeError("finish() called twice")
+    RuntimeError: finish() called twice
+[E 160606 18:39:03 web:1496] Uncaught exception POST /index (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:15001', method='POST', uri='/index', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Content-Length': '205', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate', 'Host': '127.0.0.1:15001', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:46.0) Gecko/20100101 Firefox/46.0', 'Connection': 'keep-alive', 'Referer': 'http://127.0.0.1:15001/index', 'Cookie': 'bb_lastvisit=1464870179; bb_lastactivity=0; _ga=GA1.1.1387388534.1464870170', 'Content-Type': 'application/x-www-form-urlencoded'})
+    Traceback (most recent call last):
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 1413, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "E:/soheil/web_site_root/ieee/all_functions/tornado-get.py", line 521, in post
+        result = tornado.gen.Task(self.download(details))
+      File "E:/soheil/web_site_root/ieee/all_functions/tornado-get.py", line 666, in download
+        proxy=proxy,user_pass=user_pass,cookies=cookies,log_out=log_out,ftp_upload=ftp_upload,html=html)
+      File "E:/soheil/web_site_root/ieee/all_functions\main_core.py", line 414, in download_link
+        os.remove(cookies)
+    WindowsError: [Error 2] The system cannot find the file specified: 'E:/soheil/web_site_root/ieee/all_functions/configs/sites_proxy/www.sciencedirect.com/cookies/vMmSi.txt'
+[E 160606 18:47:44 web:1496] Uncaught exception POST /index (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:15001', method='POST', uri='/index', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Content-Length': '171', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate', 'Host': '127.0.0.1:15001', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:46.0) Gecko/20100101 Firefox/46.0', 'Connection': 'keep-alive', 'Referer': 'http://127.0.0.1:15001/index', 'Cookie': 'bb_lastvisit=1464870179; bb_lastactivity=0; _ga=GA1.1.1387388534.1464870170', 'Content-Type': 'application/x-www-form-urlencoded'})
+    Traceback (most recent call last):
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 1413, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "E:/soheil/web_site_root/ieee/all_functions/tornado-get.py", line 521, in post
+        result = tornado.gen.Task(self.download(details))
+      File "E:/soheil/web_site_root/ieee/all_functions/tornado-get.py", line 666, in download
+        proxy=proxy,user_pass=user_pass,cookies=cookies,log_out=log_out,ftp_upload=ftp_upload,html=html)
+      File "E:/soheil/web_site_root/ieee/all_functions\main_core.py", line 414, in download_link
+        try:
+    WindowsError: [Error 2] The system cannot find the file specified: 'E:/soheil/web_site_root/ieee/all_functions/configs/sites_proxy/www.sciencedirect.com/cookies/FzIeC.txt'
+[E 160606 18:47:45 web:978] Uncaught exception in write_error
+    Traceback (most recent call last):
+      File "C:\Python27\lib\site-packages\tornado\web.py", line 976, in send_error
+        self.write_error(status_code, **kwargs)
+      File "E:/soheil/web_site_root/ieee/all_functions/tornado-get.py", line 454, in write_error
+        self.write("Please Try in another time Error code is :" % status_code)
+    TypeError: not all arguments converted during string formatting
+[E 160606 18:47:45 web:1908] 500 POST /index (127.0.0.1) 477599.00ms
