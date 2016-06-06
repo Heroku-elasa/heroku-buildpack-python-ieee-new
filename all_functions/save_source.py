@@ -184,27 +184,27 @@ class PDF_File:
         # Wm_f is full address
         return Wm_f
     #https://www.daniweb.com/software-development/python/threads/427722/convert-pdf-to-image-with-pythonmagick-
-    def pdf_to_image(self,**kwargs):
-        from pyPdf import PdfFileReader
-        from PythonMagick import Image
-        if kwargs:
-            if 'pdf' in kwargs:pdf_file=kwargs['pdf']
-            if 'photo' in kwargs:photo_file=kwargs['photo']
-            else:photo_file=pdf_file.split('/')[-1].split('.')[0]
-            if 'pages' in kwargs:target_pages=kwargs['pages']
-            else:pages=0
-
-        myfile = PdfFileReader(pdf_file)
-        pages = myfile.getNumPages()
-        photos=[]
-        for i in range(0,target_pages):
-            im= PythonMagick.Image()
-            im.density('300')
-            im .read(myfile.getPage(i+1))
-            # im.write('file_image{}.png'.format(i+1))
-            im.write(photo_file+'{}.png'.format(i+1))
-            photos.append(photo_file+'{'+i+'}.png')
-        return photos
+    # def pdf_to_image(self,**kwargs):
+    #     from pyPdf import PdfFileReader
+    #     from PythonMagick import Image
+    #     if kwargs:
+    #         if 'pdf' in kwargs:pdf_file=kwargs['pdf']
+    #         if 'photo' in kwargs:photo_file=kwargs['photo']
+    #         else:photo_file=pdf_file.split('/')[-1].split('.')[0]
+    #         if 'pages' in kwargs:target_pages=kwargs['pages']
+    #         else:pages=0
+    #
+    #     myfile = PdfFileReader(pdf_file)
+    #     pages = myfile.getNumPages()
+    #     photos=[]
+    #     for i in range(0,target_pages):
+    #         im= PythonMagick.Image()
+    #         im.density('300')
+    #         im .read(myfile.getPage(i+1))
+    #         # im.write('file_image{}.png'.format(i+1))
+    #         im.write(photo_file+'{}.png'.format(i+1))
+    #         photos.append(photo_file+'{'+i+'}.png')
+    #     return photos
 
 
 

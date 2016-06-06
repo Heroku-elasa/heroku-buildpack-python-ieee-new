@@ -120,8 +120,8 @@
       <file leaf-file-name="save_source.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/save_source.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.55497384" vertical-offset="3732" max-vertical-offset="6885">
-              <caret line="234" column="134" selection-start-line="234" selection-start-column="134" selection-end-line="234" selection-end-column="134" />
+            <state vertical-scroll-proportion="1.4528795" vertical-offset="2930" max-vertical-offset="6885">
+              <caret line="207" column="0" selection-start-line="207" selection-start-column="0" selection-end-line="207" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -1217,8 +1217,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/save_source.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.55497384" vertical-offset="3732" max-vertical-offset="6885">
-          <caret line="234" column="134" selection-start-line="234" selection-start-column="134" selection-end-line="234" selection-end-column="134" />
+        <state vertical-scroll-proportion="1.4528795" vertical-offset="2930" max-vertical-offset="6885">
+          <caret line="207" column="0" selection-start-line="207" selection-start-column="0" selection-end-line="207" selection-end-column="0" />
           <folding />
         </state>
       </provider>
