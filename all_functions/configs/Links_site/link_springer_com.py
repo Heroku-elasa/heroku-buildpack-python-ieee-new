@@ -2902,6 +2902,9 @@ class twill:
                             os.remove(self.cookies);return [], self.cookies, [], [], 0, self.log_out
                         # content = t_com.show()
                         html0=t_brw.result.page
+                        import springerdl
+
+
                         print '@@@@@@@@@@@@@ html0 download by twill is @@@@@@@@@@@@'
                         # print html0
                         # print '@@@@@@@@@@@@@ html0 download by twill is @@@@@@@@@@@@'
@@ -3009,6 +3012,11 @@ def link_tag_find01( html, base_url):
         pass
     return links, title
 
+def link_tag_find( html):
+    import pypdftk
+
+    generated_pdf = pypdftk.fill_form('/path/to/model.pdf', datas)
+    out_pdf = pypdftk.concat(['/path/to/cover.pdf', generated_pdf])
 
 def link_tag_find( html, base_url,links=[]):
     try:
