@@ -15,7 +15,7 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/all_functions$save_source.coverage" NAME="save_source Coverage Results" MODIFIED="1465224541660" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/all_functions$save_source.coverage" NAME="save_source Coverage Results" MODIFIED="1465226071194" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/all_functions$simple_proxy_scraper.coverage" NAME="simple_proxy_scraper Coverage Results" MODIFIED="1442185827615" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/configs/proxy_scraper" />
     <SUITE FILE_PATH="coverage/all_functions$player_skeleton__1_.coverage" NAME="player_skeleton (1) Coverage Results" MODIFIED="1456582229307" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/linux server/python GUI/Music_Player/music_player_v1" />
     <SUITE FILE_PATH="coverage/all_functions$pyside_menu.coverage" NAME="pyside-menu Coverage Results" MODIFIED="1462038055968" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/linux server/python GUI" />
@@ -43,7 +43,7 @@
     <SUITE FILE_PATH="coverage/all_functions$wxpython_test.coverage" NAME="wxpython_test Coverage Results" MODIFIED="1456567036113" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/linux server/python GUI" />
     <SUITE FILE_PATH="coverage/all_functions$PIL_test___Copy__2_.coverage" NAME="PIL_test - Copy (2) Coverage Results" MODIFIED="1456413297246" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/linux server/python GUI" />
     <SUITE FILE_PATH="coverage/all_functions$exa2_show_possibilities.coverage" NAME="exa2_show-possibilities Coverage Results" MODIFIED="1456585412973" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/linux server/python GUI/Video capture/VideoCapture-0.9-5/Examples" />
-    <SUITE FILE_PATH="coverage/all_functions$tornado_get.coverage" NAME="tornado-get Coverage Results" MODIFIED="1465223147186" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/all_functions$tornado_get.coverage" NAME="tornado-get Coverage Results" MODIFIED="1465225614019" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/all_functions$check_proxy.coverage" NAME="check_proxy Coverage Results" MODIFIED="1442087830909" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/attack" />
     <SUITE FILE_PATH="coverage/all_functions$main_core.coverage" NAME="main_core Coverage Results" MODIFIED="1442267579981" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/all_functions$wxpython_screenshut.coverage" NAME="wxpython_screenshut Coverage Results" MODIFIED="1456585338991" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/linux server/python GUI" />
@@ -110,8 +110,18 @@
       <file leaf-file-name="save_source.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/save_source.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.59947646" vertical-offset="5551" max-vertical-offset="6970">
-              <caret line="342" column="45" selection-start-line="342" selection-start-column="45" selection-end-line="342" selection-end-column="45" />
+            <state vertical-scroll-proportion="0.86649215" vertical-offset="5585" max-vertical-offset="7140">
+              <caret line="350" column="129" selection-start-line="350" selection-start-column="129" selection-end-line="350" selection-end-column="129" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="genericpath.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://C:/Python27/Lib/genericpath.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="804" max-vertical-offset="2006">
+              <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -140,8 +150,8 @@
       <file leaf-file-name="main_core.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main_core.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="6571" max-vertical-offset="12495">
-              <caret line="397" column="106" selection-start-line="397" selection-start-column="106" selection-end-line="397" selection-end-column="106" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="11853" max-vertical-offset="12495">
+              <caret line="397" column="0" selection-start-line="397" selection-start-column="0" selection-end-line="398" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -152,16 +162,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="19593" max-vertical-offset="28458">
               <caret line="1225" column="0" selection-start-line="1225" selection-start-column="0" selection-end-line="1225" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="onlinelibrary_wiley_com.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/configs/Links_site/onlinelibrary_wiley_com.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="546.2" vertical-offset="63499" max-vertical-offset="78370">
-              <caret line="2942" column="4" selection-start-line="2942" selection-start-column="4" selection-end-line="2942" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -818,23 +818,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/save_source.py</url>
-          <line>378</line>
-          <option name="timeStamp" value="865" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/save_source.py</url>
           <line>74</line>
           <option name="timeStamp" value="866" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/save_source.py</url>
-          <line>57</line>
-          <option name="timeStamp" value="867" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/save_source.py</url>
-          <line>26</line>
-          <option name="timeStamp" value="868" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/save_source.py</url>
@@ -866,35 +851,29 @@
           <line>33</line>
           <option name="timeStamp" value="875" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/save_source.py</url>
+          <line>92</line>
+          <option name="timeStamp" value="876" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/save_source.py</url>
+          <line>406</line>
+          <option name="timeStamp" value="878" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/save_source.py</url>
+          <line>100</line>
+          <option name="timeStamp" value="879" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="876" />
+      <option name="time" value="880" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://C:/Python27/Lib/site-packages/google/appengine/dist27/urllib.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19788918" vertical-offset="2016" max-vertical-offset="27132">
-          <caret line="130" column="13" selection-start-line="130" selection-start-column="13" selection-end-line="130" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python27/Lib/urllib.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33245382" vertical-offset="2118" max-vertical-offset="27880">
-          <caret line="140" column="13" selection-start-line="140" selection-start-column="13" selection-end-line="140" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python27/Lib/site-packages/twill-0.9.1-py2.7.egg/twill/other_packages/_mechanize_dist/_mechanize.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="129" max-vertical-offset="11509">
-          <caret line="22" column="6" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Python27/Lib/sgmllib.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1625" max-vertical-offset="9503">
@@ -1202,14 +1181,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="19593" max-vertical-offset="28458">
-          <caret line="1225" column="0" selection-start-line="1225" selection-start-column="0" selection-end-line="1225" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Python27/Lib/decimal.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33164558" vertical-offset="29891" max-vertical-offset="105519">
@@ -1222,22 +1193,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="44804" max-vertical-offset="77741">
           <caret line="2653" column="0" selection-start-line="2653" selection-start-column="0" selection-end-line="2653" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tornado-get.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.2" vertical-offset="11076" max-vertical-offset="26129">
-          <caret line="662" column="0" selection-start-line="662" selection-start-column="0" selection-end-line="662" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main_core.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="6571" max-vertical-offset="12495">
-          <caret line="397" column="106" selection-start-line="397" selection-start-column="106" selection-end-line="397" selection-end-column="106" />
           <folding />
         </state>
       </provider>
@@ -1258,10 +1213,58 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://C:/Python27/Lib/shutil.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33164558" vertical-offset="1824" max-vertical-offset="9435">
+          <caret line="121" column="4" selection-start-line="121" selection-start-column="4" selection-end-line="121" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="19593" max-vertical-offset="28458">
+          <caret line="1225" column="0" selection-start-line="1225" selection-start-column="0" selection-end-line="1225" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm30/system/python_stubs/-762174762/_io.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33164558" vertical-offset="15764" max-vertical-offset="23545">
+          <caret line="935" column="8" selection-start-line="935" selection-start-column="8" selection-end-line="935" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tornado-get.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.2" vertical-offset="11076" max-vertical-offset="26129">
+          <caret line="662" column="0" selection-start-line="662" selection-start-column="0" selection-end-line="662" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/genericpath.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="804" max-vertical-offset="2006">
+          <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main_core.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="11853" max-vertical-offset="12495">
+          <caret line="397" column="0" selection-start-line="397" selection-start-column="0" selection-end-line="398" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/save_source.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.59947646" vertical-offset="5551" max-vertical-offset="6970">
-          <caret line="342" column="45" selection-start-line="342" selection-start-column="45" selection-end-line="342" selection-end-column="45" />
+        <state vertical-scroll-proportion="0.86649215" vertical-offset="5585" max-vertical-offset="7140">
+          <caret line="350" column="129" selection-start-line="350" selection-start-column="129" selection-end-line="350" selection-end-column="129" />
           <folding />
         </state>
       </provider>

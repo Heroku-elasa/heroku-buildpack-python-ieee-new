@@ -317,13 +317,15 @@ class PDF_File:
             location=location0
         url_watermark=localName.url_watermark
         try:
-            os.path.isfile(frontpage)
+            if not os.path.isfile(frontpage):
+                test=pp
             if no_watermarker==0 and frontpage.endswith('.pdf') :
                 pdf_size=(os.path.getsize(frontpage))
-                if pdf_size>=11307200: # >=11,300 KB
-                    self.pdf_watermark_fast(localName.pdf_Folder_filename, localName.W_pdf_Folder_filename,url_wtm=url_watermark)
-                else:
-                    self.pdf_watermark_slow(localName.pdf_Folder_filename, localName.W_pdf_Folder_filename,url_wtm=url_watermark)
+                # if pdf_size>=11307200: # >=11,300 KB
+                #     self.pdf_watermark_fast(localName.pdf_Folder_filename, localName.W_pdf_Folder_filename,url_wtm=url_watermark)
+                # else:
+                #     self.pdf_watermark_slow(localName.pdf_Folder_filename, localName.W_pdf_Folder_filename,url_wtm=url_watermark)
+                self.pdf_watermark_slow(localName.pdf_Folder_filename, localName.W_pdf_Folder_filename,url_wtm=url_watermark)
                 pdf_dw_li = localName.pdf_Folder_filename
                 pdf_dw_Wr_li = localName.W_pdf_Folder_filename
             else:
@@ -338,14 +340,15 @@ class PDF_File:
                 if url_watermark!='':
                     # os.remove(location+'/'+localName.filename)
                     pdf_size=(os.path.getsize(localName.pdf_Folder_filename))
-                    try:
-                        if pdf_size>=200200: # >=200,300 KB
-                            self.pdf_watermark_fast(localName.pdf_Folder_filename, localName.W_pdf_Folder_filename,url_wtm=url_watermark)
-                        else:
-                            self.pdf_watermark_slow(localName.pdf_Folder_filename, localName.W_pdf_Folder_filename,url_wtm=url_watermark)
-                    except:
-                        self.pdf_watermark_slow(localName.pdf_Folder_filename, localName.W_pdf_Folder_filename,url_wtm=url_watermark)
+                    # try:
+                    #     if pdf_size>=200200: # >=200,300 KB
+                    #         self.pdf_watermark_fast(localName.pdf_Folder_filename, localName.W_pdf_Folder_filename,url_wtm=url_watermark)
+                    #     else:
+                    #         self.pdf_watermark_slow(localName.pdf_Folder_filename, localName.W_pdf_Folder_filename,url_wtm=url_watermark)
+                    # except:
+                    #     self.pdf_watermark_slow(localName.pdf_Folder_filename, localName.W_pdf_Folder_filename,url_wtm=url_watermark)
 
+                    self.pdf_watermark_slow(localName.pdf_Folder_filename, localName.W_pdf_Folder_filename,url_wtm=url_watermark)
                     pdf_dw_li = localName.pdf_Folder_filename
                     pdf_dw_Wr_li = localName.W_pdf_Folder_filename
                 else:
@@ -374,16 +377,7 @@ if __name__ == '__main__':
     # url='http://ieeexplore.ieee.org/xpl/articleDetails.jsp?tp=&arnumber=6180383&queryText%3Dpower' #91 KB
     url_watermark="http://test"
     file_name = PDF_File().filename(url)
-    try:
-        html=os.environ['OPENSHIFT_HOMEDIR']+"app-root/runtime/srv/tornado3/PDF_Files/1-s2.0-S0142061516305774-main.pdf"
-    except:
-        CurrentDir = os.path.dirname(os.path.realpath(__file__)).replace('\\','/')
-        html=CurrentDir+"/PDF_Files/1-s2.0-S0142061516305774-main.pdf"
-    # pdf='E:/Program Files win 7 2nd/Ampps/www/cgi-bin2/wrapper work/all_functions/PDF_Files/1752-153X-2-5%20-%20Copy.pdf'
-    # from  download_mozilla import web
-    # html=web().download(url)
 
-    pdf_dw_li, pdf_dw_Wr_li = PDF_File(url).finall_file_saving(html, file_name)
     from optparse import OptionParser
 
     parser = OptionParser(description=__doc__)
@@ -395,6 +389,22 @@ if __name__ == '__main__':
     parser.add_option('-d', dest='pdfdir', help='make pdf files in this directory')
     parser.add_option('-o', dest='outdir', help='outputdir used with option -d', default='tmp')
     options, args = parser.parse_args()
+
+    try:
+        html=os.environ['OPENSHIFT_HOMEDIR']+"app-root/runtime/srv/tornado3/PDF_Files/1-s2.0-S0142061516305774-main.pdf"
+    except:
+        CurrentDir = os.path.dirname(os.path.realpath(__file__)).replace('\\','/')
+        html=CurrentDir+"/PDF_Files/1-s2.0-S0142061516305774-main.pdf"
+        dir=CurrentDir+"/htmls/paper.txt"
+        f = open(dir, 'r')
+        html=f.read()
+        f.close()
+
+    # pdf='E:/Program Files win 7 2nd/Ampps/www/cgi-bin2/wrapper work/all_functions/PDF_Files/1752-153X-2-5%20-%20Copy.pdf'
+    # from  download_mozilla import web
+    # html=web().download(url)
+
+    pdf_dw_li, pdf_dw_Wr_li = PDF_File(url).finall_file_saving(html, file_name)
                             
 
 
