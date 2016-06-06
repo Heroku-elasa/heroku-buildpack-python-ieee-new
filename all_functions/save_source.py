@@ -388,9 +388,12 @@ class PDF_File:
                 test=pp
             if no_watermarker==0 and frontpage.endswith('.pdf') :
                 pdf_size=(os.path.getsize(frontpage))
-                if pdf_size>=190000: # >=190,00 KB
+                if pdf_size>=190000: # >=190 KB
                     # self.pdf_watermark_fast(localName.pdf_Folder_filename, localName.W_pdf_Folder_filename,url_wtm=url_watermark)
-                    self.pdf_watermark_fast_sell_cpdf(localName.pdf_Folder_filename, localName.W_pdf_Folder_filename,url_wtm=url_watermark)
+                    try:
+                        self.pdf_watermark_fast_sell_cpdf(localName.pdf_Folder_filename, localName.W_pdf_Folder_filename,url_wtm=url_watermark)
+                    except:
+                        self.pdf_watermark_slow(localName.pdf_Folder_filename, localName.W_pdf_Folder_filename,url_wtm=url_watermark)
                     # self.pdf_watermark_fast_first_page(localName.pdf_Folder_filename, localName.W_pdf_Folder_filename,url_wtm=url_watermark)
                 else:
                     self.pdf_watermark_slow(localName.pdf_Folder_filename, localName.W_pdf_Folder_filename,url_wtm=url_watermark)
@@ -417,9 +420,12 @@ class PDF_File:
                     # os.remove(location+'/'+localName.filename)
                     pdf_size=(os.path.getsize(localName.pdf_Folder_filename))
                     try:
-                        if pdf_size>=190000: # >=10 KB
+                        if pdf_size>=190000: # >=190 KB
                             # self.pdf_watermark_fast(localName.pdf_Folder_filename, localName.W_pdf_Folder_filename,url_wtm=url_watermark)
-                            self.pdf_watermark_fast_sell_cpdf(localName.pdf_Folder_filename, localName.W_pdf_Folder_filename,url_wtm=url_watermark)
+                            try:
+                                self.pdf_watermark_fast_sell_cpdf(localName.pdf_Folder_filename, localName.W_pdf_Folder_filename,url_wtm=url_watermark)
+                            except:
+                                self.pdf_watermark_slow(localName.pdf_Folder_filename, localName.W_pdf_Folder_filename,url_wtm=url_watermark)
                             # self.pdf_watermark_fast_first_page(localName.pdf_Folder_filename, localName.W_pdf_Folder_filename,url_wtm=url_watermark)
                         else:
                             self.pdf_watermark_slow(localName.pdf_Folder_filename, localName.W_pdf_Folder_filename,url_wtm=url_watermark)
