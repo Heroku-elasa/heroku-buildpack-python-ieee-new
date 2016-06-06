@@ -80,8 +80,8 @@
       <file leaf-file-name="tornado-get.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tornado-get.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.2" vertical-offset="11076" max-vertical-offset="26129">
-              <caret line="662" column="0" selection-start-line="662" selection-start-column="0" selection-end-line="662" selection-end-column="0" />
+            <state vertical-scroll-proportion="-2.2" vertical-offset="10702" max-vertical-offset="26129">
+              <caret line="640" column="32" selection-start-line="640" selection-start-column="32" selection-end-line="640" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -100,8 +100,8 @@
       <file leaf-file-name="link_springer_com.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/configs/Links_site/link_springer_com.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="50943" max-vertical-offset="78472">
-              <caret line="3018" column="33" selection-start-line="3018" selection-start-column="33" selection-end-line="3018" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="49515" max-vertical-offset="78404">
+              <caret line="3014" column="0" selection-start-line="3014" selection-start-column="0" selection-end-line="3014" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -120,8 +120,18 @@
       <file leaf-file-name="save_source.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/save_source.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2984293" vertical-offset="6193" max-vertical-offset="6885">
-              <caret line="373" column="30" selection-start-line="373" selection-start-column="30" selection-end-line="373" selection-end-column="30" />
+            <state vertical-scroll-proportion="-16.489529" vertical-offset="6503" max-vertical-offset="6885">
+              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="download_mozilla.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/download_mozilla.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="7642" max-vertical-offset="11628">
+              <caret line="462" column="8" selection-start-line="462" selection-start-column="8" selection-end-line="462" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -769,7 +779,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/configs/Links_site/link_springer_com.py</url>
-          <line>3130</line>
+          <line>3126</line>
           <option name="timeStamp" value="849" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
@@ -825,13 +835,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://C:/Python27/Lib/site-packages/twill-0.9.1-py2.7.egg/twill/other_packages/_mechanize_dist/_http.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="11179" max-vertical-offset="12308">
-          <caret line="676" column="0" selection-start-line="676" selection-start-column="0" selection-end-line="676" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Python27/Lib/urllib2.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334" vertical-offset="5441" max-vertical-offset="25177">
@@ -1140,14 +1143,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/configs/Links_site/onlinelibrary_wiley_com.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.96" vertical-offset="49370" max-vertical-offset="78370">
-          <caret line="2942" column="4" selection-start-line="2942" selection-start-column="4" selection-end-line="2942" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Python27/Lib/site-packages/springerdl-1.3.dev0-py2.7.egg!/springerdl/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="389">
@@ -1160,22 +1155,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="38397" max-vertical-offset="80155">
           <caret line="2276" column="0" selection-start-line="2276" selection-start-column="0" selection-end-line="2276" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/configs/Links_site/link_springer_com.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="50943" max-vertical-offset="78472">
-          <caret line="3018" column="33" selection-start-line="3018" selection-start-column="33" selection-end-line="3018" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tornado-get.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.2" vertical-offset="11076" max-vertical-offset="26129">
-          <caret line="662" column="0" selection-start-line="662" selection-start-column="0" selection-end-line="662" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1206,10 +1185,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/download_mozilla.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="7642" max-vertical-offset="11628">
+          <caret line="462" column="8" selection-start-line="462" selection-start-column="8" selection-end-line="462" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configs/Links_site/onlinelibrary_wiley_com.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.96" vertical-offset="49370" max-vertical-offset="78370">
+          <caret line="2942" column="4" selection-start-line="2942" selection-start-column="4" selection-end-line="2942" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configs/Links_site/link_springer_com.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="49515" max-vertical-offset="78404">
+          <caret line="3014" column="0" selection-start-line="3014" selection-start-column="0" selection-end-line="3014" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tornado-get.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.2" vertical-offset="10702" max-vertical-offset="26129">
+          <caret line="640" column="32" selection-start-line="640" selection-start-column="32" selection-end-line="640" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/save_source.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2984293" vertical-offset="6193" max-vertical-offset="6885">
-          <caret line="373" column="30" selection-start-line="373" selection-start-column="30" selection-end-line="373" selection-end-column="30" />
+        <state vertical-scroll-proportion="-16.489529" vertical-offset="6503" max-vertical-offset="6885">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
         </state>
       </provider>

@@ -3012,11 +3012,7 @@ def link_tag_find01( html, base_url):
         pass
     return links, title
 
-def link_tag_find( html):
-    import pypdftk
 
-    generated_pdf = pypdftk.fill_form('/path/to/model.pdf', datas)
-    out_pdf = pypdftk.concat(['/path/to/cover.pdf', generated_pdf])
 
 def link_tag_find( html, base_url,links=[]):
     try:

@@ -373,10 +373,10 @@ if __name__ == '__main__':
     url='http://ieeexplore.ieee.org/xpl/articleDetails.jsp?tp=&arnumber=6180383&queryText%3Dpower' #91 KB
     url_watermark="http://test"
     file_name = PDF_File().filename(url)
-    # html=''
+    html=os.environ['OPENSHIFT_HOMEDIR']+"app-root/runtime/srv/tornado3/PDF_Files/75414.pdf"
     # pdf='E:/Program Files win 7 2nd/Ampps/www/cgi-bin2/wrapper work/all_functions/PDF_Files/1752-153X-2-5%20-%20Copy.pdf'
-    from  download_mozilla import web
-    html=web().download(url)
+    # from  download_mozilla import web
+    # html=web().download(url)
 
     pdf_dw_li, pdf_dw_Wr_li = PDF_File(url).finall_file_saving(html, file_name)
     from optparse import OptionParser

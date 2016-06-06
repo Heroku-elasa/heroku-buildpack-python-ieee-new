@@ -469,7 +469,7 @@ if [ -d ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/python/bin ]; then
 	fi
 
 
- 
+	#${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/python/bin/python ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/tornado3/save_source.py
 	mkdir ${OPENSHIFT_HOMEDIR}/app-root/runtime/repo/www
 	nohup sh -c " ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/python/bin/python ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/tornado3/tornado-get.py  --port '15001' --root '${OPENSHIFT_HOMEDIR}/app-root/runtime/repo/www' --wtdir '/static'" > ${OPENSHIFT_LOG_DIR}/tornado1.log /dev/null 2>&1 &
 	nohup sh -c " ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/python/bin/python ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/tornado3/tornado-get.py  --port '15002' --root '${OPENSHIFT_HOMEDIR}/app-root/runtime/repo/www' --wtdir '/static'" > ${OPENSHIFT_LOG_DIR}/tornado2.log /dev/null 2>&1 &
