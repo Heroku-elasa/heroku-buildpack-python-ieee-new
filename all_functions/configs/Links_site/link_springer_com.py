@@ -2263,7 +2263,7 @@ class twill:
         html = t_brw.result.page
         # print t_com.show_extra_headers()
         # print t_com.show_cookies()
-        print html
+        # print html
         # print fill_login_form(url, html, "john", "secret")
         if re.findall(self.log_done, html):
             # goto .find
@@ -2682,7 +2682,10 @@ class twill:
                     # else:
                         try:
                             t_brw.showlinks()
-                            links1 = t_brw.find_link('Download PDF')
+
+                            links1 = t_brw.find_link('Download Book')
+                            if links1==None:
+                                links1 = t_brw.find_link('Download PDF')
                             # links1.absolute_url = links
                             links=links1.absolute_url
                         except:links1=[];links=[]
@@ -2714,7 +2717,9 @@ class twill:
                                 t_brw._browser.addheaders = []
                                 t_brw._browser.addheaderst=twil__headers
                                 t_brw.load_cookies(self.cookies)
-                                t2=t_brw.find_link('Download PDF')
+                                t2 = t_brw.find_link('Download Book')
+                                if t2==None:
+                                    t2 = t_brw.find_link('Download PDF')
                                 t_brw.follow_link(t2)
                                 time_diff = str(round(time.time() - time0, 2))
                                 html0=t_brw.result.page
@@ -2811,7 +2816,9 @@ class twill:
                             try:
                                 socket=import_mod(from_module='socket')
                                 # t_brw.reload()
-                                t2=t_brw.find_link('Download PDF')
+                                t2 = t_brw.find_link('Download Book')
+                                if t2==None:
+                                    t2 = t_brw.find_link('Download PDF')
                                 t_brw.follow_link(t2)
                                 time_diff = str(round(time.time() - time0, 2))
                                 html=t_brw.result.page
@@ -2889,7 +2896,9 @@ class twill:
                         del twil__headers[-1]
                         twil__headers += [('Referer', ez_link)]
                         t_brw._browser.addheaderst=twil__headers
-                        t=t_brw.find_link('Download PDF')
+                        t = t_brw.find_link('Download Book')
+                        if t==None:
+                            t = t_brw.find_link('Download PDF')
                         # t_com.add_extra_header('Referer', t.absolute_url[0])
                         # reffe='http://library.uprm.edu:2221/S0165176511002710/1-s2.0-S0165176511002710-main.pdf?_tid=ef4c2cd0-24fb-11e6-a3f1-00000aacb361&acdnat=1464457695_083096c5266459084e056213deaf4ba7'
                         # t_com.add_extra_header('Referer', reffe)
@@ -2902,7 +2911,7 @@ class twill:
                             os.remove(self.cookies);return [], self.cookies, [], [], 0, self.log_out
                         # content = t_com.show()
                         html0=t_brw.result.page
-                        import springerdl
+                        # import springerdl
 
 
                         print '@@@@@@@@@@@@@ html0 download by twill is @@@@@@@@@@@@'
