@@ -1,13 +1,13 @@
 None:None For Site:www.sciencedirect.com Rs_Time 1.0 Success_try:0 Failed_try:4
-130.79.179.156:8080 For Site: www.sciencedirect.com Rs_Time 44.82 Success_try:66Failed_try:17
-202.119.25.71:9999 For Site: www.sciencedirect.com Rs_Time 36.89 Success_try:66Failed_try:15
+#130.79.179.156:8080 For Site: www.sciencedirect.com Rs_Time 44.82 Success_try:66Failed_try:17
+#202.119.25.71:9999 For Site: www.sciencedirect.com Rs_Time 36.89 Success_try:66Failed_try:15
 
-18.113.1.242:8080  For Site: www.sciencedirect.com Rs_Time 51.24 Success_try:52Failed_try:13
-128.91.31.85:8080 For Site: www.sciencedirect.com Rs_Time 25.95 Success_try:0 Failed_try:11
-165.123.75.36:8080 For Site: www.sciencedirect.com Rs_Time 167.67 Success_try:49Failed_try:11
-41.89.96.43:3128 For Site: www.sciencedirect.com Rs_Time 25.95 Success_try:51 Failed_try:9
-210.57.208.14:80  For Site: www.sciencedirect.com Rs_Time 24.82 Success_try:5Failed_try:7
-210.57.215.150:3128  For Site: www.sciencedirect.com Rs_Time 28.67 Success_try:5Failed_try:7
-210.57.214.46:3128   For Site: www.sciencedirect.com  Rs_Time 24.67 Success_try:2 Failed_try:7
-85.185.42.2:8080  For Site: www.sciencedirect.com Rs_Time 24.11 Success_try:1 Failed_try:7
-202.112.114.28:3128 For Site: www.sciencedirect.com Rs_Time 12.02 Success_try:0 Failed_try:7
+#18.113.1.242:8080  For Site: www.sciencedirect.com Rs_Time 51.24 Success_try:52Failed_try:13
+#128.91.31.85:8080 For Site: www.sciencedirect.com Rs_Time 25.95 Success_try:0 Failed_try:11
+#165.123.75.36:8080 For Site: www.sciencedirect.com Rs_Time 167.67 Success_try:49Failed_try:11
+#41.89.96.43:3128 For Site: www.sciencedirect.com Rs_Time 25.95 Success_try:51 Failed_try:9
+#210.57.208.14:80  For Site: www.sciencedirect.com Rs_Time 24.82 Success_try:5Failed_try:7
+#210.57.215.150:3128  For Site: www.sciencedirect.com Rs_Time 28.67 Success_try:5Failed_try:7
+#210.57.214.46:3128   For Site: www.sciencedirect.com  Rs_Time 24.67 Success_try:2 Failed_try:7
+#85.185.42.2:8080  For Site: www.sciencedirect.com Rs_Time 24.11 Success_try:1 Failed_try:7
+#202.112.114.28:3128 For Site: www.sciencedirect.com Rs_Time 12.02 Success_try:0 Failed_try:7
