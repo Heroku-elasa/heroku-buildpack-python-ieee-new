@@ -23,6 +23,7 @@ if [ ! -d "$OPENSHIFT_HOMEDIR/app-root/runtime/srv/phantomjs/bin" ]; then
 	git clone git://github.com/ariya/phantomjs.git
 	cd phantomjs
 	#./build.sh
+	${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/python/bin/python build.py
 	nohup sh -c "./build.sh   --confirm "> $OPENSHIFT_LOG_DIR/phantomjs_install.log /dev/null 2>&1 &  
 	bash -i -c 'tail -f  $OPENSHIFT_LOG_DIR/phantomjs_install.log'
 	

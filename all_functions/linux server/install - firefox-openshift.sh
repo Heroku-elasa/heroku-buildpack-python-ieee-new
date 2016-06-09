@@ -26,7 +26,9 @@ if [ ! -d "$OPENSHIFT_HOMEDIR/app-root/runtime/srv/siege/bin" ]; then
 	cd X.V10R3
 	make
 	wget http://selenium.googlecode.com/files/selenium-server-standalone-2.0b3.jar
-	DISPLAY=:1 xvfb-run java -jar selenium-server-standalone-2.0b3.jar
+	#DISPLAY=:1 xvfb-run java -jar selenium-server-standalone-2.0b3.jar
+	export DISPLAY=:0.0
+	$OPENSHIFT_HOMEDIR/app-root/runtime/srv/java/bin/java -jar selenium-server-standalone-2.0b3.jar 
 	rm selenium-server-standalone-2.0b3.jar
     cd $OPENSHIFT_HOMEDIR/app-root/runtime/srv/firefox
 	mkdir repo
@@ -45,6 +47,7 @@ if [ ! -d "$OPENSHIFT_HOMEDIR/app-root/runtime/srv/siege/bin" ]; then
     tar zxf ../repo/jre-7u7-linux-x64.tar.gz
     mkdir -p firefox/plugins
     pushd firefox/plugins
+	firefox_dir=$OPENSHIFT_HOMEDIR/app-root/runtime/srv/firefox
     tar zxf ${firefox_dir}/repo/install_flash_player_11_linux.x86_64.tar.gz
 
     # This installs the java plugin.
@@ -56,6 +59,8 @@ if [ ! -d "$OPENSHIFT_HOMEDIR/app-root/runtime/srv/siege/bin" ]; then
     # ========================================================
 cat >rtf/run.sh <<EOF
 #!/bin/bash
+#export DISPLAY=:0.0
+export DISPLAY=:0
 MYARGS="\$*"
 export PATH="${firefox_dir}/rtf/firefox:$rtfdir/jre1.7.0_07/bin:\${PATH}"
 export CLASSPATH="${firefox_dir}/rtf/jre1.7.0_07/lib:\${CLASSPATH}"

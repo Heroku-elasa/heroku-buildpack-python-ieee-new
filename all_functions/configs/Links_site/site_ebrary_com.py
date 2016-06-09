@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#----------------------------------------------------------------------
+# ----------------------------------------------------------------------
 #
 # Author:      Laszlo Nagy
 #
@@ -21,6 +21,7 @@ import mimetypes
 import random
 import mechanize
 import md5, hashlib
+from selenium.webdriver.phantomjs import webdriver
 
 
 print "Content-type: text/html\n"
@@ -295,7 +296,7 @@ class MozillaEmulator(object):
                         length = 0
                     dlength = 0
                     # piece_size = 4096 # 4 KiB
-                    piece_size = 1024 * 1024 # 1MB
+                    piece_size = 1024 * 1024  # 1MB
                     if fd:
                         while True:
                             data = openerdirector.read(piece_size)
@@ -418,8 +419,8 @@ class MECAHNIZM(object):
         # Browser options
         br.set_handle_equiv(True)
         br.set_handle_gzip(True)
-        br.set_handle_referer(True)    # no allow everything to be written to
-        br.set_handle_robots(False)   # no robots
+        br.set_handle_referer(True)  # no allow everything to be written to
+        br.set_handle_robots(False)  # no robots
         br.set_handle_refresh(True)  # can sometimes hang without this
         br.set_handle_redirect(True)
 
@@ -511,7 +512,7 @@ class MECAHNIZM(object):
             if not newdata:
                 self.cj.save(self.cookie3)
                 break
-        return data, self.cookie3 #,pdf_path
+        return data, self.cookie3  #,pdf_path
 
     def download_pdf_br(self, pdf_url1):
         class pdf_url():
@@ -556,7 +557,7 @@ class MECAHNIZM(object):
         if f1:
             self.cj.save(self.cookie3)
 
-        return f1[0], self.cookie3 #,pdf_path
+        return f1[0], self.cookie3  #,pdf_path
 
 
 
@@ -820,15 +821,16 @@ def twil_find_pdf_link(link):
     form = tw.find_form()
     for k in range(0, len(form)):
         # br,cookies=tw.login_to_site(link,form[k],[],[])
-        [html, cookies, links, title, times,mydriver] = tw.login_to_site_selenium(link, form[k], [], [])
+        [html, cookies, links, title, times, mydriver] = tw.login_to_site_selenium(link, form[k], [], [])
         if links != []:
-            html=tw.Download_selenium( links,cookies,mydriver)
+            html = tw.Download_selenium(links, cookies, mydriver)
             break
         [html, cookies, links, title, times] = tw.twill_find_link(link, form[k])
         if links != []:
             break
     os.chdir(fo)
     return html, cookies, links, title, form[k], times
+
 
 def twil_download_pdf_link(link):
     site = urlparse2(link).hostname
@@ -919,13 +921,13 @@ class twill:
                 'Form_id': pip.split('Form_id:' + z)[1].split(z)[0],
                 'Form_Type': pip.split('Form_Type:' + z)[1].split(z)[0],
                 'database_link': pip.split('database_link:' + z)[1].split(z)[0].replace('\n', ''),
-                'Log_test': pip.split('Log_test:' + z)[1].split(z)[0].replace('\n', '') # or 8080 or whatever
+                'Log_test': pip.split('Log_test:' + z)[1].split(z)[0].replace('\n', '')  # or 8080 or whatever
             }
             # proxy_="http://%(user)s:%(pass)s@%(host)s:%(port)s" % proxy_info
             # proxy_handler = urllib2.ProxyHandler({"http" : "http://%(user)s:%(pass)s@%(host)s:%(port)s" % proxy_info})
         except:
             proxy_info = {
-                'Form_Tag': pip.split('Form_Tag:')[1].replace('\n', '') # or 8080 or whatever
+                'Form_Tag': pip.split('Form_Tag:')[1].replace('\n', '')  # or 8080 or whatever
             }
         return proxy_info
 
@@ -996,22 +998,53 @@ class twill:
         file_location = os.getcwd()
         profile = webdriver.FirefoxProfile()
         from selenium import webdriver
-        driver = webdriver.PhantomJS(executable_path='/var/lib/openshift/53fa54a8e0b8cd1d3c000611/app-root/runtime/srv/phantomjs/bin/phantomjs')
+        import os
+        # os.path.abspath()
+        # import heroku
+        home = os.environ['OPENSHIFT_HOMEDIR'];
+        path = home + 'app-root/runtime/srv/phantomjs/bin/phantomjs'
+        try:ip = os.environ['OPENSHIFT_DIY_IP']
+        except:ip='127.0.0.1'
+        dr = ' --webdriver='+ip+':8080 --webdriver-selenium-grid-hub=http://' + ip + ':15010'
+        dr = '  --webdriver-selenium-grid-hub=http://' + ip + ':15010'
+        # desired_capabilities={}
+        from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+        desired_capabilities = DesiredCapabilities.PHANTOMJS
+        desired_capabilities['phantomjs.ghostdriver.path'] = home+'app-root/runtime/srv/ghostdriver/src/main.js'
+        driver = webdriver.PhantomJS(executable_path=path+dr, port=15010,desired_capabilities=desired_capabilities)
+        try:driver = webdriver.PhantomJS(executable_path=path, port=15010,desired_capabilities=desired_capabilities, service_args=dr)
+        except:driver = webdriver.PhantomJS(executable_path=path)
+        driver = webdriver.Remote(command_executor='http://127.0.0.1:4444/wd/hub')
+        driver = webdriver.Remote("http://localhost:4444/wd/hub", webdriver.DesiredCapabilities.HTMLUNIT.copy())
+        driver = webdriver.Remote("http://localhost:15001", webdriver.DesiredCapabilities.HTMLUNITWITHJS)
+
+        from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+        capabilities = DesiredCapabilities.PHANTOMJS
+        desired_capabilities={
+            'browserName': 'phantomjs',
+            'phantomjs.ghostdriver.path':home+'app-root/runtime/srv/ghostdriver/src/main.js'
+        }
+        capabilities['phantomjs.ghostdriver.path']=home+'app-root/runtime/srv/ghostdriver/src/main.js'
+        driver = webdriver.Remote(command_executor="http://"+ip +":15010", desired_capabilities=desired_capabilities)
+        driver = webdriver.Remote(port=15010, desired_capabilities=desired_capabilities)
+
+        # from selenium.remote import connect
+
 
 
         # from selenium import webdriver
         # driver = webdriver.PhantomJS(executable_path='E:/Program Files win 7 2nd/phantomjs-1.9.2-windows/phantomjs')
 
-        profile.set_preference("browser.download.folderList",2)
-        profile.set_preference('browser.download.useDownloadDir',True)
-        profile.set_preference('browser.download.dir',file_location)
+        profile.set_preference("browser.download.folderList", 2)
+        profile.set_preference('browser.download.useDownloadDir', True)
+        profile.set_preference('browser.download.dir', file_location)
         profile.set_preference("browser.download.default_directory", file_location)
         profile.set_preference("browser.download.lastDir", file_location)
-        profile.set_preference("browser.download.manager.showWhenStarting",False)
+        profile.set_preference("browser.download.manager.showWhenStarting", False)
         # profile.set_preference("browser.cache.disk.enable", False)
 
         profile.set_preference("browser.helperApps.neverAsk.saveToDisk", 'application/pdf')
-        profile.set_preference("pdfjs.disabled",True)
+        profile.set_preference("pdfjs.disabled", True)
         profile.set_preference("plugin.scan.Acrobat", "99.0")
         # mydirver.setPreference("plugin.scan.plid.all", False)
         profile.set_preference("plugin.disable_full_page_plugin_for_types", "application/pdf")
@@ -1072,136 +1105,270 @@ class twill:
                 self.cookies = mydriver.get_cookies()
                 time_diff = str(round(time.time() - time0, 2))
                 if link != []:
-                    return html, self.cookies, links, title, time_diff,mydriver
+                    return html, self.cookies, links, title, time_diff, mydriver
 
 
             except:
-                return [], [], [], [], 0,[]
+                return [], [], [], [], 0, []
         else:
-            return [], [], [], [], 0,[]
+            return [], [], [], [], 0, []
 
 
-    def Download_selenium(self, link,cookies ,mydriver,form_data='', proxy=[], User_Pass=[]):
+def Download_selenium(self, link, cookies, mydriver, form_data='', proxy=[], User_Pass=[]):
+    # from selenium import webdriver
 
-        # from selenium import webdriver
+    # self.url = "%(ezproxy_host)s" % form_data
+    # self.database_link = "%(database_link)s" % form_data
+    # username = "%(user)s" % form_data
+    # password = "%(pass)s" % form_data
+    # user_tag = "%(user_tag)s" % form_data
+    # pass_tag = "%(pass_tag)s" % form_data
+    # Form_id = "%(Form_id)s" % form_data
+    # submit_tag_name = "%(submit_tag_name)s" % form_data
+    # submit_tag_value = "%(submit_tag_value)s" % form_data
+    # Form_Type = "%(Form_Type)s" % form_data
+    # log_done = "%(Log_test)s" % form_data
+    # log_done = "%(Log_test)s" % form_data
+    # # try:
+    # #     form_id=form.attrs['id']
+    # # except:
+    #     form_id=''
+    # mydriver = webdriver.Firefox()
+    time0 = time.time()
+    mydriver.add_cookie(cookies)
+    # mydriver.get(self.url)
+    # # mydriver.maximize_window()
+    # username1 = mydriver.find_element_by_name(user_tag)
+    # password1 = mydriver.find_element_by_name(pass_tag)
+    #
+    # username1.send_keys(username)
+    # password1.send_keys(password)
+    #
+    # submit_button = mydriver.find_element_by_xpath("//input[@value='" + submit_tag_value + "']")
+    # s = submit_button.click()
+    # s2 = mydriver.page_source
+    # site2 = urlparse2(self.url).hostname
+    # self.base_url = 'http://' + self.site + '.' + site2
+    # ez_link = 'https://' + self.site + '.' + site2 + link.split(self.site)[1]
+    # ez_sign_in = 'https://' + self.site + '.' + site2 + '/lib/scitechjo/login.action'
+    # # mydriver.set_page_load_timeout(1700)
+    # self.socket.setdefaulttimeout(360)
+    # mydriver.get(ez_sign_in)
+    # # time.sleep(5)
+    # mydriver.set_page_load_timeout(1700)
+    # sign_in = mydriver.find_element_by_partial_link_text('Sign')
+    # sg = sign_in.click()
+    # username1 = mydriver.find_element_by_name('username')
+    # password1 = mydriver.find_element_by_name('password')
+    # username1.send_keys('ss3@elec-lab.tk')
+    # password1.send_keys('ss123456')
+    # submit_button = mydriver.find_element_by_xpath("//input[@name='" + 'login_btn_1' + "']")
+    # s = submit_button.click()
+    try:
+        mydriver.get(link)
+        # time.sleep(5)
+        mydriver.set_page_load_timeout(1700)
+        html = mydriver.page_source
 
-        # self.url = "%(ezproxy_host)s" % form_data
-        # self.database_link = "%(database_link)s" % form_data
-        # username = "%(user)s" % form_data
-        # password = "%(pass)s" % form_data
-        # user_tag = "%(user_tag)s" % form_data
-        # pass_tag = "%(pass_tag)s" % form_data
-        # Form_id = "%(Form_id)s" % form_data
-        # submit_tag_name = "%(submit_tag_name)s" % form_data
-        # submit_tag_value = "%(submit_tag_value)s" % form_data
-        # Form_Type = "%(Form_Type)s" % form_data
-        # log_done = "%(Log_test)s" % form_data
-        # log_done = "%(Log_test)s" % form_data
-        # # try:
-        # #     form_id=form.attrs['id']
-        # # except:
-        #     form_id=''
-        # mydriver = webdriver.Firefox()
-        time0 = time.time()
-        mydriver.add_cookie(cookies)
-        # mydriver.get(self.url)
-        # # mydriver.maximize_window()
-        # username1 = mydriver.find_element_by_name(user_tag)
-        # password1 = mydriver.find_element_by_name(pass_tag)
+        va = []
+        # file_location = os.getcwd()
+        # mydriver.set_preference("download.default_directory", file_location)
+        # mydriver.set_preference("browser.download.folderList",2)
+        # mydriver.set_preference("browser.download.manager.showWhenStarting",False)
+        # mydriver.set_preference("browser.cache.disk.enable", False)
         #
-        # username1.send_keys(username)
-        # password1.send_keys(password)
+        # mydriver.set_preference("browser.helperApps.neverAsk.saveToDisk", 'application/pdf')
+        # mydriver.set_preference("pdfjs.disabled",True)
+        # mydriver.set_preference("plugin.scan.Acrobat", "99.0")
+        # # mydirver.setPreference("plugin.scan.plid.all", False)
+        # mydriver.set_preference("plugin.disable_full_page_plugin_for_types", "application/pdf")
+
+
+        for i in mydriver.find_elements_by_xpath("//select /*"):
+            # i.click()
+            print i.get_attribute("value")
+            va.append(i.get_attribute("value"))
+            i.click()
+            # ok_l = mydriver.find_elements_by_xpath("//input[@name='submit']")
+            ok_l = mydriver.find_element_by_name('submit')
+
+            ok_l.click()
+
+            break
+
+        # for i in mydriver.find_elements_by_xpath(
+        #         "//select[@name='chapterDownloadPageNumber']/option[text()='option_text']"):
+        #     # i.click()
+        #     # print i.get_attribute("href")
+        #     print 'ssssssssssssssss'
+        #     # for i in mydriver.find_elements_by_xpath("//option[@value=*]"):
+        # #     # i.click()
+        # #     print i.get_attribute("href")
         #
-        # submit_button = mydriver.find_element_by_xpath("//input[@value='" + submit_tag_value + "']")
-        # s = submit_button.click()
-        # s2 = mydriver.page_source
-        # site2 = urlparse2(self.url).hostname
-        # self.base_url = 'http://' + self.site + '.' + site2
-        # ez_link = 'https://' + self.site + '.' + site2 + link.split(self.site)[1]
-        # ez_sign_in = 'https://' + self.site + '.' + site2 + '/lib/scitechjo/login.action'
-        # # mydriver.set_page_load_timeout(1700)
-        # self.socket.setdefaulttimeout(360)
-        # mydriver.get(ez_sign_in)
-        # # time.sleep(5)
-        # mydriver.set_page_load_timeout(1700)
-        # sign_in = mydriver.find_element_by_partial_link_text('Sign')
-        # sg = sign_in.click()
-        # username1 = mydriver.find_element_by_name('username')
-        # password1 = mydriver.find_element_by_name('password')
-        # username1.send_keys('ss3@elec-lab.tk')
-        # password1.send_keys('ss123456')
-        # submit_button = mydriver.find_element_by_xpath("//input[@name='" + 'login_btn_1' + "']")
-        # s = submit_button.click()
+        # # for a in continue_link:
+        # #     print(a.get_attribute('href'))
+        # # s=1;
+        # html = continue_link.click()
+        # s = 1
+        time_diff = str(round(time.time() - time0, 2))
+        return 1
+    except:
+        pass
+
+
+def login_to_site(self, link, form_data, proxy=[], User_Pass=[]):
+    self.url = "%(ezproxy_host)s" % form_data
+    self.database_link = "%(database_link)s" % form_data
+    username = "%(user)s" % form_data
+    password = "%(pass)s" % form_data
+    user_tag = "%(user_tag)s" % form_data
+    pass_tag = "%(pass_tag)s" % form_data
+    Form_id = "%(Form_id)s" % form_data
+    log_done = "%(Log_test)s" % form_data
+    br = mechanize.Browser(factory=mechanize.RobustFactory())
+    # Browser options
+    br.set_handle_robots(False)
+    br.set_handle_referer(True)
+    br.set_handle_refresh(True)
+
+    br.set_handle_equiv(True)
+    br.set_handle_gzip(True)
+    br.set_handle_redirect(True)
+    cj = cookielib.LWPCookieJar()
+    # cj.revert(cookie3)
+    opener = mechanize.build_opener(mechanize.HTTPCookieProcessor(cj))
+
+    br.set_cookiejar(cj)
+
+    cj.save(self.cookies)
+    # Follows refresh 0 but not hangs on refresh > 0
+    br.set_handle_refresh(mechanize._http.HTTPRefreshProcessor(), max_time=1)
+
+    # Want debugging messages?
+    # User-Agent (this is cheating, ok?)
+    br.addheaders = [('User-agent',
+                      'Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.1) Gecko/2008071615 Fedora/3.0.1-1.fc9 Firefox/3.0.1')]
+    # br.addheaders =[('Content-type', 'application/x-www-form-urlencoded'), ('Content-length', '39'), ('Referer', 'http://lib.just.edu.jo/login?url='), ('Host', 'lib.just.edu.jo'), ('User-agent', 'Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.1) Gecko/2008071615 Fedora/3.0.1-1.fc9 Firefox/3.0.1')]
+
+    # txheaders = {
+    #     'Accept':'text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5',
+    #     'Accept-Language':'en,hu;q=0.8,en-us;q=0.5,hu-hu;q=0.3',
+    #     'Accept-Encoding': 'gzip, deflate',
+    #     'Accept-Charset': 'ISO-8859-1,utf-8;q=0.7,*;q=0.7',
+    #     'Keep-Alive': '300',
+    #     'Connection': 'keep-alive',
+    #     'Cache-Control': 'max-age=0',
+    # }
+    #
+    # req = urllib2.Request(url, txheaders)
+    # req2 = urllib2.urlopen(req)
+    # print req2
+    if proxy != [] and not (re.findall('None:None', proxy)):
+        br.proxies = br.set_proxies({"http": proxy})
+        # br.proxies=br.set_proxies( proxy)
+
+    if User_Pass != [] and not (re.findall('None:None', User_Pass)):
+        br.add_proxy_password(User_Pass.split(":")[0], User_Pass.split(":")[1])
+
+    try:
+        br.open(self.url)
+    except urllib2.HTTPError, e:
+        print "Got error code", e.code
         try:
-            mydriver.get(link)
-            # time.sleep(5)
-            mydriver.set_page_load_timeout(1700)
-            html = mydriver.page_source
+            br.open(self.url)
+        except urllib2.HTTPError, e:
+            print "Got error code", e.code
+    except urllib2.URLError, e:
+        print "Got error code", e.code
 
-            va = []
-            # file_location = os.getcwd()
-            # mydriver.set_preference("download.default_directory", file_location)
-            # mydriver.set_preference("browser.download.folderList",2)
-            # mydriver.set_preference("browser.download.manager.showWhenStarting",False)
-            # mydriver.set_preference("browser.cache.disk.enable", False)
-            #
-            # mydriver.set_preference("browser.helperApps.neverAsk.saveToDisk", 'application/pdf')
-            # mydriver.set_preference("pdfjs.disabled",True)
-            # mydriver.set_preference("plugin.scan.Acrobat", "99.0")
-            # # mydirver.setPreference("plugin.scan.plid.all", False)
-            # mydriver.set_preference("plugin.disable_full_page_plugin_for_types", "application/pdf")
+    # os.environ['http_proxy']=''
 
+    if br.forms():
+        print [form for form in br.forms()]
+        # br.select_form(name="USER")
+        # [f.id for f in br.forms()]
+        formcount = done = 0
+        for form in br.forms():
+            try:
+                form_id = form.attrs['id']
+            except:
+                form_id = ''
+            if form_id == Form_id:
+                br.form = form
+                done = 1
+            if done == 0: formcount = formcount + 1
 
-            for i in mydriver.find_elements_by_xpath("//select /*"):
-                # i.click()
-                print i.get_attribute("value")
-                va.append(i.get_attribute("value"))
-                i.click()
-                # ok_l = mydriver.find_elements_by_xpath("//input[@name='submit']")
-                ok_l = mydriver.find_element_by_name('submit')
+        formcount = 0
+        for frm in br.forms():
+            try:
+                form_id = form.attrs['id']
+            except:
+                form_id = ''
+            if str(form_id) == Form_id:
+                done = 1
+            if done == 0: formcount = formcount + 1
 
-                ok_l.click()
+        br.select_form(nr=formcount)
+        # br.select_form(nr = 0)
+        br[user_tag] = username
+        br[pass_tag] = password
+        br.submit()
 
+    print br.response().get_data()
+    # print current url
+    print "We are now at:", br.geturl()
+    # print error
+    if br.geturl() == self.url:
+        print "Login Failed"
+    else:
+        print "Successfully logged in"
+
+    if log_done in br.response().get_data():
+        print ("You are logged on to the Public Access to Court Electronic "
+               "Records (PACER) Case Search website as " + username + ". All costs "
+                                                                      "will be billed to this account.")
+        # print "<li><a>"
+        # print (link)
+        # print "</a></li>"
+        # print "<li><a>"
+        # print link.base_url
+        # print "</a></li>"
+        site2 = urlparse2(self.url).hostname
+        self.base_url = 'http://' + self.site + '.' + site2
+        ez_link = 'http://' + self.site + '.' + site2 + link.split(self.site)[1]
+        cj.save(self.cookies)
+        for link1 in br.links():
+
+            # http://www.rfc-editor.org/rfc/rfc2606.txt
+            if re.findall(self.site, link1.url):
+                print(link1)
+                # Link(base_url='http://www.example.com/', url='http://www.rfc-editor.org/rfc/rfc2606.txt', text='RFC 2606', tag='a', attrs=[('href', 'http://www.rfc-editor.org/rfc/rfc2606.txt')])
+                print(link1.url)
+                print('match found')
+                # match found
                 break
 
-            # for i in mydriver.find_elements_by_xpath(
-            #         "//select[@name='chapterDownloadPageNumber']/option[text()='option_text']"):
-            #     # i.click()
-            #     # print i.get_attribute("href")
-            #     print 'ssssssssssssssss'
-            #     # for i in mydriver.find_elements_by_xpath("//option[@value=*]"):
-            # #     # i.click()
-            # #     print i.get_attribute("href")
-            #
-            # # for a in continue_link:
-            # #     print(a.get_attribute('href'))
-            # # s=1;
-            # html = continue_link.click()
-            # s = 1
-            time_diff = str(round(time.time() - time0, 2))
-            return 1
-        except:
-            pass
+        # br.follow_link(link1)   # link still holds the last value it had in the loop
+        # print(br.geturl())
+        req = br.click_link(link1)
+        html = br.open(req).read()
+        html2 = br.open(ez_link).read()
+        print html2
 
+        # frontpage,cookies = MECAHNIZM([],[],cookies=self.cookies,url=ez_link).speed_download(ez_link)
 
-    def login_to_site(self, link, form_data, proxy=[], User_Pass=[]):
-        self.url = "%(ezproxy_host)s" % form_data
-        self.database_link = "%(database_link)s" % form_data
-        username = "%(user)s" % form_data
-        password = "%(pass)s" % form_data
-        user_tag = "%(user_tag)s" % form_data
-        pass_tag = "%(pass_tag)s" % form_data
-        Form_id = "%(Form_id)s" % form_data
-        log_done = "%(Log_test)s" % form_data
-        br = mechanize.Browser(factory=mechanize.RobustFactory())
+        request = br.request
+        header = request.header_items()
+        # header=request.get_header()
+
         # Browser options
         br.set_handle_robots(False)
-        br.set_handle_referer(True)
-        br.set_handle_refresh(True)
-
+        # br.set_handle_referer(True)
+        # br.set_handle_refresh(True)
+        #
         br.set_handle_equiv(True)
         br.set_handle_gzip(True)
-        br.set_handle_redirect(True)
+        # br.set_handle_redirect(True)
         cj = cookielib.LWPCookieJar()
         # cj.revert(cookie3)
         opener = mechanize.build_opener(mechanize.HTTPCookieProcessor(cj))
@@ -1212,355 +1379,221 @@ class twill:
         # Follows refresh 0 but not hangs on refresh > 0
         br.set_handle_refresh(mechanize._http.HTTPRefreshProcessor(), max_time=1)
 
-        # Want debugging messages?
-        # User-Agent (this is cheating, ok?)
-        br.addheaders = [('User-agent',
-                          'Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.1) Gecko/2008071615 Fedora/3.0.1-1.fc9 Firefox/3.0.1')]
-        # br.addheaders =[('Content-type', 'application/x-www-form-urlencoded'), ('Content-length', '39'), ('Referer', 'http://lib.just.edu.jo/login?url='), ('Host', 'lib.just.edu.jo'), ('User-agent', 'Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.1) Gecko/2008071615 Fedora/3.0.1-1.fc9 Firefox/3.0.1')]
+        time0 = time.time()
 
-        # txheaders = {
-        #     'Accept':'text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5',
-        #     'Accept-Language':'en,hu;q=0.8,en-us;q=0.5,hu-hu;q=0.3',
-        #     'Accept-Encoding': 'gzip, deflate',
-        #     'Accept-Charset': 'ISO-8859-1,utf-8;q=0.7,*;q=0.7',
-        #     'Keep-Alive': '300',
-        #     'Connection': 'keep-alive',
-        #     'Cache-Control': 'max-age=0',
-        # }
-        #
-        # req = urllib2.Request(url, txheaders)
-        # req2 = urllib2.urlopen(req)
-        # print req2
-        if proxy != [] and not (re.findall('None:None', proxy)):
-            br.proxies = br.set_proxies({"http": proxy})
-            # br.proxies=br.set_proxies( proxy)
-
-        if User_Pass != [] and not (re.findall('None:None', User_Pass)):
-            br.add_proxy_password(User_Pass.split(":")[0], User_Pass.split(":")[1])
-
+        # request = urllib2.Request(ez_link, None, header)
+        # openerdirector = br.open(request)
+        # br.addheaders(header)
+        openerdirector = br.open(ez_link)
         try:
-            br.open(self.url)
-        except urllib2.HTTPError, e:
-            print "Got error code", e.code
-            try:
-                br.open(self.url)
-            except urllib2.HTTPError, e:
-                print "Got error code", e.code
-        except urllib2.URLError, e:
-            print "Got error code", e.code
-
-        # os.environ['http_proxy']=''
-
-        if br.forms():
-            print [form for form in br.forms()]
-            # br.select_form(name="USER")
-            # [f.id for f in br.forms()]
-            formcount = done = 0
-            for form in br.forms():
-                try:
-                    form_id = form.attrs['id']
-                except:
-                    form_id = ''
-                if form_id == Form_id:
-                    br.form = form
-                    done = 1
-                if done == 0: formcount = formcount + 1
-
-            formcount = 0
-            for frm in br.forms():
-                try:
-                    form_id = form.attrs['id']
-                except:
-                    form_id = ''
-                if str(form_id) == Form_id:
-                    done = 1
-                if done == 0: formcount = formcount + 1
-
-            br.select_form(nr=formcount)
-            # br.select_form(nr = 0)
-            br[user_tag] = username
-            br[pass_tag] = password
-            br.submit()
-
-        print br.response().get_data()
-        # print current url
-        print "We are now at:", br.geturl()
-        # print error
-        if br.geturl() == self.url:
-            print "Login Failed"
-        else:
-            print "Successfully logged in"
-
-        if log_done in br.response().get_data():
-            print ("You are logged on to the Public Access to Court Electronic "
-                   "Records (PACER) Case Search website as " + username + ". All costs "
-                                                                          "will be billed to this account.")
-            # print "<li><a>"
-            # print (link)
-            # print "</a></li>"
-            # print "<li><a>"
-            # print link.base_url
-            # print "</a></li>"
-            site2 = urlparse2(self.url).hostname
-            self.base_url = 'http://' + self.site + '.' + site2
-            ez_link = 'http://' + self.site + '.' + site2 + link.split(self.site)[1]
-            cj.save(self.cookies)
-            for link1 in br.links():
-
-                # http://www.rfc-editor.org/rfc/rfc2606.txt
-                if re.findall(self.site, link1.url):
-                    print(link1)
-                    # Link(base_url='http://www.example.com/', url='http://www.rfc-editor.org/rfc/rfc2606.txt', text='RFC 2606', tag='a', attrs=[('href', 'http://www.rfc-editor.org/rfc/rfc2606.txt')])
-                    print(link1.url)
-                    print('match found')
-                    # match found
-                    break
-
-            # br.follow_link(link1)   # link still holds the last value it had in the loop
-            # print(br.geturl())
-            req = br.click_link(link1)
-            html = br.open(req).read()
-            html2 = br.open(ez_link).read()
-            print html2
-
-            # frontpage,cookies = MECAHNIZM([],[],cookies=self.cookies,url=ez_link).speed_download(ez_link)
-
-            request = br.request
-            header = request.header_items()
-            # header=request.get_header()
-
-            # Browser options
-            br.set_handle_robots(False)
-            # br.set_handle_referer(True)
-            # br.set_handle_refresh(True)
-            #
-            br.set_handle_equiv(True)
-            br.set_handle_gzip(True)
-            # br.set_handle_redirect(True)
-            cj = cookielib.LWPCookieJar()
-            # cj.revert(cookie3)
-            opener = mechanize.build_opener(mechanize.HTTPCookieProcessor(cj))
-
-            br.set_cookiejar(cj)
-
-            cj.save(self.cookies)
-            # Follows refresh 0 but not hangs on refresh > 0
-            br.set_handle_refresh(mechanize._http.HTTPRefreshProcessor(), max_time=1)
-
-            time0 = time.time()
-
-            # request = urllib2.Request(ez_link, None, header)
-            # openerdirector = br.open(request)
-            # br.addheaders(header)
-            openerdirector = br.open(ez_link)
-            try:
-                if (openerdirector._headers.dict['content-type']) == 'application/pdf':
-                    length = long(openerdirector._headers.dict['content-length'])
-                    ok = True
-                else:
-                    length = 0
-            except:
+            if (openerdirector._headers.dict['content-type']) == 'application/pdf':
+                length = long(openerdirector._headers.dict['content-length'])
+                ok = True
+            else:
                 length = 0
-            dlength = 0
-            # piece_size = 4096 # 4 KiB
-            piece_size = 1024 * 1024 # 1MB
-            data = ''
-            while True:
-                newdata = openerdirector.read(piece_size)
-                dlength += len(newdata)
-                data += newdata
-                if length != 0:
-                    status = r"%10d [%3.2f%%]" % (dlength, dlength * 100. / length)
-                    status = status + chr(8) * (len(status) + 1)
-                    print status
-                    # pdf_path=PDF_File().file_save(data, "PDF_Files\\", localName.filename)
-                    # if onprogress:
-                    #     onprogress(length,dlength)
-                if not newdata:
-                    cj.save(self.cookies)
-                    break
-            self.br = br;
-            self.cj = cj;
-            time_diff = str(round(time.time() - time0, 2))
-            links, title = self.link_tag_find(data, self.base_url)
-            if link != []:
-                return data, self.cookies, links, title, time_diff
-            return data, self.cookies #,pdf_path
-
-
-        else:
-            raise ValueError("Could not login to PACER Case Search. Check your "
-                             "username and password")
-        return br
-
-    def link_tag_find(self, html, base_url):
-        try:
-            # title=LINK().find_my_tilte(data=html,start_dash='<h1 class="article-title"',end_dash='1>',make_url=False)
-            title = LINK().find_my_tilte(data=html, start_dash='type="image/x-icon"><title>', end_dash='</title>',
-                                         make_url=False)
         except:
-            title = ''
+            length = 0
+        dlength = 0
+        # piece_size = 4096 # 4 KiB
+        piece_size = 1024 * 1024  # 1MB
+        data = ''
+        while True:
+            newdata = openerdirector.read(piece_size)
+            dlength += len(newdata)
+            data += newdata
+            if length != 0:
+                status = r"%10d [%3.2f%%]" % (dlength, dlength * 100. / length)
+                status = status + chr(8) * (len(status) + 1)
+                print status
+                # pdf_path=PDF_File().file_save(data, "PDF_Files\\", localName.filename)
+                # if onprogress:
+                #     onprogress(length,dlength)
+            if not newdata:
+                cj.save(self.cookies)
+                break
+        self.br = br;
+        self.cj = cj;
+        time_diff = str(round(time.time() - time0, 2))
+        links, title = self.link_tag_find(data, self.base_url)
+        if link != []:
+            return data, self.cookies, links, title, time_diff
+        return data, self.cookies  #,pdf_path
 
-        links = LINK().find_my_tilte(data=html, start_dash='<a id="pdfLink" href="', end_dash='"', make_url=True)
 
-        if links == '' or links == []:
-            links = LINK().soap_my(data=html, tag='title="Download PDF" ', attr='a', href='href', url=base_url)
-        if links == [] or links == '':
-            links = LINK().soap_my(data=html, tag='pdfLink', attr='a', href='href', url=base_url)
-        if title == '' or title == []:
-            title = LINK().soap_my(data=html, tag='class="article-title"', attr='h1', href='', url=base_url)
-        if title == '' or title == []:
-            title = LINK().soap_my(data=html, tag='<title>', attr='', href='', url=base_url)
-        if links != []: pass
+    else:
+        raise ValueError("Could not login to PACER Case Search. Check your "
+                         "username and password")
+    return br
 
 
-    def download_mechanize(self, link, form_data):
-        self.url = "%(ezproxy_host)s" % form_data
-        self.database_link = "%(database_link)s" % form_data
-        self.username = "%(user)s" % form_data
-        self.password = "%(pass)s" % form_data
-        self.user_tag = "%(user_tag)s" % form_data
-        self.pass_tag = "%(pass_tag)s" % form_data
-        self.Form_id = "%(Form_id)s" % form_data
-        self.submit_tag_name = "%(submit_tag_name)s" % form_data
-        self.submit_tag_value = "%(submit_tag_value)s" % form_data
-        self.Form_Type = "%(Form_Type)s" % form_data
-        self.log_done = "%(Log_test)s" % form_data
-        browser = mechanize.Browser(factory=mechanize.RobustFactory())
-        browser.set_handle_robots(False)
+def link_tag_find(self, html, base_url):
+    try:
+        # title=LINK().find_my_tilte(data=html,start_dash='<h1 class="article-title"',end_dash='1>',make_url=False)
+        title = LINK().find_my_tilte(data=html, start_dash='type="image/x-icon"><title>', end_dash='</title>',
+                                     make_url=False)
+    except:
+        title = ''
 
-        browser.open(link)
-        self.formnumber = 0
-        formnumber = 1
-        all_forms = browser.forms()
-        for each_frm in all_forms:
-            self.formnumber = 1 + self.formnumber
-            attr = each_frm.attrs             ## all attributes of form
-            try:
-                form_id = each_frm.attrs['id']
-            except:
-                form_id = ''
+    links = LINK().find_my_tilte(data=html, start_dash='<a id="pdfLink" href="', end_dash='"', make_url=True)
 
-            if each_frm.method == 'POST' and (form_id == self.Form_id ):
+    if links == '' or links == []:
+        links = LINK().soap_my(data=html, tag='title="Download PDF" ', attr='a', href='href', url=base_url)
+    if links == [] or links == '':
+        links = LINK().soap_my(data=html, tag='pdfLink', attr='a', href='href', url=base_url)
+    if title == '' or title == []:
+        title = LINK().soap_my(data=html, tag='class="article-title"', attr='h1', href='', url=base_url)
+    if title == '' or title == []:
+        title = LINK().soap_my(data=html, tag='<title>', attr='', href='', url=base_url)
+    if links != []: pass
+
+
+def download_mechanize(self, link, form_data):
+    self.url = "%(ezproxy_host)s" % form_data
+    self.database_link = "%(database_link)s" % form_data
+    self.username = "%(user)s" % form_data
+    self.password = "%(pass)s" % form_data
+    self.user_tag = "%(user_tag)s" % form_data
+    self.pass_tag = "%(pass_tag)s" % form_data
+    self.Form_id = "%(Form_id)s" % form_data
+    self.submit_tag_name = "%(submit_tag_name)s" % form_data
+    self.submit_tag_value = "%(submit_tag_value)s" % form_data
+    self.Form_Type = "%(Form_Type)s" % form_data
+    self.log_done = "%(Log_test)s" % form_data
+    browser = mechanize.Browser(factory=mechanize.RobustFactory())
+    browser.set_handle_robots(False)
+
+    browser.open(link)
+    self.formnumber = 0
+    formnumber = 1
+    all_forms = browser.forms()
+    for each_frm in all_forms:
+        self.formnumber = 1 + self.formnumber
+        attr = each_frm.attrs  ## all attributes of form
+        try:
+            form_id = each_frm.attrs['id']
+        except:
+            form_id = ''
+
+        if each_frm.method == 'POST' and (form_id == self.Form_id ):
             # browser.follow_link(text="Package Index", nr=0)
             # for form in browser.forms():
             #     if form.attrs['id'] == 'password':
             #         browser.form = form
 
-                d = browser.select_form(nr=self.formnumber)
-                browser[self.user_tag] = self.username
-                browser[self.pass_tag] = self.password
-                browser.submit()
+            d = browser.select_form(nr=self.formnumber)
+            browser[self.user_tag] = self.username
+            browser[self.pass_tag] = self.password
+            browser.submit()
 
-                # browser.select_form(name="password")
-                # browser.select_form(name="user")
-                # browser.select_form(name="searchform")
-                # browser.form["term"] = "mechanize"
-                # browser.submit()
-                # browser.follow_link(text_regex="mechanize-?(.*)")
-                # link = browser.find_link(text_regex=r"\.tar\.gz")
-                filename = os.path.basename(urlparse.urlsplit(link.url)[2])
-                if os.path.exists(filename):
-                    sys.exit("%s already exists, not grabbing" % filename)
-                browser.retrieve(link.url, filename)
-
-
-    def twill_find_link(self, link, form_data):
-        self.url = "%(ezproxy_host)s" % form_data
-        self.database_link = "%(database_link)s" % form_data
-        self.username = "%(user)s" % form_data
-        self.password = "%(pass)s" % form_data
-        self.user_tag = "%(user_tag)s" % form_data
-        self.pass_tag = "%(pass_tag)s" % form_data
-        self.Form_id = "%(Form_id)s" % form_data
-        self.submit_tag_name = "%(submit_tag_name)s" % form_data
-        self.submit_tag_value = "%(submit_tag_value)s" % form_data
-        self.Form_Type = "%(Form_Type)s" % form_data
-        self.log_done = "%(Log_test)s" % form_data
-        # site = urlparse2(link).hostname
+            # browser.select_form(name="password")
+            # browser.select_form(name="user")
+            # browser.select_form(name="searchform")
+            # browser.form["term"] = "mechanize"
+            # browser.submit()
+            # browser.follow_link(text_regex="mechanize-?(.*)")
+            # link = browser.find_link(text_regex=r"\.tar\.gz")
+            filename = os.path.basename(urlparse.urlsplit(link.url)[2])
+            if os.path.exists(filename):
+                sys.exit("%s already exists, not grabbing" % filename)
+            browser.retrieve(link.url, filename)
 
 
-        # self.a.config("readonly_controls_writeable", 1)
-        # self.b = self.a.get_browser()
-        # self.b.set_agent_string("Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.8.1.14) Gecko/20080404 Firefox/2.0.0.14")
-        # self.b.clear_cookies()
-        twill = import_mod(from_module='twill')
-        t_com = twill.commands
-        t_com.reset_browser
-        t_com.reset_output
-        t_com = twill.commands
-        ## get the default browser
-        t_brw = t_com.get_browser()
-        t_brw.set_agent_string(
-            "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.8.1.14) Gecko/20080404 Firefox/2.0.0.14")
-        ## open the url
-        # url = 'http://google.com'
-        t_brw.go(self.url)
-        html = t_brw.result.page
-        print html
-        # print fill_login_form(url, html, "john", "secret")
-
-        ## get all forms from that URL
-        all_forms = t_brw.get_all_forms()         ## this returns list of form objects
-        print "Forms:"
-        t_brw.showforms()
-
-        ## now, you have to choose only that form, which is having POST method
-
-        self.formnumber = 0
-        formnumber = 1
-        for each_frm in all_forms:
-            self.formnumber = 1 + self.formnumber
-            attr = each_frm.attrs             ## all attributes of form
-            try:
-                form_id = each_frm.attrs['id']
-            except:
-                form_id = ''
-
-            if each_frm.method == 'POST' and (form_id == self.Form_id ):
+def twill_find_link(self, link, form_data):
+    self.url = "%(ezproxy_host)s" % form_data
+    self.database_link = "%(database_link)s" % form_data
+    self.username = "%(user)s" % form_data
+    self.password = "%(pass)s" % form_data
+    self.user_tag = "%(user_tag)s" % form_data
+    self.pass_tag = "%(pass_tag)s" % form_data
+    self.Form_id = "%(Form_id)s" % form_data
+    self.submit_tag_name = "%(submit_tag_name)s" % form_data
+    self.submit_tag_value = "%(submit_tag_value)s" % form_data
+    self.Form_Type = "%(Form_Type)s" % form_data
+    self.log_done = "%(Log_test)s" % form_data
+    # site = urlparse2(link).hostname
 
 
-                t_com.formclear(formnumber)
-                t_com.fv(self.formnumber, self.user_tag, self.username)
-                t_com.fv(self.formnumber, self.pass_tag, self.password)
-                all_forms = t_brw.get_all_forms()         ## this returns list of form objects
-                print "Forms:"
-                t_brw.showforms()
-                # t_com.submit(self.formnumber)
-                # t_brw.submit(self.submit_tag_name)
-                t_com.submit(self.submit_tag_name)
-                #
-                content = t_com.show()
-                print 'debug twill post content:', content
-                t_com.save_cookies(self.cookies)
-                t_brw.load_cookies(self.cookies)
-                if re.findall(self.log_done, content):
-                    print ("You are logged on to the Public Access to Court Electronic "
-                           "Records (PACER) Case Search website as " + self.url + ". All costs "
-                                                                                  "will be billed to this account.")
+    # self.a.config("readonly_controls_writeable", 1)
+    # self.b = self.a.get_browser()
+    # self.b.set_agent_string("Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.8.1.14) Gecko/20080404 Firefox/2.0.0.14")
+    # self.b.clear_cookies()
+    twill = import_mod(from_module='twill')
+    t_com = twill.commands
+    t_com.reset_browser
+    t_com.reset_output
+    t_com = twill.commands
+    ## get the default browser
+    t_brw = t_com.get_browser()
+    t_brw.set_agent_string(
+        "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.8.1.14) Gecko/20080404 Firefox/2.0.0.14")
+    ## open the url
+    # url = 'http://google.com'
+    t_brw.go(self.url)
+    html = t_brw.result.page
+    print html
+    # print fill_login_form(url, html, "john", "secret")
 
-                    # t_brw.go(self.database_link)
-                    # site = urlparse2(link).hostname
-                    site2 = urlparse2(self.url).hostname
-                    self.base_url = 'http://' + self.site + '.' + site2
-                    ez_link = 'http://' + self.site + '.' + site2 + link.split(site)[1]
-                    time0 = time.time()
-                    t_brw.go(ez_link)
-                    time_diff = str(round(time.time() - time0, 2))
-                    html = t_brw.result.page
-                    # print t_brw.find_link('http://64.62.211.131:2082/frontend/x3/mail/fwds.html')
+    ## get all forms from that URL
+    all_forms = t_brw.get_all_forms()  ## this returns list of form objects
+    print "Forms:"
+    t_brw.showforms()
 
-                    print t_com.show_extra_headers()
-                    print t_com.show_cookies()
-                    print t_com.showlinks()
-                    print t_brw.result.page
-                    links, title = self.link_tag_find(html, self.base_url)
-                    if link != []:
-                        return html, self.cookies, links, title, time_diff
-                else:
-                    return [], [], [], [], 0
-            # return html,self.cookies,links,title,0
-        return [], [], [], [], 0
+    ## now, you have to choose only that form, which is having POST method
+
+    self.formnumber = 0
+    formnumber = 1
+    for each_frm in all_forms:
+        self.formnumber = 1 + self.formnumber
+        attr = each_frm.attrs  ## all attributes of form
+        try:
+            form_id = each_frm.attrs['id']
+        except:
+            form_id = ''
+
+        if each_frm.method == 'POST' and (form_id == self.Form_id ):
+
+
+            t_com.formclear(formnumber)
+            t_com.fv(self.formnumber, self.user_tag, self.username)
+            t_com.fv(self.formnumber, self.pass_tag, self.password)
+            all_forms = t_brw.get_all_forms()  ## this returns list of form objects
+            print "Forms:"
+            t_brw.showforms()
+            # t_com.submit(self.formnumber)
+            # t_brw.submit(self.submit_tag_name)
+            t_com.submit(self.submit_tag_name)
+            #
+            content = t_com.show()
+            print 'debug twill post content:', content
+            t_com.save_cookies(self.cookies)
+            t_brw.load_cookies(self.cookies)
+            if re.findall(self.log_done, content):
+                print ("You are logged on to the Public Access to Court Electronic "
+                       "Records (PACER) Case Search website as " + self.url + ". All costs "
+                                                                              "will be billed to this account.")
+
+                # t_brw.go(self.database_link)
+                # site = urlparse2(link).hostname
+                site2 = urlparse2(self.url).hostname
+                self.base_url = 'http://' + self.site + '.' + site2
+                ez_link = 'http://' + self.site + '.' + site2 + link.split(site)[1]
+                time0 = time.time()
+                t_brw.go(ez_link)
+                time_diff = str(round(time.time() - time0, 2))
+                html = t_brw.result.page
+                # print t_brw.find_link('http://64.62.211.131:2082/frontend/x3/mail/fwds.html')
+
+                print t_com.show_extra_headers()
+                print t_com.show_cookies()
+                print t_com.showlinks()
+                print t_brw.result.page
+                links, title = self.link_tag_find(html, self.base_url)
+                if link != []:
+                    return html, self.cookies, links, title, time_diff
+            else:
+                return [], [], [], [], 0
+                # return html,self.cookies,links,title,0
+    return [], [], [], [], 0
 
 
 class LINK:
@@ -1748,7 +1781,7 @@ class LINK:
                 cookies = ''
             web = self.Mozilla_Web
 
-            if len(user_pass_h) != 0: #user_pass_h !='' or
+            if len(user_pass_h) != 0:  #user_pass_h !='' or
 
                 # html,pr,upss,cookies=web().download(url,pr_h,user_pass_h,cookies=cookies)
                 # or by mechanizm method
@@ -1800,7 +1833,7 @@ class LINK:
                 upss = user_pass_h
 
             if not (html != [] and html[:4] == '%PDF'):
-                if len(user_pass_h) != 0: #user_pass_h !='' or
+                if len(user_pass_h) != 0:  #user_pass_h !='' or
 
                     # html,pr,upss,cookies=web().download(url,pr_h,user_pass_h,cookies=cookies);mech=0
 
@@ -1868,7 +1901,7 @@ class LINK:
             url_pdf = {}
             for j in range(i + 1, len(pr_h)):
                 if don_flg != 1 and not url.endswith('.pdf') \
-                    and not url.endswith('.zip') and link_done == 0:
+                        and not url.endswith('.zip') and link_done == 0:
                     time0 = time.time()
 
                     if re.findall('None', pr_h[j]):
@@ -1885,7 +1918,8 @@ class LINK:
                                 self.proxy_checker3.make_txt_file(site_file + site + ".txt", pp, site, time_diff)
                                 self.proxy_checker3.sort_file(site_file + site + ".txt", " Rs_Time ")
                             except:
-                                print 'we could not update proxy list for site:' + site + " that is worked with proxy " + pr_h[j] + '\n'
+                                print 'we could not update proxy list for site:' + site + " that is worked with proxy " + \
+                                      pr_h[j] + '\n'
                             responce = {
                                 'html': html,
                                 'url': url,
@@ -1981,7 +2015,8 @@ class LINK:
                                 self.proxy_checker3.make_txt_file(site_file + site + ".txt", pp, site, time_diff)
                                 self.proxy_checker3.sort_file(site_file + site + ".txt", " Rs_Time ")
                             except:
-                                print 'we could not update proxy list for site:' + site + " that is worked with proxy " +pr_h[j] + '\n'
+                                print 'we could not update proxy list for site:' + site + " that is worked with proxy " + \
+                                      pr_h[j] + '\n'
 
                             break
 
@@ -2085,7 +2120,7 @@ class LINK:
 
             # return links,pr_h[j],user_pass_h[j],cookies,
 
-        else: # pr_h[j]=[] there is no trusted proxy for it
+        else:  # pr_h[j]=[] there is no trusted proxy for it
             res = self.dowload_basePr_userpass_link(url, "None:None", [], cookies='')
             html = res['html'];
             proxy0 = res['proxy'];
@@ -2124,7 +2159,7 @@ if __name__ == '__main__':
     #HOW TO USE:
     url = "http://127.0.0.1/1752-153X-2-5%20-%20Copy.pdf"
     url = "http://127.0.0.1/1752-153X-2-5.pdf"
-    url = 'http://ieeexplore.ieee.org/xpl/articleDetails.jsp?tp=&arnumber=6180383&queryText%3Dpower' #91 KB
+    url = 'http://ieeexplore.ieee.org/xpl/articleDetails.jsp?tp=&arnumber=6180383&queryText%3Dpower'  #91 KB
     # url = "http://127.0.0.1/"
     # url = "http://dl.acm.org/citation.cfm?id=99977.100000&coll=DL&dl=ACM"
 

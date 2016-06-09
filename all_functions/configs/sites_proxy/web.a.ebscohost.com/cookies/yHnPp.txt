@@ -1,0 +1,6 @@
+#LWP-Cookies-2.0
+Set-Cookie3: REAK=77humsism8out5m41hq288u8v2; path="/"; domain=".uprm.edu"; path_spec; domain_dot; expires="2016-06-08 00:06:50Z"; version=0
+Set-Cookie3: ezproxy=CVlwskeYsBiecaL; path="/"; domain=".uprm.edu"; path_spec; domain_dot; discard; version=0
+Set-Cookie3: BIGipServerpdc-ehis_80="572653834.20480.0000"; path="/"; domain="library.uprm.edu"; path_spec; discard; version=0
+Set-Cookie3: BIGipServersdc-ehis_80="572654602.20480.0000"; path="/"; domain="library.uprm.edu"; path_spec; discard; version=0
+Set-Cookie3: EHost2="sid=05fde8b1-4244-4b6c-9f1e-55e5a48721dc@sessionmgr4005&k2=dGJyMPGrskuurLVMrOPfgeyk44Dt6fIA&k3=dGJyMOPY8Um0q64A&k4=ehost&k6=en&k7=live&k8=DS:live"; path="/"; domain="library.uprm.edu"; path_spec; discard; version=0

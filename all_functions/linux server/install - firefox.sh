@@ -38,12 +38,14 @@ if [ ! -d "$OPENSHIFT_HOMEDIR/app-root/runtime/srv/firefox/bin" ]; then
 	rm -rf *
 	
 	
-	wget http://firefox.googlecode.com/files/firefox-1.8.0-linux-x86_64.tar.bz2
-	tar xf firefox-1.8.0-linux-x86_64.tar.bz2
-	rm firefox-1.8.0-linux-x86_64.tar.bz2
-	mv firefox-1.8.0-linux-x86_64/ firefox
+	#wget http://firefox.googlecode.com/files/firefox-1.8.0-linux-x86_64.tar.bz2
+	wget https://download-installer.cdn.mozilla.net/pub/firefox/releases/46.0/linux-x86_64/en-US/firefox-46.0.tar.bz2
+	tar xf firefox-46.0.tar.bz2
+	rm firefox-46.0.tar.bz2
+	mv firefox-46.0/ firefox
 	cd firefox
-	./bin/firefox -v
+	export DISPLAY=:0.0
+	./firefox -v
 	
 	
 	git clone git://github.com/n1k0/casperjs.git

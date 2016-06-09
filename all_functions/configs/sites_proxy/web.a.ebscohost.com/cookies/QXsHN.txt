@@ -1,0 +1,2 @@
+#LWP-Cookies-2.0
+Set-Cookie3: REAK=0id30gmdjad44hnaclmac475q0; path="/"; domain=".uprm.edu"; path_spec; domain_dot; expires="2016-06-08 00:00:46Z"; version=0

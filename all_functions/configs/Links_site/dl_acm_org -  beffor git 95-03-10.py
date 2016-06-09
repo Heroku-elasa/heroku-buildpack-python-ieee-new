@@ -1526,10 +1526,12 @@ class twill:
 
         try:
             home = os.environ['OPENSHIFT_HOMEDIR'];
-            path = home + 'app-root/runtime/srv/phantomjs/bin/phantomjs'
+            #path = home + 'app-root/runtime/srv/phantomjs/bin/phantomjs'
+			path = home + '/app-root/runtime/srv/python/lib/python2.7/chromedriver'
             ip = os.environ['OPENSHIFT_DIY_IP']
             dr = '--webdriver=8080 --webdriver-selenium-grid-hub=http://' + ip + ':15022'
-            driver = webdriver.PhantomJS(executable_path=path, port=15022, service_args=dr)
+            #driver = webdriver.PhantomJS(executable_path=path, port=15022, service_args=dr)
+			driver = webdriver.Chrome(executable_path=path, port=15022, service_args=dr)
         except:
             try:
                 path = 'E:\Program Files win 7 2nd\phantomjs-1.9.2-windows'
