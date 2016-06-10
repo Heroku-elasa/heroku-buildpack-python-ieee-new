@@ -1,2 +1,3 @@
-https://github.com/Heroku-elasa/heroku-buildpack-python
+#https://github.com/Heroku-elasa/heroku-buildpack-python
 https://github.com/stomita/heroku-buildpack-phantomjs
+https://github.com/Heroku-elasa/heroku-buildpack-python-ieee.git
