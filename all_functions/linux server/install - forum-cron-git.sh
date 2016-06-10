@@ -64,13 +64,13 @@ git add .
 #cd ~/app-root/data/sites
 # git --work-tree=/ add ~/app-root/runtime/repo/php/* -f # multiple folder
 git add shopping.zip
-#git config --global user.name "soheilpaper"
-#git config --global user.email soheil_paper@yahoo.com
+git config --global user.name "soheilpaper"
+git config --global user.email soheil_paper@yahoo.com
  #git commit --amend --reset-author
 git commit -a  -m "first commit"
 
 git remote rm origin
-
+compgen -c
 git remote add origin  https://github.com/3Phase-inverter/3phase-inverter.git
 #git remote add origin https://soheilpaper:ss123456@github.com/soheilpaper/openshift-test.git
 #git remote add origin https://github.com/soheilpaper/openshift-test.git

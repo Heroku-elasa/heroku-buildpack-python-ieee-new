@@ -19,8 +19,9 @@ if [[ "$HOME" = "" ]];then
 	echo $Current_DIR
 else
 	echo 'Current_DIR is home:'
+	export  Current_DIR="$HOME"
 	echo $Current_DIR
-    Current_DIR="$HOME"
+    
 fi
 
 if [[ "$OPENSHIFT_LOG_DIR" = "" ]];then
@@ -70,12 +71,18 @@ else
 fi
 
 if [ "$OPENSHIFT_REPO_DIR" = "" ]; then	
-	Current_DIR=$OPENSHIFT_HOMEDIR
+	export  OPENSHIFT_REPO_DIR=$OPENSHIFT_HOMEDIR
+	echo 'OPENSHIFT_REPO_DIR is:'
+	echo $OPENSHIFT_REPO_DIR
 fi
 if [ "OPENSHIFT_REPO_DIR" = "" ]; then	
-Current_DIR="$PWD"
+	export  OPENSHIFT_REPO_DIR="$PWD"
+	echo 'OPENSHIFT_REPO_DIR is:'
+	echo $OPENSHIFT_REPO_DIR
 fi
+echo 'Current_DIR is:'
 echo ${Current_DIR}
+
 if [  -d ${Current_DIR}/.openshift/action_hooks/common ]; then	
     source ${Current_DIR}/.openshift/action_hooks/common
 fi
@@ -83,6 +90,8 @@ fi
 
 if [ ! -d ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv ]; then	
     mkdir ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv
+	echo 'mkdir is:'
+	echo ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv
 fi
 rm -rf $OPENSHIFT_TMP_DIR/*
 

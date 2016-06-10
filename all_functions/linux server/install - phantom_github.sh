@@ -23,7 +23,11 @@ if [ ! -d "$OPENSHIFT_HOMEDIR/app-root/runtime/srv/phantomjs/bin" ]; then
 	git clone git://github.com/ariya/phantomjs.git
 	cd phantomjs
 	#./build.sh
-	${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/python/bin/python build.py
+	if [ -d "${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/python/bin" ]; then
+	    ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/python/bin/python build.py
+	else
+		python build.py
+	fi
 	nohup sh -c "./build.sh   --confirm "> $OPENSHIFT_LOG_DIR/phantomjs_install.log /dev/null 2>&1 &  
 	bash -i -c 'tail -f  $OPENSHIFT_LOG_DIR/phantomjs_install.log'
 	
@@ -60,3 +64,8 @@ echo "*****************************"
 echo "*****************************"
 echo "***  F I N I S H E D !!   ***"
 echo "*****************************"
+
+cat << 'EOF' > .buildpacks
+https://github.com/heroku/heroku-buildpack-ruby
+https://github.com/stomita/heroku-buildpack-phantomjs
+EOF

@@ -13,6 +13,102 @@ fi
 # 2. java jre-7u7
 # 3. flash 11.2
 # ========================================================
+cd 
+if [[ "$HOME" = "" ]];then
+	Current_DIR="$PWD"
+	echo 'Current_DIR is:'
+	echo $Current_DIR
+else
+	echo 'Current_DIR is home:'
+
+    Current_DIR="$HOME"
+    	echo $Current_DIR
+fi
+
+if [[ "$OPENSHIFT_LOG_DIR" = "" ]];then
+	#echo "$OPENSHIFT_LOG_DIR" > "$OPENSHIFT_HOMEDIR/.env/OPENSHIFT_DIY_LOG_DIR"
+    
+	
+	export OPENSHIFT_LOG_DIR="$Current_DIR/openshifts/logs/"
+	echo 'OPENSHIFT_LOG_DIR is:'
+	echo $OPENSHIFT_LOG_DIR
+else
+   echo "$OPENSHIFT_LOG_DIR Exists"
+fi
+
+if [ "$OPENSHIFT_HOMEDIR" = "" ]; then	
+	export OPENSHIFT_HOMEDIR="$Current_DIR/openshifts"
+	echo 'OPENSHIFT_HOMEDIR is:'
+	echo $OPENSHIFT_HOMEDIR
+else
+	echo 'OPENSHIFT_HOMEDIR exist:'
+	echo $OPENSHIFT_HOMEDIR
+fi
+
+if [ ! -d ${Current_DIR}/openshifts ]; then	        
+	mkdir  ${Current_DIR}/openshifts
+	export OPENSHIFT_HOMEDIR="$Current_DIR/openshifts"
+	echo 'OPENSHIFT_HOMEDIR is:'
+	echo $OPENSHIFT_HOMEDIR
+fi
+
+if [ ! -d ${Current_DIR}/openshifts/logs ]; then	
+        mkdir ${Current_DIR}/openshifts/logs
+        export OPENSHIFT_LOG_DIR="$Current_DIR/openshifts/logs/"
+	echo 'OPENSHIFT_LOG_DIR is:'
+	echo $OPENSHIFT_LOG_DIR
+fi
+###########
+
+if [[ "$OPENSHIFT_TMP_DIR" = "" ]]; then	
+	#mkdir  ${Current_DIR}/openshifts
+	export OPENSHIFT_TMP_DIR="$Current_DIR/openshifts/tmp"
+	echo 'OPENSHIFT_TMP_DIR2 is:'
+	echo $OPENSHIFT_TMP_DIR
+fi
+if [ ! -d ${Current_DIR}/openshifts/tmp ]; then	
+        mkdir ${Current_DIR}/openshifts/tmp
+        export OPENSHIFT_TMP_DIR="$Current_DIR/openshifts/tmp"
+	echo 'OPENSHIFT_TMP_DIR2 is:'
+	echo $OPENSHIFT_TMP_DIR
+fi
+
+#######
+
+if [ ! -d ${Current_DIR}/openshifts/app-root ]; then	
+        mkdir ${Current_DIR}/openshifts/app-root
+fi
+	
+if [ ! -d ${Current_DIR}/openshifts/app-root/runtime ]; then	
+        mkdir ${Current_DIR}/openshifts/app-root/runtime
+fi
+#####
+
+
+if [ "$OPENSHIFT_REPO_DIR" = "" ]; then	
+	OPENSHIFT_REPO_DIR=$OPENSHIFT_HOMEDIR
+	echo 'OPENSHIFT_REPO_DIR is:'
+	echo $OPENSHIFT_REPO_DIR
+fi
+if [ "OPENSHIFT_REPO_DIR" = "" ]; then	
+	OPENSHIFT_REPO_DIR="$PWD"
+	echo 'OPENSHIFT_REPO_DIR is:'
+	echo $OPENSHIFT_REPO_DIR
+fi
+
+echo 'Current_DIR is:'
+echo ${Current_DIR}
+
+if [  -d ${Current_DIR}/.openshift/action_hooks/common ]; then	
+    source ${Current_DIR}/.openshift/action_hooks/common
+fi
+
+
+if [ ! -d ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv ]; then	
+    mkdir ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv
+    echo 'mkdir is:'
+    echo ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv
+fi
 
 mkdir $OPENSHIFT_HOMEDIR/app-root/runtime/srv
 mkdir $OPENSHIFT_HOMEDIR/app-root/runtime/srv/firefox
@@ -28,7 +124,11 @@ if [ ! -d "$OPENSHIFT_HOMEDIR/app-root/runtime/srv/siege/bin" ]; then
 	wget http://selenium.googlecode.com/files/selenium-server-standalone-2.0b3.jar
 	#DISPLAY=:1 xvfb-run java -jar selenium-server-standalone-2.0b3.jar
 	export DISPLAY=:0.0
-	$OPENSHIFT_HOMEDIR/app-root/runtime/srv/java/bin/java -jar selenium-server-standalone-2.0b3.jar 
+	if [  -d $OPENSHIFT_HOMEDIR/app-root/runtime/srv/java/bin/java ]; then	
+		$OPENSHIFT_HOMEDIR/app-root/runtime/srv/java/bin/java -jar selenium-server-standalone-2.0b3.jar
+	else
+		java -jar selenium-server-standalone-2.0b3.jar
+	fi
 	rm selenium-server-standalone-2.0b3.jar
     cd $OPENSHIFT_HOMEDIR/app-root/runtime/srv/firefox
 	mkdir repo
