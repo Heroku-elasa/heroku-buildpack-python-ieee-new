@@ -1385,11 +1385,11 @@ def main(**kwargs):
     http_server = tornado.httpserver.HTTPServer(application)
     print " &&&&&&&&&&&&&&&Before Starting Torando on ip and port:" + server_ip + ':' + server_port
     try:
-        http_server.listen(server_port, server_ip)
-        print "Starting Torando on ip and port:" + server_ip + ':' + server_port
-    except:
         http_server.listen(server_port)
         print "Starting Torando on only  port:" ':' + server_port
+    except:
+        http_server.listen(server_port, server_ip)
+        print "Starting Torando on ip and port:" + server_ip + ':' + server_port
 
     tornado.ioloop.IOLoop.instance().start()
     # print "Tornado finished"
@@ -1477,7 +1477,10 @@ if __name__ == "__main__":
         if options.ip == 'OPENSHIFT_DIY_IP':
 
             try:
-                options.ip = os.environ['OPENSHIFT_DIY_IP']
+                try:
+                    options.ip = os.environ['OPENSHIFT_DIY_IP']
+                except:
+                    options.ip = '127.0.0.1'
                 print "the environ_diy_ip is:\n" + options.ip
                 if re.findall('{',options.root):
                     o=options.root.split('{')[1].split('}')[0]
@@ -1485,12 +1488,17 @@ if __name__ == "__main__":
 
                 if not os.path.isdir(options.root+options.pdfdir):os.mkdir(options.root+options.pdfdir)
                 if not os.path.isdir(options.root+options.water_pdfdir):os.mkdir(options.root+options.water_pdfdir)
+                print "you entered thi ip \n" + options.ip
+                print "you entered thi port \n" + options.port
 
 
             except:
                 try:
 
-                    options.ip = os.environ['OPENSHIFT_NGINX_IP']
+                    try:
+                        options.ip = os.environ['OPENSHIFT_NGINX_IP']
+                    except:
+                        options.ip = '127.0.0.1'
                     print "the environ_diy_ip is:\n" + options.ip
                     if re.findall('{', options.root):
                         o = options.root.split('{')[1].split('}')[0]
@@ -1499,6 +1507,8 @@ if __name__ == "__main__":
                     if not os.path.isdir(options.root + options.pdfdir): os.mkdir(options.root + options.pdfdir)
                     if not os.path.isdir(options.root + options.water_pdfdir): os.mkdir(
                         options.root + options.water_pdfdir)
+                    print "you entered thi ip \n" + options.ip
+                    print "you entered thi port \n" + options.port
                 except:
                     options.ip = '127.0.0.1'
                     options.port = '15001'
@@ -1525,7 +1535,10 @@ if __name__ == "__main__":
         try:
             import os
 
-            options.ip = os.environ['OPENSHIFT_DIY_IP']
+            try:
+                options.ip = os.environ['OPENSHIFT_DIY_IP']
+            except:
+                options.ip = '127.0.0.1'
             # port = '15001'
             print 'this server will be runned on ip:' + options.ip + 'and port:' + options.port
             if not os.path.isdir(options.root+options.pdfdir):os.mkdir(options.root+options.pdfdir)
