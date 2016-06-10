@@ -1384,8 +1384,13 @@ def main(**kwargs):
     # tornado.log.define_logging_options(log_file_prefix='/log.txt')
     http_server = tornado.httpserver.HTTPServer(application)
     print " &&&&&&&&&&&&&&&Before Starting Torando on ip and port:" + server_ip + ':' + server_port
-    http_server.listen(server_port, server_ip)
-    print "Starting Torando on ip and port:" + server_ip + ':' + server_port
+    try:
+        http_server.listen(server_port, server_ip)
+        print "Starting Torando on ip and port:" + server_ip + ':' + server_port
+    except:
+        http_server.listen(server_port)
+        print "Starting Torando on only  port:" ':' + server_port
+
     tornado.ioloop.IOLoop.instance().start()
     # print "Tornado finished"
 
