@@ -1394,6 +1394,10 @@ def main(**kwargs):
 
     try:
         tornado.ioloop.IOLoop.instance().start()
+    
+    except Exception,e: 
+        print str(e)
+
     except OSError as err:
         print("OS error: {0}".format(err))
     except ValueError:
