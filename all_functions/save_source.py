@@ -179,7 +179,10 @@ class PDF_File:
 
             try:
                 home_dir=os.environ['OPENSHIFT_HOMEDIR']
-                st=home_dir+'/app-root/runtime/srv/cpdf/cpdf -stamp-on '+wt1+ " "+pathname+' -o '+Wm_f
+                if os.path.isfile(home_dir+'/app-root/runtime/srv/cpdf/cpdf'):
+                    st=home_dir+'/app-root/runtime/srv/cpdf/cpdf -stamp-on '+wt1+ " "+pathname+' -o '+Wm_f
+                else:
+                    st='/app/all_functions/srv/cpdf/cpdf -stamp-on '+wt1+ " "+pathname+' -o '+Wm_f
             except:
                 home_dir='C:/Users/Hamed/IGC/Desktop/CNC DIY/cpdfdemo/cpdf.exe'
                 st=home_dir+' -stamp-on '+wt1+ " "+pathname+' -o '+Wm_f
