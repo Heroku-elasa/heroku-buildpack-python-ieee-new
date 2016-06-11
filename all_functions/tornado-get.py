@@ -1387,7 +1387,7 @@ def main(**kwargs):
     server_port=server_port.replace(':','')
     try:
         http_server.listen(server_port)
-        print "Starting Torando on only  port:" ':' + server_port
+        print "Starting Torando on only  port:" + server_port
     except:
         http_server.listen(server_port, server_ip)
         print "Starting Torando on ip and port:" + server_ip + ':' + server_port
