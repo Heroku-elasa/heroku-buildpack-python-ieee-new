@@ -29,7 +29,7 @@ grab==0.6.24
 greenlet==0.4.9
 heroku==0.1.4
 hsalf==0.0.1
-httplib2==0.9.1
+httplib2==0.19.0
 hurry.filesize==0.9
 idna==2.0
 img2pdf==0.1.5
