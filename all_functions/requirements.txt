@@ -12,7 +12,7 @@ click==5.1
 colorama==0.3.3
 comtypes==1.1.2
 crypto==1.4.1
-cryptography==1.0.1
+cryptography==3.3.2
 cssselect==0.9.1
 Django==1.8.4
 django-screamshot==0.6.0
