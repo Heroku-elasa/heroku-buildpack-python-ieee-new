@@ -4,7 +4,7 @@ beautifulsoup4==4.4.0
 bibtexparser==0.6.1
 cairocffi==0.7.2
 CairoSVG==1.0.20
-certifi==2015.4.28
+certifi==2022.12.7
 cffi==1.2.1
 characteristic==14.3.0
 chardet==2.3.0
